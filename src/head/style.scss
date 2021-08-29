@@ -1,0 +1,341 @@
+.head {
+    .address {
+        position: relative;
+        background: #fff;
+        text-align: center;
+        line-height: 57px;
+        color: #1195F0;
+        font-size: 22px;
+
+        .close {
+            position: absolute;
+            right: 16px;
+
+            &::after {
+                cursor: pointer;
+                content: '+';
+                display: inline-block;
+                width: 16px;
+                position: relative;
+                top: 2px;
+                font-weight: bold;
+                font-size: 33px;
+                height: 16px;
+                transform: rotate(45deg);
+                color: #1195F0;
+            }
+
+        }
+    }
+
+    .head-con {
+        background: #0e96f0;
+
+        .head-content {
+            position: relative;
+            background: url('../assets/banner-bg.png') no-repeat;
+            margin: 0 auto;
+            width: 1920px;
+            height: 1260px;
+            text-align: left;
+
+            &::before {
+                content: '';
+                display: inline-block;
+                width: 2px;
+                height: 100%;
+                background: #0e96f0;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .head-warp {
+
+                width: 1680px;
+                margin: 0 auto;
+
+                .content-desc {
+                    padding-bottom: 36px;
+                    padding-top: 233px;
+                    width: 922px;
+                    height: 144px;
+                    font-size: 54px;
+                    font-weight: bold;
+                    line-height: 72px;
+                    color: #FFFFFF;
+                    text-shadow: 0px 3px 6px rgba(0, 22, 221, 0.23);
+                }
+
+                .content-btn {
+                    margin-bottom: 132px;
+
+                    .farmBtnText {
+                        margin-right: 18px;
+                    }
+
+                    .uniswapBtnText {}
+
+                    span {
+                        cursor: pointer;
+                        display: inline-block;
+                        width: 190px;
+                        text-align: center;
+                        line-height: 64px;
+                        background: #F6F6F6;
+                        box-shadow: 0px 3px 3px rgba(0, 6, 166, 0.12);
+                        border-radius: 32px;
+                        font-size: 26px;
+                        color: #1D1F75;
+                    }
+                }
+
+                .substrat {
+                    display: flex;
+                    align-items: flex-end;
+
+                    .substratLogo {
+                        width: 259px;
+                        height: 117px;
+                    }
+
+                    .parity {
+                        display: inline-block;
+                        width: 228px;
+                        height: 56px;
+                        text-align: right;
+                        font-size: 24px;
+                        text-indent: 2em;
+                        line-height: 24px;
+                        color: #000000;
+                        margin-right: 10px;
+                    }
+
+                    .substrateBtnText {
+                        cursor: pointer;
+                        text-align: center;
+                        display: inline-block;
+                        width: 165px;
+                        line-height: 56px;
+                        border: 2px solid #000000;
+                        box-shadow: 0px 3px 3px rgba(0, 27, 162, 0.12);
+                        border-radius: 28px;
+                        font-size: 27px;
+                        color: #000000;
+                    }
+                }
+
+                .nav {
+                    height: 72px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-top: 33px;
+
+                    .nav-left {
+                        img {
+                            width: 309px;
+                            height: 72px;
+                        }
+                    }
+
+                    .nav-right {
+                        display: flex;
+                        align-items: center;
+
+                        .list {
+                            display: flex;
+
+                            .item {
+                                font-size: 25px;
+                                color: #FFFFFF;
+                                text-decoration: none;
+                                margin-left: 42px;
+
+                                &:hover {
+                                    position: relative;
+
+                                    &::after {
+                                        position: absolute;
+                                        bottom: -10px;
+                                        left: 10%;
+                                        content: '';
+                                        display: inline-block;
+                                        width: 80%;
+                                        height: 0px;
+                                        border: 2px solid #FFFFFF;
+                                    }
+
+                                }
+                            }
+                        }
+
+                        .language {
+                            cursor: pointer;
+                            margin-left: 60px;
+                            display: flex;
+                            align-items: center;
+                            position: relative;
+
+                            .language-name {
+                                font-size: 25px;
+                                color: #FFFFFF;
+                            }
+
+                            .language-arrow {
+                                height: 40px;
+                                width: 20px;
+                                margin-left: 5px;
+                                display: inline-block;
+                                background: url('../assets/left.png') no-repeat;
+
+                                &.top {
+                                    transform: rotate(90deg) scale(.5);
+                                }
+
+                                &.bottom {
+                                    transform: rotate(270deg) scale(.5);
+                                }
+                            }
+
+                            .language-select {
+                                position: absolute;
+                                top: 35px;
+                                right: 0;
+                                width: 100px;
+                                padding: 10px;
+                                outline: none;
+                                border: none;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.usd {
+    &.topClose {
+        top: 927px;
+    }
+
+    color: #1D1F75;
+    z-index: 1;
+    width: 1640px;
+    height: 196px;
+    position: absolute;
+    top: 984px;
+    left: 50%;
+    margin-left: -820px;
+    background: #FFFFFF;
+    box-shadow: 7px 18px 37px rgba(29, 31, 117, 0.25);
+    border-radius: 20px;
+
+    .usd-con {
+        padding-left: 50px;
+        padding-top: 54px;
+        display: flex;
+
+        .usd-logo {
+            img {
+                width: 88.76px;
+                height: 88.76px;
+            }
+        }
+
+        .usd-usd {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            justify-content: space-around;
+            margin-left: 38px;
+
+            .usd-name {
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            .usd-price {
+                font-size: 50px;
+            }
+
+            .usd-currency {
+                margin-left: 10px;
+                font-size: 30px;
+            }
+        }
+
+        .verticalBar {
+            position: relative;
+
+            &:after {
+                left: -50px;
+                position: absolute;
+                content: '';
+                display: inline-block;
+                width: 0px;
+                height: 61px;
+                border: 1px solid #BBBBBB;
+            }
+        }
+
+        .usd-point {
+            display: flex;
+            align-items: center;
+            margin-left: 100px;
+            font-size: 40px;
+            font-weight: bold;
+            line-height: 53px;
+            color: #55AA55;
+
+            .usd-num {}
+
+            .usd-direction {
+                width: 0;
+                height: 0;
+                margin-left: 8px;
+                border-left: 8.7px solid transparent;
+                border-right: 8.7px solid transparent;
+                border-bottom: 8.7px solid #55AA55;
+            }
+        }
+
+        .usd-rank {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            justify-content: space-around;
+            margin-left: 108px;
+        }
+
+        .usd-text {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .usd-value {
+            font-size: 35px;
+        }
+
+        .usd-marketCap {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            justify-content: space-around;
+            margin-left: 108px;
+        }
+
+        .usd-volume {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            justify-content: space-around;
+            margin-left: 108px;
+        }
+
+
+    }
+}

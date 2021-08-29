@@ -1,0 +1,80 @@
+.road {
+    background: rgba($color: #A9B5BD, $alpha: .3);
+    padding-bottom: 118px;
+    .road-con {
+        width: 1640px;
+        margin: 0 auto;
+    }
+
+    .title {
+        margin-bottom: 16px;
+    }
+
+    .desc {
+        margin-bottom: 95px;
+    }
+
+    .warp {
+        display: flex;
+
+        .item {
+            clear: both;
+            flex: 1;
+            .road-title {
+                font-size: 34px;
+                font-weight: bold;
+                color: #1D1F75;
+
+                span {
+                    margin-left: 10px;
+                    display: inline-block;
+                    text-align: center;
+                    width: 100px;
+                    height: 50px;
+                    line-height: 50px;
+                    background: #FFFFFF;
+                    box-shadow: 0px 5px 15px rgba(29, 31, 117, 0.15);
+                    border-radius: 26px;
+                }
+            }
+
+            .road-info {
+                position: relative;
+                margin-top: 62px;
+                display: inline-block;
+                width: 100%;
+                margin-bottom: 28px;
+                height: 62px;
+                height: 0px;
+                border-radius: 3px;
+                border: 6px solid #3EDDCF;
+
+                img {
+                    width: 62px;
+                    height: 62px;
+                    position: absolute;
+                    top: -32px;
+                }
+            }
+
+            .road-text {
+                float: right;
+                margin-top: 28px;
+                width: 365px;
+                p {
+                    padding: 12px 6px 9px 11px;
+                    text-align: center;
+                    background: #FFFFFF;
+                    box-shadow: 0px 10px 18px rgba(29, 31, 117, 0.1);
+                    border-radius: 10px;
+                    font-size: 24px;
+                    line-height: 23px;
+                    color: #1E1C24;
+                    &:not(:first-child){
+                        margin-top: 11px;
+                    }
+                }
+            }
+        }
+    }
+}

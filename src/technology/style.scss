@@ -1,0 +1,93 @@
+.technology {
+    background: #fff;
+    height: 791px;
+    width: 100%;
+    position: relative;
+    top: -262px;
+    .title{
+        margin-bottom: 28px;
+    }
+    .technology-con {
+        width: 1680px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 162px 0 0;
+
+        .con {
+            .warp {
+                display: flex;
+
+                .item {
+                    overflow: hidden;
+                    flex: 1;
+                    width: 319px;
+                    height: 465px;
+                    background: #FFFFFF;
+                    border: 1px solid #D7D7D8;
+                    box-shadow: 7px 21px 18px rgba(29, 31, 117, 0.15);
+                    border-radius: 15px;
+                    position: relative;
+
+                    &:not(:first-child) {
+                        margin-left: 12px;
+                    }
+
+                    .front {
+                        background: #FFFFFF;
+                        text-align: center;
+
+                        img {
+                            width: 169px;
+                            height: 169px;
+                            margin-top: 73px;
+                        }
+
+                        h2 {
+                            margin-top: 42px;
+                            font-size: 27px;
+                            line-height: 36px;
+                            margin-bottom: 61px;
+                            color: #031D5B;
+
+                        }
+                    }
+
+                    .back {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        border-radius: 15px;
+                        text-align: center;
+                        padding: 0 32px;
+                        background: #1D1F75;
+                        height: 100%;
+                        color: #fff;
+                        font-size: 25px;
+                        line-height: 34px;
+
+                        &.isFront {
+                            display: none;
+                        }
+
+                        &.isBack {
+                            opacity: 0.85;
+                        }
+
+                        .info {
+                            margin: 51px auto 30px;
+                        }
+                    }
+
+                    .info {
+                        display: inline-block;
+                        width: 83px;
+                        height: 0px;
+                        border: 6px solid #3EDDCF;
+                    }
+                }
+            }
+        }
+    }
+}
