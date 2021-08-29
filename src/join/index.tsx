@@ -9,6 +9,7 @@ function Join() {
   const title = "Join our Community Now!";
   const desc = "Like, share, retweet, repost on all social networks";
   const btn = "Click here to Buy Token";
+  const btnUrl = 'https://www.gateio.pro/cn/trade/ARES_USDT';
   return (
     <section className="join">
       <div className="join-con">
@@ -20,10 +21,10 @@ function Join() {
           </li>
         </ul>
         <div className='btn-con'>
-          <p className="btn">
+          <a className="btn" href={btnUrl} target='_blank' rel="noreferrer">
             <img src={linkBtn} alt="" />
             <span>{btn}</span>
-          </p>
+          </a>
         </div>
       </div>
     </section>
