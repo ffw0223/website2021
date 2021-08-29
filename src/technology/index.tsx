@@ -10,45 +10,45 @@ import technology5Png from "../assets/technology5.png";
 
 function Technology() {
   const { t } = useTranslation();
-  const title = "Technology Architecture";
+  const title = t("Technology Architecture");
   const desc =
-    "Ares is an on-chain verifying oracle protocol powered by Polkadot. It provides reliable off-chain data efficiently and in a trustless manner.";
+    t("Ares is an on-chain verifying oracle protocol powered by Polkadot. It provides reliable off-chain data efficiently and in a trustless manner.");
   const oldlist = [
     {
       img: technology1Png,
-      title: "Aggregator",
-      desc: "The challenger verifies the integrity and validity of the data submitted by the aggregator and submits fraudulent aggregator data and correct data to the Reputation Committee for rewards.",
+      title: t("Aggregator"),
+      desc: t("The aggregator obtains external request data through Scanner, sends the request to the Provider to process all Oracle requests, and uses VRF to ensure the randomness of the aggregator."),
       status: "isFront",
     },
     {
       img: technology2Png,
-      title: "Aggregator2",
-      desc: "The challenger verifies the integrity and validity of the data submitted by the aggregator and submits fraudulent aggregator data and correct data to the Reputation Committee for rewards.",
+      title: t("Challenger"),
+      desc: t("The challenger verifies the integrity and validity of the data submitted by the aggregator and submits fraudulent aggregator data and correct data to the Reputation Committee for rewards."),
       status: "isFront",
     },
     {
       img: technology3Png,
-      title: "Reputation Committee",
-      desc: "The challenger verifies the integrity and validity of the data submitted by the aggregator and submits fraudulent aggregator data and correct data to the Reputation Committee for rewards.",
+      title: t("Reputation Committee"),
+      desc: t("By incentivizing validators and punishing malicious aggregators, the security of the Ares network is ensured. The Reputation Committee is fully self-governed by the community, running for the Reputation Committee through token mortgage and reputation weighting."),
       status: "isFront",
     },
     {
       img: technology4Png,
-      title: "Data Consumer",
-      desc: "The challenger verifies the integrity and validity of the data submitted by the aggregator and submits fraudulent aggregator data and correct data to the Reputation Committee for rewards.",
+      title: t("Data Consumer"),
+      desc: t("Data consumers can be objects that need to obtain external data in smart contracts, parachains, and DAPPs. They can provide various credible and compelling data for DEFI, prediction markets, and gambling."),
       status: "isFront",
     },
     {
       img: technology5Png,
-      title: "Node Operator",
-      desc: "The challenger verifies the integrity and validity of the data submitted by the aggregator and submits fraudulent aggregator data and correct data to the Reputation Committee for rewards.",
+      title: t("Node Operator"),
+      desc: t("Node operators, as full nodes of the Ares network, verify data by comparing it with the locally stored data market to ensure the Ares network's security, and provide oracle RPC services."),
       status: "isFront",
     },
   ];
   const [list, setList] = useState(oldlist);
 
   return (
-    <section className="technology">
+    <section className="technology" id='Technology'>
       <div className="technology-con">
         <h2 className="title">{title}</h2>
         <p className="desc">{desc}</p>

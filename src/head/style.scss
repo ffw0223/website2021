@@ -76,10 +76,11 @@
 
                     .uniswapBtnText {}
 
-                    span {
+                    a {
                         cursor: pointer;
                         display: inline-block;
                         width: 190px;
+                        text-decoration: none;
                         text-align: center;
                         line-height: 64px;
                         background: #F6F6F6;
@@ -122,6 +123,7 @@
                         border-radius: 28px;
                         font-size: 27px;
                         color: #000000;
+                        text-decoration: none;
                     }
                 }
 

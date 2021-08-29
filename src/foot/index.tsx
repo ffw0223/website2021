@@ -2,58 +2,60 @@ import React from "react";
 import "./style.scss";
 import emailImg from "../assets/email.png";
 import topImg from "../assets/top.png";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 function Foot() {
   const { t } = useTranslation();
   const about = {
-    title: "About Us",
-    desc: "Ares is an on-chain-verified oracle protocol that provides secure and reliable data services for the Polkadot DeFi ecosystem.",
+    title: t("About Us"),
+    desc: t(
+      "Ares is an on-chain-verified oracle protocol that provides secure and reliable data services for the Polkadot DeFi ecosystem."
+    ),
     email: "info@aresprotocol.io",
   };
   const link = {
-    title: "Quick Links",
+    title: t("Quick Links"),
     list: [
       {
-        name: "Home",
-        url: "",
+        name: t("Home"),
+        url: "#Home",
       },
       {
-        name: "Technology",
-        url: "",
+        name: t("Technology"),
+        url: "#Technology",
       },
       {
-        name: "Economics",
-        url: "",
+        name: t("Economics"),
+        url: "#Economics",
       },
       {
-        name: "Application",
-        url: "",
+        name: t("Application"),
+        url: "#Application",
       },
       {
         name: "Team Members",
-        url: "",
+        url: "#Team",
       },
       {
         name: "Strategic Investors",
-        url: "",
+        url: "#Strategic",
       },
     ],
   };
   const resources = {
-    title: "Resources",
+    title: t("Resources"),
     list: [
       {
-        name: "Documentation",
-        url: "",
+        name: t("Documentation"),
+        url: "https://docs.aresprotocol.io/#/",
       },
       {
-        name: "Explorer",
-        url: "",
+        name: t("Explorer"),
+        url: "#",
       },
       {
-        name: "Market",
-        url: "",
+        name: t("Market"),
+        url: "mailto:info@aresprotocol.io",
       },
     ],
   };
@@ -82,7 +84,9 @@ function Foot() {
               const { name, url } = item;
               return (
                 <li className="link-item" key={index}>
-                  <a href="">{name}</a>
+                  <a href={url} target={url[0] === "#" ? "_self" : "_blank"}>
+                    {name}
+                  </a>
                 </li>
               );
             })}
@@ -95,7 +99,9 @@ function Foot() {
               const { name, url } = item;
               return (
                 <li className="link-item" key={index}>
-                  <a href="">{name}</a>
+                  <a href={url} target={url[0] === "#" ? "_self" : "_blank"}>
+                    {name}
+                  </a>
                 </li>
               );
             })}

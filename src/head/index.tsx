@@ -38,43 +38,44 @@ function Head() {
       "ARES Official ERC-20 Contract is 0x358AA737e033F34df7c54306960a38d09AaBd523"
     ),
     desc: t("$ARES a Decentralized Cross-chain Oracle Service Protocol"),
-    farmsUrl: "",
+    farmsUrl: "https://trojan.aresprotocol.io/",
     farmBtnText: t("Farms"),
-    uniswapUrl: "",
+    uniswapUrl:
+      "https://app.uniswap.org/#/swap?outputCurrency=0x358AA737e033F34df7c54306960a38d09AaBd523&use=V2",
     uniswapBtnText: t("Uniswap"),
-    parity: t("Ares Protocol is based on Substrate"),
-    substrateUrl: "",
-    substrateBtnText: t("Substrate"),
+    parity: "Ares Protocol is based on Substrate",
+    substrateUrl: "https://www.parity.io/technologies/substrate/",
+    substrateBtnText: "Substrate",
     navs: [
       {
         name: t("Home"),
         id: "Home",
-        url: "",
+        url: "#home",
       },
       {
         name: t("Technology"),
         id: "Technology",
-        url: "",
+        url: "#Technology",
       },
       {
         name: t("Economics"),
         id: "Economics",
-        url: "",
+        url: "#Economics",
       },
       {
         name: t("Application"),
         id: "Application",
-        url: "",
+        url: "#Application",
       },
       {
         name: t("Documentation"),
         id: "Documentation",
-        url: "",
+        url: "https://docs.aresprotocol.io/#/",
       },
       {
         name: t("Buy Token"),
         id: "Buy Token",
-        url: "",
+        url: "https://www.gateio.pro/cn/trade/ARES_USDT",
       },
     ],
     language: {
@@ -128,7 +129,7 @@ function Head() {
 
   return (
     <>
-      <section className="head">
+      <section className="head" id="Home">
         {addressSwitch ? (
           <h2 className="address">
             {head.topTip}
@@ -156,7 +157,11 @@ function Head() {
                       const { name, url, id } = nav;
                       return (
                         <li key={id || index}>
-                          <a className="item" href={url}>
+                          <a
+                            className="item"
+                            href={url}
+                            target={url[0] === "#" ? "_self" : "_blank"}
+                          >
                             {name}
                           </a>
                         </li>
@@ -215,15 +220,27 @@ function Head() {
               </div>
               <p className="content-desc">{head.desc}</p>
               <p className="content-btn">
-                <span className="farmBtnText">{head.farmBtnText}</span>
-                <span className="uniswapBtnText">{head.uniswapBtnText}</span>
+                <a href={head.farmsUrl} className="farmBtnText" target="_blank">
+                  {head.farmBtnText}
+                </a>
+                <a
+                  className="uniswapBtnText"
+                  href={head.uniswapUrl}
+                  target="_blank"
+                >
+                  {head.uniswapBtnText}
+                </a>
               </p>
               <div className="substrat">
                 <img className="substratLogo" src={parityImg} alt="" />
                 <span className="parity">{head.parity}</span>
-                <span className="substrateBtnText">
+                <a
+                  className="substrateBtnText"
+                  href={head.substrateUrl}
+                  target="_blank"
+                >
                   {head.substrateBtnText}
-                </span>
+                </a>
               </div>
             </div>
           </div>

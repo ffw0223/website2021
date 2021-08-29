@@ -25,9 +25,9 @@ import "./style.scss";
 
 function Strategic() {
   const { t } = useTranslation();
-  const title = "Strategic Investors";
+  const title = t("Strategic Investors");
   const desc =
-    "Our investors, the seed of our project and  a fundamental part of our development and innovation.";
+    t("Our investors, the seed of our project and  a fundamental part of our development and innovation.");
   const list = [
     strategic1,
     strategic2,
@@ -52,7 +52,7 @@ function Strategic() {
     strategic21,
   ];
   return (
-    <section className="strategic">
+    <section className="strategic" id='Strategic'>
       <div className="strategic-con">
         <h2 className="title">{title}</h2>
         <p className="desc">{desc}</p>

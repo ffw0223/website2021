@@ -34,7 +34,7 @@ const swiperConfig = {
 function Team() {
   const { t } = useTranslation();
   let swiperRef = null;
-  const title = "Team Members";
+  const title = t("Team Members");
   const desc =
     "The Ares Protocol Team combines knowledge, experience andpassion for cryptocurrencies. ";
   const list = [
@@ -42,39 +42,63 @@ function Team() {
       img: "",
       twitter: "https://swiperjs.com/react",
       telegram: "https://swiperjs.com/react",
-      position: "CTO",
+      position: t("CTO"),
       name: "Keric",
-      desc: "6 years’ experience in blockchain development. Proficient in public chain and parallel chain development. ",
+      desc: t("6 years’ experience in blockchain development. Proficient in public chain and parallel chain development. Participated in the development of multiple blockchain projects. Expert in Go and Rust. Early Follower of Polkadot."),
     },
     {
       img: "",
       twitter: "https://swiperjs.com/react",
       telegram: "https://swiperjs.com/react",
-      position: "Researcher",
-      name: "Andy",
-      desc: "Early investor of Polkadot. 10 years’ experience in Internet entrepreneurship. 5 years’ experience in the blockchain industry. ",
-    },
-    {
-      img: "",
-      twitter: "https://swiperjs.com/react",
-      telegram: "https://swiperjs.com/react",
-      position: "Core developer",
+      position: t("Core developer"),
       name: "Sander Ruvins",
-      desc: "Sander Ruvins Over 10 years of experiences in Development and Management.",
+      desc: t("Sander Ruvins Over 10 years of experiences in Development and Management, real time database products and exchange platform products expert. Currently focused on Blockchain Development and Cross-chain Technologies."),
     },
     {
       img: "",
       twitter: "https://swiperjs.com/react",
       telegram: "https://swiperjs.com/react",
-      position: "Core 1developer",
-      name: "Sander2 Ruvins",
-      desc: "Sander 1Ruvins Over 10 years of experiences in Development and Management.",
+      position: t("Core developer"),
+      name: "Tiago Boat",
+      desc: t("Tiago Boat, more than 8 years of experience in-large-scale computing and algorithm, 5 years of cloud service experience, with many patents such as consensus algorithm and blockchain transaction."),
+    },
+    {
+      img: "",
+      twitter: "https://swiperjs.com/react",
+      telegram: "https://swiperjs.com/react",
+      position: t("Core developer"),
+      name: "Scott",
+      desc: t("7 years’ experience in software development. Full stack Developer. Proficient in programming languages ​​such as Java, Golang and node. Engaged in blockchain research and development since 2018. Familiar with EOS and Ethereum blockhchain."),
+    },
+    {
+      img: "",
+      twitter: "https://swiperjs.com/react",
+      telegram: "https://swiperjs.com/react",
+      position: t("Researcher"),
+      name: "Andy",
+      desc: t("Early investor of Polkadot. 10 years’ experience in Internet entrepreneurship. 5 years’ experience in the blockchain industry. Expert in economic modelling and distributed businesses."),
+    },
+    {
+      img: "",
+      twitter: "https://swiperjs.com/react",
+      telegram: "https://swiperjs.com/react",
+      position: t("Developer"),
+      name: "Alex",
+      desc: t("Expert in multithreaded programming, real-time and high-performance software systems and communication systems and protocols."),
+    },
+    {
+      img: "",
+      twitter: "https://swiperjs.com/react",
+      telegram: "https://swiperjs.com/react",
+      position: t("Developer"),
+      name: "Feng",
+      desc: t("Over 15 years’ experience in software development/integration. Developer of Auckland Blockchainlabs (technical team)."),
     },
   ];
   const number = 3;
   const slides = Math.ceil(list.length / number) as number;
   return (
-    <section className="team">
+    <section className="team" id='Team'>
       <div className="team-con">
         <AwesomeSwiper
           ref={(ref) => (swiperRef = ref)}
