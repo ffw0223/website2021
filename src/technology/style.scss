@@ -27,7 +27,10 @@
                     box-shadow: 7px 21px 18px rgba(29, 31, 117, 0.15);
                     border-radius: 15px;
                     position: relative;
-
+                    &:hover .back{
+                      display: inline-block;
+                      opacity: 0.85;
+                    }
                     &:not(:first-child) {
                         margin-left: 12px;
                     }
@@ -66,15 +69,7 @@
                         color: #fff;
                         font-size: 25px;
                         line-height: 34px;
-
-                        &.isFront {
-                            display: none;
-                        }
-
-                        &.isBack {
-                            opacity: 0.85;
-                        }
-
+                        display: none;
                         .info {
                             margin: 51px auto 30px;
                         }

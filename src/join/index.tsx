@@ -2,6 +2,13 @@ import React from "react";
 import "./style.scss";
 import { useTranslation } from 'react-i18next';
 import link from "../assets/link-icon.png";
+import link1 from "../assets/join-link1.png";
+import link2 from "../assets/join-link2.png";
+import link3 from "../assets/join-link3.png";
+import link4 from "../assets/join-link4.png";
+import link5 from "../assets/join-link5.png";
+import link6 from "../assets/join-link6.png";
+import link7 from "../assets/join-link7.png";
 import linkBtn from "../assets/link-logo-btn.png";
 
 function Join() {
@@ -15,11 +22,15 @@ function Join() {
       <div className="join-con">
         <h2 className="title">{title}</h2>
         <p className="desc">{desc}</p>
-        <ul className="link-icon">
-          <li>
-            <img src={link} alt="" />
-          </li>
-        </ul>
+        <div className="link-icon">
+            <a href='https://t.me/aresprotocol' target="_blank" rel="noreferrer"><img src={link1} alt="" /></a>
+            <a href='https://twitter.com/AresProtocolLab' target="_blank" rel="noreferrer"><img src={link3} alt="" /></a>
+            <a href='https://www.facebook.com/groups/aresprotocollabs' target="_blank" rel="noreferrer"><img src={link2} alt="" /></a>
+            <a href='https://discord.gg/EsaFRr7xmc' target="_blank" rel="noreferrer"><img src={link4} alt="" /></a>
+            <a href='https://www.reddit.com/r/AresProtocolLabs/' target="_blank" rel="noreferrer"><img src={link5} alt="" /></a>
+            <a href='https://aresprotocollab.medium.com/' target="_blank" rel="noreferrer"><img src={link6} alt="" /></a>
+            <a href='https://github.com/aresprotocols' target="_blank" rel="noreferrer"><img src={link7} alt="" /></a>
+        </div>
         <div className='btn-con'>
           <a className="btn" href={btnUrl} target='_blank' rel="noreferrer">
             <img src={linkBtn} alt="" />
