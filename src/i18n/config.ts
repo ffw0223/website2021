@@ -49,7 +49,7 @@ export const resources = {
       "About Us":"About Us",
       "Ares is an on-chain-verified oracle protocol that provides secure and reliable data services for the Polkadot DeFi ecosystem.":"Ares is an on-chain-verified oracle protocol that provides secure and reliable data services for the Polkadot DeFi ecosystem.",
       "Quick Links":"Quick Links",
-      "Explorer":"Explorer",
+      "Explorer":"Blockchain Explorer",
       "Resources":"Resources",
       "Market":"Market",
       "Whitepaper 1.0 was issued":"Whitepaper 1.0 was issued",

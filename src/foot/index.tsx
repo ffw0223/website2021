@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.scss";
+import "./style1280.scss";
 import emailImg from "../assets/email.png";
 import topImg from "../assets/top.png";
 import { useTranslation } from "react-i18next";
@@ -12,6 +13,7 @@ function Foot() {
       "Ares is an on-chain-verified oracle protocol that provides secure and reliable data services for the Polkadot DeFi ecosystem."
     ),
     email: "info@aresprotocol.io",
+    emailUrl: "https://info@aresprotocol.io",
   };
   const link = {
     title: t("Quick Links"),
@@ -51,12 +53,12 @@ function Foot() {
       },
       {
         name: t("Explorer"),
-        url: "#",
+        url: "https://etherscan.io/token/0x358aa737e033f34df7c54306960a38d09aabd523",
       },
-      {
-        name: t("Market"),
-        url: "mailto:info@aresprotocol.io",
-      },
+      // {
+      //   name: t("Market"),
+      //   url: "mailto:info@aresprotocol.io",
+      // },
     ],
   };
   const subscribe = {
@@ -74,7 +76,7 @@ function Foot() {
           <p className="about-desc">{about.desc}</p>
           <p className="about-email">
             <img src={emailImg} alt="" />
-            <span>{about.email}</span>
+            <a href={about.emailUrl}>{about.email}</a>
           </p>
         </div>
         <div className="link">

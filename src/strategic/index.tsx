@@ -22,6 +22,7 @@ import strategic19 from "../assets/strategic19.png";
 import strategic20 from "../assets/strategic20.png";
 import strategic21 from "../assets/strategic21.png";
 import "./style.scss";
+import "./style1280.scss";
 
 function Strategic() {
   const { t } = useTranslation();

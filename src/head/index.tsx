@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./style.scss";
+import "./style1280.scss";
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
+import vedio from "../assets/vedio.mp4";
 import aresLogoImg from "../assets/ares-logo.png";
 import logoImg from "../assets/logo.png";
 import parityImg from "../assets/parity.png";
@@ -50,22 +52,30 @@ function Head() {
       {
         name: t("Home"),
         id: "Home",
-        url: "#home",
+        url: "#Home",
+        minScrollTop: -1,
+        maxScrollTop: 998,
       },
       {
         name: t("Technology"),
         id: "Technology",
         url: "#Technology",
+        minScrollTop: 998,
+        maxScrollTop: 2051,
       },
       {
         name: t("Economics"),
         id: "Economics",
         url: "#Economics",
+        minScrollTop: 2051,
+        maxScrollTop: 3097,
       },
       {
         name: t("Application"),
         id: "Application",
         url: "#Application",
+        minScrollTop: 3097,
+        maxScrollTop: 10000,
       },
       {
         name: t("Documentation"),
@@ -92,26 +102,28 @@ function Head() {
       localIndex: 0,
     },
   };
+
   const ares = {
     name: "Ares Protocol (ARES)",
-    price: "--",
+    price: 0.04,
     currency: "USD",
     symbol: "$",
-    point: "--",
-    rank: "--",
+    point: 3.32,
+    rank: 1142,
     rankText: "Rank",
-    marketCap: "--",
+    marketCap: 6400053.37,
     marketCapText: "marketCap",
-    volume: "--",
+    volume: 809945.75,
     volumeText: "volume",
   };
   const [addressSwitch, setAddressSwitch] = useState(true);
   const [languageStatus, setlanguageStatus] = useState(false);
+  const [scrollTop, setScroll] = useState(0);
+  const [vedioSwich, setVedioStauts] = useState(false);
   const [language, setlanguage] = useState(
     head.language.select[head.language.localIndex].name
   );
   const [aresData, setAresData] = useState(ares);
-
   useEffect(() => {
     const fetchData = async () => {
       const res = (await getAresAll()) as unknown as aresData;
@@ -125,73 +137,93 @@ function Head() {
       setAresData(newAresData);
     };
     fetchData();
-  }, [aresData]);
+  }, []);
+
+  useEffect(() => {
+    window.onscroll = (e) => {
+      const top = document.documentElement.scrollTop || document.body.scrollTop;
+      setScroll(top);
+    };
+  }, []);
 
   return (
     <>
       <section className="head" id="Home">
-        {addressSwitch ? (
-          <h2 className="address">
-            {head.topTip}
-            <span
-              className="close"
-              onClick={() => {
-                setAddressSwitch(false);
-              }}
-            ></span>
-          </h2>
-        ) : null}
-
-        <header className="head-con">
-          <div className="head-content">
-            <div className="head-warp">
-              <div className="nav">
-                <div className="nav-left">
-                  <a href="/">
-                    <img src={logoImg} alt="" />
-                  </a>
-                </div>
-                <div className="nav-right">
-                  <ul className="list">
-                    {head.navs.map((nav, index) => {
-                      const { name, url, id } = nav;
-                      return (
-                        <li key={id || index}>
-                          <a
-                            className="item"
-                            href={url}
-                            target={url[0] === "#" ? "_self" : "_blank"}
-                          >
-                            {name}
-                          </a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                  <div className="language">
+        <div className={classnames("head-top", { fixed: !!scrollTop })}>
+          <div className="head-top-address">
+            {addressSwitch ? (
+              <h2 className="address">
+                {head.topTip}
+                <span
+                  className="close"
+                  onClick={() => {
+                    setAddressSwitch(false);
+                  }}
+                ></span>
+              </h2>
+            ) : null}
+          </div>
+          <div className="head-top-nav">
+            <div className="nav">
+              <div className="nav-left">
+                <a href="/">
+                  <img src={logoImg} alt="" />
+                </a>
+              </div>
+              <div className="nav-right">
+                <ul className="list">
+                  {head.navs.map((nav, index) => {
+                    const { name, url, id, minScrollTop, maxScrollTop } = nav;
+                    const active =
+                      minScrollTop &&
+                      scrollTop >= minScrollTop &&
+                      maxScrollTop &&
+                      scrollTop < maxScrollTop;
+                    return (
+                      <li key={id || index}>
+                        <a
+                          className={classnames("item", {
+                            active,
+                          })}
+                          href={url}
+                          target={url[0] === "#" ? "_self" : "_blank"}
+                        >
+                          {name}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <div className="language">
+                  <p className="language-name">
                     <span
-                      className="language-name"
-                      onClick={() => {
+                      className={classnames("one", {
+                        isShowLanguage: languageStatus,
+                      })}
+                      onClick={(e) => {
                         setlanguageStatus(!languageStatus);
+                        if ((e.target as any).innerText === "EN") {
+                          head.language.localIndex = 0;
+                        } else {
+                          head.language.localIndex = 1;
+                        }
+                        const language =
+                          head.language.select[head.language.localIndex].name;
+                        setlanguage(language);
+                        setlanguageStatus(!languageStatus);
+                        i18n.changeLanguage(
+                          head.language.select[head.language.localIndex].id
+                        );
                       }}
                     >
-                      {language}
+                      {language === "EN" ? "EN" : "CN"}
                     </span>
-                    <span
-                      onClick={() => {
-                        setlanguageStatus(!languageStatus);
-                      }}
-                      className={classnames("language-arrow", {
-                        top: languageStatus,
-                        bottom: !languageStatus,
-                      })}
-                    ></span>
                     {languageStatus ? (
-                      <select
-                        className="language-select"
-                        value={language}
-                        onChange={(e) => {
-                          if (e.target.value === "EN") {
+                      <span
+                        className="two"
+                        onClick={(e) => {
+                          setlanguageStatus(!languageStatus);
+                          if ((e.target as any).innerText === "EN") {
                             head.language.localIndex = 0;
                           } else {
                             head.language.localIndex = 1;
@@ -205,19 +237,25 @@ function Head() {
                           );
                         }}
                       >
-                        {head.language.select.map((item) => {
-                          const { name, id } = item;
-                          return (
-                            <option key={id} value={name}>
-                              {id}
-                            </option>
-                          );
-                        })}
-                      </select>
+                        {language === "EN" ? "CN" : "EN"}
+                      </span>
                     ) : null}
-                  </div>
+                  </p>
+                  <span
+                    className={classnames("language-arrow", {
+                      top: languageStatus,
+                      bottom: !languageStatus,
+                    })}
+                  ></span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <header className="head-con">
+          <div className="head-content">
+            <div className="head-warp">
               <p className="content-desc">{head.desc}</p>
               <p className="content-btn">
                 <a href={head.farmsUrl} className="farmBtnText" target="_blank">
@@ -241,6 +279,27 @@ function Head() {
                 >
                   {head.substrateBtnText}
                 </a>
+                <img
+                  className="video-img"
+                  src="/"
+                  onClick={() => setVedioStauts(!vedioSwich)}
+                />
+                {vedioSwich ? (
+                  <div className="video">
+                    <video
+                      className="video-con"
+                      autoPlay
+                      src={vedio}
+                      controls={true}
+                    >
+                      你的浏览器不支持
+                    </video>
+                    <span
+                      className="video-mask"
+                      onClick={() => setVedioStauts(!vedioSwich)}
+                    ></span>
+                  </div>
+                ) : null}
               </div>
             </div>
           </div>

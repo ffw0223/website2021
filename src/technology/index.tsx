@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./style.scss";
+import "./style1280.scss";
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 import technology1Png from "../assets/technology1.png";
@@ -26,7 +27,7 @@ function Technology() {
     },
     {
       img: technology3Png,
-      title: t("Reputation Committee"),
+      title: t("Reputation            Committee"),
       desc: t("By incentivizing validators and punishing malicious aggregators, the security of the Ares network is ensured. The Reputation Committee is fully self-governed by the community, running for the Reputation Committee through token mortgage and reputation weighting.")
     },
     {
@@ -44,7 +45,7 @@ function Technology() {
   return (
     <section className="technology" id='Technology'>
       <div className="technology-con">
-        <h2 className="title">{title}</h2>
+        <h2 className="title" dangerouslySetInnerHTML={{__html:title}}></h2>
         <p className="desc">{desc}</p>
         <div className="con">
           <ul className="warp">

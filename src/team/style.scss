@@ -16,7 +16,7 @@
         text-align: left;
 
         .swiper-wrapper {
-            height: 867px;
+            height: 987px;
 
             .warp {
                 display: flex;
@@ -24,7 +24,7 @@
 
             .item {
                 width: 536px;
-                height: 306px;
+                height: 426px; 
                 background: #fff;
                 box-shadow: 7px 21px 18px rgba(29, 31, 117, 0.15);
                 border-radius: 15px;
@@ -89,14 +89,19 @@
                 }
 
                 .team-name {
-                    padding-top: 22px;
+                    padding-top: 24px;
                     padding-left: 52px;
-                    padding-bottom: 24px;
                     font-size: 34px;
                     font-weight: bold;
                     color: #1D1F75;
                 }
-
+                .team-position{
+                  padding-left: 52px;
+                  padding-top: 24px;
+                  padding-bottom: 48px;
+                  color: #1D1F75;
+                  font-size: 26px;
+                }
                 .team-desc {
                     padding-left: 52px;
                     padding-right: 32px;

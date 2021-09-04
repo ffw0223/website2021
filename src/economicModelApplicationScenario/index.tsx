@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import economicModelImg from "../assets/economicModel.png";
 import applicationScenarioImg from "../assets/applicationScenario.png";
 import "./style.scss";
-import f from "../until/language";
+import "./style1280.scss";
 
 function EconomicModelApplicationScenario() {
   const { t } = useTranslation();

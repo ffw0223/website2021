@@ -1,17 +1,18 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import "./style.scss";
+import "./style1280.scss";
 import { useTranslation } from 'react-i18next';
 import twitterImg from "../assets/twitter.png";
 import telegramImg from "../assets/telegram.png";
 import AwesomeSwiper from "react-awesome-swiper";
 const swiperConfig = {
-  loop: true,
-  autoplay: {
-    delay: 3000,
-    stopOnLastSlide: false,
-    disableOnInteraction: true,
-  },
+  // loop: true,
+  // autoplay: {
+  //   delay: 3000,
+  //   stopOnLastSlide: false,
+  //   disableOnInteraction: true,
+  // },
   // Disable preloading of all images
   preloadImages: false,
   // Enable lazy loading
@@ -130,7 +131,7 @@ function Team() {
                         data;
                       return (
                         <div className="item" key={`${index}${sindex}`}>
-                          <div className="top">
+                          {/* <div className="top">
                             <div className="left">
                               <img className="headImg" src={img} alt="" />
                               <p className="position">
@@ -154,8 +155,9 @@ function Team() {
                                 />
                               </a>
                             </div>
-                          </div>
+                          </div> */}
                           <h2 className="team-name">{name}</h2>
+                          <h2 className="team-position">{position}</h2>
                           <p className="team-desc">{desc}</p>
                         </div>
                       );

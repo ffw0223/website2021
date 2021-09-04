@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.scss";
+import "./style1280.scss";
 import { useTranslation } from "react-i18next";
 import roadIcon from "../assets/road.png";
 

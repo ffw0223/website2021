@@ -1,0 +1,109 @@
+@media only screen and (min-width: 1280px) and (max-width: 1679px) {
+  .team {
+    .title {
+      padding-top: 89 * 0.76190476px;
+      padding-bottom: 21 * 0.76190476px;
+    }
+    .desc {
+      padding-bottom: 40px;
+    }
+    .team-con {
+      width: 1500 * 0.76190476px;
+
+      .swiper-wrapper {
+        height: 987 * 0.76190476px;
+
+        .warp {
+        }
+
+        .item {
+          width: 536 * 0.76190476px;
+          height: 426 * 0.76190476px;
+          box-shadow: 7 * 0.76190476px 21 * 0.76190476px 18 * 0.76190476px
+            rgba(29, 31, 117, 0.15);
+          border-radius: 15 * 0.76190476px;
+
+          &:not(:first-child) {
+            margin-left: 16 * 0.76190476px;
+          }
+
+          .top {
+            margin-top: -61.7 * 0.76190476px;
+            padding-left: 31 * 0.76190476px;
+            padding-right: 32 * 0.76190476px;
+
+            .left {
+              .headImg {
+                margin-right: 20 * 0.76190476px;
+                width: 123 * 0.76190476px;
+                height: 123 * 0.76190476px;
+                border-radius: 50 * 0.76190476px;
+              }
+
+              .position {
+                .info {
+                  top: -60 * 0.76190476px;
+                  width: 132 * 0.76190476px;
+                }
+
+                .text {
+                  top: -20 * 0.76190476px;
+                  font-size: 26 * 0.76190476px;
+                }
+              }
+            }
+
+            .right {
+              img {
+                width: 43 * 0.76190476px;
+                height: 43 * 0.76190476px;
+              }
+
+              .telegram {
+                margin-left: 15 * 0.76190476px;
+              }
+            }
+          }
+
+          .team-name {
+            padding-top: 24 * 0.76190476px;
+            padding-left: 52 * 0.76190476px;
+            font-size: 34 * 0.76190476px;
+          }
+          .team-position {
+            padding-left: 52 * 0.76190476px;
+            padding-top: 24 * 0.76190476px;
+            padding-bottom: 48 * 0.76190476px;
+            font-size: 26 * 0.76190476px;
+          }
+          .team-desc {
+            padding-left: 52 * 0.76190476px;
+            padding-right: 32 * 0.76190476px;
+            font-size: 25 * 0.76190476px;
+            line-height: 30 * 0.76190476px;
+          }
+        }
+      }
+    }
+
+    .swiper-button-prev,
+    .swiper-container-rtl .swiper-button-next {
+      left: -70 * 0.76190476px;
+    }
+
+    .swiper-button-next,
+    .swiper-container-rtl .swiper-button-prev {
+      right: -70 * 0.76190476px;
+    }
+    .swiper-pagination-team {
+      bottom: 55 * 0.76190476px;
+      .swiper-pagination-bullet {
+        width: 20 * 0.76190476px;
+        height: 20 * 0.76190476px;
+        margin-left: 12 * 0.76190476px;
+        &.swiper-pagination-bullet-active {
+        }
+      }
+    }
+  }
+}

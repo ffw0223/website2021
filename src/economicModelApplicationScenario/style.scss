@@ -1,112 +1,110 @@
 .economicModelApplicationScenario {
-    .title {
-        padding-top: 67px;
-        padding-bottom: 23px;
-    }
+  .title {
+    padding-top: 67px;
+    padding-bottom: 23px;
+  }
 
-    .desc {
-        margin-bottom: 118px;
-    }
+  .desc {
+    margin-bottom: 118px;
+  }
 
-    .economicModelApplicationScenario-con {
-        width: 1640px;
-        margin: 0 auto;
+  .economicModelApplicationScenario-con {
+    width: 1640px;
+    margin: 0 auto;
 
-        .economicModelApplicationScenario-warp {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-
-            .economicModelApplicationScenario-swiper {
-                .economicModelApplicationScenario-swiper-awesomeSwiper {
-
-                    width: 674px;
-                    height: 512px;
-                    background: #fff;
-                    border: 1px solid #C4C8CB;
-                    box-shadow: 7px 21px 18px rgba(29, 31, 117, 0.15);
-                    border-radius: 15px;
-                    text-align: left;
-
-                    .economicModelApplicationScenario-swiper-title {
-                        font-size: 35px;
-                        padding-top: 45px;
-                        color: #1D1F75;
-                        font-weight: bold;
-                        padding-bottom: 32px;
-                        padding-left: 65px;
-
-                    }
-
-                    .economicModelApplicationScenario-swiper-info {
-                        width: 83px;
-                        height: 0px;
-                        border-radius: 3px;
-                        margin-left: 65px;
-                        border: 3px solid #1195F0;
-                        margin-bottom: 38px;
-                    }
-
-                    .economicModelApplicationScenario-swiper-desc {
-                        width: 572px;
-                        height: 258px;
-                        font-size: 28px;
-                        padding-left: 65px;
-                        font-weight: 400;
-                        line-height: 36px;
-                        color: #363872;
-                    }
-
-                    .swiper-wrapper {
-
-                    }
-                }
-            }
-
+    .economicModelApplicationScenario-warp {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      .economicModelApplicationScenario-img {
+        img {
+          width: 823px;
+          height: 604px;
         }
+      }
+      .economicModelApplicationScenario-swiper {
+        .economicModelApplicationScenario-swiper-awesomeSwiper {
+          width: 674px;
+          height: 512px;
+          background: #fff;
+          border: 1px solid #c4c8cb;
+          box-shadow: 7px 21px 18px rgba(29, 31, 117, 0.15);
+          border-radius: 15px;
+          text-align: left;
 
-    }
+          .economicModelApplicationScenario-swiper-title {
+            font-size: 35px;
+            padding-top: 45px;
+            color: #1d1f75;
+            font-weight: bold;
+            padding-bottom: 32px;
+            padding-left: 65px;
+          }
 
-    &.economicModel {
-        background: rgba($color: #A9B5BD, $alpha: .3);
-        height: 1046px;
-    }
+          .economicModelApplicationScenario-swiper-info {
+            width: 83px;
+            height: 0px;
+            border-radius: 3px;
+            margin-left: 65px;
+            border: 3px solid #1195f0;
+            margin-bottom: 38px;
+          }
 
-    &.applicationScenario {
-        height: 1060px;
-        background: #fff;
+          .economicModelApplicationScenario-swiper-desc {
+            width: 572px;
+            height: 258px;
+            font-size: 26px;
+            padding-left: 65px;
+            font-weight: 400;
+            line-height: 36px;
+            color: #363872;
+          }
 
-        .economicModelApplicationScenario-warp {
-            align-items: center;
-
-            .economicModelApplicationScenario-swiper {
-                width: 768px;
-                height: 519px;
-
-                .economicModelApplicationScenario-swiper-desc {
-                    width: 650px;
-                    height: 218px;
-                }
-            }
+          .swiper-wrapper {
+          }
         }
-
+      }
     }
+  }
 
-    .swiper-pagination {
-        bottom: 45px;
-        left: 53px;
-        text-align: left;
-        .swiper-pagination-bullet {
-            width: 16px;
-            height: 16px;
-            opacity: 0.25;
-            margin-left: 12px;
-            background: #1D1F75;
+  &.economicModel {
+    background: rgba($color: #a9b5bd, $alpha: 0.3);
+    height: 1046px;
+  }
 
-            &.swiper-pagination-bullet-active {
-                opacity: 1;
-            }
+  &.applicationScenario {
+    height: 1060px;
+    background: #fff;
+
+    .economicModelApplicationScenario-warp {
+      align-items: center;
+
+      .economicModelApplicationScenario-swiper {
+        width: 768px;
+        height: 519px;
+
+        .economicModelApplicationScenario-swiper-desc {
+          width: 650px;
+          height: 218px;
         }
+      }
     }
+  }
 
+  .swiper-pagination {
+    bottom: 45px;
+    left: 53px;
+    text-align: left;
+    .swiper-pagination-bullet {
+      width: 16px;
+      height: 16px;
+      opacity: 0.25;
+      margin-left: 12px;
+      background: #1d1f75;
+
+      &.swiper-pagination-bullet-active {
+        opacity: 1;
+      }
+    }
+  }
 }
