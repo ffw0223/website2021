@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./style.scss";
 import "./style1280.scss";
+import "./style428.scss";
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 import vedio from "../assets/vedio.mp4";
 import aresLogoImg from "../assets/ares-logo.png";
 import logoImg from "../assets/logo.png";
+import vedioImg from "../assets/vedio.png";
 import parityImg from "../assets/parity.png";
 interface aresData {
   price: number;
@@ -39,6 +41,7 @@ function Head() {
     topTip: t(
       "ARES Official ERC-20 Contract is 0x358AA737e033F34df7c54306960a38d09AaBd523"
     ),
+    topTip_m: "ARES Official ERC-20 Contract is 0x358A...Bd523",
     desc: t("$ARES a Decentralized Cross-chain Oracle Service Protocol"),
     farmsUrl: "https://trojan.aresprotocol.io/",
     farmBtnText: t("Farms"),
@@ -127,6 +130,7 @@ function Head() {
   const [addressSwitch, setAddressSwitch] = useState(true);
   const [languageStatus, setlanguageStatus] = useState(false);
   const [scrollTop, setScroll] = useState(0);
+  const [phone, setPhone] = useState(false);
   const [vedioSwich, setVedioStauts] = useState(false);
   const [language, setlanguage] = useState(
     head.language.select[head.language.localIndex].name
@@ -146,11 +150,23 @@ function Head() {
     };
     fetchData();
   }, []);
-
   useEffect(() => {
-    setScroll(document.documentElement.scrollTop || document.body.scrollTop);
+    const isPhone =
+      (document?.documentElement?.clientWidth || document?.body?.clientWidth) <=
+      990;
+    isPhone && setPhone(isPhone);
+    setScroll(
+      document?.documentElement?.scrollTop || document?.body?.scrollTop
+    );
+    if (phone) {
+      document.write(
+        `<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">`
+      );
+    }
     window.onscroll = () => {
-      setScroll(document.documentElement.scrollTop || document.body.scrollTop);
+      setScroll(
+        document?.documentElement?.scrollTop || document?.body?.scrollTop
+      );
     };
   }, []);
 
@@ -161,7 +177,7 @@ function Head() {
           <div className="head-top-address">
             {addressSwitch ? (
               <h2 className="address">
-                {head.topTip}
+                {phone ? head.topTip_m : head.topTip}
                 <span
                   className="close"
                   onClick={() => {
@@ -171,85 +187,67 @@ function Head() {
               </h2>
             ) : null}
           </div>
-          <div className="head-top-nav">
-            <div className="nav">
-              <div className="nav-left">
-                <a href="/">
-                  <img src={logoImg} alt="" />
-                </a>
-              </div>
-              <div className="nav-right">
-                <ul className="list">
-                  {head.navs.map((nav, index) => {
-                    const {
-                      name,
-                      url,
-                      id,
-                      minScrollTop,
-                      maxScrollTop,
-                      minScrollTop1280,
-                      maxScrollTop1280,
-                    } = nav;
-                    let active = null;
-                    if (
-                      document.body.clientWidth >= 1280 &&
-                      document.body.clientWidth <= 1679
-                    ) {
-                      active =
-                        minScrollTop1280 &&
-                        scrollTop >= minScrollTop1280 &&
-                        maxScrollTop1280 &&
-                        scrollTop < maxScrollTop1280;
-                    } else {
-                      active =
-                        minScrollTop &&
-                        scrollTop >= minScrollTop &&
-                        maxScrollTop &&
-                        scrollTop < maxScrollTop;
-                    }
+          {phone ? (
+            <div className=""></div>
+          ) : (
+            <div className="head-top-nav">
+              <div className="nav">
+                <div className="nav-left">
+                  <a href="/">
+                    <img src={logoImg} alt="" />
+                  </a>
+                </div>
+                <div className="nav-right">
+                  <ul className="list">
+                    {head.navs.map((nav, index) => {
+                      const {
+                        name,
+                        url,
+                        id,
+                        minScrollTop,
+                        maxScrollTop,
+                        minScrollTop1280,
+                        maxScrollTop1280,
+                      } = nav;
+                      let active = null;
+                      if (
+                        document.body.clientWidth >= 1280 &&
+                        document.body.clientWidth <= 1679
+                      ) {
+                        active =
+                          minScrollTop1280 &&
+                          scrollTop >= minScrollTop1280 &&
+                          maxScrollTop1280 &&
+                          scrollTop < maxScrollTop1280;
+                      } else {
+                        active =
+                          minScrollTop &&
+                          scrollTop >= minScrollTop &&
+                          maxScrollTop &&
+                          scrollTop < maxScrollTop;
+                      }
 
-                    return (
-                      <li key={id || index}>
-                        <a
-                          className={classnames("item", {
-                            active,
-                          })}
-                          href={url}
-                          target={url[0] === "#" ? "_self" : "_blank"}
-                        >
-                          {name}
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-                <div className="language">
-                  <p className="language-name">
-                    <span
-                      className={classnames("one", {
-                        isShowLanguage: languageStatus,
-                      })}
-                      onClick={(e) => {
-                        setlanguageStatus(!languageStatus);
-                        if ((e.target as any).innerText === "EN") {
-                          head.language.localIndex = 0;
-                        } else {
-                          head.language.localIndex = 1;
-                        }
-                        const language =
-                          head.language.select[head.language.localIndex].name;
-                        setlanguage(language);
-                        setlanguageStatus(!languageStatus);
-                        i18n.changeLanguage(
-                          head.language.select[head.language.localIndex].id
-                        );
-                      }}
-                    >
-                      {language === "EN" ? "EN" : "CN"}
-                    </span>
-                    {languageStatus ? (
+                      return (
+                        <li key={id || index}>
+                          <a
+                            className={classnames("item", {
+                              active,
+                            })}
+                            href={url}
+                            target={url[0] === "#" ? "_self" : "_blank"}
+                          >
+                            {name}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <div className="language">
+                    <p className="language-name">
                       <span
-                        className="two"
+                        className={classnames("one", {
+                          isShowLanguage: languageStatus,
+                        })}
                         onClick={(e) => {
                           setlanguageStatus(!languageStatus);
                           if ((e.target as any).innerText === "EN") {
@@ -266,20 +264,43 @@ function Head() {
                           );
                         }}
                       >
-                        {language === "EN" ? "CN" : "EN"}
+                        {language === "EN" ? "EN" : "CN"}
                       </span>
-                    ) : null}
-                  </p>
-                  <span
-                    className={classnames("language-arrow", {
-                      top: languageStatus,
-                      bottom: !languageStatus,
-                    })}
-                  ></span>
+                      {languageStatus ? (
+                        <span
+                          className="two"
+                          onClick={(e) => {
+                            setlanguageStatus(!languageStatus);
+                            if ((e.target as any).innerText === "EN") {
+                              head.language.localIndex = 0;
+                            } else {
+                              head.language.localIndex = 1;
+                            }
+                            const language =
+                              head.language.select[head.language.localIndex]
+                                .name;
+                            setlanguage(language);
+                            setlanguageStatus(!languageStatus);
+                            i18n.changeLanguage(
+                              head.language.select[head.language.localIndex].id
+                            );
+                          }}
+                        >
+                          {language === "EN" ? "CN" : "EN"}
+                        </span>
+                      ) : null}
+                    </p>
+                    <span
+                      className={classnames("language-arrow", {
+                        top: languageStatus,
+                        bottom: !languageStatus,
+                      })}
+                    ></span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
 
         <header className="head-con">
@@ -310,7 +331,7 @@ function Head() {
                 </a>
                 <img
                   className="video-img"
-                  src="/"
+                  src={vedioImg}
                   onClick={() => setVedioStauts(!vedioSwich)}
                 />
                 {vedioSwich ? (
