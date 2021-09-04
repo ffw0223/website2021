@@ -55,6 +55,8 @@ function Head() {
         url: "#Home",
         minScrollTop: -1,
         maxScrollTop: 998,
+        minScrollTop1280: -1,
+        maxScrollTop1280: 759,
       },
       {
         name: t("Technology"),
@@ -62,6 +64,8 @@ function Head() {
         url: "#Technology",
         minScrollTop: 998,
         maxScrollTop: 2051,
+        minScrollTop1280: 759,
+        maxScrollTop1280: 1562,
       },
       {
         name: t("Economics"),
@@ -69,6 +73,8 @@ function Head() {
         url: "#Economics",
         minScrollTop: 2051,
         maxScrollTop: 3097,
+        minScrollTop1280: 1562,
+        maxScrollTop1280: 2359,
       },
       {
         name: t("Application"),
@@ -76,6 +82,8 @@ function Head() {
         url: "#Application",
         minScrollTop: 3097,
         maxScrollTop: 10000,
+        minScrollTop1280: 2359,
+        maxScrollTop1280: 10000,
       },
       {
         name: t("Documentation"),
@@ -140,9 +148,9 @@ function Head() {
   }, []);
 
   useEffect(() => {
-    window.onscroll = (e) => {
-      const top = document.documentElement.scrollTop || document.body.scrollTop;
-      setScroll(top);
+    setScroll(document.documentElement.scrollTop || document.body.scrollTop);
+    window.onscroll = () => {
+      setScroll(document.documentElement.scrollTop || document.body.scrollTop);
     };
   }, []);
 
@@ -173,12 +181,33 @@ function Head() {
               <div className="nav-right">
                 <ul className="list">
                   {head.navs.map((nav, index) => {
-                    const { name, url, id, minScrollTop, maxScrollTop } = nav;
-                    const active =
-                      minScrollTop &&
-                      scrollTop >= minScrollTop &&
-                      maxScrollTop &&
-                      scrollTop < maxScrollTop;
+                    const {
+                      name,
+                      url,
+                      id,
+                      minScrollTop,
+                      maxScrollTop,
+                      minScrollTop1280,
+                      maxScrollTop1280,
+                    } = nav;
+                    let active = null;
+                    if (
+                      document.body.clientWidth >= 1280 &&
+                      document.body.clientWidth <= 1679
+                    ) {
+                      active =
+                        minScrollTop1280 &&
+                        scrollTop >= minScrollTop1280 &&
+                        maxScrollTop1280 &&
+                        scrollTop < maxScrollTop1280;
+                    } else {
+                      active =
+                        minScrollTop &&
+                        scrollTop >= minScrollTop &&
+                        maxScrollTop &&
+                        scrollTop < maxScrollTop;
+                    }
+
                     return (
                       <li key={id || index}>
                         <a
