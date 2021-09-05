@@ -363,6 +363,7 @@ function Head() {
               </div>
             </div>
           </div>
+          <div className='head-content-line'></div>
         </header>
         <img
           className={classnames("toTop", { active: scrollTop >= 500 })}

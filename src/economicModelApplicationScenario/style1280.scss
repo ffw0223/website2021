@@ -13,10 +13,216 @@
       width: 1640 * 0.76190476px;
 
       .economicModelApplicationScenario-warp {
-        .economicModelApplicationScenario-img {
-          img{
-            width: 823 * 0.76190476px;
-            height: 604 * 0.76190476px;
+        .economicModel-img {
+          width: 823* 0.76190476px;
+          height: 604* 0.76190476px;
+          .common {
+            .img {
+              width: 107* 0.76190476px;
+              height: 107* 0.76190476px;
+            }
+          }
+          .economic {
+            &::after {
+              width: 185* 0.76190476px;
+              height: 185* 0.76190476px;
+              border: 150* 0.76190476px solid rgba(201, 215, 225);
+              margin-top: -35* 0.76190476px;
+            }
+            &::before {
+              width: 435* 0.76190476px;
+              height: 435* 0.76190476px;
+              left: 49* 0.76190476px;
+              top: 49* 0.76190476px;
+            }
+            width: 533* 0.76190476px;
+            height: 533* 0.76190476px;
+          }
+          .economic1 {
+            bottom: 124* 0.76190476px;
+            left: 147* 0.76190476px;
+          }
+          .economic2 {
+            bottom: 344* 0.76190476px;
+            left: 170* 0.76190476px;
+          }
+          .economic3 {
+            bottom: 471* 0.76190476px;
+            left: 375* 0.76190476px;
+          }
+          .economic4 {
+            bottom: 286* 0.76190476px;
+            left: 600* 0.76190476px;
+          }
+          .economic5 {
+            width: 200* 0.76190476px;
+            bottom: 67* 0.76190476px;
+            left: 571* 0.76190476px;
+          }
+          .text {
+            width: 120* 0.76190476px;
+            font-size: 22* 0.76190476px;
+            line-height: 30* 0.76190476px;
+          }
+          .economicText {
+            bottom: -378* 0.76190476px;
+            font-size: 27* 0.76190476px;
+          }
+          .economic1Text {
+            left: -243* 0.76190476px;
+            top: -34* 0.76190476px;
+          }
+          .economic2Text {
+            left: -243* 0.76190476px;
+            top: -44* 0.76190476px;
+          }
+          .economic3Text {
+            left: -113* 0.76190476px;
+            top: -123* 0.76190476px;
+          }
+          .economic4Text {
+            left: 129* 0.76190476px;
+            top: -84* 0.76190476px;
+          }
+          .economic5Text {
+            left: 136* 0.76190476px;
+            top: -83* 0.76190476px;
+          }
+        }
+        .applicationScenario-img {
+          width: 823* 0.76190476px;
+          height: 604* 0.76190476px;
+          .line1 {
+            width: 100* 0.76190476px;
+            height: 5* 0.76190476px;
+            left: 374* 0.76190476px;
+            top: 297* 0.76190476px;
+          }
+          .line2 {
+            width: 100* 0.76190476px;
+            height: 5* 0.76190476px;
+            left: 454* 0.76190476px;
+            top: 168* 0.76190476px;
+          }
+          .line3 {
+            width: 100* 0.76190476px;
+            height: 5* 0.76190476px;
+            left: 537* 0.76190476px;
+            top: 297* 0.76190476px;
+          }
+          .common {
+            width: 150* 0.76190476px;
+            height: 150* 0.76190476px;
+            padding: 9* 0.76190476px;
+            font-size: 25* 0.76190476px;
+            .img {
+              width: 74* 0.76190476px;
+              height: 74* 0.76190476px;
+            }
+            .text {
+              width: 120* 0.76190476px;
+              font-size: 22* 0.76190476px;
+              line-height: 30* 0.76190476px;
+            }
+          }
+          .application {
+            width: 150* 0.76190476px;
+            height: 150* 0.76190476px;
+            margin-left: -161* 0.76190476px;
+            padding: 9* 0.76190476px;
+            font-size: 25* 0.76190476px;
+            border: 172* 0.76190476px solid rgba(201, 215, 225);
+            &::after {
+              width: 310* 0.76190476px;
+              height: 310* 0.76190476px;
+            }
+            &::before {
+              width: 318* 0.76190476px;
+              height: 318* 0.76190476px;
+            }
+          }
+          .application1 {
+            top: 362* 0.76190476px;
+            left: 272* 0.76190476px;
+            .text {
+              left: -110* 0.76190476px;
+            }
+          }
+          .application2 {
+            top: 176* 0.76190476px;
+            left: 206* 0.76190476px;
+            .text {
+              left: -110* 0.76190476px;
+            }
+          }
+          .application3 {
+            top: 9* 0.76190476px;
+            left: 263* 0.76190476px;
+            .text {
+              left: -110* 0.76190476px;
+            }
+          }
+          .application4 {
+            top: -88* 0.76190476px;
+            left: 456* 0.76190476px;
+  
+            .text {
+              top: 10* 0.76190476px;
+              left: -13* 0.76190476px;
+            }
+          }
+          .application5 {
+            top: 22* 0.76190476px;
+            left: 661* 0.76190476px;
+            .text {
+              left: 57* 0.76190476px;
+            }
+          }
+          .application6 {
+            top: 169* 0.76190476px;
+            left: 721* 0.76190476px;
+            .text {
+              left: 91* 0.76190476px;
+            }
+          }
+          .application7 {
+            top: 358* 0.76190476px;
+            left: 661* 0.76190476px;
+            .text {
+              left: 91* 0.76190476px;
+            }
+          }
+          .application8 {
+            top: 431* 0.76190476px;
+            left: 457* 0.76190476px;
+            .text {
+              left: -12* 0.76190476px;
+              top: 122* 0.76190476px;
+            }
+          }
+          .application11 {
+            top: 270* 0.76190476px;
+            left: 305* 0.76190476px;
+            .img {
+              width: 91* 0.76190476px;
+              height: 89* 0.76190476px;
+            }
+          }
+          .application22 {
+            top: 14* 0.76190476px;
+            left: 445* 0.76190476px;
+            .img {
+              width: 91* 0.76190476px;
+              height: 89* 0.76190476px;
+            }
+          }
+          .application33 {
+            top: 277* 0.76190476px;
+            left: 589* 0.76190476px;
+            .img {
+              width: 91* 0.76190476px;
+              height: 89* 0.76190476px;
+            }
           }
         }
         .economicModelApplicationScenario-swiper {
@@ -63,7 +269,6 @@
       height: 1060 * 0.76190476px;
 
       .economicModelApplicationScenario-warp {
-        
         .economicModelApplicationScenario-swiper {
           width: 768 * 0.76190476px;
           height: 519 * 0.76190476px;
