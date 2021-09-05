@@ -9,6 +9,8 @@ import aresLogoImg from "../assets/ares-logo.png";
 import logoImg from "../assets/logo.png";
 import vedioImg from "../assets/vedio.png";
 import parityImg from "../assets/parity.png";
+import topImg from "../assets/top.png";
+
 interface aresData {
   price: number;
   market_cap: number;
@@ -235,6 +237,7 @@ function Head() {
                             })}
                             href={url}
                             target={url[0] === "#" ? "_self" : "_blank"}
+                            rel="noreferrer"
                           >
                             {name}
                           </a>
@@ -308,13 +311,19 @@ function Head() {
             <div className="head-warp">
               <p className="content-desc">{head.desc}</p>
               <p className="content-btn">
-                <a href={head.farmsUrl} className="farmBtnText" target="_blank">
+                <a
+                  href={head.farmsUrl}
+                  className="farmBtnText"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {head.farmBtnText}
                 </a>
                 <a
                   className="uniswapBtnText"
                   href={head.uniswapUrl}
                   target="_blank"
+                  rel="noreferrer"
                 >
                   {head.uniswapBtnText}
                 </a>
@@ -326,6 +335,7 @@ function Head() {
                   className="substrateBtnText"
                   href={head.substrateUrl}
                   target="_blank"
+                  rel="noreferrer"
                 >
                   {head.substrateBtnText}
                 </a>
@@ -354,6 +364,14 @@ function Head() {
             </div>
           </div>
         </header>
+        <img
+          className={classnames("toTop", { active: scrollTop >= 500 })}
+          src={topImg}
+          alt=""
+          onClick={() => {
+            window.scrollTo(0, 0);
+          }}
+        />
       </section>
       <section className={classnames("usd", { topClose: !addressSwitch })}>
         <ul className="usd-con">

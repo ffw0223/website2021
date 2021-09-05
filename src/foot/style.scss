@@ -100,8 +100,8 @@
           line-height: 72px;
           background: #1195f0;
           border-radius: 100px;
-          &:hover{
-          background: #363872;
+          &:hover {
+            background: #363872;
           }
         }
       }
@@ -116,12 +116,5 @@
     font-size: 22px;
     font-weight: 400;
     color: #ffffff;
-  }
-
-  .top {
-    cursor: pointer;
-    position: absolute;
-    bottom: 40px;
-    right: 0;
   }
 }

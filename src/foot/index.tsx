@@ -2,7 +2,6 @@ import React from "react";
 import "./style.scss";
 import "./style1280.scss";
 import emailImg from "../assets/email.png";
-import topImg from "../assets/top.png";
 import { useTranslation } from "react-i18next";
 
 function Foot() {
@@ -86,7 +85,7 @@ function Foot() {
               const { name, url } = item;
               return (
                 <li className="link-item" key={index}>
-                  <a href={url} target={url[0] === "#" ? "_self" : "_blank"}>
+                  <a href={url} target={url[0] === "#" ? "_self" : "_blank"} rel="noreferrer">
                     {name}
                   </a>
                 </li>
@@ -101,7 +100,7 @@ function Foot() {
               const { name, url } = item;
               return (
                 <li className="link-item" key={index}>
-                  <a href={url} target={url[0] === "#" ? "_self" : "_blank"}>
+                  <a href={url} target={url[0] === "#" ? "_self" : "_blank"} rel="noreferrer">
                     {name}
                   </a>
                 </li>
@@ -121,14 +120,6 @@ function Foot() {
       <div className="copyright">
         <p>{copyright}</p>
       </div>
-      <img
-        className="top"
-        src={topImg}
-        alt=""
-        onClick={() => {
-          window.scrollTo(0, 0);
-        }}
-      />
     </section>
   );
 }
