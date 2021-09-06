@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AwesomeSwiper from "react-awesome-swiper";
 import { useTranslation } from "react-i18next";
+import classnames from "classnames";
 import EconomicImg from "../assets/Economic.png";
 import applicationScenarioImg from "../assets/applicationScenario.png";
 import "./style.scss";
@@ -8,8 +9,8 @@ import "./style1280.scss";
 
 function EconomicModelApplicationScenario() {
   const { t } = useTranslation();
-
-  let economicModelRef = null;
+  const [economicSwiperIndex, seteconomicSwiperIndex] = useState(1);
+  let economicModelRef: any = null;
   let applicationScenarioRef = null;
   const eeconomicModel = {
     title: t("Economic Model"),
@@ -64,6 +65,42 @@ function EconomicModelApplicationScenario() {
       },
     },
   };
+  useEffect(() => {
+    economicModelRef?.swiper?.on("slideChange", function () {
+      for (let i = 1; i <= 5; i++) {
+        document
+          .querySelector(`.economic${i}`)
+          ?.setAttribute("class", `economic${i} common`);
+      }
+      const index = economicModelRef.swiper.activeIndex;
+      if (index === 6 || index === 1) {
+        document
+          .querySelector(`.economic5`)
+          ?.setAttribute("class", `economic5 common hover`);
+          console.log(2)
+      }
+      if (index === 2) {
+        document
+          .querySelector(`.economic4`)
+          ?.setAttribute("class", `economic4 common hover`);
+      }
+      if (index === 3) {
+        document
+          .querySelector(`.economic3`)
+          ?.setAttribute("class", `economic3 common hover`);
+      }
+      if (index === 4) {
+        document
+          .querySelector(`.economic2`)
+          ?.setAttribute("class", `economic2 common hover`);
+      }
+      if (index === 5) {
+        document
+          .querySelector(`.economic1`)
+          ?.setAttribute("class", `economic1 common hover`);
+      }
+    });
+  }, []);
   const applicationScenario = {
     title: t("Application Scenario"),
     desc: t(
@@ -131,23 +168,48 @@ function EconomicModelApplicationScenario() {
               <div className="economic common">
                 <span className="economicText text">Economic Model</span>
               </div>
-              <div className="economic1 common">
+              <div
+                className="economic1 common"
+                onMouseEnter={() => {
+                  economicModelRef?.swiper?.slideTo(5);
+                }}
+              >
                 <span className="img"></span>
                 <span className="economic1Text text">Community Governance</span>
               </div>
-              <div className="economic2 common">
+              <div
+                className="economic2 common"
+                onMouseEnter={() => {
+                  economicModelRef?.swiper?.slideTo(4);
+                }}
+              >
                 <span className="img"></span>
                 <span className="economic2Text text">Treasury</span>
               </div>
-              <div className="economic3 common">
+              <div
+                className="economic3 common"
+                onMouseEnter={() => {
+                  economicModelRef?.swiper?.slideTo(3);
+                }}
+              >
                 <span className="img"></span>
                 <span className="economic3Text text">Arbitration</span>
               </div>
-              <div className="economic4 common">
+              <div
+                className="economic4 common"
+                onMouseEnter={() => {
+                  economicModelRef?.swiper?.slideTo(2);
+                }}
+              >
                 <span className="img"></span>
                 <span className="economic4Text text">Transaction Fee</span>
               </div>
-              <div className="economic5 common">
+              <div
+                className="economic5 common hover"
+                onMouseEnter={() => {
+                  economicModelRef?.swiper?.slideTo(1);
+                }}
+              >
                 <span className="img"></span>
                 <span className="economic5Text text">Node Mortgage</span>
               </div>

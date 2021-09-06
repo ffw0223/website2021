@@ -32,10 +32,12 @@
             background-position: center center;
             background-repeat: no-repeat;
           }
-          &:not(.economic):hover .img {
+          &:not(.economic):hover .img,
+          &.hover .img {
             background-color: #1d1f75;
           }
-          &:not(.economic):hover .text {
+          &:not(.economic):hover .text,
+          &.hover .text {
             color: #1d1f75;
           }
         }
