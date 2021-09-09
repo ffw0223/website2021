@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.scss";
 import "./style1280.scss";
 import emailImg from "../assets/email.png";
@@ -6,13 +6,19 @@ import { useTranslation } from "react-i18next";
 
 function Foot() {
   const { t } = useTranslation();
+  const [sendAlert, setSendAlert] = useState(false);
+  const [emailValue, setEmailValue] = useState('');
   const about = {
     title: t("About Us"),
     desc: t(
       "Ares is an on-chain-verified oracle protocol that provides secure and reliable data services for the Polkadot DeFi ecosystem."
     ),
     email: "info@aresprotocol.io",
-    emailUrl: "https://info@aresprotocol.io",
+    emailUrl: "mailto:info@aresprotocol.io",
+  };
+  const alert = {
+    title: t("alert-title"),
+    desc: t("alert-desc"),
   };
   const link = {
     title: t("Quick Links"),
@@ -85,7 +91,11 @@ function Foot() {
               const { name, url } = item;
               return (
                 <li className="link-item" key={index}>
-                  <a href={url} target={url[0] === "#" ? "_self" : "_blank"} rel="noreferrer">
+                  <a
+                    href={url}
+                    target={url[0] === "#" ? "_self" : "_blank"}
+                    rel="noreferrer"
+                  >
                     {name}
                   </a>
                 </li>
@@ -100,7 +110,11 @@ function Foot() {
               const { name, url } = item;
               return (
                 <li className="link-item" key={index}>
-                  <a href={url} target={url[0] === "#" ? "_self" : "_blank"} rel="noreferrer">
+                  <a
+                    href={url}
+                    target={url[0] === "#" ? "_self" : "_blank"}
+                    rel="noreferrer"
+                  >
                     {name}
                   </a>
                 </li>
@@ -112,14 +126,28 @@ function Foot() {
           <h2 className="foot-title">{subscribe.title}</h2>
           <p className="subscribe-desc">{subscribe.desc}</p>
           <div className="send">
-            <input type="text" placeholder={subscribe.email} />
-            <span>{subscribe.emailBtn}</span>
+            <input type="text" placeholder={subscribe.email} onChange={(e)=>setEmailValue(e.target.value)}/>
+            <span onClick={()=>{
+              if(new RegExp("^[a-z0-9A-Z]+[- | a-z0-9A-Z . _]+@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-z]{2,}$").test(emailValue)){
+                setSendAlert(true)
+              }
+            }}>{subscribe.emailBtn}</span>
           </div>
         </div>
       </footer>
       <div className="copyright">
         <p>{copyright}</p>
       </div>
+      {sendAlert ? (
+        <div className="alert">
+          <span className="alert-mask" onClick={()=>{setSendAlert(false)}} ></span>
+          <div className="alert-content">
+            <span className='alert-close'  onClick={()=>{setSendAlert(false)}} >+</span>
+            <h2 className="alert-title">{alert.title}</h2>
+            <p className="alert-desc">{alert.desc}</p>
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }

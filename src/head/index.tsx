@@ -7,9 +7,9 @@ import { useTranslation } from "react-i18next";
 import vedio from "../assets/vedio.mp4";
 import aresLogoImg from "../assets/ares-logo.png";
 import logoImg from "../assets/logo.png";
-import vedioImg from "../assets/vedio.png";
 import parityImg from "../assets/parity.png";
 import topImg from "../assets/top.png";
+import earthSvg from "../assets/earth.svg";
 
 interface aresData {
   price: number;
@@ -307,6 +307,10 @@ function Head() {
         </div>
 
         <header className="head-con">
+          <div
+            className="video-img"
+            onClick={() => setVedioStauts(!vedioSwich)}
+          ></div>
           <div className="head-content">
             <div className="head-warp">
               <p className="content-desc">{head.desc}</p>
@@ -339,11 +343,6 @@ function Head() {
                 >
                   {head.substrateBtnText}
                 </a>
-                <img
-                  className="video-img"
-                  src={vedioImg}
-                  onClick={() => setVedioStauts(!vedioSwich)}
-                />
                 {vedioSwich ? (
                   <div className="video">
                     <video

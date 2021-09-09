@@ -45,12 +45,14 @@
     }
   }
   .video-img {
-    left: 606px;
+    width: 919px;
+    z-index: 1;
+    height: 1071px;
     cursor: pointer;
-    width: 143px;
-    height: 143px;
-    position: relative;
-    bottom: -10px;
+    background: url('../assets/earth.png') no-repeat;
+    position: absolute;
+    top: 171px;
+    right: 0;
   }
 
   .head-top {
@@ -247,6 +249,7 @@
       }
 
       .head-warp {
+        position: relative;
         width: 1680px;
         margin: 0 auto;
 
