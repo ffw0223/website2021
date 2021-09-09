@@ -8,7 +8,7 @@
     bottom: 40px;
     z-index: 100;
     right: 0;
-    &.active{
+    &.active {
       opacity: 1;
       bottom: 10px;
       visibility: visible;
@@ -55,6 +55,7 @@
 
   .head-top {
     &.fixed {
+      box-shadow: 7px 18px 37px rgb(29 31 117 / 25%);
       position: fixed;
       left: 0;
       right: 0;
@@ -126,14 +127,19 @@
               display: flex;
               flex-direction: column;
               .one {
+                position: relative;
                 color: #ffffff;
                 &.isShowLanguage {
-                  margin-top: 30px;
+                  top: 13px;
                 }
               }
               .two {
-                margin-top: 5px;
-                color: #1d1f75;
+                position: relative;
+                color: #ffffff;
+                top: 20px;
+                &:hover {
+                  color: #1d1f75;
+                }
               }
             }
 
@@ -145,10 +151,12 @@
               background: url("../assets/left.png") no-repeat;
 
               &.top {
+                transition: all 0.5s;
                 transform: rotate(90deg) scale(0.5);
               }
 
               &.bottom {
+                transition: all 0.5s;
                 transform: rotate(270deg) scale(0.5);
               }
             }
@@ -202,7 +210,7 @@
 
   .head-con {
     background: #0e96f0;
-    .head-content-line{
+    .head-content-line {
       height: 1px;
       background: #0e96f0;
       width: 100%;
@@ -320,6 +328,11 @@
             font-size: 27px;
             color: #000000;
             text-decoration: none;
+            &:hover {
+              box-shadow: 0px 3px 3px #1d1f75;
+              background: #1d1f75;
+              color: #fff;
+            }
           }
         }
       }
@@ -351,6 +364,7 @@
 
     .usd-logo {
       &::after {
+        animation: usd 2s linear infinite;
         content: "";
         background: url("../assets/loading.png") no-repeat;
         background-size: contain;
@@ -470,15 +484,24 @@
   }
 }
 
+@keyframes usd {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes pulsePrimary {
   0% {
-      -webkit-box-shadow: 0 0 0 0 rgba(82, 104, 242, 0.4);
-      box-shadow: 0 0 0 0 rgba(82, 104, 242, 0.4);
+    -webkit-box-shadow: 0 0 0 0 rgba(82, 104, 242, 0.4);
+    box-shadow: 0 0 0 0 rgba(82, 104, 242, 0.4);
   }
   70% {
-      box-shadow: 0 0 0 20px rgba(82, 104, 242, 0);
+    box-shadow: 0 0 0 20px rgba(82, 104, 242, 0);
   }
   100% {
-      box-shadow: 0 0 0 0 rgba(82, 104, 242, 0);
+    box-shadow: 0 0 0 0 rgba(82, 104, 242, 0);
   }
 }

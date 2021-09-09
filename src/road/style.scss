@@ -77,12 +77,12 @@
         p {
           padding: 12px 6px 9px 11px;
           text-align: center;
+          color: #363872;
           background: #ffffff;
           box-shadow: 0px 10px 18px rgba(29, 31, 117, 0.1);
           border-radius: 10px;
-          font-size: 24px;
+          font-size: 22px;
           line-height: 23px;
-          color: #1e1c24;
           &:not(:first-child) {
             margin-top: 11px;
           }
@@ -93,6 +93,10 @@
 }
 
 @keyframes road {
-  from {width: 0;}
-  to {width: 100%;}
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }

@@ -4,7 +4,7 @@
       width: 143 * 0.76190476px;
       height: 143 * 0.76190476px;
       bottom: -10 * 0.76190476px;
-      left: 330* 0.76190476px;
+      left: 330 * 0.76190476px;
     }
     .head-top {
       margin-bottom: -196 * 0.76190476px;
@@ -40,14 +40,14 @@
               margin-left: 20px;
 
               .language-name {
-                font-size: 18px;
+                font-size: 25 * 0.76190476px;
                 .one {
                   &.isShowLanguage {
-                    margin-top: 30 * 0.76190476px;
+                    top: 13 * 0.76190476px;
                   }
                 }
                 .two {
-                  margin-top: 5 * 0.76190476px;
+                  top: 20 * 0.76190476px;
                 }
               }
 

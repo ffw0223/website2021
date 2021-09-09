@@ -125,9 +125,9 @@ function Head() {
     rank: 1142,
     rankText: "Rank",
     marketCap: 6400053.37,
-    marketCapText: "marketCap",
+    marketCapText: "MarketCap",
     volume: 809945.75,
-    volumeText: "volume",
+    volumeText: "Volume",
   };
   const [addressSwitch, setAddressSwitch] = useState(true);
   const [languageStatus, setlanguageStatus] = useState(false);
@@ -363,7 +363,7 @@ function Head() {
               </div>
             </div>
           </div>
-          <div className='head-content-line'></div>
+          <div className="head-content-line"></div>
         </header>
         <img
           className={classnames("toTop", { active: scrollTop >= 500 })}

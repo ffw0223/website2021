@@ -77,7 +77,7 @@ function EconomicModelApplicationScenario() {
         document
           .querySelector(`.economic5`)
           ?.setAttribute("class", `economic5 common hover`);
-          console.log(2)
+        console.log(2);
       }
       if (index === 2) {
         document
