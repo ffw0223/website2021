@@ -7,7 +7,8 @@ import { useTranslation } from "react-i18next";
 function Foot() {
   const { t } = useTranslation();
   const [sendAlert, setSendAlert] = useState(false);
-  const [emailValue, setEmailValue] = useState('');
+  const [isClick, setClick] = useState(false);
+  const [emailValue, setEmailValue] = useState("");
   const about = {
     title: t("About Us"),
     desc: t(
@@ -15,6 +16,7 @@ function Foot() {
     ),
     email: "info@aresprotocol.io",
     emailUrl: "mailto:info@aresprotocol.io",
+    emailTip: t("emailTip"),
   };
   const alert = {
     title: t("alert-title"),
@@ -126,13 +128,31 @@ function Foot() {
           <h2 className="foot-title">{subscribe.title}</h2>
           <p className="subscribe-desc">{subscribe.desc}</p>
           <div className="send">
-            <input type="text" placeholder={subscribe.email} onChange={(e)=>setEmailValue(e.target.value)}/>
-            <span onClick={()=>{
-              if(new RegExp("^[a-z0-9A-Z]+[- | a-z0-9A-Z . _]+@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-z]{2,}$").test(emailValue)){
-                setSendAlert(true)
-              }
-            }}>{subscribe.emailBtn}</span>
+            <input
+              type="text"
+              placeholder={subscribe.email}
+              onChange={(e) => setEmailValue(e.target.value)}
+            />
+            <span
+              onClick={() => {
+                setClick(true)
+                if (
+                  new RegExp(
+                    "^[a-z0-9A-Z]+[- | a-z0-9A-Z . _]+@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-z]{2,}$"
+                  ).test(emailValue)
+                ) {
+                  setSendAlert(true);
+                }
+              }}
+            >
+              {subscribe.emailBtn}
+            </span>
           </div>
+          {!new RegExp(
+            "^[a-z0-9A-Z]+[- | a-z0-9A-Z . _]+@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-z]{2,}$"
+          ).test(emailValue) && isClick ? (
+            <p className="emailTip">{about.emailTip}</p>
+          ) : null}
         </div>
       </footer>
       <div className="copyright">
@@ -140,9 +160,21 @@ function Foot() {
       </div>
       {sendAlert ? (
         <div className="alert">
-          <span className="alert-mask" onClick={()=>{setSendAlert(false)}} ></span>
+          <span
+            className="alert-mask"
+            onClick={() => {
+              setSendAlert(false);
+            }}
+          ></span>
           <div className="alert-content">
-            <span className='alert-close'  onClick={()=>{setSendAlert(false)}} >+</span>
+            <span
+              className="alert-close"
+              onClick={() => {
+                setSendAlert(false);
+              }}
+            >
+              +
+            </span>
             <h2 className="alert-title">{alert.title}</h2>
             <p className="alert-desc">{alert.desc}</p>
           </div>

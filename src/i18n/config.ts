@@ -114,6 +114,7 @@ export const resources = {
       "Blockchain researchers. 5 years of experience in blockchain, expert in community building and community marketing, early participant of Polkadot.":"Blockchain researchers. 5 years of experience in blockchain, expert in community building and community marketing, early participant of Polkadot.",
       "alert-title":"Thank you for subscribing!",
       "alert-desc":"We will keep you up to date with all the information from the world of Ares Protocol.",
+      "emailTip":"Enter your e-mail address in the correct format",
     },
   },
   cn: {
@@ -233,6 +234,7 @@ export const resources = {
       "Blockchain researchers. 5 years of experience in blockchain, expert in community building and community marketing, early participant of Polkadot.":"区块链研究者。在区块链方面5年的经验，社区建设与社区营销方面的专家，Polkadot早期参与者。",
       "alert-title":"谢谢订阅!",
       "alert-desc":"我们会让你了解到Ares Protocol最新的消息",
+      "emailTip":"请输入正确的邮箱格式",
     },
   },
 };
