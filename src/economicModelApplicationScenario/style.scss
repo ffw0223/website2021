@@ -239,10 +239,9 @@
           padding: 9px;
           position: relative;
           background: #1195f0;
-          text-align: center;
           display: flex;
+          justify-content: center;
           align-items: center;
-          align-content: center;
           font-size: 25px;
           font-weight: bold;
           color: #fff;
@@ -471,5 +470,44 @@
         opacity: 1;
       }
     }
+  }
+}
+#root.cn {
+  .economicModelApplicationScenario
+    .economicModelApplicationScenario-con
+    .economicModelApplicationScenario-warp
+    .economicModel-img
+    .economic4 {
+    bottom: 309px;
+  }
+  .economicModelApplicationScenario
+    .economicModelApplicationScenario-con
+    .economicModelApplicationScenario-warp
+    .economicModel-img
+    .economic5 {
+    bottom: 97px;
+  }
+  .economicModelApplicationScenario
+    .economicModelApplicationScenario-con
+    .economicModelApplicationScenario-warp
+    .economicModel-img
+    .economic4Text {
+    top: -74px;
+  }
+  .economicModelApplicationScenario
+    .economicModelApplicationScenario-con
+    .economicModelApplicationScenario-warp
+    .economicModel-img
+    .economic1Text {
+    left: -257px;
+    top: -49px;
+  }
+  .economicModelApplicationScenario
+    .economicModelApplicationScenario-con
+    .economicModelApplicationScenario-warp
+    .economicModel-img
+    .economic5Text {
+    left: 150px;
+    top: -68px;
   }
 }

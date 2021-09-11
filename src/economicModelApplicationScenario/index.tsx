@@ -175,7 +175,7 @@ function EconomicModelApplicationScenario() {
                 }}
               >
                 <span className="img"></span>
-                <span className="economic1Text text">Community Governance</span>
+                <span className="economic1Text text">{t("Community Governance")}</span>
               </div>
               <div
                 className="economic2 common"
@@ -184,7 +184,7 @@ function EconomicModelApplicationScenario() {
                 }}
               >
                 <span className="img"></span>
-                <span className="economic2Text text">Treasury</span>
+                <span className="economic2Text text">{t('Treasury')}</span>
               </div>
               <div
                 className="economic3 common"
@@ -193,7 +193,7 @@ function EconomicModelApplicationScenario() {
                 }}
               >
                 <span className="img"></span>
-                <span className="economic3Text text">Arbitration</span>
+                <span className="economic3Text text">{t('Arbitration')}</span>
               </div>
               <div
                 className="economic4 common"
@@ -202,7 +202,7 @@ function EconomicModelApplicationScenario() {
                 }}
               >
                 <span className="img"></span>
-                <span className="economic4Text text">Transaction Fee</span>
+                <span className="economic4Text text">{t('Transaction Fee')}</span>
               </div>
               <div
                 className="economic5 common hover"
@@ -211,7 +211,7 @@ function EconomicModelApplicationScenario() {
                 }}
               >
                 <span className="img"></span>
-                <span className="economic5Text text">Node Mortgage</span>
+                <span className="economic5Text text">{t('Node Mortgage')}</span>
               </div>
             </div>
             <div className="economicModelApplicationScenario-swiper">
@@ -278,7 +278,7 @@ function EconomicModelApplicationScenario() {
               </AwesomeSwiper>
             </div>
             <div className="applicationScenario-img">
-              <span className="application img">ARES CHAIN</span>
+              <span className="application img">{t('ARES CHAIN')}</span>
               <span className="line1"></span>
               <span className="line2"></span>
               <span className="line3"></span>
@@ -293,35 +293,35 @@ function EconomicModelApplicationScenario() {
               </div>
               <div className="common application1">
                 <span className=" img"></span>
-                <span className=" text">Financial Derivates</span>
+                <span className=" text">{t('Financial Derivates')}</span>
               </div>
               <div className="common application2">
                 <span className=" img"></span>
-                <span className=" text">Stable Coins</span>
+                <span className=" text">{t('Stable Coins')}</span>
               </div>
               <div className="common application3">
                 <span className=" img"></span>
-                <span className=" text">Insurance</span>
+                <span className=" text">{t('Insurance')}</span>
               </div>
               <div className="common application4">
                 <span className=" img"></span>
-                <span className=" text">Lending</span>
+                <span className=" text">{t('Lending')}</span>
               </div>
               <div className="common application5">
                 <span className=" img"></span>
-                <span className=" text">IOT</span>
+                <span className=" text">{t('IOT')}</span>
               </div>
               <div className=" common application6">
                 <span className=" img"></span>
-                <span className=" text">Prediction Market</span>
+                <span className=" text">{t('Prediction Marketr')}</span>
               </div>
               <div className="common application7">
                 <span className=" img"></span>
-                <span className=" text">NFT</span>
+                <span className=" text">{t('NFT')}</span>
               </div>
               <div className="common application8">
                 <span className=" img"></span>
-                <span className=" text">DEX</span>
+                <span className=" text">{t('DEX')}</span>
               </div>
             </div>
           </div>

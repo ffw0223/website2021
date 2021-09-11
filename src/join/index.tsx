@@ -16,9 +16,9 @@ import linkBtn from "../assets/link-logo-btn.png";
 
 function Join() {
   const { t } = useTranslation();
-  const title = "Join our Community Now!";
-  const desc = "Like, share, retweet, repost on all social networks";
-  const btn = "Click here to Buy Token";
+  const title = t("Join our Community Now!");
+  const desc = t("Please comment，press like button, share, retweet, and subscribe on our social networks.");
+  const btn = t("Click here to Buy Token");
   const btnUrl = 'https://www.gateio.pro/cn/trade/ARES_USDT';
   return (
     <section className="join">

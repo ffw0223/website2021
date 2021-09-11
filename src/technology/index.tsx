@@ -27,7 +27,7 @@ function Technology() {
     },
     {
       img: technology3Png,
-      title: t("Reputation            Committee"),
+      title: t("Reputation Committee"),
       desc: t("By incentivizing validators and punishing malicious aggregators, the security of the Ares network is ensured. The Reputation Committee is fully self-governed by the community, running for the Reputation Committee through token mortgage and reputation weighting.")
     },
     {

@@ -37,7 +37,7 @@ function Team() {
   let swiperRef = null;
   const title = t("Team Members");
   const desc =
-    "The Ares Protocol Team combines knowledge, experience andpassion for cryptocurrencies. ";
+    t("The Ares Protocol Team combines knowledge, experience andpassion for cryptocurrencies. ");
   const list = [
     {
       position: t("Founder&Researcher"),

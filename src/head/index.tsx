@@ -49,7 +49,7 @@ function Head() {
     uniswapUrl:
       "https://app.uniswap.org/#/swap?outputCurrency=0x358AA737e033F34df7c54306960a38d09AaBd523&use=V2",
     uniswapBtnText: t("Uniswap"),
-    parity: "Ares Protocol is based on Substrate",
+    parity: t("Ares Protocol is based on Substrate"),
     substrateUrl: "https://www.parity.io/technologies/substrate/",
     substrateBtnText: "Substrate",
     navs: [
@@ -122,11 +122,11 @@ function Head() {
     symbol: "$",
     point: 3.32,
     rank: 1142,
-    rankText: "Rank",
+    rankText: t("Rank"),
     marketCap: 6400053.37,
-    marketCapText: "MarketCap",
+    marketCapText: t("MarketCap"),
     volume: 809945.75,
-    volumeText: "Volume",
+    volumeText: t("Volume"),
   };
   const [addressSwitch, setAddressSwitch] = useState(true);
   const [languageStatus, setlanguageStatus] = useState(false);
@@ -260,6 +260,12 @@ function Head() {
                           const language =
                             head.language.select[head.language.localIndex].name;
                           setlanguage(language);
+                          document
+                            .querySelector("#root")
+                            ?.setAttribute(
+                              "class",
+                              head.language.select[head.language.localIndex].id
+                            );
                           setlanguageStatus(!languageStatus);
                           i18n.changeLanguage(
                             head.language.select[head.language.localIndex].id
@@ -281,6 +287,14 @@ function Head() {
                             const language =
                               head.language.select[head.language.localIndex]
                                 .name;
+                            document
+                              .querySelector("#root")
+                              ?.setAttribute(
+                                "class",
+                                head.language.select[head.language.localIndex]
+                                  .id
+                              );
+
                             setlanguage(language);
                             setlanguageStatus(!languageStatus);
                             i18n.changeLanguage(
@@ -312,8 +326,7 @@ function Head() {
           <div
             className="video-img"
             onClick={() => setVedioStauts(!vedioSwich)}
-          >
-          </div>
+          ></div>
           <div className="head-content">
             <div className="head-warp">
               <p className="content-desc">{head.desc}</p>
@@ -393,18 +406,18 @@ function Head() {
             <span className="usd-direction"></span>
           </li>
           <li className="usd-rank verticalBar">
-            <p className="usd-text">{aresData.rankText}</p>
+            <p className="usd-text">{ares.rankText}</p>
             <p className="usd-value">{aresData.rank}</p>
           </li>
           <li className="usd-marketCap verticalBar">
-            <p className="usd-text">{aresData.marketCapText}</p>
+            <p className="usd-text">{ares.marketCapText}</p>
             <p className="usd-value">
               {aresData.symbol}
               {aresData.marketCap} M
             </p>
           </li>
           <li className="usd-volume verticalBar">
-            <p className="usd-text">{aresData.volumeText}</p>
+            <p className="usd-text">{ares.volumeText}</p>
             <p className="usd-value">
               {aresData.symbol}
               {aresData.volume} M

@@ -6,9 +6,9 @@ import roadIcon from "../assets/road.png";
 
 function Road() {
   const { t } = useTranslation();
-  const title = "Road Map";
+  const title = t("Road Map");
   const desc =
-    "A great road traveled, gaining experiences, adding successes and build a great project.";
+    t("A great road traveled, gaining experiences, adding successes and build a great project.");
   const data = [
     {
       year: "2020",

@@ -42,11 +42,11 @@ function Foot() {
         url: "#Application",
       },
       {
-        name: "Team Members",
+        name: t("Team Members"),
         url: "#Team",
       },
       {
-        name: "Strategic Investors",
+        name: t("Strategic Investors"),
         url: "#Strategic",
       },
     ],
@@ -69,10 +69,10 @@ function Foot() {
     ],
   };
   const subscribe = {
-    title: "Subscribe",
-    desc: "Subscribe and receive all news and information about Ares Protocol.",
+    title: t("Subscribe"),
+    desc: t("Subscribe and receive all news and information about Ares Protocol."),
     email: "name@company.com",
-    emailBtn: "Send",
+    emailBtn: t("Send"),
   };
   const copyright = "Copyright © 2021.The Ares Protocol All rights reserved.";
   return (
