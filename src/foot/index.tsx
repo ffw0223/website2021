@@ -3,6 +3,7 @@ import "./style.scss";
 import "./style1280.scss";
 import emailImg from "../assets/email.png";
 import { useTranslation } from "react-i18next";
+import Config from "../Config";
 
 function Foot() {
   const { t } = useTranslation();
@@ -75,6 +76,23 @@ function Foot() {
     emailBtn: t("Send"),
   };
   const copyright = "Copyright © 2021.The Ares Protocol All rights reserved.";
+
+  const handleSubscribe = async () => {
+    setClick(true)
+    if (
+      new RegExp(
+        "^[a-z0-9A-Z]+[- | a-z0-9A-Z . _]+@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-z]{2,}$"
+      ).test(emailValue)
+    ) {
+      const result = await (await fetch(Config.baseMailAPI + Config.subscribeAPI + "?email=" + emailValue)).json();
+      if (result.status) {
+        setSendAlert(true);
+      } else {
+        console.warn(result.message);
+      }
+    }
+  }
+
   return (
     <section className="foot">
       <footer className="foot-con">
@@ -133,18 +151,7 @@ function Foot() {
               placeholder={subscribe.email}
               onChange={(e) => setEmailValue(e.target.value)}
             />
-            <span
-              onClick={() => {
-                setClick(true)
-                if (
-                  new RegExp(
-                    "^[a-z0-9A-Z]+[- | a-z0-9A-Z . _]+@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-z]{2,}$"
-                  ).test(emailValue)
-                ) {
-                  setSendAlert(true);
-                }
-              }}
-            >
+            <span onClick={handleSubscribe}>
               {subscribe.emailBtn}
             </span>
           </div>
