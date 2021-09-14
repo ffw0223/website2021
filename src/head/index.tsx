@@ -138,6 +138,10 @@ function Head() {
   );
   const [aresData, setAresData] = useState(ares);
   useEffect(() => {
+    const svg = document.getElementById("eq8NxO51czK1");
+    const vedioImg = document.querySelector(".video-img");
+    vedioImg?.appendChild(svg!);
+    svg?.setAttribute("style", "display:block");
     const fetchData = async () => {
       const res = (await getAresAll()) as unknown as aresData;
       const newAresData = Object.assign(JSON.parse(JSON.stringify(aresData)), {
