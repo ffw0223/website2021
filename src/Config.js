@@ -1,5 +1,5 @@
 const Config = {
-	baseMailAPI: "http://localhost:2999",
+	baseMailAPI: "http://141.164.58.241:3000",
 	subscribeAPI: "/api/subscribe",
 	loginAPI: "/admin/login",
 	sendMailAPI: "/admin/send",

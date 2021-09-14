@@ -88,6 +88,8 @@ const Backend = _ => {
 
 			if (result.status === 1) {
 				window.alert("邮件已发送，正在群发中……");
+			} else {
+				console.warn(result.message);
 			}
 		}
 	}
