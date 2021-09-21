@@ -543,7 +543,9 @@
     transform: rotate(360deg);
   }
 }
-
+.cn .head .head-top .head-top-nav .nav .nav-right .list .nav-child .nav-child-item.aresProtocol{
+  width: auto;
+}
 @keyframes pulsePrimary {
   0% {
     -webkit-box-shadow: 0 0 0 0 rgba(82, 104, 242, 0.4);

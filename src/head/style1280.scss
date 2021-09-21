@@ -1,22 +1,22 @@
 @media only screen and (min-width: 1280px) and (max-width: 1679px) {
-  #root.cn .parity{
-    width: 282* 0.76190476px;
+  #root.cn .parity {
+    width: 282 * 0.76190476px;
   }
-  #root.cn .join .btn-con .btn span{
-    padding-left: 110* 0.76190476px;
+  #root.cn .join .btn-con .btn span {
+    padding-left: 110 * 0.76190476px;
   }
   .head {
     .video-img {
       top: 22.285714px;
       right: -136px;
-      transform: scale(.70);
+      transform: scale(0.7);
     }
     .head-top {
       margin-bottom: -196 * 0.76190476px;
       .head-top-nav {
         height: 139 * 0.76190476px;
         .nav {
-          width: 1280 * 0.76190476px;
+          width: 1680 * 0.76190476px;
           padding-top: 33 * 0.76190476px;
 
           .nav-left {
@@ -29,8 +29,8 @@
           .nav-right {
             .list {
               .item {
-                font-size: 18px;
-                margin-left: 20px;
+                font-size: 25 * 0.76190476px;
+                margin-left: 42 * 0.76190476px;
 
                 &:hover,
                 &.active {
@@ -39,10 +39,33 @@
                   }
                 }
               }
+              .nav-child-arrow {
+                height: 40 * 0.76190476px;
+                width: 20 * 0.76190476px;
+                margin-left: 5 * 0.76190476px;
+              }
+              .nav-child {
+                top: 45 * 0.76190476px;
+                padding: 25 * 0.76190476px;
+                box-shadow: 0px 10 * 0.76190476px 10 * 0.76190476px
+                  rgba(0, 0, 0, 0.16);
+
+                .nav-child-item {
+                  height: 33 * 0.76190476px;
+                  line-height: 33 * 0.76190476px;
+                  font-size: 25 * 0.76190476px;
+                  &.aresProtocol {
+                    width: 166 * 0.76190476px;
+                  }
+                  &:not(:first-child) {
+                    margin-top: 24 * 0.76190476px;
+                  }
+                }
+              }
             }
 
             .language {
-              margin-left: 20px;
+              margin-left: 60 * 0.76190476px;
 
               .language-name {
                 font-size: 25 * 0.76190476px;
@@ -60,12 +83,28 @@
                 height: 40 * 0.76190476px;
                 width: 20 * 0.76190476px;
                 margin-left: 5 * 0.76190476px;
+                display: inline-block;
+                background: url("../assets/left.png") no-repeat;
+
+                &.top {
+                  transition: all 0.5s;
+                  transform: rotate(90deg) scale(0.5);
+                }
+
+                &.bottom {
+                  transition: all 0.5s;
+                  transform: rotate(270deg) scale(0.5);
+                }
               }
 
               .language-select {
+                position: absolute;
                 top: 35 * 0.76190476px;
+                right: 0;
                 width: 100 * 0.76190476px;
                 padding: 10 * 0.76190476px;
+                outline: none;
+                border: none;
               }
             }
           }
