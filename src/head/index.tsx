@@ -54,45 +54,64 @@ function Head() {
     substrateBtnText: "Substrate",
     navs: [
       {
-        name: t("Home"),
-        id: "Home",
-        url: "#Home",
-        minScrollTop: -1,
-        maxScrollTop: 998,
-        minScrollTop1280: -1,
-        maxScrollTop1280: 759,
+        name: t("Networks"),
+        children: [
+          {
+            name: t("Ares Protocol"),
+            className: "aresProtocol",
+            url: "",
+          },
+          {
+            name: t("Mars"),
+            url: "",
+          },
+        ],
       },
       {
-        name: t("Technology"),
-        id: "Technology",
-        url: "#Technology",
-        minScrollTop: 998,
-        maxScrollTop: 2051,
-        minScrollTop1280: 759,
-        maxScrollTop1280: 1562,
+        name: t("Introduction"),
+        children: [
+          {
+            name: t("Technology"),
+            id: "Technology",
+            url: "#Technology",
+            minScrollTop: 998,
+            maxScrollTop: 2051,
+            minScrollTop1280: 759,
+            maxScrollTop1280: 1562,
+          },
+          {
+            name: t("Economics"),
+            id: "Economics",
+            url: "#Economics",
+            minScrollTop: 2051,
+            maxScrollTop: 3097,
+            minScrollTop1280: 1562,
+            maxScrollTop1280: 2359,
+          },
+          {
+            name: t("Application"),
+            id: "Application",
+            url: "#Application",
+            minScrollTop: 3097,
+            maxScrollTop: 10000,
+            minScrollTop1280: 2359,
+            maxScrollTop1280: 10000,
+          },
+        ],
       },
       {
-        name: t("Economics"),
-        id: "Economics",
-        url: "#Economics",
-        minScrollTop: 2051,
-        maxScrollTop: 3097,
-        minScrollTop1280: 1562,
-        maxScrollTop1280: 2359,
-      },
-      {
-        name: t("Application"),
-        id: "Application",
-        url: "#Application",
-        minScrollTop: 3097,
-        maxScrollTop: 10000,
-        minScrollTop1280: 2359,
-        maxScrollTop1280: 10000,
-      },
-      {
-        name: t("Documentation"),
-        id: "Documentation",
-        url: "https://docs.aresprotocol.io/#/",
+        name: t("About"),
+        children: [
+          {
+            name: t("Documentation"),
+            id: "Documentation",
+            url: "https://docs.aresprotocol.io/#/",
+          },
+          {
+            name: t("Contact"),
+            url: "",
+          },
+        ],
       },
       {
         name: t("Buy Token"),
@@ -137,6 +156,7 @@ function Head() {
     head.language.select[head.language.localIndex].name
   );
   const [aresData, setAresData] = useState(ares);
+  const [navChildActive, setNavChildActive] = useState<null | number>(null);
   useEffect(() => {
     const svg = document.getElementById("eq8NxO51czK1");
     const vedioImg = document.querySelector(".video-img");
@@ -173,6 +193,11 @@ function Head() {
         document?.documentElement?.scrollTop || document?.body?.scrollTop
       );
     };
+    document.body.onclick = (e) => {
+      const navChildClassName = (e?.target as any)?.getAttribute("class");
+      if (navChildClassName?.includes("nav-child")) return;
+      setNavChildActive(null);
+    };
   }, []);
 
   return (
@@ -206,6 +231,7 @@ function Head() {
                   <ul className="list">
                     {head.navs.map((nav, index) => {
                       const {
+                        children,
                         name,
                         url,
                         id,
@@ -213,7 +239,7 @@ function Head() {
                         maxScrollTop,
                         minScrollTop1280,
                         maxScrollTop1280,
-                      } = nav;
+                      } = nav as any;
                       let active = null;
                       if (
                         document.body.clientWidth >= 1280 &&
@@ -231,19 +257,97 @@ function Head() {
                           maxScrollTop &&
                           scrollTop < maxScrollTop;
                       }
-
                       return (
                         <li key={id || index}>
-                          <a
-                            className={classnames("item", {
-                              active,
-                            })}
-                            href={url}
-                            target={url[0] === "#" ? "_self" : "_blank"}
-                            rel="noreferrer"
-                          >
-                            {name}
-                          </a>
+                          {children ? (
+                            <div className="item">
+                              <span
+                                className="nav-child-text"
+                                onClick={() =>
+                                  setNavChildActive(
+                                    navChildActive === index ? null : index
+                                  )
+                                }
+                              >
+                                {name}
+                              </span>
+                              <span
+                                onClick={() =>
+                                  setNavChildActive(
+                                    navChildActive === index ? null : index
+                                  )
+                                }
+                                className={classnames("nav-child-arrow", {
+                                  top: navChildActive === index,
+                                  bottom: navChildActive !== index,
+                                })}
+                              ></span>
+                              {navChildActive === index}
+                              {navChildActive === index ? (
+                                <div className="nav-child">
+                                  {children.map((sNav: any, sindex: number) => {
+                                    const {
+                                      name,
+                                      url,
+                                      id,
+                                      className,
+                                      minScrollTop,
+                                      maxScrollTop,
+                                      minScrollTop1280,
+                                      maxScrollTop1280,
+                                    } = sNav as any;
+                                    let active = null;
+                                    if (
+                                      document.body.clientWidth >= 1280 &&
+                                      document.body.clientWidth <= 1679
+                                    ) {
+                                      active =
+                                        minScrollTop1280 &&
+                                        scrollTop >= minScrollTop1280 &&
+                                        maxScrollTop1280 &&
+                                        scrollTop < maxScrollTop1280;
+                                    } else {
+                                      active =
+                                        minScrollTop &&
+                                        scrollTop >= minScrollTop &&
+                                        maxScrollTop &&
+                                        scrollTop < maxScrollTop;
+                                    }
+                                    return (
+                                      <a
+                                        key={`${index}${sindex}`}
+                                        className={classnames(
+                                          "nav-child-item",
+                                          className,
+                                          {
+                                            active,
+                                          }
+                                        )}
+                                        href={url}
+                                        target={
+                                          url?.[0] === "#" ? "_self" : "_blank"
+                                        }
+                                        rel="noreferrer"
+                                      >
+                                        {name}
+                                      </a>
+                                    );
+                                  })}
+                                </div>
+                              ) : null}
+                            </div>
+                          ) : (
+                            <a
+                              className={classnames("item", {
+                                active,
+                              })}
+                              href={url}
+                              target={url?.[0] === "#" ? "_self" : "_blank"}
+                              rel="noreferrer"
+                            >
+                              {name}
+                            </a>
+                          )}
                         </li>
                       );
                     })}
