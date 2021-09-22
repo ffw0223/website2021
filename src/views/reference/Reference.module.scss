@@ -1,0 +1,86 @@
+.referenceLayout {
+	padding-top: 76px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 17px;
+	width: 100%;
+	margin-bottom: 107px;
+
+	h2 {
+		color: #e56239;
+		font-size: 54px;
+	}
+
+	.description {
+		color: #1e1c24;
+		font-size: 23px;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 122px;
+		width: 80%;
+		column-gap: 1rem;
+
+		.buttonBlock {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			align-items: center;
+			row-gap: 1rem;
+			width: 300px;
+
+			.darkButton {
+				width: 100%;
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+				text-transform: capitalize;
+				background: #e56239;
+				border-radius: 43px;
+				padding: 19px 37px;
+				font-size: 22px;
+				font-weight: 400;
+				color: #ffffff;
+			}
+
+			.lightButton {
+				width: 100%;
+				background: #ffffff;
+				border: 2px solid #e56239;
+				border-radius: 43px;
+				font-size: 22px;
+				padding: 19px 37px;
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+				font-weight: 600;
+				color: #e56239;
+			}
+		}
+
+		th {
+			font-size: 24px;
+			font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+			font-weight: bold;
+			color: #1e1c24;
+			padding: 20px 28px;
+		}
+
+		tbody {
+			font-size: 23px;
+			font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+			font-weight: 400;
+			color: #1e1c24;
+
+			td {
+				font-size: 24px;
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+				color: #1e1c24;
+				padding: 20px 28px;
+			}
+		}
+	}
+}

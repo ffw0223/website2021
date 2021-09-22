@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./style.scss";
-import "./style1280.scss";
-import "./style428.scss";
+// import "./style1280.scss";
+// import "./style428.scss";
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 import vedio from "../assets/vedio.mp4";
@@ -54,51 +54,50 @@ function Head() {
     substrateBtnText: "Substrate",
     navs: [
       {
-        name: t("Home"),
-        id: "Home",
-        url: "#Home",
+        name: t("network"),
+        id: "network",
+        url: "#network",
         minScrollTop: -1,
         maxScrollTop: 998,
         minScrollTop1280: -1,
         maxScrollTop1280: 759,
       },
       {
-        name: t("Technology"),
-        id: "Technology",
-        url: "#Technology",
+        name: t("supply"),
+        id: "supply",
+        url: "#supply",
         minScrollTop: 998,
         maxScrollTop: 2051,
         minScrollTop1280: 759,
         maxScrollTop1280: 1562,
       },
       {
-        name: t("Economics"),
-        id: "Economics",
-        url: "#Economics",
+        name: t("deposit"),
+        id: "deposit",
+        url: "#deposit",
         minScrollTop: 2051,
         maxScrollTop: 3097,
         minScrollTop1280: 1562,
         maxScrollTop1280: 2359,
       },
       {
-        name: t("Application"),
-        id: "Application",
-        url: "#Application",
+        name: t("crowdloan"),
+        id: "crowdloan",
+        url: "#crowdloan",
         minScrollTop: 3097,
         maxScrollTop: 10000,
         minScrollTop1280: 2359,
         maxScrollTop1280: 10000,
       },
       {
-        name: t("Documentation"),
-        id: "Documentation",
-        url: "https://docs.aresprotocol.io/#/",
-      },
-      {
-        name: t("Buy Token"),
-        id: "Buy Token",
-        url: "https://www.gateio.pro/cn/trade/ARES_USDT",
-      },
+        name: t("app"),
+        id: "app",
+        url: "#app",
+        minScrollTop: 3097,
+        maxScrollTop: 10000,
+        minScrollTop1280: 2359,
+        maxScrollTop1280: 10000,
+      }
     ],
     language: {
       select: [
@@ -128,7 +127,6 @@ function Head() {
     volume: 809945.75,
     volumeText: t("Volume"),
   };
-  const [addressSwitch, setAddressSwitch] = useState(true);
   const [languageStatus, setlanguageStatus] = useState(false);
   const [scrollTop, setScroll] = useState(0);
   const [phone, setPhone] = useState(false);
@@ -138,10 +136,10 @@ function Head() {
   );
   const [aresData, setAresData] = useState(ares);
   useEffect(() => {
-    const svg = document.getElementById("eq8NxO51czK1");
-    const vedioImg = document.querySelector(".video-img");
-    vedioImg?.appendChild(svg!);
-    svg?.setAttribute("style", "display:block");
+    // const svg = document.getElementById("eq8NxO51czK1");
+    // const vedioImg = document.querySelector(".video-img");
+    // vedioImg?.appendChild(svg!);
+    // svg?.setAttribute("style", "display:block");
     const fetchData = async () => {
       const res = (await getAresAll()) as unknown as aresData;
       const newAresData = Object.assign(JSON.parse(JSON.stringify(aresData)), {
@@ -179,29 +177,15 @@ function Head() {
     <>
       <section className="head" id="Home">
         <div className={classnames("head-top", { fixed: !!scrollTop })}>
-          <div className="head-top-address">
-            {addressSwitch ? (
-              <h2 className="address">
-                {phone ? head.topTip_m : head.topTip}
-                <span
-                  className="close"
-                  onClick={() => {
-                    setAddressSwitch(false);
-                  }}
-                ></span>
-              </h2>
-            ) : null}
-          </div>
+          <a href="/" style={{ marginLeft: "3rem" }}>
+            <img src={logoImg} height="80px" alt="" />
+          </a>
+
           {phone ? (
             <div className=""></div>
           ) : (
             <div className="head-top-nav">
               <div className="nav">
-                <div className="nav-left">
-                  <a href="/">
-                    <img src={logoImg} alt="" />
-                  </a>
-                </div>
                 <div className="nav-right">
                   <ul className="list">
                     {head.navs.map((nav, index) => {
@@ -327,107 +311,22 @@ function Head() {
         </div>
 
         <header className="head-con">
-          <div
-            className="video-img"
-            onClick={() => setVedioStauts(!vedioSwich)}
-          ></div>
           <div className="head-content">
             <div className="head-warp">
-              <p className="content-desc">{head.desc}</p>
-              <p className="content-btn">
-                <a
-                  href={head.farmsUrl}
-                  className="farmBtnText"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {head.farmBtnText}
-                </a>
-                <a
-                  className="uniswapBtnText"
-                  href={head.uniswapUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {head.uniswapBtnText}
-                </a>
-              </p>
-              <div className="substrat">
-                <img className="substratLogo" src={parityImg} alt="" />
-                <span className="parity">{head.parity}</span>
-                <a
-                  className="substrateBtnText"
-                  href={head.substrateUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {head.substrateBtnText}
-                </a>
-                {vedioSwich ? (
-                  <div className="video">
-                    <video
-                      className="video-con"
-                      autoPlay
-                      src={vedio}
-                      controls={true}
-                    >
-                      你的浏览器不支持
-                    </video>
-                    <span
-                      className="video-mask"
-                      onClick={() => setVedioStauts(!vedioSwich)}
-                    ></span>
-                  </div>
-                ) : null}
+              <img className="illustration" src="/images/illustration.svg" width="50%" />
+
+              <div className="content-desc">
+                <div className="content">{t("descriptionHomePage")}</div>
+
+                <button className="button" style={{ marginTop: "2rem" }}>{t("joinCrowdloan")}</button>
               </div>
             </div>
           </div>
-          <div className="head-content-line"></div>
         </header>
-        <img
-          className={classnames("toTop", { active: scrollTop >= 500 })}
-          src={topImg}
-          alt=""
-          onClick={() => {
-            window.scrollTo(0, 0);
-          }}
-        />
-      </section>
-      <section className={classnames("usd", { topClose: !addressSwitch })}>
-        <ul className="usd-con">
-          <li className="usd-logo">
-            <img src={aresLogoImg} alt="" />
-          </li>
-          <li className="usd-usd">
-            <p className="usd-name">{aresData.name}</p>
-            <p>
-              <span className="usd-price">{aresData.price}</span>
-              <span className="usd-currency">{aresData.currency}</span>
-            </p>
-          </li>
-          <li className="usd-point verticalBar">
-            <span className="usd-num">{aresData.point}%</span>
-            <span className="usd-direction"></span>
-          </li>
-          <li className="usd-rank verticalBar">
-            <p className="usd-text">{ares.rankText}</p>
-            <p className="usd-value">{aresData.rank}</p>
-          </li>
-          <li className="usd-marketCap verticalBar">
-            <p className="usd-text">{ares.marketCapText}</p>
-            <p className="usd-value">
-              {aresData.symbol}
-              {aresData.marketCap} M
-            </p>
-          </li>
-          <li className="usd-volume verticalBar">
-            <p className="usd-text">{ares.volumeText}</p>
-            <p className="usd-value">
-              {aresData.symbol}
-              {aresData.volume} M
-            </p>
-          </li>
-        </ul>
+
+        <div className="floatBlock">
+          <div>{t("aboutMars")}</div>
+        </div>
       </section>
     </>
   );

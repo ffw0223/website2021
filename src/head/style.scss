@@ -1,4 +1,10 @@
 .head {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+
   .toTop {
     transition: all 0.5s ease;
     cursor: pointer;
@@ -45,7 +51,7 @@
     }
   }
   .video-img {
-    width: 919px;
+    width: 319px;
     z-index: 1;
     height: 1071px;
     cursor: pointer;
@@ -56,22 +62,30 @@
   }
 
   .head-top {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: -196px;
+    z-index: 100;
+
     &.fixed {
       box-shadow: 7px 18px 37px rgb(29 31 117 / 25%);
       position: fixed;
       left: 0;
       right: 0;
-      .head-top-nav {
-        background: #1295f0;
-      }
+      background-color: #ea5b34;
+      z-index: 1001;
     }
-    position: relative;
-    margin-bottom: -196px;
-    z-index: 100;
+    
     .head-top-nav {
       height: 139px;
+      margin-right: 3rem;
+
       .nav {
-        width: 1680px;
+        max-width: 1680px;
         margin: 0 auto;
         display: flex;
         align-items: center;
@@ -96,7 +110,8 @@
               font-size: 25px;
               color: #ffffff;
               text-decoration: none;
-              margin-left: 42px;
+              margin-left: 2rem;
+              text-transform: capitalize;
 
               &:hover,
               &.active {
@@ -181,7 +196,7 @@
     background: #fff;
 
     .address {
-      width: 1680px;
+      max-width: 1680px;
       margin: 0 auto;
       position: relative;
       text-align: center;
@@ -211,7 +226,8 @@
   }
 
   .head-con {
-    background: #0e96f0;
+    width: 100%;
+
     .head-content-line {
       height: 1px;
       background: #0e96f0;
@@ -221,10 +237,12 @@
     }
     .head-content {
       position: relative;
-      background: url("../assets/banner-bg.png") no-repeat;
+      width: 100%;
+      background: url("../assets/bg.jpg");
+      // background-repeat: no-r
       margin: 0 auto;
-      width: 1920px;
-      height: 1260px;
+      // width: 1920px;
+      // height: 1260px;
       text-align: left;
 
       &::before {
@@ -250,19 +268,50 @@
 
       .head-warp {
         position: relative;
-        width: 1680px;
+        max-width: 1680px;
         margin: 0 auto;
 
+        .illustration {
+          position: absolute;
+          top: 150px;
+          right: 0;
+          z-index: 0;
+        }
+
         .content-desc {
-          padding-bottom: 36px;
-          padding-top: 338px;
-          width: 922px;
-          height: 144px;
-          font-size: 54px;
-          font-weight: bold;
-          line-height: 72px;
-          color: #ffffff;
-          text-shadow: 0px 3px 6px rgba(0, 22, 221, 0.23);
+          // padding-bottom: 36px;
+          // padding-top: 338px;
+          // width: 922px;
+          // height: 144px;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          padding-left: 3rem;
+          padding-right: 3rem;
+
+          .content {
+            z-index: 100;
+            width: 60%;
+            font-size: 36px;
+            font-weight: bold;
+            line-height: 48px;
+            color: #ffffff;
+            text-shadow: 0px 3px 6px rgba(0, 22, 221, 0.23);
+          }
+
+          .button {
+            background-color: #f6f6f6;
+            border-radius: 36px;
+            box-shadow: 0px 3px 3px rgba(0, 6, 166, 0.12);
+            padding: 16px 32px;
+            color: #ea5b34;
+            font-size: 26px;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            text-transform: capitalize;
+            border: none;
+          }
         }
 
         .content-btn {
@@ -341,6 +390,21 @@
       }
     }
   }
+
+  .floatBlock {
+    background-color: white;
+    box-shadow: 7px 18px 37px rgba(93, 93, 93, 0.25);
+    border-radius: 17px;
+    position: absolute;
+    max-width: 80%;
+    top: 600px;
+    z-index: 200;
+    font-size: 25px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    padding: 3rem;
+    color: #1e1c24;
+    line-height: 40px;
+  }
 }
 
 .usd {
@@ -350,7 +414,7 @@
 
   color: #1d1f75;
   z-index: 1;
-  width: 1640px;
+  max-width: 1640px;
   height: 196px;
   position: absolute;
   top: 928px;
@@ -508,9 +572,9 @@
     box-shadow: 0 0 0 0 rgba(82, 104, 242, 0);
   }
 }
-#root.cn .parity{
+#root.cn .parity {
   width: 282px;
 }
-#root.cn .join .btn-con .btn span{
+#root.cn .join .btn-con .btn span {
   padding-left: 110px;
 }

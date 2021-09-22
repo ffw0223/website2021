@@ -12,6 +12,11 @@ import Join from "./join";
 import Foot from "./foot";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Backend from "./backend/Backend";
+import Supply from "./views/supply/Supply";
+import Deposit from "./views/deposit/Deposit";
+import Reference from "./views/reference/Reference";
+import Community from "./views/community/Community";
+import Footer from "./views/footer/Footer";
 
 function App() {
   return (<>
@@ -20,13 +25,19 @@ function App() {
         <Route exact path="/">
           <div className="App">
             <Head />
-            <Technology />
+            <Supply />
+            <Deposit />
+            <Reference />
+            <Community />
+            <Footer />
+
+            {/* <Technology />
             <EconomicModelApplicationScenario />
             <Team />
             <Strategic />
             <Road />
             <Join />
-            <Foot />
+            <Foot /> */}
           </div>
         </Route>
 

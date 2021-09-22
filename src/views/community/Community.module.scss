@@ -1,0 +1,33 @@
+.communityLayout {
+	padding-top: 76px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 17px;
+	width: 100%;
+	background: linear-gradient(173deg, #e56239 0%, #e27c5c 100%);
+	margin-bottom: 107px;
+
+	h2 {
+		font-size: 53px;
+		font-weight: bold;
+		color: #ffffff;
+	}
+
+	.description {
+		color: white;
+		font-size: 23px;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 122px;
+		width: 80%;
+		column-gap: 1rem;
+	}
+}

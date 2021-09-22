@@ -1,0 +1,47 @@
+.footerLayout {
+	display: flex;
+	flex-direction: column;
+	padding-top: 65px;
+
+	.content {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+		column-gap: 100px;
+		padding-bottom: 129px;
+
+		.card {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			row-gap: 1rem;
+			font-size: 25px;
+			font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+			line-height: 35px;
+			font-weight: 400;
+			color: #1e1c24;
+
+			h3 {
+				font-size: 35px;
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+				font-weight: bold;
+				line-height: 28px;
+				color: #e56239;
+				margin-bottom: 44px;
+			}
+		}
+	}
+
+	.footer {
+		background: #ea5b34;
+		font-size: 22px;
+		font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+		font-weight: 400;
+		color: #ffffff;
+		padding-top: 14px;
+		padding-bottom: 14px;
+		text-align: center;
+	}
+}
