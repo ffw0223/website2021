@@ -6,7 +6,7 @@ const Footer = props => {
 			<div className={styles.card} style={{ maxWidth: "405px" }}>
 				<h3>About Us</h3>
 				<div>Mars is a canary network built by Ares Protocol on Kusama. It will conduct some contract call tests on asset prices.</div>
-				<div>info@aresprotocol.io</div>
+				<div><img src="/images/mail.png" />&nbsp;<a href="mailto:info@aresprotocol.io">info@aresprotocol.io</a></div>
 			</div>
 
 			<div className={styles.card}>

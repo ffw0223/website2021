@@ -1,40 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./style.scss";
-// import "./style1280.scss";
-// import "./style428.scss";
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
-import vedio from "../assets/vedio.mp4";
-import aresLogoImg from "../assets/ares-logo.png";
-import logoImg from "../assets/logo.png";
-import parityImg from "../assets/parity.png";
-import topImg from "../assets/top.png";
-
-interface aresData {
-  price: number;
-  market_cap: number;
-  percent_change: number;
-  rank: number;
-  volume: number;
-}
-
-async function getAresAll() {
-  return new Promise((resolve) => {
-    const url = "https://api.aresprotocol.io/api/getAresAll";
-    const httpRequest = new XMLHttpRequest();
-    httpRequest.open("GET", url, true);
-    httpRequest.send();
-    httpRequest.onreadystatechange = function () {
-      if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-        const json = httpRequest.responseText;
-        const result = JSON.parse(json);
-        if (!result?.code && result?.message === "OK") {
-          resolve(result?.data);
-        }
-      }
-    };
-  });
-}
 
 function Head() {
   const { t, i18n } = useTranslation();
@@ -114,58 +81,13 @@ function Head() {
     },
   };
 
-  const ares = {
-    name: "Ares Protocol (ARES)",
-    price: 0.04,
-    currency: "USD",
-    symbol: "$",
-    point: 3.32,
-    rank: 1142,
-    rankText: t("Rank"),
-    marketCap: 6400053.37,
-    marketCapText: t("MarketCap"),
-    volume: 809945.75,
-    volumeText: t("Volume"),
-  };
   const [languageStatus, setlanguageStatus] = useState(false);
   const [scrollTop, setScroll] = useState(0);
-  const [phone, setPhone] = useState(false);
-  const [vedioSwich, setVedioStauts] = useState(false);
   const [language, setlanguage] = useState(
     head.language.select[head.language.localIndex].name
   );
-  const [aresData, setAresData] = useState(ares);
+
   useEffect(() => {
-    // const svg = document.getElementById("eq8NxO51czK1");
-    // const vedioImg = document.querySelector(".video-img");
-    // vedioImg?.appendChild(svg!);
-    // svg?.setAttribute("style", "display:block");
-    const fetchData = async () => {
-      const res = (await getAresAll()) as unknown as aresData;
-      const newAresData = Object.assign(JSON.parse(JSON.stringify(aresData)), {
-        price: res?.price?.toFixed(2),
-        marketCap: res?.market_cap?.toFixed(2),
-        point: res?.percent_change?.toFixed(2),
-        rank: res?.rank,
-        volume: res?.volume?.toFixed(2),
-      });
-      setAresData(newAresData);
-    };
-    fetchData();
-  }, []);
-  useEffect(() => {
-    const isPhone =
-      (document?.documentElement?.clientWidth || document?.body?.clientWidth) <=
-      990;
-    isPhone && setPhone(isPhone);
-    setScroll(
-      document?.documentElement?.scrollTop || document?.body?.scrollTop
-    );
-    if (phone) {
-      document.write(
-        `<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">`
-      );
-    }
     window.onscroll = () => {
       setScroll(
         document?.documentElement?.scrollTop || document?.body?.scrollTop
@@ -178,66 +100,90 @@ function Head() {
       <section className="head" id="Home">
         <div className={classnames("head-top", { fixed: !!scrollTop })}>
           <a href="/" style={{ marginLeft: "3rem" }}>
-            <img src={logoImg} height="80px" alt="" />
+            <img src="/images/logo.png" height="80px" alt="" />
           </a>
 
-          {phone ? (
-            <div className=""></div>
-          ) : (
-            <div className="head-top-nav">
-              <div className="nav">
-                <div className="nav-right">
-                  <ul className="list">
-                    {head.navs.map((nav, index) => {
-                      const {
-                        name,
-                        url,
-                        id,
-                        minScrollTop,
-                        maxScrollTop,
-                        minScrollTop1280,
-                        maxScrollTop1280,
-                      } = nav;
-                      let active = null;
-                      if (
-                        document.body.clientWidth >= 1280 &&
-                        document.body.clientWidth <= 1679
-                      ) {
-                        active =
-                          minScrollTop1280 &&
-                          scrollTop >= minScrollTop1280 &&
-                          maxScrollTop1280 &&
-                          scrollTop < maxScrollTop1280;
-                      } else {
-                        active =
-                          minScrollTop &&
-                          scrollTop >= minScrollTop &&
-                          maxScrollTop &&
-                          scrollTop < maxScrollTop;
-                      }
+          <div className="head-top-nav">
+            <div className="nav">
+              <div className="nav-right">
+                <ul className="list">
+                  {head.navs.map((nav, index) => {
+                    const {
+                      name,
+                      url,
+                      id,
+                      minScrollTop,
+                      maxScrollTop,
+                      minScrollTop1280,
+                      maxScrollTop1280,
+                    } = nav;
+                    let active = null;
+                    if (
+                      document.body.clientWidth >= 1280 &&
+                      document.body.clientWidth <= 1679
+                    ) {
+                      active =
+                        minScrollTop1280 &&
+                        scrollTop >= minScrollTop1280 &&
+                        maxScrollTop1280 &&
+                        scrollTop < maxScrollTop1280;
+                    } else {
+                      active =
+                        minScrollTop &&
+                        scrollTop >= minScrollTop &&
+                        maxScrollTop &&
+                        scrollTop < maxScrollTop;
+                    }
 
-                      return (
-                        <li key={id || index}>
-                          <a
-                            className={classnames("item", {
-                              active,
-                            })}
-                            href={url}
-                            target={url[0] === "#" ? "_self" : "_blank"}
-                            rel="noreferrer"
-                          >
-                            {name}
-                          </a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                  <div className="language">
-                    <p className="language-name">
+                    return (
+                      <li key={id || index}>
+                        <a
+                          className={classnames("item", {
+                            active,
+                          })}
+                          href={url}
+                          target={url[0] === "#" ? "_self" : "_blank"}
+                          rel="noreferrer"
+                        >
+                          {name}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <div className="language">
+                  <p className="language-name">
+                    <span
+                      className={classnames("one", {
+                        isShowLanguage: languageStatus,
+                      })}
+                      onClick={(e) => {
+                        setlanguageStatus(!languageStatus);
+                        if ((e.target as any).innerText === "EN") {
+                          head.language.localIndex = 0;
+                        } else {
+                          head.language.localIndex = 1;
+                        }
+                        const language =
+                          head.language.select[head.language.localIndex].name;
+                        setlanguage(language);
+                        document
+                          .querySelector("#root")
+                          ?.setAttribute(
+                            "class",
+                            head.language.select[head.language.localIndex].id
+                          );
+                        setlanguageStatus(!languageStatus);
+                        i18n.changeLanguage(
+                          head.language.select[head.language.localIndex].id
+                        );
+                      }}
+                    >
+                      {language === "EN" ? "EN" : "CN"}
+                    </span>
+                    {languageStatus ? (
                       <span
-                        className={classnames("one", {
-                          isShowLanguage: languageStatus,
-                        })}
+                        className="two"
                         onClick={(e) => {
                           setlanguageStatus(!languageStatus);
                           if ((e.target as any).innerText === "EN") {
@@ -246,68 +192,40 @@ function Head() {
                             head.language.localIndex = 1;
                           }
                           const language =
-                            head.language.select[head.language.localIndex].name;
-                          setlanguage(language);
+                            head.language.select[head.language.localIndex]
+                              .name;
                           document
                             .querySelector("#root")
                             ?.setAttribute(
                               "class",
-                              head.language.select[head.language.localIndex].id
+                              head.language.select[head.language.localIndex]
+                                .id
                             );
+
+                          setlanguage(language);
                           setlanguageStatus(!languageStatus);
                           i18n.changeLanguage(
                             head.language.select[head.language.localIndex].id
                           );
                         }}
                       >
-                        {language === "EN" ? "EN" : "CN"}
+                        {language === "EN" ? "CN" : "EN"}
                       </span>
-                      {languageStatus ? (
-                        <span
-                          className="two"
-                          onClick={(e) => {
-                            setlanguageStatus(!languageStatus);
-                            if ((e.target as any).innerText === "EN") {
-                              head.language.localIndex = 0;
-                            } else {
-                              head.language.localIndex = 1;
-                            }
-                            const language =
-                              head.language.select[head.language.localIndex]
-                                .name;
-                            document
-                              .querySelector("#root")
-                              ?.setAttribute(
-                                "class",
-                                head.language.select[head.language.localIndex]
-                                  .id
-                              );
-
-                            setlanguage(language);
-                            setlanguageStatus(!languageStatus);
-                            i18n.changeLanguage(
-                              head.language.select[head.language.localIndex].id
-                            );
-                          }}
-                        >
-                          {language === "EN" ? "CN" : "EN"}
-                        </span>
-                      ) : null}
-                    </p>
-                    <span
-                      onClick={(e) => {
-                        setlanguageStatus(!languageStatus);
-                      }}
-                      className={classnames("language-arrow", {
-                        top: languageStatus,
-                        bottom: !languageStatus,
-                      })}
-                    ></span>
-                  </div>
+                    ) : null}
+                  </p>
+                  <span
+                    onClick={(e) => {
+                      setlanguageStatus(!languageStatus);
+                    }}
+                    className={classnames("language-arrow", {
+                      top: languageStatus,
+                      bottom: !languageStatus,
+                    })}
+                  ></span>
                 </div>
               </div>
             </div>
-          )}
+          </div>
         </div>
 
         <header className="head-con">
@@ -325,6 +243,8 @@ function Head() {
         </header>
 
         <div className="floatBlock">
+          <img src="/images/thumb1.png" height="190px" />
+
           <div>{t("aboutMars")}</div>
         </div>
       </section>

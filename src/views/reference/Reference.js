@@ -14,16 +14,25 @@ const Reference = props => {
 
 		<div className={styles.content}>
 			<div className={styles.buttonBlock}>
+				<img src="/images/thumb2.png" height="256px" />
 				<button className={styles.darkButton}>{t("joinCrowdloan")}</button>
 				<button className={styles.lightButton}>{t("learnMore")}</button>
 			</div>
 
-			<div>
+			<div style={{
+				width: "80%",
+				display: "flex",
+				flexDirection: "column",
+				justifyContent: "center",
+				alignItems: "center",
+				maxWidth: "1140px"
+			}}>
 				<div style={{
 					background: "linear-gradient(180deg, #F37B53 0%, #FFB980 100%)",
 					boxShadow: "7px 21px 15px rgba(187, 25, 0, 0.2)",
 					padding: "15px 15px 0 15px",
-					borderRadius: "15px 15px 0 0"
+					borderRadius: "15px 15px 0 0",
+					width: "80%"
 				}}>
 					<div style={{
 						background: "#E5E9EB",
@@ -67,6 +76,12 @@ const Reference = props => {
 						</table>
 					</div>
 				</div>
+
+				<img src="/images/laptop.png" style={{
+					position: "relative",
+					top: "-15px",
+					width: "100%"
+				}} />
 			</div>
 		</div>
 	</section>);
