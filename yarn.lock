@@ -1917,7 +1917,7 @@
   resolved "https://r.cnpmjs.org/@types/stack-utils/download/@types/stack-utils-2.0.1.tgz"
   integrity sha1-IPGClPeX8iCbX2XI47XI6CYdEnw=
 
-"@types/swiper@^5.3.2", "@types/swiper@^5.4.3":
+"@types/swiper@^5.4.3":
   version "5.4.3"
   resolved "https://r.cnpmjs.org/@types/swiper/download/@types/swiper-5.4.3.tgz"
   integrity sha1-oUIL2XN2JuYwuxFtcR79409bnpk=
@@ -4346,13 +4346,6 @@ dom-walk@^0.1.0:
   version "0.1.2"
   resolved "https://registry.nlark.com/dom-walk/download/dom-walk-0.1.2.tgz#0c548bef048f4d1f2a97249002236060daa3fd84"
   integrity sha1-DFSL7wSPTR8qlySQAiNgYNqj/YQ=
-
-dom7@^2.1.5:
-  version "2.1.5"
-  resolved "https://r.cnpmjs.org/dom7/download/dom7-2.1.5.tgz"
-  integrity sha1-p5QRAXgAsx2EAAcM2uu/ySwfY3c=
-  dependencies:
-    ssr-window "^2.0.0"
 
 domain-browser@^1.1.1:
   version "1.2.0"
@@ -9255,14 +9248,6 @@ react-app-polyfill@^2.0.0:
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
 
-react-awesome-swiper@^1.4.16:
-  version "1.4.16"
-  resolved "https://r.cnpmjs.org/react-awesome-swiper/download/react-awesome-swiper-1.4.16.tgz"
-  integrity sha1-69qHGw35X/rPXP8/QILwD8gJn8w=
-  dependencies:
-    "@types/swiper" "^5.3.2"
-    swiper "^5.4.3"
-
 react-dev-utils@^11.0.3:
   version "11.0.4"
   resolved "https://r.cnpmjs.org/react-dev-utils/download/react-dev-utils-11.0.4.tgz"
@@ -10383,11 +10368,6 @@ sprintf-js@~1.0.2:
   resolved "https://r.cnpmjs.org/sprintf-js/download/sprintf-js-1.0.3.tgz"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
-ssr-window@^2.0.0:
-  version "2.0.0"
-  resolved "https://r.cnpmjs.org/ssr-window/download/ssr-window-2.0.0.tgz"
-  integrity sha1-mMMBrvmVIzF/jWlhjwAQeRCW78Q=
-
 ssri@^6.0.1:
   version "6.0.2"
   resolved "https://r.cnpmjs.org/ssri/download/ssri-6.0.2.tgz"
@@ -10676,14 +10656,6 @@ svgo@^1.0.0, svgo@^1.2.2:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
-
-swiper@^5.4.3:
-  version "5.4.5"
-  resolved "https://r.cnpmjs.org/swiper/download/swiper-5.4.5.tgz"
-  integrity sha1-o1D2VL9oQm27ZReTgkklUS0iPA8=
-  dependencies:
-    dom7 "^2.1.5"
-    ssr-window "^2.0.0"
 
 symbol-tree@^3.2.4:
   version "3.2.4"

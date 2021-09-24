@@ -1,4 +1,5 @@
 .footerLayout {
+	font-size: 25px;
 	display: flex;
 	flex-direction: column;
 	padding-top: 65px;
@@ -10,6 +11,8 @@
 		align-items: flex-start;
 		column-gap: 100px;
 		padding-bottom: 129px;
+		padding-left: 2rem;
+		padding-right: 2rem;
 
 		.card {
 			display: flex;
@@ -43,5 +46,41 @@
 		padding-top: 14px;
 		padding-bottom: 14px;
 		text-align: center;
+	}
+}
+
+@media (max-width: 576px) {
+	.footerLayout {
+		font-size: 16px;
+		padding-top: 3rem;
+
+		.content {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			row-gap: 2rem;
+			padding-bottom: 2rem;
+			padding-left: 0;
+			padding-right: 0;
+
+			.card {
+				justify-content: center;
+				align-items: center;
+				row-gap: 0.5rem;
+				font-size: 1rem;
+				line-height: normal;
+				width: 90%;
+				text-align: center;
+
+				h3 {
+					font-size: 2rem;
+					margin-bottom: 2rem;
+				}
+			}
+		}
+
+		.footer {
+			font-size: 1rem;
+		}
 	}
 }
