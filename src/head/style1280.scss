@@ -31,9 +31,14 @@
               .item {
                 font-size: 25 * 0.76190476px;
                 margin-left: 42 * 0.76190476px;
-
-                &:hover,
-                &.active {
+                &.Apps {
+                  width: 132 * 0.76190476px;
+                  font-size: 25 * 0.76190476px;
+                  height: 53 * 0.76190476px;
+                  border-radius: 34 * 0.76190476px;
+                }
+                &:not(.Apps):hover,
+                &:not(.Apps).active {
                   &::after {
                     bottom: -10 * 0.76190476px;
                   }

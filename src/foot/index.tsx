@@ -142,7 +142,7 @@ function Foot() {
             })}
           </ul>
         </div>
-        <div className="subscribe">
+        <div className="subscribe" id='sendEmail'>
           <h2 className="foot-title">{subscribe.title}</h2>
           <p className="subscribe-desc">{subscribe.desc}</p>
           <div className="send">

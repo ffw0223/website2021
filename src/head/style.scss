@@ -101,9 +101,18 @@
               margin-left: 42px;
               display: flex;
               align-items: center;
-
-              &:hover,
-              &.active {
+              &.Apps{
+                width: 132px;
+                font-size: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 53px;
+                background: linear-gradient(126deg, #3075F2 0%, #333FDF 100%);
+                border-radius: 34px;
+              }
+              &:not(.Apps):hover,
+              &:not(.Apps).active {
                 &::after {
                   animation: nav 1s;
                   position: absolute;

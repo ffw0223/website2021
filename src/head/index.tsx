@@ -5,6 +5,7 @@ import "./style428.scss";
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 import vedio from "../assets/vedio.mp4";
+import vedioEn from "../assets/vedioEn.mp4";
 import aresLogoImg from "../assets/ares-logo.png";
 import logoImg from "../assets/logo.png";
 import parityImg from "../assets/parity.png";
@@ -109,7 +110,8 @@ function Head() {
           },
           {
             name: t("Contact"),
-            url: "",
+            className: "Contact",
+            url: "#sendEmail",
           },
         ],
       },
@@ -117,6 +119,11 @@ function Head() {
         name: t("Buy Token"),
         id: "Buy Token",
         url: "https://www.gateio.pro/cn/trade/ARES_USDT",
+      },
+      {
+        name: "Apps",
+        id: "Apps",
+        url: "https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fgladios.aresprotocol.io/#/explorer",
       },
     ],
     language: {
@@ -338,7 +345,7 @@ function Head() {
                             </div>
                           ) : (
                             <a
-                              className={classnames("item", {
+                              className={classnames("item", id, {
                                 active,
                               })}
                               href={url}
@@ -472,7 +479,7 @@ function Head() {
                     <video
                       className="video-con"
                       autoPlay
-                      src={vedio}
+                      src={language === "EN" ? vedioEn : vedio}
                       controls={true}
                     >
                       你的浏览器不支持
