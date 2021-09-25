@@ -34,8 +34,8 @@ function Road() {
       ],
     },
     {
-      year: "2020",
-      envy: "Q4",
+      year: "2021",
+      envy: "Q2",
       text: [
         t("Improve economic model design"),
         t("Launch Testnet"),
@@ -43,8 +43,8 @@ function Road() {
       ],
     },
     {
-      year: "2020",
-      envy: "Q4",
+      year: "2021",
+      envy: "Q3",
       text: [
         t("Launch Mainnet"),
         t("Carry out multi-channel service cooperation"),
