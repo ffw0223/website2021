@@ -44,7 +44,7 @@ function Head() {
       "ARES Official ERC-20 Contract is 0x358AA737e033F34df7c54306960a38d09AaBd523"
     ),
     topTip_m: "ARES Official ERC-20 Contract is 0x358A...Bd523",
-    desc: t("$ARES a Decentralized Cross-chain Oracle Service Protocol"),
+    desc: t("$ARES A Decentralized Cross-Chain Oracle Service Protocol"),
     farmsUrl: "https://trojan.aresprotocol.io/",
     farmBtnText: t("Farms"),
     uniswapUrl:
@@ -172,7 +172,7 @@ function Head() {
     const fetchData = async () => {
       const res = (await getAresAll()) as unknown as aresData;
       const newAresData = Object.assign(JSON.parse(JSON.stringify(aresData)), {
-        price: res?.price?.toFixed(2),
+        price: res?.price?.toFixed(3),
         marketCap: res?.market_cap?.toFixed(2),
         point: res?.percent_change?.toFixed(2),
         rank: res?.rank,
