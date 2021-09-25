@@ -236,7 +236,6 @@
   }
   .head-top-address {
     background: #fff;
-
     .address {
       width: 1680px;
       margin: 0 auto;
@@ -245,7 +244,11 @@
       line-height: 57px;
       color: #1195f0;
       font-size: 22px;
-
+      a{
+        text-decoration: none;
+        color: #1195f0;
+        font-size: 22px;
+      }
       .close {
         position: absolute;
         right: 16px;

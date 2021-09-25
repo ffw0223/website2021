@@ -214,7 +214,9 @@ function Head() {
           <div className="head-top-address">
             {addressSwitch ? (
               <h2 className="address">
-                {phone ? head.topTip_m : head.topTip}
+                <a href={`https://etherscan.io/token/0x358AA737e033F34df7c54306960a38d09AaBd523`}>
+                  {phone ? head.topTip_m : head.topTip}
+                </a>
                 <span
                   className="close"
                   onClick={() => {
