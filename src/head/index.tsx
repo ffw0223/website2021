@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./style.scss";
 import "./style1280.scss";
-import "./style428.scss";
+// import "./style428.scss";
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 import vedio from "../assets/vedio.mp4";
