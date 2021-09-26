@@ -185,7 +185,7 @@ export const resources = {
       "A great road traveled, gaining experiences, adding successes and build a great project.":"项目的发展进程，获得的成功经验，我们正在创造一个伟大的项目。",
       "Farms": "挖矿",
       "Strategic Investors":"战略投资者",
-      "The Ares Protocol Team combines knowledge, experience andpassion for cryptocurrencies. ":"项目投资方，参与种子轮并对项目发展和创新提供重要支持。",
+      "The Ares Protocol Team combines knowledge, experience andpassion for cryptocurrencies. ":"战神协议团队对加密货币有着丰富的知识、经验和热情。",
       "Anyone who holds the Ares pass has the right to govern, and can vote for protocol upgrades and reputation committee elections. The Reputation Committee ensures the security of the Ares network by incentivizing validators and punishing malicious nodes.":"持有ares通证的任何人享有治理权，可以通过投票进行协议升级和声誉委员会选举等。声誉委员会通过激励验证人、惩罚作恶的节点，保证Ares网络的安全。",
       "Ares Protocol can provide verifiable randomness on the chain which can be used to generate unpredictable gameplay scenarios in block chain games or enable the minting of NFTs.":"Ares Protocol将提供链上可验证随机数，赋能区块链游戏和NFTs更多玩法。",
       "Games and NFTs":"博彩游戏",

@@ -124,7 +124,7 @@ function Foot() {
           </ul>
         </div>
         <div className="link resources">
-          <h2 className="foot-title">{link.title}</h2>
+          <h2 className="foot-title">{resources.title}</h2>
           <ul className="link-con">
             {resources.list.map((item, index) => {
               const { name, url } = item;
