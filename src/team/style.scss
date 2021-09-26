@@ -29,7 +29,6 @@
         background: #fff;
         box-shadow: 7px 21px 18px rgba(29, 31, 117, 0.15);
         border-radius: 15px;
-
         &:not(:first-child) {
           margin-left: 16px;
         }
@@ -145,5 +144,10 @@
         opacity: 1;
       }
     }
+  }
+}
+.cn {
+  .team-name{
+    margin-top: 50px;
   }
 }
