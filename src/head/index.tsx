@@ -145,7 +145,7 @@ function Head() {
                           style={{ cursor: "pointer" }}
                           onClick={showMenu}>{name}</div>) : (<a
                             className={classnames("item", { active })}
-                            href={target ?? "#" + id}
+                            href={target ? target : "#" + id}
                             rel="noreferrer">{name}</a>)}
                       </li>
                     );
@@ -236,7 +236,6 @@ function Head() {
 
                 <button className="button" style={{ marginTop: "2rem" }}>{t("joinCrowdloan")}</button>
 
-                {/* <img className="illustration" src="/images/illustration.svg" width="50%" /> */}
                 <div id="animatePlayer" className="illustration" />
 
                 <div className="floatBlock">

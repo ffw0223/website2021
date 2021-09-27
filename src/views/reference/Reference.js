@@ -13,7 +13,11 @@ const Reference = props => {
 			<div className={styles.buttonBlock}>
 				<img src="/images/thumb2.png" height="256px" />
 				<button className={styles.darkButton}>{t("joinCrowdloan")}</button>
-				<button className={styles.lightButton}>{t("learnMore")}</button>
+				<a
+					href="https://aresprotocollab.medium.com/the-canary-network-of-ares-protocol-mars-announced-auction-strategy-crowdloaning-specification-a1e66f74b985"
+					target="_blank">
+					<div className={styles.lightButton}>{t("learnMore")}</div>
+				</a>
 			</div>
 
 			<div className={styles.monitor}>

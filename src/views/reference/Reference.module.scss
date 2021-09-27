@@ -36,6 +36,10 @@
 			row-gap: 1rem;
 			width: 300px;
 
+			a{
+				text-decoration: none;
+			}
+
 			.darkButton {
 				outline: none;
 				border-width: 0;
@@ -57,11 +61,13 @@
 
 			.lightButton {
 				width: 100%;
+				text-align: center;
 				background: #ffffff;
 				border: 2px solid #e56239;
 				border-radius: 43px;
 				font-size: 22px;
-				padding: 19px 37px;
+				padding-top: 19px;
+				padding-bottom: 19px;
 				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 				font-weight: 400;
 				color: #e56239;

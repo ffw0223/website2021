@@ -6,13 +6,15 @@ const Footer = props => {
 
 	return (<section className={styles.footerLayout}>
 		<div className={styles.content} id="footer">
-			<div className={styles.card} style={{ maxWidth: "405px" }}>
+			<div className={styles.card} style={{ width: "405px" }}>
 				<h3>{t("aboutUs")}</h3>
 				<div>{t("aboutUsDescription")}</div>
-				<div><img src="/images/mail.png" />&nbsp;<a href="mailto:info@aresprotocol.io">info@aresprotocol.io</a><a href="#Home">adfds</a></div>
+				<div><img src="/images/mail.png" />&nbsp;<a href="mailto:info@aresprotocol.io">info@aresprotocol.io</a></div>
 			</div>
 
-			<div className={styles.card}>
+			<div className={styles.card} style={{
+				textTransform: "capitalize"
+			}}>
 				<h3>{t("quickLinks")}</h3>
 				<div>{t("network")}</div>
 				<div>{t("supply")}</div>
@@ -28,7 +30,9 @@ const Footer = props => {
 				<div>Medium</div>
 			</div>
 
-			<div className={styles.card}>
+			<div className={styles.card} style={{
+				width: "472px"
+			}}>
 				<h3>{t("subscribe")}</h3>
 				<div>{t("subscribeInfo")}</div>
 			</div>
