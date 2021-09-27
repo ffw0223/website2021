@@ -72,13 +72,24 @@ function Head() {
   const [scrollTop, setScroll] = useState(0);
   const [language, setlanguage] = useState(head.language.select[head.language.localIndex].name);
   const [isMenuShow, setIsMenuShow] = useState(false);
+  const [isTopButtonShow, setIsTopButtonShow] = useState(false);
+
+  const goToTop = () => {
+    window.location.href = "#Home";
+  }
 
   useEffect(() => {
     window.onscroll = () => {
       setIsMenuShow(false);
-      setScroll(
-        document?.documentElement?.scrollTop || document?.body?.scrollTop
-      );
+
+      const tempHeight = document?.documentElement?.scrollTop || document?.body?.scrollTop
+      setScroll(tempHeight);
+
+      if (tempHeight > window.innerHeight) {
+        setIsTopButtonShow(true);
+      } else {
+        setIsTopButtonShow(false)
+      }
     };
   }, []);
 
@@ -235,6 +246,8 @@ function Head() {
         </header>
 
         <div id="modalContainer" style={{ display: !isMenuShow ? "none" : "block" }} />
+
+        {isTopButtonShow && (<div className="goToTopButton" onClick={goToTop}>⌃</div>)}
       </section>
     </>
   );
