@@ -91,6 +91,9 @@ function Head() {
         setIsTopButtonShow(false)
       }
     };
+
+    const svg = document.getElementById("ebI2qV0WAvx1");
+    document.getElementById("animatePlayer")?.appendChild(svg!);
   }, []);
 
   const showMenu = (event: any) => {
@@ -233,7 +236,8 @@ function Head() {
 
                 <button className="button" style={{ marginTop: "2rem" }}>{t("joinCrowdloan")}</button>
 
-                <img className="illustration" src="/images/illustration.svg" width="50%" />
+                {/* <img className="illustration" src="/images/illustration.svg" width="50%" /> */}
+                <div id="animatePlayer" className="illustration" />
 
                 <div className="floatBlock">
                   <img src="/images/thumb1.png" height="190px" />
