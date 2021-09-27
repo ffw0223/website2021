@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, MouseEventHandler } from "react";
 import "./style.scss";
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
+import PopupMenu from "../components/PopupMenu";
+import { render } from "react-dom";
 
 function Head() {
   const visibleBottom = window.scrollY + document.documentElement.clientHeight;
@@ -12,22 +14,43 @@ function Head() {
       {
         name: t("network"),
         id: "head",
+        menu: {
+          menuItems: [
+            {
+              title: "Ares Protocol",
+              handle: () => { window.location.href = "https://aresprotocol.io" }
+            },
+            {
+              title: "Mars",
+              handle: () => { window.location.href = "#Home" }
+            }
+          ]
+        },
+        target: ""
       },
       {
         name: t("supply"),
         id: "supply",
+        menu: null,
+        target: ""
       },
       {
         name: t("deposit"),
         id: "deposit",
+        menu: null,
+        target: ""
       },
       {
         name: t("crowdloan"),
         id: "crowdloan",
+        menu: null,
+        target: ""
       },
       {
         name: t("app"),
         id: "app",
+        menu: null,
+        target: "https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fgladios.aresprotocol.io/#/explorer"
       }
     ],
     language: {
@@ -47,17 +70,27 @@ function Head() {
 
   const [languageStatus, setlanguageStatus] = useState(false);
   const [scrollTop, setScroll] = useState(0);
-  const [language, setlanguage] = useState(
-    head.language.select[head.language.localIndex].name
-  );
+  const [language, setlanguage] = useState(head.language.select[head.language.localIndex].name);
+  const [isMenuShow, setIsMenuShow] = useState(false);
 
   useEffect(() => {
     window.onscroll = () => {
+      setIsMenuShow(false);
       setScroll(
         document?.documentElement?.scrollTop || document?.body?.scrollTop
       );
     };
   }, []);
+
+  const showMenu = (event: any) => {
+    setIsMenuShow(true);
+
+    const dom = event.target;
+    const menuData: any = head.navs.find(nav => (nav.id === dom.id))?.menu;
+    const rect = dom.getBoundingClientRect();
+    const theModal = <PopupMenu menuItems={menuData.menuItems} left={rect.x} top={rect.y + dom.offsetHeight + document.documentElement.scrollTop + 5} />;
+    render(theModal, document.getElementById("modalContainer"))
+  }
 
   return (
     <>
@@ -74,7 +107,9 @@ function Head() {
                   {head.navs.map((nav, index) => {
                     const {
                       name,
-                      id
+                      id,
+                      menu,
+                      target
                     } = nav;
 
                     let active = false;
@@ -90,15 +125,14 @@ function Head() {
 
                     return (
                       <li key={id || index}>
-                        <a
-                          className={classnames("item", {
-                            active,
-                          })}
-                          href={"#" + id}
-                          rel="noreferrer"
-                        >
-                          {name}
-                        </a>
+                        {menu ? (<div
+                          id={id}
+                          className={classnames("item", { active })}
+                          style={{ cursor: "pointer" }}
+                          onClick={showMenu}>{name}</div>) : (<a
+                            className={classnames("item", { active })}
+                            href={target ?? "#" + id}
+                            rel="noreferrer">{name}</a>)}
                       </li>
                     );
                   })}
@@ -199,9 +233,15 @@ function Head() {
             </div>
           </div>
         </header>
+
+        <div id="modalContainer" style={{ display: !isMenuShow ? "none" : "block" }} />
       </section>
     </>
   );
 }
 
 export default Head;
+function menu(menu: any) {
+  throw new Error("Function not implemented.");
+}
+

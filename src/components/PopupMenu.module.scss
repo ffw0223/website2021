@@ -1,0 +1,19 @@
+.popupMenuLayout {
+	position: absolute;
+	background-color: white;
+	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.16);
+	font-size: 25px;
+	padding: 1.5rem;
+	color: #e56239;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	row-gap: 1rem;
+	z-index: 10000;
+
+	.item {
+		cursor: pointer;
+	}
+}

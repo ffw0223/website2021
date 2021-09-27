@@ -89,6 +89,9 @@
     .head-top-nav {
       height: 139px;
       margin-right: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       .nav {
         max-width: 1680px;
@@ -96,7 +99,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-top: 33px;
 
         .nav-left {
           img {
