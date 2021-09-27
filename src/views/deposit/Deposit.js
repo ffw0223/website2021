@@ -15,6 +15,7 @@ const Deposit = props => {
 				<div className={styles.label}>$AMAS</div>
 				<div className={styles.primaryLabel}>1:1000</div>
 				<div className={styles.info}>{t("rewardsDescription1")}</div>
+				<div className={styles.line} />
 			</div>
 
 			<div className={styles.card}>
@@ -22,6 +23,7 @@ const Deposit = props => {
 				<div className={styles.label}>$AMAS</div>
 				<div className={styles.primaryLabel}>20% Bonus</div>
 				<div className={styles.info}>{t("rewardsDescription2")}</div>
+				<div className={styles.line} />
 			</div>
 
 			<div className={styles.card}>
@@ -29,6 +31,7 @@ const Deposit = props => {
 				<div className={styles.label}>$AMAS</div>
 				<div className={styles.primaryLabel}>3% Bonus</div>
 				<div className={styles.info}>{t("rewardsDescription3")}</div>
+				<div className={styles.line} />
 			</div>
 		</div>
 	</section>);
