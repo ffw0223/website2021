@@ -10,39 +10,57 @@ const Community = props => {
 
 		<div className={styles.content}>
 			<div className={styles.img}>
-				<img src="/images/tg.png" />
+				<a href="https://t.me/aresprotocol" target="_blank">
+					<img src="/images/tg.png" />
+				</a>
 			</div>
 
 			<div className={styles.img}>
-				<img src="/images/t.png" />
+				<a href="https://twitter.com/AresProtocolLab" target="_blank">
+					<img src="/images/t.png" />
+				</a>
 			</div>
 
 			<div className={styles.img}>
-				<img src="/images/f.png" />
+				<a href="https://www.facebook.com/aresprotocollab" target="_blank">
+					<img src="/images/f.png" />
+				</a>
 			</div>
 
 			<div className={styles.img}>
-				<img src="/images/ro.png" />
+				<a href="https://discord.gg/MKE4yX4h" target="_blank">
+					<img src="/images/ro.png" />
+				</a>
 			</div>
 
 			<div className={styles.img}>
-				<img src="/images/reddit.png" />
+				<a href="https://www.reddit.com/r/AresProtocolLabs" target="_blank">
+					<img src="/images/reddit.png" />
+				</a>
 			</div>
 
 			<div className={styles.img}>
-				<img src="/images/pop.png" />
+				<a href="https://aresprotocollab.medium.com" target="_blank">
+					<img src="/images/pop.png" />
+				</a>
 			</div>
 
 			<div className={styles.img}>
-				<img src="/images/github.png" />
+				<a href="https://github.com/aresprotocols" target="_blank">
+					<img src="/images/github.png" />
+				</a>
 			</div>
 
 			<div className={styles.img}>
-				<img src="/images/ins.png" />
+				<a href="https://www.instagram.com/aresprotocollab" target="_blank">
+					<img src="/images/ins.png" />
+				</a>
 			</div>
 
 			<div className={styles.img}>
-				<img src="/images/youtube.png" />
+				<a href="https://www.youtube.com/channel/UCgwY4NwkoP8Hx1Fqmp_rJUw" target="_blank">
+					<img src="/images/youtube.png" />
+				</a>
 			</div>
 		</div>
 	</section>);
