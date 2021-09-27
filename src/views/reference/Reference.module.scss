@@ -48,6 +48,11 @@
 				font-size: 22px;
 				font-weight: 400;
 				color: #ffffff;
+
+				&:hover {
+					background-color: #f39e4f;
+					color: #fdf4eb;
+				}
 			}
 
 			.lightButton {
@@ -58,8 +63,13 @@
 				font-size: 22px;
 				padding: 19px 37px;
 				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-				font-weight: 600;
+				font-weight: 400;
 				color: #e56239;
+
+				&:hover {
+					background: #e56239;
+					color: white;
+				}
 			}
 		}
 

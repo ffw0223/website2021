@@ -38,6 +38,11 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
+			&:hover {
+				background: #f3944f;
+				border-color: #f3944f;
+			}
 		}
 	}
 }
