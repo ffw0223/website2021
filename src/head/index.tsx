@@ -4,6 +4,7 @@ import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 import PopupMenu from "../components/PopupMenu";
 import { render } from "react-dom";
+import JoinCrowdloanModal from "../components/JoinCrowdloanModal";
 
 function Head() {
   const visibleBottom = window.scrollY + document.documentElement.clientHeight;
@@ -73,6 +74,10 @@ function Head() {
   const [language, setlanguage] = useState(head.language.select[head.language.localIndex].name);
   const [isMenuShow, setIsMenuShow] = useState(false);
   const [isTopButtonShow, setIsTopButtonShow] = useState(false);
+
+  const handleJoinCrowdloan = (event: any) => {
+    render(<JoinCrowdloanModal />, document.getElementById("mainModalContainer"));
+  };
 
   const goToTop = () => {
     window.location.href = "#Home";
@@ -234,7 +239,10 @@ function Head() {
               <div className="content-desc">
                 <div className="content">{t("descriptionHomePage")}</div>
 
-                <button className="button" style={{ marginTop: "2rem" }}>{t("joinCrowdloan")}</button>
+                <button
+                  className="button"
+                  style={{ marginTop: "2rem" }}
+                  onClick={handleJoinCrowdloan}>{t("joinCrowdloan")}</button>
 
                 <div id="animatePlayer" className="illustration" />
 

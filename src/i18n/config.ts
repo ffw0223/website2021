@@ -7,7 +7,7 @@ export const resources = {
       crowdloan: "crowdloan",
       app: "app",
       descriptionHomePage: "The only on-chain Oracle of KusamaCanary Network of Ares Protocol",
-      joinCrowdloan: "join the crowdload",
+      joinCrowdloan: "join the crowdloan",
       aboutMars: "Mars is a canary network built by Ares Protocol on Kusama. It will conduct some contract call tests on asset prices. It will provide Kusama with a native Oracle system and bring a better Oracle service to DeFi developers.",
       supplyTitle: "Total $AMAS Supply",
       supplyDescription: "Support Mars Parachain Auction Gain 300,000,000 $AMAS Rewards",
@@ -46,7 +46,15 @@ export const resources = {
       blockchainExplore: "Blockchain Explore",
       subscribe: "Subscribe",
       subscribeInfo: "Subscribe and receive all news and information about Mars.",
-      copyright: "Copyright © 2021.The Ares Protocol All rights reserved."
+      copyright: "Copyright © 2021.The Ares Protocol All rights reserved.",
+      contributeNow: "Contribute NOW!",
+      connectPolkadotExtension: "Connect Polkadot.js.extension",
+      ksmTOContribute: "KSM to Contribute",
+      max: "max",
+      estimatedAMASRewards: "Estimated AMAS Rewards",
+      email: "email",
+      submit: "submit",
+      cancel: "cancel"
     },
   },
   cn: {
@@ -96,7 +104,15 @@ export const resources = {
       blockchainExplore: "浏览器",
       subscribe: "订阅",
       subscribeInfo: "订阅并接收所有关于火星的新闻和信息。",
-      copyright: "Copyright © 2021.The Ares Protocol 保留所有权利。"
+      copyright: "Copyright © 2021.The Ares Protocol 保留所有权利。",
+      contributeNow: "现在贡献!",
+      connectPolkadotExtension: "Connect Polkadot.js.extension",
+      ksmTOContribute: "贡献KSM数值",
+      max: "最大值",
+      estimatedAMASRewards: "预计$AMAS奖励",
+      email: "电子邮箱",
+      submit: "提交",
+      cancel: "取消"
     },
   },
 };

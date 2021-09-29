@@ -31,6 +31,8 @@ function App() {
         </Route>
       </Suspense>
     </BrowserRouter>
+
+    <div id="mainModalContainer"/>
   </>);
 }
 

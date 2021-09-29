@@ -1,9 +1,15 @@
 import { useTranslation } from "react-i18next";
 import styles from "./Reference.module.scss";
 import '../../../node_modules/react-vis/dist/style.css';
+import { render } from "react-dom";
+import JoinCrowdloanModal from "../../components/JoinCrowdloanModal";
 
 const Reference = props => {
 	const { t } = useTranslation();
+
+	const handleJoinCrowdloan = event => {
+		render(<JoinCrowdloanModal />, document.getElementById("mainModalContainer"));
+	};
 
 	return (<section className={styles.referenceLayout} id="crowdloan">
 		<h2>{t("references")}&nbsp;$AMAS</h2>
@@ -12,7 +18,11 @@ const Reference = props => {
 		<div className={styles.content}>
 			<div className={styles.buttonBlock}>
 				<img src="/images/thumb2.png" height="256px" />
-				<button className={styles.darkButton}>{t("joinCrowdloan")}</button>
+
+				<button
+					className={styles.darkButton}
+					onClick={handleJoinCrowdloan}>{t("joinCrowdloan")}</button>
+
 				<a
 					href="https://aresprotocollab.medium.com/the-canary-network-of-ares-protocol-mars-announced-auction-strategy-crowdloaning-specification-a1e66f74b985"
 					target="_blank">
