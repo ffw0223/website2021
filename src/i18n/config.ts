@@ -54,7 +54,10 @@ export const resources = {
       estimatedAMASRewards: "Estimated AMAS Rewards",
       email: "email",
       submit: "submit",
-      cancel: "cancel"
+      cancel: "cancel",
+      emailTip: "Enter your e-mail address in the correct format",
+      thanksForSubscribing: "Thank you for subscribing!",
+      thanksForSubscribingContent: "We will keep you up to date with all the information from the world of Ares Protocol."
     },
   },
   cn: {
@@ -112,7 +115,10 @@ export const resources = {
       estimatedAMASRewards: "预计$AMAS奖励",
       email: "电子邮箱",
       submit: "提交",
-      cancel: "取消"
+      cancel: "取消",
+      emailTip: "请输入格式正确的邮箱地址",
+      thanksForSubscribing: "谢谢您的订阅!",
+      thanksForSubscribingContent: "我们将为您提供来自《战神协议》世界的所有最新信息。火星的世界。"
     },
   },
 };

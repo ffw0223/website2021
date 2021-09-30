@@ -1,8 +1,37 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./Footer.module.scss";
+import debounce from "lodash.debounce";
+import { render } from "react-dom";
+import Alert from "../../components/Alert";
+import Config from "../../Config";
 
 const Footer = props => {
 	const { t } = useTranslation();
+	const [inputEmail, setInputEmail] = useState("");
+	const [isValidMail, setIsValidMail] = useState(true);
+
+	const checkMailAddress = event => {
+		const re = new RegExp("^[a-z0-9A-Z]+[- | a-z0-9A-Z . _]+@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-z]{2,}$")
+		if (re.test(event.target.value)) {
+			setIsValidMail(true);
+			setInputEmail(event.target.value);
+		} else {
+			setIsValidMail(false);
+		}
+	}
+	const handleInput = debounce(checkMailAddress, 1500);
+
+	const handleSubmit = async event => {
+		if (inputEmail) {
+			const result = await (await fetch(Config.baseMailAPI + Config.subscribeAPI + "?zip_code=mars&email=" + inputEmail)).json();
+			if (result.status) {
+				render(<Alert title={t("thanksForSubscribing")} content={t("thanksForSubscribingContent")} />, document.getElementById("mainModalContainer"));
+			} else {
+				console.warn(result.message);
+			}
+		}
+	}
 
 	return (<section className={styles.footerLayout}>
 		<div className={styles.content} id="footer">
@@ -13,7 +42,8 @@ const Footer = props => {
 			</div>
 
 			<div className={styles.card} style={{
-				textTransform: "capitalize"
+				textTransform: "capitalize",
+				minWidth: "206px"
 			}}>
 				<h3>{t("quickLinks")}</h3>
 				<div>{t("network")}</div>
@@ -34,7 +64,24 @@ const Footer = props => {
 				width: "472px"
 			}}>
 				<h3>{t("subscribe")}</h3>
+
 				<div>{t("subscribeInfo")}</div>
+
+				<div style={{
+					width: "100%",
+					position: "relative"
+				}}>
+					<input
+						className={styles.inputMail}
+						onChange={handleInput} />
+
+					<button
+						disabled={!inputEmail || !isValidMail}
+						className={styles.maxButton}
+						onClick={handleSubmit}>{t("submit")}</button>
+				</div>
+
+				{!isValidMail && (<div style={{ fontSize: "1rem" }}>{t("emailTip")}</div>)}
 			</div>
 		</div>
 
