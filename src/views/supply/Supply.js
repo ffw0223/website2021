@@ -7,12 +7,14 @@ const Supply = props => {
 	const { t } = useTranslation();
 	const theNumber = "1000000000";
 	const myData = [
-		{ angle: 30, radius: 3.5, innerRadius: 2 },
+		{ angle: 30, radius: 3.3, innerRadius: 2 },
+		{ angle: 2, radius: 3.5, innerRadius: 2 },
 		{ angle: 20, radius: 3, innerRadius: 2 },
 		{ angle: 5, radius: 3, innerRadius: 2 },
 		{ angle: 5, radius: 3, innerRadius: 2 },
 		{ angle: 20, radius: 3, innerRadius: 2 },
 		{ angle: 20, radius: 3, innerRadius: 2 },
+		{ angle: 2, radius: 3.5, innerRadius: 2 },
 	];
 
 	return (<section className={styles.supplyLayout} id="supply">
@@ -34,8 +36,7 @@ const Supply = props => {
 					width={380}
 					height={380}
 					showLabels={true}
-					colorRange={['#FFE0D5', '#EA5B34', "#FFCFC0", "#FFC1AC", "#F9A285", "#F37B53"]}
-					padAngle={0.05} />
+					colorRange={['#ffffff', '#EA5B34', '#FFE0D5', "#FFCFC0", "#FFC1AC", "#F9A285", "#F37B53", '#ffffff']} />
 
 				<div className={styles.majorLabel} style={{
 					right: "-2rem",
