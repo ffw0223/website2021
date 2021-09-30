@@ -22,4 +22,5 @@
   right: 2rem;
   bottom: 5rem;
   cursor: pointer;
+  z-index: 200000;
 }

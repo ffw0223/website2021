@@ -42,8 +42,7 @@ const Footer = props => {
 			</div>
 
 			<div className={styles.card} style={{
-				textTransform: "capitalize",
-				minWidth: "206px"
+				textTransform: "capitalize"
 			}}>
 				<h3>{t("quickLinks")}</h3>
 				<div>{t("network")}</div>
@@ -60,17 +59,12 @@ const Footer = props => {
 				<div>Medium</div>
 			</div>
 
-			<div className={styles.card} style={{
-				width: "472px"
-			}}>
+			<div className={styles.card}>
 				<h3>{t("subscribe")}</h3>
 
 				<div>{t("subscribeInfo")}</div>
 
-				<div style={{
-					width: "100%",
-					position: "relative"
-				}}>
+				<div className={styles.inputContainer}>
 					<input
 						className={styles.inputMail}
 						onChange={handleInput} />

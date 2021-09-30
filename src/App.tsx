@@ -32,7 +32,7 @@ function App() {
       </Suspense>
     </BrowserRouter>
 
-    <div id="mainModalContainer"/>
+    <div id="mainModalContainer" />
   </>);
 }
 

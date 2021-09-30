@@ -30,7 +30,10 @@ const Supply = props => {
 				<div className={styles.infoBlock}>{t("supplyInfo")}</div>
 			</div>
 
-			<div style={{ position: "relative" }}>
+			<div style={{
+				scale: "0.9",
+				position: "relative"
+			}}>
 				<RadialChart
 					data={myData}
 					width={380}

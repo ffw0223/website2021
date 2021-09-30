@@ -42,44 +42,49 @@
 				color: black;
 			}
 
-			.inputMail {
-				border: 2px solid #969696;
-				box-shadow: 0px 3px 3px rgba(0, 6, 166, 0.12);
-				opacity: 0.65;
-				border-radius: 49px;
-				padding-top: 1rem;
-				padding-bottom: 1rem;
-				padding-left: 2rem;
-				padding-right: 9rem;
-				background-color: white;
-				outline: none;
-				font-size: 1rem;
-				width: calc(100% - 11.2rem);
-			}
+			.inputContainer {
+				width: 100%;
+				position: relative;
 
-			button:disabled {
-				filter: grayscale(100%);
-				opacity: 0.3;
-				pointer-events: none;
-			}
+				.inputMail {
+					border: 2px solid #969696;
+					box-shadow: 0px 3px 3px rgba(0, 6, 166, 0.12);
+					opacity: 0.65;
+					border-radius: 49px;
+					padding-top: 1rem;
+					padding-bottom: 1rem;
+					padding-left: 2rem;
+					padding-right: 9rem;
+					background-color: white;
+					outline: none;
+					font-size: 1rem;
+					width: calc(100% - 11.2rem);
+				}
 
-			.maxButton {
-				cursor: pointer;
-				background: #e56239;
-				border-radius: 100px;
-				text-transform: uppercase;
-				padding-left: 2rem;
-				padding-right: 2rem;
-				padding-top: 1.2rem;
-				padding-bottom: 1.2rem;
-				outline: none;
-				position: absolute;
-				right: 0;
-				top: 0;
-				border: none;
-				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-				font-weight: 400;
-				color: #ffffff;
+				button:disabled {
+					filter: grayscale(100%);
+					opacity: 0.3;
+					pointer-events: none;
+				}
+
+				.maxButton {
+					cursor: pointer;
+					background: #e56239;
+					border-radius: 100px;
+					text-transform: uppercase;
+					padding-left: 2rem;
+					padding-right: 2rem;
+					padding-top: 1.2rem;
+					padding-bottom: 1.2rem;
+					outline: none;
+					position: absolute;
+					right: 0;
+					top: 0;
+					border: none;
+					font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+					font-weight: 400;
+					color: #ffffff;
+				}
 			}
 		}
 	}
@@ -106,9 +111,10 @@
 			justify-content: center;
 			align-items: center;
 			row-gap: 2rem;
-			padding-bottom: 2rem;
+			padding-bottom: 6rem;
 			padding-left: 0;
 			padding-right: 0;
+			width: 100%;
 
 			.card {
 				justify-content: center;
