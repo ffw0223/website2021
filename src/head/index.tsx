@@ -151,9 +151,13 @@ function Head() {
                         {menu ? (<div
                           id={id}
                           className={classnames("item")}
-                          style={{ cursor: "pointer" }}
+                          style={{
+                            cursor: "pointer",
+                            display: "flex",
+                            alignItems: "center"
+                          }}
                           onClick={showMenu}>
-                          {name}&nbsp;
+                          {name}
                           <span className={classnames("language-arrow", {
                             top: isMenuShow,
                             bottom: !isMenuShow,
