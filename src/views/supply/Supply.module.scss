@@ -8,6 +8,7 @@
 	row-gap: 17px;
 	width: 100%;
 	margin-bottom: 159px;
+	font-size: 25px;
 
 	h2 {
 		color: #e56239;
@@ -27,6 +28,45 @@
 		margin-top: 122px;
 		width: 80%;
 
+		.majorLabel {
+			background: #ea5b34;
+			box-shadow: -1px 1px 1px rgba(135, 41, 0, 0.26);
+			border-radius: 6px;
+			font-size: 1rem;
+			color: white;
+			padding: 1rem 2rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			row-gap: 0.5rem;
+			position: absolute;
+		}
+
+		.thinLabel {
+			font-size: 1rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			row-gap: 0.5rem;
+			position: absolute;
+			max-width: 6rem;
+
+			.label {
+				font-family: Arial, Helvetica, sans-serif;
+				color: #565656;
+				font-size: 0.75rem;
+				text-align: center;
+			}
+
+			.subLabel {
+				background: #e5e9eb;
+				border-radius: 2px;
+				padding: 5px 1rem;
+			}
+		}
+
 		.leftBlock {
 			width: 50%;
 
@@ -40,7 +80,7 @@
 					font-size: 48px;
 					font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New";
 					background-color: #f37b53;
-					color: #E9E9E9;
+					color: #e9e9e9;
 					border-radius: 15px;
 					padding: 0.5rem;
 				}

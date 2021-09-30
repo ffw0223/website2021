@@ -7,12 +7,12 @@ const Supply = props => {
 	const { t } = useTranslation();
 	const theNumber = "1000000000";
 	const myData = [
-		{ angle: 30, radius: 3.5, innerRadius: 2, label: t("PLOSupply"), subLabel: '30%' },
-		{ angle: 20, radius: 3, innerRadius: 2, label: t("PLOReserve"), subLabel: '20%' },
-		{ angle: 5, radius: 3, innerRadius: 2, label: t("marketing"), subLabel: "5%" },
-		{ angle: 5, radius: 3, innerRadius: 2, label: t("devFund"), subLabel: "5%" },
-		{ angle: 20, radius: 3, innerRadius: 2, label: t("ecoSystemDevelopment"), subLabel: "20%" },
-		{ angle: 20, radius: 3, innerRadius: 2, label: t("liquidityMining"), subLabel: "20%" },
+		{ angle: 30, radius: 3.5, innerRadius: 2 },
+		{ angle: 20, radius: 3, innerRadius: 2 },
+		{ angle: 5, radius: 3, innerRadius: 2 },
+		{ angle: 5, radius: 3, innerRadius: 2 },
+		{ angle: 20, radius: 3, innerRadius: 2 },
+		{ angle: 20, radius: 3, innerRadius: 2 },
 	];
 
 	return (<section className={styles.supplyLayout} id="supply">
@@ -28,7 +28,7 @@ const Supply = props => {
 				<div className={styles.infoBlock}>{t("supplyInfo")}</div>
 			</div>
 
-			<div>
+			<div style={{ position: "relative" }}>
 				<RadialChart
 					data={myData}
 					width={380}
@@ -36,6 +36,54 @@ const Supply = props => {
 					showLabels={true}
 					colorRange={['#FFE0D5', '#EA5B34', "#FFCFC0", "#FFC1AC", "#F9A285", "#F37B53"]}
 					padAngle={0.05} />
+
+				<div className={styles.majorLabel} style={{
+					right: "-2rem",
+					top: "2rem"
+				}}>
+					<div>{t("PLOSupply")}</div>
+					<div>30%</div>
+				</div>
+
+				<div className={styles.thinLabel} style={{
+					right: "2rem",
+					bottom: 0
+				}}>
+					<div className={styles.label}>{t("PLOReserve")}</div>
+					<div className={styles.subLabel}>20%</div>
+				</div>
+
+				<div className={styles.thinLabel} style={{
+					right: "10rem",
+					bottom: "-1rem"
+				}}>
+					<div className={styles.label}>{t("marketing")}</div>
+					<div className={styles.subLabel}>5%</div>
+				</div>
+
+				<div className={styles.thinLabel} style={{
+					left: "5rem",
+					bottom: "0rem"
+				}}>
+					<div className={styles.label}>{t("devFund")}</div>
+					<div className={styles.subLabel}>5%</div>
+				</div>
+
+				<div className={styles.thinLabel} style={{
+					left: "-2.5rem",
+					bottom: "5rem"
+				}}>
+					<div className={styles.label}>{t("ecoSystemDevelopment")}</div>
+					<div className={styles.subLabel}>20%</div>
+				</div>
+
+				<div className={styles.thinLabel} style={{
+					left: "-1rem",
+					top: "4rem"
+				}}>
+					<div className={styles.label}>{t("liquidityMining")}</div>
+					<div className={styles.subLabel}>20%</div>
+				</div>
 			</div>
 		</div>
 	</section>);
