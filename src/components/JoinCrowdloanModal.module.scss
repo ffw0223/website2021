@@ -172,3 +172,36 @@
 		}
 	}
 }
+
+
+@media (max-width: 576px) {
+	.joinCrowdloanModalLayout {
+	
+		.modal {
+			font-size: 16px;
+			column-gap: 0;
+			padding: 1rem;
+			width: 80%;
+			background-image: none;
+	
+			.illustrationModal {
+				display: none;
+			}
+	
+			.modalLayout {
+				padding: 3rem 0;
+	
+				.content {
+					margin-top: 2rem;
+					max-width: none;
+	
+					.buttons {
+						justify-content: center;
+						width: 100%;
+						margin-top: 1rem;
+					}
+				}
+			}
+		}
+	}	
+}
