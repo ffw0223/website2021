@@ -12,6 +12,7 @@ const PopupMenu = props => {
 		if (props.menuItems) {
 			setTimeout(() => {
 				unmountComponentAtNode(document.getElementById("modalContainer"));
+				return props.hide();
 			}, 3000);
 		}
 	}, [props.menuItems])

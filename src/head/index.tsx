@@ -107,7 +107,11 @@ function Head() {
     const dom = event.target;
     const menuData: any = head.navs.find(nav => (nav.id === dom.id))?.menu;
     const rect = dom.getBoundingClientRect();
-    const theModal = <PopupMenu menuItems={menuData.menuItems} left={rect.x} top={rect.y + dom.offsetHeight + document.documentElement.scrollTop + 5} />;
+    const theModal = <PopupMenu
+      menuItems={menuData.menuItems}
+      hide={() => setIsMenuShow(false)}
+      left={rect.x}
+      top={rect.y + dom.offsetHeight + document.documentElement.scrollTop + 5} />;
     render(theModal, document.getElementById("modalContainer"))
   }
 
@@ -146,10 +150,14 @@ function Head() {
                       <li key={id || index}>
                         {menu ? (<div
                           id={id}
-                          className={classnames("item", { active })}
+                          className={classnames("item")}
                           style={{ cursor: "pointer" }}
                           onClick={showMenu}>
-                          {name}
+                          {name}&nbsp;
+                          <span className={classnames("language-arrow", {
+                            top: isMenuShow,
+                            bottom: !isMenuShow,
+                          })} />
                         </div>) : (<a
                           className={classnames("item", { active, highlight: id === "apps" })}
                           href={target ? target : "#" + id}
