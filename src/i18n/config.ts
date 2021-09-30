@@ -5,7 +5,7 @@ export const resources = {
       supply: "supply",
       deposit: "deposit",
       crowdloan: "crowdloan",
-      app: "app",
+      apps: "apps",
       descriptionHomePage: "The only on-chain Oracle of KusamaCanary Network of Ares Protocol",
       joinCrowdloan: "join the crowdloan",
       aboutMars: "Mars is a canary network built by Ares Protocol on Kusama. It will conduct some contract call tests on asset prices. It will provide Kusama with a native Oracle system and bring a better Oracle service to DeFi developers.",

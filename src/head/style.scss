@@ -137,6 +137,12 @@
                   border: 2px solid #ffffff;
                 }
               }
+
+              &.highlight {
+                background: linear-gradient(143deg, #ffcc7b 0%, #fea45a 100%);
+                border-radius: 34px;
+                padding: 0.65rem 2rem;
+              }
             }
           }
 

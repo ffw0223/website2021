@@ -48,8 +48,8 @@ function Head() {
         target: ""
       },
       {
-        name: t("app"),
-        id: "app",
+        name: t("apps"),
+        id: "apps",
         menu: null,
         target: "https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fgladios.aresprotocol.io/#/explorer"
       }
@@ -148,10 +148,14 @@ function Head() {
                           id={id}
                           className={classnames("item", { active })}
                           style={{ cursor: "pointer" }}
-                          onClick={showMenu}>{name}</div>) : (<a
-                            className={classnames("item", { active })}
-                            href={target ? target : "#" + id}
-                            rel="noreferrer">{name}</a>)}
+                          onClick={showMenu}>
+                          {name}
+                        </div>) : (<a
+                          className={classnames("item", { active, highlight: id === "apps" })}
+                          href={target ? target : "#" + id}
+                          rel="noreferrer">
+                          {name}
+                        </a>)}
                       </li>
                     );
                   })}
