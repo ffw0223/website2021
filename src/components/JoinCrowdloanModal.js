@@ -19,7 +19,7 @@ const JoinCrowdloanModal = props => {
 
 	const handleConnect = async event => {
 		const allInjected = await web3Enable("mars");
-		const accounts = await web3Accounts();
+		const accounts = await web3Accounts({ ss58Format: 2 });
 		setAccount(accounts[0]);
 
 		const { data: balance } = await api.query.system.account(accounts[0].address);
