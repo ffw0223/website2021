@@ -33,6 +33,16 @@
       width: 75%;
     }
     .video-mask {
+      &::after{
+        content: '+';
+        transform: rotate(45deg);
+        font-size: 48px;
+        color: #fff;
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        cursor: pointer;
+      }
       display: block;
       z-index: 102;
       position: absolute;
@@ -48,11 +58,20 @@
     width: 919px;
     z-index: 1;
     height: 1071px;
-    cursor: pointer;
     // background: url('../assets/earth.svg') no-repeat;
     position: absolute;
     top: 150px;
     right: 0;
+    .video-button {
+      top: 625px;
+      margin-left: -50px;
+      cursor: pointer;
+      position: absolute;
+      z-index: 2;
+      width: 120px;
+      height: 120px;
+      display: inline-block;
+    }
   }
 
   .head-top {
@@ -101,14 +120,14 @@
               margin-left: 42px;
               display: flex;
               align-items: center;
-              &.Apps{
+              &.Apps {
                 width: 132px;
                 font-size: 25px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 height: 53px;
-                background: linear-gradient(126deg, #3075F2 0%, #333FDF 100%);
+                background: linear-gradient(126deg, #3075f2 0%, #333fdf 100%);
                 border-radius: 34px;
               }
               &:not(.Apps):hover,
@@ -144,7 +163,8 @@
               }
             }
             .nav-child {
-              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen';
+              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                "Roboto", "Oxygen";
               position: absolute;
               left: 0;
               top: 45px;
@@ -165,7 +185,7 @@
                 font-size: 23px;
                 font-weight: 600;
                 color: #1195f0;
-                &.aresProtocol{
+                &.aresProtocol {
                   width: 166px;
                 }
                 &:not(:first-child) {
@@ -245,7 +265,7 @@
       line-height: 57px;
       color: #1195f0;
       font-size: 22px;
-      a{
+      a {
         text-decoration: none;
         color: #1195f0;
         font-size: 22px;
@@ -556,7 +576,15 @@
     transform: rotate(360deg);
   }
 }
-.cn .head .head-top .head-top-nav .nav .nav-right .list .nav-child .nav-child-item.aresProtocol{
+.cn
+  .head
+  .head-top
+  .head-top-nav
+  .nav
+  .nav-right
+  .list
+  .nav-child
+  .nav-child-item.aresProtocol {
   width: auto;
 }
 @keyframes pulsePrimary {

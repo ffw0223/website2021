@@ -44,7 +44,7 @@ function Head() {
       "ARES Official ERC-20 Contract is 0x358AA737e033F34df7c54306960a38d09AaBd523"
     ),
     topTip_m: "ARES Official ERC-20 Contract is 0x358A...Bd523",
-    desc: t("$ARES A Decentralized Cross-Chain Oracle Service Protocol"),
+    desc: t("ARES A Decentralized Cross-Chain Oracle Service Protocol"),
     farmsUrl: "https://trojan.aresprotocol.io/",
     farmBtnText: t("Farms"),
     uniswapUrl:
@@ -64,7 +64,7 @@ function Head() {
           },
           {
             name: t("Mars"),
-            url: "",
+            url: "https://www.aresprotocol.io/mars",
           },
         ],
       },
@@ -214,7 +214,9 @@ function Head() {
           <div className="head-top-address">
             {addressSwitch ? (
               <h2 className="address">
-                <a href={`https://etherscan.io/token/0x358AA737e033F34df7c54306960a38d09AaBd523`}>
+                <a
+                  href={`https://etherscan.io/token/0x358AA737e033F34df7c54306960a38d09AaBd523`}
+                >
                   {phone ? head.topTip_m : head.topTip}
                 </a>
                 <span
@@ -440,10 +442,12 @@ function Head() {
         </div>
 
         <header className="head-con">
-          <div
-            className="video-img"
-            onClick={() => setVedioStauts(!vedioSwich)}
-          ></div>
+          <div className="video-img">
+            <span
+              className="video-button"
+              onClick={() => setVedioStauts(!vedioSwich)}
+            ></span>
+          </div>
           <div className="head-content">
             <div className="head-warp">
               <p className="content-desc">{head.desc}</p>
