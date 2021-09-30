@@ -66,6 +66,8 @@ const JoinCrowdloanModal = props => {
 	return (<div className={styles.joinCrowdloanModalLayout}>
 		<div className={styles.modal}>
 			<div className={styles.modalLayout}>
+				<div className={styles.closeButton} onClick={handleCancel}>⤫</div>
+
 				<h3>{t("contributeNow")}</h3>
 
 				<div className={styles.content} >
