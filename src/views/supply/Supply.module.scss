@@ -28,34 +28,22 @@
 		margin-top: 122px;
 		width: 80%;
 
-		.majorLabel {
-			background: #ea5b34;
-			box-shadow: -1px 1px 1px rgba(135, 41, 0, 0.26);
-			border-radius: 6px;
-			font-size: 1rem;
-			color: white;
-			padding: 1rem 2rem;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			row-gap: 0.5rem;
-			position: absolute;
-		}
-
 		.thinLabel {
+			border-radius: 6px;
+			margin: 0 1rem;
+			padding: 1rem 2rem;
 			font-size: 1rem;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			row-gap: 0.5rem;
+			row-gap: 0.3rem;
 			position: absolute;
 			max-width: 6rem;
+			color: #565656;
 
 			.label {
 				font-family: Arial, Helvetica, sans-serif;
-				color: #565656;
 				font-size: 0.75rem;
 				text-align: center;
 			}

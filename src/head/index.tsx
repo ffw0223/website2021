@@ -262,10 +262,16 @@ function Head() {
 
                 <div id="animatePlayer" className="illustration" />
 
-                <div className="floatBlock">
-                  <img src="/images/thumb1.png" height="190px" />
+                <div style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center"
+                }}>
+                  <div className="floatBlock">
+                    <img src="/images/thumb1.png" height="190px" />
 
-                  <div>{t("aboutMars")}</div>
+                    <div>{t("aboutMars")}</div>
+                  </div>
                 </div>
               </div>
             </div>

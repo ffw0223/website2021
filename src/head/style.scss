@@ -199,19 +199,19 @@
       // background-repeat: no-r
       margin: 0 auto;
       // width: 1920px;
-      // height: 1260px;
+      height: 1019px;
       text-align: left;
 
       .head-warp {
         position: relative;
         max-width: 1680px;
         margin: 0 auto;
+        height: 100%;
 
         .illustration {
           position: absolute;
-          width: 500px;
-          height: 500px;
-          top: 150px;
+          width: 60%;
+          top: 270px;
           right: 0;
           z-index: 0;
         }
@@ -221,7 +221,7 @@
           // padding-top: 338px;
           // width: 922px;
           // height: 144px;
-          height: 100vh;
+          height: 100%;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -231,7 +231,7 @@
 
           .content {
             z-index: 100;
-            width: 60%;
+            width: 650px;
             font-size: 36px;
             font-weight: bold;
             line-height: 48px;
@@ -263,7 +263,7 @@
             border-radius: 17px;
             position: absolute;
             max-width: 80%;
-            top: 600px;
+            top: 925px;
             z-index: 200;
             font-size: 25px;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -597,7 +597,12 @@
               width: 100%;
               font-weight: bold;
               text-align: center;
-              margin-top: 10rem;
+              margin-top: -10rem;
+              font-size: 25px;
+            }
+            
+            .button {
+              font-size: 1rem;
             }
 
             .floatBlock {
