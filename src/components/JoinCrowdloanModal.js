@@ -20,10 +20,14 @@ const JoinCrowdloanModal = props => {
 		const allInjected = await web3Enable("mars");
 		const accounts = await web3Accounts({ ss58Format: 2 });
 		setAccounts(accounts)
-		setAccount(accounts[0]);
+		setAccount(accounts[0].address);
 
 		const { data: balance } = await api.query.system.account(accounts[0].address);
 		setBalance(balance.free)
+	}
+
+	const handleChange = event => {
+		setAccount(event.target.value);
 	}
 
 	const handleCancel = event => {
@@ -31,7 +35,7 @@ const JoinCrowdloanModal = props => {
 	}
 
 	const handleSubmit = async event => {
-		const SENDER = account.address;
+		const SENDER = account;
 		const injector = await web3FromAddress(SENDER)
 		api.tx.crowdloan.contribute(0, inputValue.toFixed(), null)
 			.signAndSend(SENDER, { signer: injector.signer }, status => {
@@ -72,7 +76,9 @@ const JoinCrowdloanModal = props => {
 
 				{/* <div className={styles.lightButton}>{account.address.substr(0, 10) + "..."}</div> */}
 				<div className={styles.content} >
-					{account ? (<select className={styles.lightButton}>
+					{account ? (<select
+						onChange={handleChange}
+						className={styles.lightButton}>
 						{accounts.map(item => (<option key={item.address} value={item.address}>{item.meta.name}</option>))}
 					</select>) : (isConnected ? (<button
 						className={styles.lightButton}
