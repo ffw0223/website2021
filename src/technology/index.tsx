@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./style.scss";
 import "./style1280.scss";
+import "./style428.scss";
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 import technology1Png from "../assets/technology1.png";

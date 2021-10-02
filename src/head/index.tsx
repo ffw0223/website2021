@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./style.scss";
 import "./style1280.scss";
-// import "./style428.scss";
+import "./style428.scss";
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 import vedio from "../assets/vedio.mp4";
@@ -155,6 +155,7 @@ function Head() {
     volumeText: t("Volume"),
   };
   const [addressSwitch, setAddressSwitch] = useState(true);
+  const [mNav, setmNavSwitch] = useState(false);
   const [languageStatus, setlanguageStatus] = useState(false);
   const [scrollTop, setScroll] = useState(0);
   const [phone, setPhone] = useState(false);
@@ -185,16 +186,11 @@ function Head() {
   useEffect(() => {
     const isPhone =
       (document?.documentElement?.clientWidth || document?.body?.clientWidth) <=
-      990;
+      1279;
     isPhone && setPhone(isPhone);
     setScroll(
       document?.documentElement?.scrollTop || document?.body?.scrollTop
     );
-    if (phone) {
-      document.write(
-        `<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">`
-      );
-    }
     window.onscroll = () => {
       setScroll(
         document?.documentElement?.scrollTop || document?.body?.scrollTop
@@ -229,7 +225,19 @@ function Head() {
             ) : null}
           </div>
           {phone ? (
-            <div className=""></div>
+            <div className="mNav-warp">
+              <div className="mNav">
+                <a href="/" className="mlogo">
+                  <img src={logoImg} alt="" />
+                </a>
+                <div
+                  className="mnavbutton-con"
+                  onClick={() => setmNavSwitch(true)}
+                >
+                  <span className="mnavbutton">-</span>
+                </div>
+              </div>
+            </div>
           ) : (
             <div className="head-top-nav">
               <div className="nav">
@@ -440,9 +448,218 @@ function Head() {
             </div>
           )}
         </div>
+        {mNav ? (
+          <div className={classnames("mNav-con", { isAddress: addressSwitch })}>
+            <div className="mNav-list">
+              <ul className="list">
+                {head.navs.map((nav, index) => {
+                  const {
+                    children,
+                    name,
+                    url,
+                    id,
+                    minScrollTop,
+                    maxScrollTop,
+                    minScrollTop1280,
+                    maxScrollTop1280,
+                  } = nav as any;
+                  let active = null;
+                  if (
+                    document.body.clientWidth >= 1280 &&
+                    document.body.clientWidth <= 1679
+                  ) {
+                    active =
+                      minScrollTop1280 &&
+                      scrollTop >= minScrollTop1280 &&
+                      maxScrollTop1280 &&
+                      scrollTop < maxScrollTop1280;
+                  } else {
+                    active =
+                      minScrollTop &&
+                      scrollTop >= minScrollTop &&
+                      maxScrollTop &&
+                      scrollTop < maxScrollTop;
+                  }
+                  return (
+                    <li key={id || index}>
+                      {children ? (
+                        <div className="item">
+                          <div className="nav-child-left">
+                            <span
+                              className="nav-child-text"
+                              onClick={() =>
+                                setNavChildActive(
+                                  navChildActive === index ? null : index
+                                )
+                              }
+                            >
+                              {name}
+                            </span>
+                            <span
+                              onClick={() =>
+                                setNavChildActive(
+                                  navChildActive === index ? null : index
+                                )
+                              }
+                              className={classnames("nav-child-arrow", {
+                                top: navChildActive === index,
+                                bottom: navChildActive !== index,
+                              })}
+                            ></span>
+                          </div>
+                          {navChildActive === index ? (
+                            <div className="nav-child">
+                              {children.map((sNav: any, sindex: number) => {
+                                const {
+                                  name,
+                                  url,
+                                  id,
+                                  className,
+                                  minScrollTop,
+                                  maxScrollTop,
+                                  minScrollTop1280,
+                                  maxScrollTop1280,
+                                } = sNav as any;
+                                let active = null;
+                                if (
+                                  document.body.clientWidth >= 1280 &&
+                                  document.body.clientWidth <= 1679
+                                ) {
+                                  active =
+                                    minScrollTop1280 &&
+                                    scrollTop >= minScrollTop1280 &&
+                                    maxScrollTop1280 &&
+                                    scrollTop < maxScrollTop1280;
+                                } else {
+                                  active =
+                                    minScrollTop &&
+                                    scrollTop >= minScrollTop &&
+                                    maxScrollTop &&
+                                    scrollTop < maxScrollTop;
+                                }
+                                return (
+                                  <a
+                                    key={`${index}${sindex}`}
+                                    className={classnames(
+                                      "nav-child-item",
+                                      className,
+                                      {
+                                        active,
+                                      }
+                                    )}
+                                    href={url}
+                                    target={
+                                      url?.[0] === "#" ? "_self" : "_blank"
+                                    }
+                                    rel="noreferrer"
+                                  >
+                                    {name}
+                                  </a>
+                                );
+                              })}
+                            </div>
+                          ) : null}
+                        </div>
+                      ) : (
+                        <a
+                          className={classnames("item", id, {
+                            active,
+                          })}
+                          href={url}
+                          target={url?.[0] === "#" ? "_self" : "_blank"}
+                          rel="noreferrer"
+                        >
+                          {name}
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+              <div className="language">
+                <p className="language-name">
+                  <span
+                    className={classnames("one", {
+                      isShowLanguage: languageStatus,
+                    })}
+                    onClick={(e) => {
+                      setlanguageStatus(!languageStatus);
+                      if ((e.target as any).innerText === "EN") {
+                        head.language.localIndex = 0;
+                      } else {
+                        head.language.localIndex = 1;
+                      }
+                      const language =
+                        head.language.select[head.language.localIndex].name;
+                      setlanguage(language);
+                      document
+                        .querySelector("#root")
+                        ?.setAttribute(
+                          "class",
+                          head.language.select[head.language.localIndex].id
+                        );
+                      setlanguageStatus(!languageStatus);
+                      i18n.changeLanguage(
+                        head.language.select[head.language.localIndex].id
+                      );
+                    }}
+                  >
+                    {language === "EN" ? "EN" : "CN"}
+                  </span>
+                  {languageStatus ? (
+                    <span
+                      className="two"
+                      onClick={(e) => {
+                        setlanguageStatus(!languageStatus);
+                        if ((e.target as any).innerText === "EN") {
+                          head.language.localIndex = 0;
+                        } else {
+                          head.language.localIndex = 1;
+                        }
+                        const language =
+                          head.language.select[head.language.localIndex].name;
+                        document
+                          .querySelector("#root")
+                          ?.setAttribute(
+                            "class",
+                            head.language.select[head.language.localIndex].id
+                          );
 
+                        setlanguage(language);
+                        setlanguageStatus(!languageStatus);
+                        i18n.changeLanguage(
+                          head.language.select[head.language.localIndex].id
+                        );
+                      }}
+                    >
+                      {language === "EN" ? "CN" : "EN"}
+                    </span>
+                  ) : null}
+                </p>
+                <span
+                  onClick={(e) => {
+                    setlanguageStatus(!languageStatus);
+                  }}
+                  className={classnames("language-arrow", {
+                    top: languageStatus,
+                    bottom: !languageStatus,
+                  })}
+                ></span>
+              </div>
+            </div>
+            <span className="mNav-close" onClick={() => setmNavSwitch(false)}>
+              +
+            </span>
+          </div>
+        ) : null}
         <header className="head-con">
-          <div className="video-img">
+          <div
+            className={classnames(
+              "video-img",
+              { isNoAddress: !addressSwitch },
+              { fixed: !!scrollTop }
+            )}
+          >
             <span
               className="video-button"
               onClick={() => setVedioStauts(!vedioSwich)}
@@ -470,7 +687,14 @@ function Head() {
                 </a>
               </p>
               <div className="substrat">
-                <img className="substratLogo" src={parityImg} alt="" />
+                {document?.documentElement?.clientWidth ||
+                document?.body?.clientWidth ? (
+                  <div className="substratLogo-con">
+                    <img className="substratLogo" src={parityImg} alt="" />
+                  </div>
+                ) : (
+                  <img className="substratLogo" src={parityImg} alt="" />
+                )}
                 <span className="parity">{head.parity}</span>
                 <a
                   className="substrateBtnText"
@@ -510,7 +734,13 @@ function Head() {
           }}
         />
       </section>
-      <section className={classnames("usd", { topClose: !addressSwitch })}>
+      <section
+        className={classnames(
+          "usd",
+          { topClose: !addressSwitch },
+          { fixed: !!scrollTop }
+        )}
+      >
         <ul className="usd-con">
           <li className="usd-logo">
             <img src={aresLogoImg} alt="" />

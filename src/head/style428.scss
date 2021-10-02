@@ -1,28 +1,53 @@
-@media only screen and (max-width: 990px) {
-  #root.cn .parity{
-    width: 282* 0.76190476px;
+@media only screen and (max-width: 1279px) {
+  .cn .head .head-con .head-content .head-warp .substrat .substratLogo{
+    right: -30px;
   }
-  #root.cn .join .btn-con .btn span{
-    padding-left: 110* 0.76190476px;
+  .head .head-top-address .address a {
+    font-size: 16px;
   }
+  .head .head-con .head-content-line{
+    top: -290px;
+  }
+  .head .video-img.isNoAddress {
+    top: 533px;
+  }
+
+  .head .video-img .video-button {
+    top: 250px;
+  }
+  .head .head-con .head-content .head-warp .substrat {
+    flex-wrap: wrap;
+  }
+  #root.cn .parity {
+    width: 282 * 0.55864198px;
+  }
+  #root.cn .join .btn-con .btn span {
+    padding-left: 110 * 0.55864198px;
+  }
+  
   .head {
     .video-img {
-      width: 919 * 0.76190476px;
-      height: 1071 * 0.76190476px;
-      top: 171 * 0.76190476px;
+      width: 428px;
+      height: 1071 * 0.55864198px;
+      top: 590px;
+      left: 50%;
+      transform: translateX(-50%) scale(1.18);
+      &.fixed {
+        top: 543px;
+      }
     }
     .head-top {
-      margin-bottom: -196 * 0.76190476px;
+      margin-bottom: -210 * 0.55864198px;
       .head-top-nav {
-        height: 139 * 0.76190476px;
+        height: 139 * 0.55864198px;
         .nav {
-          width: 375px;
-          padding-top: 33 * 0.76190476px;
+          width: 428px;
+          padding-top: 33 * 0.55864198px;
 
           .nav-left {
             img {
-              width: 309 * 0.76190476px;
-              height: 72 * 0.76190476px;
+              width: 309 * 0.55864198px;
+              height: 72 * 0.55864198px;
             }
           }
 
@@ -35,7 +60,7 @@
                 &:hover,
                 &.active {
                   &::after {
-                    bottom: -10 * 0.76190476px;
+                    bottom: -10 * 0.55864198px;
                   }
                 }
               }
@@ -45,27 +70,27 @@
               margin-left: 20px;
 
               .language-name {
-                font-size: 25 * 0.76190476px;
+                font-size: 25 * 0.55864198px;
                 .one {
                   &.isShowLanguage {
-                    top: 13 * 0.76190476px;
+                    top: 13 * 0.55864198px;
                   }
                 }
                 .two {
-                  top: 20 * 0.76190476px;
+                  top: 20 * 0.55864198px;
                 }
               }
 
               .language-arrow {
-                height: 40 * 0.76190476px;
-                width: 20 * 0.76190476px;
-                margin-left: 5 * 0.76190476px;
+                height: 40 * 0.55864198px;
+                width: 20 * 0.55864198px;
+                margin-left: 5 * 0.55864198px;
               }
 
               .language-select {
-                top: 35 * 0.76190476px;
-                width: 100 * 0.76190476px;
-                padding: 10 * 0.76190476px;
+                top: 35 * 0.55864198px;
+                width: 100 * 0.55864198px;
+                padding: 10 * 0.55864198px;
               }
             }
           }
@@ -74,19 +99,19 @@
     }
     .head-top-address {
       .address {
-        width: 375px;
+        width: 428px;
         margin: 0 auto;
         line-height: 57px;
         font-size: 16px;
 
         .close {
-          right: 16 * 0.76190476px;
+          right: -10px;
 
           &::after {
-            width: 16 * 0.76190476px;
-            top: 2 * 0.76190476px;
-            font-size: 33 * 0.76190476px;
-            height: 16 * 0.76190476px;
+            width: 16 * 0.55864198px;
+            top: 5.1px;
+            font-size: 33 * 0.55864198px;
+            height: 16 * 0.55864198px;
           }
         }
       }
@@ -94,66 +119,77 @@
 
     .head-con {
       .head-content {
-        width: 1280px;
-        height: 1260 * 0.76190476px;
+        width: 428px;
+        height: 1000px;
         background-size: 1280px;
 
         &::before {
-          width: 0;
+          width: 2px;
         }
 
         .head-warp {
-          width: 375px;
+          width: 428px;
 
           .content-desc {
-            padding-bottom: 36 * 0.76190476px;
-            padding-top: 338 * 0.76190476px;
-            width: 922 * 0.76190476px;
-            height: 144 * 0.76190476px;
-            font-size: 54 * 0.76190476px;
-            line-height: 72 * 0.76190476px;
-            text-shadow: 0px 3 * 0.76190476px 6 * 0.76190476px
+            padding-bottom: 52px;
+            padding-top: 338 * 0.55864198px;
+            width: 428px;
+            height: 110px;
+            font-size: 30px;
+            text-align: center;
+            line-height: 72 * 0.55864198px;
+            text-shadow: 0px 3 * 0.55864198px 6 * 0.55864198px
               rgba(0, 22, 221, 0.23);
           }
 
           .content-btn {
-            margin-bottom: 132 * 0.76190476px;
-
+            margin-bottom: 48px;
+            text-align: center;
             .farmBtnText {
-              margin-right: 18 * 0.76190476px;
+              margin-right: 18 * 0.55864198px;
             }
 
             a {
-              width: 190 * 0.76190476px;
-              line-height: 64 * 0.76190476px;
-              box-shadow: 0px 3 * 0.76190476px 3 * 0.76190476px
+              width: 148px;
+              line-height: 44px;
+              box-shadow: 0px 3 * 0.55864198px 3 * 0.55864198px
                 rgba(0, 6, 166, 0.12);
-              border-radius: 32 * 0.76190476px;
-              font-size: 26 * 0.76190476px;
+              border-radius: 32 * 0.55864198px;
+              font-size: 18px;
             }
           }
 
           .substrat {
+            .substratLogo-con {
+              width: 100%;
+            }
             .substratLogo {
-              width: 259 * 0.76190476px;
-              height: 117 * 0.76190476px;
+              position: relative;
+              right: -100px;
+              width: 129px;
+              height: 58px;
+              display: block;
             }
 
             .parity {
-              width: 228 * 0.76190476px;
-              height: 56 * 0.76190476px;
-              font-size: 24 * 0.76190476px;
-              line-height: 24 * 0.76190476px;
-              margin-right: 10 * 0.76190476px;
+              width: 228x;
+              height: 56 * 0.55864198px;
+              font-size: 18px;
+              font-weight: bold;
+              line-height: 24px;
+              margin-right: 17px;
             }
 
             .substrateBtnText {
-              width: 165 * 0.76190476px;
-              line-height: 56 * 0.76190476px;
-              box-shadow: 0px 3 * 0.76190476px 3 * 0.76190476px
+              width: 158px;
+              line-height: 43px;
+              box-shadow: 0px 3 * 0.55864198px 3 * 0.55864198px
                 rgba(0, 27, 162, 0.12);
-              border-radius: 28 * 0.76190476px;
-              font-size: 27 * 0.76190476px;
+              border-radius: 43px;
+              font-size: 18px;
+              font-weight: bold;
+              position: relative;
+              bottom: -15px;
             }
           }
         }
@@ -162,84 +198,98 @@
   }
 
   .usd {
-    &.topClose {
-      top: 927 * 0.76190476px;
+    &.fixed{
+      top: 946px;
     }
-
-    width: 1640 * 0.76190476px;
-    height: 196 * 0.76190476px;
-    top: 710px;
-    margin-left: -820 * 0.76190476px;
-    box-shadow: 7 * 0.76190476px 18 * 0.76190476px 37 * 0.76190476px
+    &.topClose {
+      top: 946px;
+    }
+    width: 374px;
+    height: 198px;
+    top: 975px;
+    margin-left: -180px;
+    box-shadow: 7 * 0.55864198px 18 * 0.55864198px 37 * 0.55864198px
       rgba(29, 31, 117, 0.25);
-    border-radius: 20 * 0.76190476px;
+    border-radius: 20 * 0.55864198px;
 
     .usd-con {
-      padding-left: 50 * 0.76190476px;
-      padding-top: 54 * 0.76190476px;
+      flex-wrap: wrap;
+      padding-left: 16px;
+      padding-top: 25px;
 
       .usd-logo {
         img {
-          width: 88.76 * 0.76190476px;
-          height: 88.76 * 0.76190476px;
+          width: 88.76 * 0.55864198px;
+          height: 88.76 * 0.55864198px;
         }
       }
 
       .usd-usd {
-        margin-left: 38 * 0.76190476px;
+        margin-left: 38 * 0.55864198px;
 
         .usd-name {
-          font-size: 20 * 0.76190476px;
+          font-size: 20 * 0.55864198px;
         }
 
         .usd-price {
-          font-size: 50 * 0.76190476px;
+          font-size: 27px;
         }
 
         .usd-currency {
-          margin-left: 10 * 0.76190476px;
-          font-size: 30 * 0.76190476px;
+          margin-left: 10 * 0.55864198px;
+          font-size: 30 * 0.55864198px;
         }
       }
 
       .verticalBar {
         &:after {
-          left: -50 * 0.76190476px;
-          height: 61 * 0.76190476px;
+          left: -20 * 0.55864198px;
+          height: 61 * 0.55864198px;
         }
       }
-
       .usd-point {
-        margin-left: 100 * 0.76190476px;
-        font-size: 40 * 0.76190476px;
-        line-height: 53 * 0.76190476px;
-
+        margin-left: 100 * 0.55864198px;
+        font-size: 23px;
+        line-height: 53 * 0.55864198px;
+        &::after {
+          left: -20px;
+        }
         .usd-direction {
-          margin-left: 8 * 0.76190476px;
-          border-left: 8.7 * 0.76190476px solid transparent;
-          border-right: 8.7 * 0.76190476px solid transparent;
-          border-bottom: 8.7 * 0.76190476px solid #55aa55;
+          margin-left: 8 * 0.55864198px;
+          border-left: 8.7 * 0.55864198px solid transparent;
+          border-right: 8.7 * 0.55864198px solid transparent;
+          border-bottom: 8.7 * 0.55864198px solid #55aa55;
         }
       }
 
       .usd-rank {
-        margin-left: 108 * 0.76190476px;
+        align-items: flex-start;
+        margin-left: 0px;
+        margin-top: 43px;
+        &::after {
+          content: none;
+        }
       }
 
       .usd-text {
-        font-size: 20 * 0.76190476px;
+        font-size: 12px;
+        margin-bottom: 10px;
       }
 
       .usd-value {
-        font-size: 35 * 0.76190476px;
+        font-size: 20px;
       }
 
       .usd-marketCap {
-        margin-left: 108 * 0.76190476px;
+        margin-top: 43px;
+        align-items: flex-start;
+        margin-left: 20px;
       }
 
       .usd-volume {
-        margin-left: 108 * 0.76190476px;
+        margin-top: 43px;
+        align-items: flex-start;
+        margin-left: 20px;
       }
     }
   }

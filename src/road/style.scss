@@ -1,6 +1,120 @@
 .road {
   background: rgba($color: #a9b5bd, $alpha: 0.3);
   padding-bottom: 118px;
+  &.m {
+    margin: 0 auto;
+    padding-bottom: 67px;
+    .warp::after {
+      content: none;
+    }
+    .desc {
+      margin-bottom: 50px;
+    }
+    .warp .item .road-info{
+      border-radius: 6px;
+    }
+    .warp .item .road-title {
+      position: relative;
+      left: -35px;
+    }
+    .warp .item .road-info{
+      margin-top: 40px;
+    }
+     .warp .item .road-info{
+      margin-left: 27px;
+    }
+     .warp .item .road-info img{
+      left: 120px;
+    }
+     .warp .item .road-text{
+      width: 317px;
+      margin:0 auto;
+    }
+    .road-con {
+      box-sizing: border-box;
+      padding: 0 27px;
+      width: 428px;
+    }
+    .warp {
+      flex: none;
+    }
+    .team-con {
+      width: 100%;
+    }
+    .warp .item {
+      overflow: hidden;
+    }
+    .warp .item .road-title span {
+      width: 63px;
+      height: 35px;
+      line-height: 35px;
+    }
+    .swiper-button-prev,
+    .swiper-container-rtl .swiper-button-next {
+      background-image: none;
+      left: -20px;
+      top: 60%;
+      &::after{
+        content: '<';
+        position: absolute;
+        font-size: 20px;
+        transform: scaleY(2);
+        display: inline-block;
+        width: 20px;
+        height: 40px;
+        color: #2EE6DB;
+        font-weight: bold;
+        right: 0;
+        top: 0;
+      }
+    }
+
+    .swiper-button-next,
+    .swiper-container-rtl .swiper-button-prev {
+      background-image: none;
+      right: -20px;
+      top: 60%;
+      &::after{
+        content: '>';
+        position: absolute;
+        font-size: 20px;
+        transform: scaleY(2);
+        display: inline-block;
+        width: 20px;
+        height: 40px;
+        color: #2EE6DB;
+        font-weight: bold;
+        right: 0;
+        top: 0;
+      }
+    }
+    .swiper-pagination-team {
+      position: absolute;
+      transform: translate(-50%) scale(0.75);
+      left: 50%;
+      z-index: 1;
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        opacity: 0.4;
+        margin-left: 12px;
+        background: #1d1f75;
+        &.swiper-pagination-bullet-active {
+          opacity: 1;
+        }
+      }
+    }
+    .warp .item .road-title {
+      font-size: 24px;
+    }
+    .warp .item .road-text {
+      margin-top: 10px;
+      float: none;
+    }
+    .warp .item .road-text p {
+      font-size: 15px;
+    }
+  }
   .road-con {
     width: 1640px;
     margin: 0 auto;

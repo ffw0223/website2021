@@ -1,4 +1,229 @@
 .head {
+  .language {
+    cursor: pointer;
+    margin-left: 60px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .language-name {
+      font-size: 25px;
+      display: flex;
+      flex-direction: column;
+      .one {
+        position: relative;
+        color: #ffffff;
+        &.isShowLanguage {
+          top: 13px;
+        }
+      }
+      .two {
+        position: relative;
+        color: #ffffff;
+        top: 20px;
+        &:hover {
+          color: #1d1f75;
+        }
+      }
+    }
+
+    .language-arrow {
+      height: 40px;
+      width: 20px;
+      margin-left: 5px;
+      display: inline-block;
+      background: url("../assets/left.png") no-repeat;
+
+      &.top {
+        transition: all 0.5s;
+        transform: rotate(90deg) scale(0.5);
+      }
+
+      &.bottom {
+        transition: all 0.5s;
+        transform: rotate(270deg) scale(0.5);
+      }
+    }
+
+    .language-select {
+      position: absolute;
+      top: 35px;
+      right: 0;
+      width: 100px;
+      padding: 10px;
+      outline: none;
+      border: none;
+    }
+  }
+  .nav-child-arrow {
+    height: 40px;
+    width: 20px;
+    margin-left: 5px;
+    display: inline-block;
+    background: url("../assets/left.png") no-repeat;
+
+    &.top {
+      transition: all 0.5s;
+      transform: rotate(90deg) scale(0.5);
+    }
+
+    &.bottom {
+      transition: all 0.5s;
+      transform: rotate(270deg) scale(0.5);
+    }
+  }
+  .mNav-warp{
+    background: #1195f0;
+  }
+  .mNav-con {
+    width: 428px;
+    left: 50%;
+    margin-left: -214px;
+    z-index: 1000;
+    background: #1195f0;
+    box-shadow: 0px 3px 17px rgba(0, 16, 125, 0.37);
+    opacity: 0.9;
+    border-radius: 0px;
+    padding: 31px 27px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    &.isAddress {
+      top: 57px;
+    }
+    .mNav-close {
+      cursor: pointer;
+      position: absolute;
+      top: 31px;
+      right: 27px;
+      color: #fff;
+      font-size: 30px;
+      font-weight: bold;
+      transform: rotate(45deg);
+    }
+    .language {
+      margin-top: 5px;
+      margin-left: 0;
+      .language-name {
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+    .language .language-name .one.isShowLanguage {
+      top: 9px;
+    }
+    .mNav-list {
+      li {
+        .item {
+          text-decoration: none;
+          cursor: pointer;
+          position: relative;
+          display: flex;
+          align-items: flex-start;
+          text-align: left;
+          flex-direction: column;
+          font-size: 18px;
+          font-weight: bold;
+          color: #fff;
+          &:hover,
+          &.active {
+            &::after {
+              position: absolute;
+              top: 35px;
+              left: 0%;
+              content: "";
+              display: inline-block;
+              width: 20px;
+              height: 0px;
+              border: 2px solid #ffffff;
+            }
+          }
+          .nav-child-left {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .nav-child {
+            display: flex;
+            flex-direction: column;
+            margin-left: 30px;
+            a {
+              height: 24px;
+              font-size: 18px;
+              font-family: Segoe UI;
+              font-weight: 600;
+              color: #ffffff;
+              text-decoration: none;
+              &:first-child{
+                margin-top:10px
+              }
+              &:not(:first-child) {
+                margin-top: 20px;
+              }
+            }
+          }
+        }
+        display: flex;
+        align-items: center;
+        min-height: 40px;
+        &:not(:first-child) {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+  .mNav {
+    width: 428px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 27px;
+    display: flex;
+    background: #0e96f0;
+    align-items: center;
+    justify-content: space-between;
+    .mlogo {
+      img {
+        height: 48.8px;
+      }
+    }
+    .mnavbutton-con {
+      cursor: pointer;
+      width: 22px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mnavbutton {
+      position: relative;
+      width: 22px;
+      height: 4px;
+      border-radius: 1px;
+      background: #ffffff;
+      &::after {
+        content: "-";
+        display: inline-block;
+        position: absolute;
+        top: -10px;
+        border-radius: 1px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: #ffffff;
+      }
+      &::before {
+        content: "-";
+        display: inline-block;
+        border-radius: 1px;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: #ffffff;
+      }
+    }
+  }
   .toTop {
     transition: all 0.5s ease;
     cursor: pointer;
@@ -33,8 +258,8 @@
       width: 75%;
     }
     .video-mask {
-      &::after{
-        content: '+';
+      &::after {
+        content: "+";
         transform: rotate(45deg);
         font-size: 48px;
         color: #fff;
@@ -145,23 +370,7 @@
                 }
               }
             }
-            .nav-child-arrow {
-              height: 40px;
-              width: 20px;
-              margin-left: 5px;
-              display: inline-block;
-              background: url("../assets/left.png") no-repeat;
 
-              &.top {
-                transition: all 0.5s;
-                transform: rotate(90deg) scale(0.5);
-              }
-
-              &.bottom {
-                transition: all 0.5s;
-                transform: rotate(270deg) scale(0.5);
-              }
-            }
             .nav-child {
               font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                 "Roboto", "Oxygen";
@@ -192,63 +401,6 @@
                   margin-top: 24px;
                 }
               }
-            }
-          }
-
-          .language {
-            cursor: pointer;
-            margin-left: 60px;
-            display: flex;
-            align-items: center;
-            position: relative;
-
-            .language-name {
-              font-size: 25px;
-              display: flex;
-              flex-direction: column;
-              .one {
-                position: relative;
-                color: #ffffff;
-                &.isShowLanguage {
-                  top: 13px;
-                }
-              }
-              .two {
-                position: relative;
-                color: #ffffff;
-                top: 20px;
-                &:hover {
-                  color: #1d1f75;
-                }
-              }
-            }
-
-            .language-arrow {
-              height: 40px;
-              width: 20px;
-              margin-left: 5px;
-              display: inline-block;
-              background: url("../assets/left.png") no-repeat;
-
-              &.top {
-                transition: all 0.5s;
-                transform: rotate(90deg) scale(0.5);
-              }
-
-              &.bottom {
-                transition: all 0.5s;
-                transform: rotate(270deg) scale(0.5);
-              }
-            }
-
-            .language-select {
-              position: absolute;
-              top: 35px;
-              right: 0;
-              width: 100px;
-              padding: 10px;
-              outline: none;
-              border: none;
             }
           }
         }

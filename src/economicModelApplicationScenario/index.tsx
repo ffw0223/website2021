@@ -6,6 +6,7 @@ import EconomicImg from "../assets/Economic.png";
 import applicationScenarioImg from "../assets/applicationScenario.png";
 import "./style.scss";
 import "./style1280.scss";
+import "./style428.scss";
 
 function EconomicModelApplicationScenario() {
   const { t } = useTranslation();

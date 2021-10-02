@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.scss";
 import "./style1280.scss";
+import "./style428.scss";
 import { useTranslation } from 'react-i18next';
 import link from "../assets/link-icon.png";
 import link1 from "../assets/join-link1.png";

@@ -33,9 +33,11 @@
             background-repeat: no-repeat;
           }
           &:not(.economic):hover .img,
+          &:not(.economic):active .img,
           &.hover .img {
             background-color: #1d1f75;
           }
+          &:not(.economic):active .img,
           &:not(.economic):hover .text,
           &.hover .text {
             color: #1d1f75;
@@ -95,7 +97,7 @@
         }
         .economic3 {
           bottom: 471px;
-          left: 375px;
+          left: 428px;
           z-index: 2;
           .img {
             background-image: url("../assets/Economic3.png");
@@ -203,10 +205,10 @@
           font-size: 25px;
           font-weight: bold;
           color: #fff;
-          &:hover .img {
+          &:hover .img,&:active .img {
             background-color: #1d1f75;
           }
-          &:hover .text {
+          &:hover .text,&:active .text {
             color: #1d1f75;
           }
           .img {

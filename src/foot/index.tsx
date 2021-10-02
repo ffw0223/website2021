@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./style.scss";
 import "./style1280.scss";
+import "./style428.scss";
 import emailImg from "../assets/email.png";
 import { useTranslation } from "react-i18next";
 import Config from "../Config";

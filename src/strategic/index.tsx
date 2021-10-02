@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import "./style.scss";
+import "./style428.scss";
 import "./style1280.scss";
 
 function Strategic() {

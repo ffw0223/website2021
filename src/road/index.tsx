@@ -3,12 +3,15 @@ import "./style.scss";
 import "./style1280.scss";
 import { useTranslation } from "react-i18next";
 import roadIcon from "../assets/road.png";
+import AwesomeSwiper from "react-awesome-swiper";
 
 function Road() {
+  let swiperRef = null;
   const { t } = useTranslation();
   const title = t("Road Map");
-  const desc =
-    t("A great road traveled, gaining experiences, adding successes and build a great project.");
+  const desc = t(
+    "A great road traveled, gaining experiences, adding successes and build a great project."
+  );
   const data = [
     {
       year: "2020",
@@ -53,6 +56,78 @@ function Road() {
       ],
     },
   ];
+  if (document?.documentElement?.clientWidth <= 1279) {
+    const swiperConfig = {
+      // loop: true,
+      // autoplay: {
+      //   delay: 3000,
+      //   stopOnLastSlide: false,
+      //   disableOnInteraction: true,
+      // },
+      // Disable preloading of all images
+      preloadImages: false,
+      // Enable lazy loading
+      lazy: true,
+      speed: 500,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination-team",
+        bulletElement: "li",
+        hideOnClick: true,
+        clickable: true,
+      },
+      on: {
+        slideChange: function () {},
+      },
+    };
+    return (
+      <section className="road m">
+        <div className="road-con">
+          <h2 className="title">{title}</h2>
+          <p className="desc">{desc}</p>
+          <div className="warp">
+            <div className="team-con">
+              <AwesomeSwiper
+                ref={(ref) => (swiperRef = ref)}
+                config={swiperConfig}
+              >
+                <div className="swiper-wrapper">
+                  {data.map((item, index) => {
+                    const { year, envy, text } = item;
+                    return (
+                      <div className="swiper-slide" key={index}>
+                        <div className="item" key={index}>
+                          <h2 className="road-title">
+                            {year}
+                            <span>{envy}</span>
+                          </h2>
+                          <p className="road-info">
+                            <img src={roadIcon} alt="" />
+                          </p>
+                          <div className="road-text">
+                            {text.map((t, index) => (
+                              <p key={index}>{t}</p>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="swiper-pagination"></div>
+              </AwesomeSwiper>
+              <div className="swiper-button-prev"></div>
+              <div className="swiper-button-next"></div>
+              <div className="swiper-pagination-team"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
   return (
     <section className="road">
       <div className="road-con">
