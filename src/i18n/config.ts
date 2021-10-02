@@ -57,7 +57,8 @@ export const resources = {
       cancel: "cancel",
       emailTip: "Enter your e-mail address in the correct format",
       thanksForSubscribing: "Thank you for subscribing!",
-      thanksForSubscribingContent: "We will keep you up to date with all the information from the world of Ares Protocol."
+      thanksForSubscribingContent: "We will keep you up to date with all the information from the world of Ares Protocol.",
+      send: "send"
     },
   },
   cn: {
@@ -96,7 +97,7 @@ export const resources = {
       totalToken: "代币总数",
       tokenSymbol: "代币符号",
       rewardRedemption: "奖赏兑换",
-      rewardRedemptionDescription: "在线交流/比例交换Ares",
+      rewardRedemptionDescription: "上线交易所/比例交换Ares",
       joinCommunity: "现在就加入我们的社区",
       communityDescription: "在所有社交网络上点赞、分享、转发、转贴",
       aboutUs: "关于我们",
@@ -118,7 +119,8 @@ export const resources = {
       cancel: "取消",
       emailTip: "请输入格式正确的邮箱地址",
       thanksForSubscribing: "谢谢您的订阅!",
-      thanksForSubscribingContent: "我们将为您提供来自《战神协议》世界的所有最新信息。火星的世界。"
+      thanksForSubscribingContent: "我们将为您提供来自《战神协议》世界的所有最新信息。火星的世界。",
+      send: "发送"
     },
   },
 };

@@ -1,18 +1,17 @@
-import { ApiPromise } from "@polkadot/api";
 import { web3Accounts, web3Enable, web3FromAddress, web3ListRpcProviders, web3UseRpcProvider } from "@polkadot/extension-dapp";
-import { WsProvider } from "@polkadot/rpc-provider";
 import BigNumber from "bignumber.js";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { unmountComponentAtNode } from "react-dom";
 import { useTranslation } from "react-i18next";
 import styles from "./JoinCrowdloanModal.module.scss";
 
-let api = null;
 let theInput = null;
 
 const JoinCrowdloanModal = props => {
+	const api = props.api;
+	const isConnected = Boolean(api);
 	const { t } = useTranslation();
-	const [isConnected, setIsConnected] = useState(false);
+	const [accounts, setAccounts] = useState([]);
 	const [account, setAccount] = useState(null);
 	const [balance, setBalance] = useState(null);
 	const [inputValue, setInputValue] = useState(new BigNumber(0));
@@ -20,6 +19,7 @@ const JoinCrowdloanModal = props => {
 	const handleConnect = async event => {
 		const allInjected = await web3Enable("mars");
 		const accounts = await web3Accounts({ ss58Format: 2 });
+		setAccounts(accounts)
 		setAccount(accounts[0]);
 
 		const { data: balance } = await api.query.system.account(accounts[0].address);
@@ -53,15 +53,15 @@ const JoinCrowdloanModal = props => {
 		setInputValue(new BigNumber(event.target.value).shiftedBy(12));
 	}
 
-	const init = async () => {
-		const provider = new WsProvider("wss://kusama-rpc.polkadot.io");
-		api = await ApiPromise.create({ provider });
-		setIsConnected(true);
-	};
+	// const init = async () => {
+	// 	const provider = new WsProvider("wss://kusama-rpc.polkadot.io");
+	// 	api = await ApiPromise.create({ provider });
+	// 	setIsConnected(true);
+	// };
 
-	useEffect(() => {
-		init();
-	}, []);
+	// useEffect(() => {
+	// 	init();
+	// }, []);
 
 	return (<div className={styles.joinCrowdloanModalLayout}>
 		<div className={styles.modal}>
@@ -70,8 +70,11 @@ const JoinCrowdloanModal = props => {
 
 				<h3>{t("contributeNow")}</h3>
 
+				{/* <div className={styles.lightButton}>{account.address.substr(0, 10) + "..."}</div> */}
 				<div className={styles.content} >
-					{account ? (<div className={styles.lightButton}>{account.address.substr(0, 10) + "..."}</div>) : (isConnected ? (<button
+					{account ? (<select className={styles.lightButton}>
+						{accounts.map(item => (<option key={item.address} value={item.address}>{item.meta.name}</option>))}
+					</select>) : (isConnected ? (<button
 						className={styles.lightButton}
 						disabled={!isConnected}
 						onClick={handleConnect}>{t("connectPolkadotExtension")}</button>) : (<div className={styles.lightButton}>Loading Polkadot.js...</div>))}

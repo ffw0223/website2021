@@ -6,7 +6,7 @@ import PopupMenu from "../components/PopupMenu";
 import { render } from "react-dom";
 import JoinCrowdloanModal from "../components/JoinCrowdloanModal";
 
-function Head() {
+function Head(props: any) {
   const visibleBottom = window.scrollY + document.documentElement.clientHeight;
   const visibleTop = window.scrollY;
   const { t, i18n } = useTranslation();
@@ -76,7 +76,7 @@ function Head() {
   const [isTopButtonShow, setIsTopButtonShow] = useState(false);
 
   const handleJoinCrowdloan = (event: any) => {
-    render(<JoinCrowdloanModal />, document.getElementById("mainModalContainer"));
+    render(<JoinCrowdloanModal api={props.api} />, document.getElementById("mainModalContainer"));
   };
 
   const goToTop = () => {

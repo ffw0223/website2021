@@ -35,7 +35,7 @@ const Footer = props => {
 
 	return (<section className={styles.footerLayout}>
 		<div className={styles.content} id="footer">
-			<div className={styles.card} style={{ width: "405px" }}>
+			<div className={styles.card} style={{ width: "16em" }}>
 				<h3>{t("aboutUs")}</h3>
 				<div>{t("aboutUsDescription")}</div>
 				<div><img src="/images/mail.png" />&nbsp;<a href="mailto:info@aresprotocol.io">info@aresprotocol.io</a></div>
@@ -62,7 +62,7 @@ const Footer = props => {
 			<div className={styles.card}>
 				<h3>{t("subscribe")}</h3>
 
-				<div>{t("subscribeInfo")}</div>
+				<div style={{ width: "19em" }}>{t("subscribeInfo")}</div>
 
 				<div className={styles.inputContainer}>
 					<input
@@ -72,10 +72,10 @@ const Footer = props => {
 					<button
 						disabled={!inputEmail || !isValidMail}
 						className={styles.maxButton}
-						onClick={handleSubmit}>{t("submit")}</button>
+						onClick={handleSubmit}>{t("send")}</button>
 				</div>
 
-				{!isValidMail && (<div style={{ fontSize: "1rem" }}>{t("emailTip")}</div>)}
+				{!isValidMail && (<div style={{ fontSize: "1em" }}>{t("emailTip")}</div>)}
 			</div>
 		</div>
 

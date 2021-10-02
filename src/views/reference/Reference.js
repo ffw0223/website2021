@@ -8,7 +8,7 @@ const Reference = props => {
 	const { t } = useTranslation();
 
 	const handleJoinCrowdloan = event => {
-		render(<JoinCrowdloanModal />, document.getElementById("mainModalContainer"));
+		render(<JoinCrowdloanModal api={props.api} />, document.getElementById("mainModalContainer"));
 	};
 
 	return (<section className={styles.referenceLayout} id="crowdloan">
