@@ -166,7 +166,7 @@ function Head() {
   const [aresData, setAresData] = useState(ares);
   const [navChildActive, setNavChildActive] = useState<null | number>(null);
   useEffect(() => {
-    const svg = document.getElementById("eq8NxO51czK1");
+    const svg = document.getElementById("eHCcx25uMnP1");
     const vedioImg = document.querySelector(".video-img");
     vedioImg?.appendChild(svg!);
     svg?.setAttribute("style", "display:block");
