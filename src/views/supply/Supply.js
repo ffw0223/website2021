@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import styles from "./Supply.module.scss";
-import { RadialChart, Hint } from 'react-vis';
+import { RadialChart } from 'react-vis';
 import '../../../node_modules/react-vis/dist/style.css';
 import { useState } from "react";
 
@@ -71,7 +71,7 @@ const Supply = props => {
 
 				{data && data.map((d, index) => {
 					if (index === 0) {
-						return;
+						return (<></>);
 					}
 
 					return (<div

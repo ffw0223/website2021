@@ -1,4 +1,4 @@
-import { web3Accounts, web3Enable, web3FromAddress, web3ListRpcProviders, web3UseRpcProvider } from "@polkadot/extension-dapp";
+import { web3Accounts, web3Enable, web3FromAddress } from "@polkadot/extension-dapp";
 import BigNumber from "bignumber.js";
 import { useState } from "react";
 import { unmountComponentAtNode } from "react-dom";
@@ -17,7 +17,7 @@ const JoinCrowdloanModal = props => {
 	const [inputValue, setInputValue] = useState(new BigNumber(0));
 
 	const handleConnect = async event => {
-		const allInjected = await web3Enable("mars");
+		await web3Enable("mars");
 		const accounts = await web3Accounts({ ss58Format: 2 });
 		setAccounts(accounts)
 		setAccount(accounts[0].address);
@@ -125,7 +125,7 @@ const JoinCrowdloanModal = props => {
 				</div>
 			</div>
 
-			<img className={styles.illustrationModal} src="/images/modal.png" />
+			<img className={styles.illustrationModal} src="/images/modal.png" alt="illustration"/>
 		</div>
 
 	</div >);

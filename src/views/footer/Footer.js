@@ -38,7 +38,7 @@ const Footer = props => {
 			<div className={styles.card} style={{ width: "16em" }}>
 				<h3>{t("aboutUs")}</h3>
 				<div>{t("aboutUsDescription")}</div>
-				<div><img src="/images/mail.png" />&nbsp;<a href="mailto:info@aresprotocol.io">info@aresprotocol.io</a></div>
+				<div><img src="/images/mail.png" alt="" />&nbsp;<a href="mailto:info@aresprotocol.io">info@aresprotocol.io</a></div>
 			</div>
 
 			<div className={styles.card} style={{

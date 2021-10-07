@@ -17,7 +17,7 @@ const Reference = props => {
 
 		<div className={styles.content}>
 			<div className={styles.buttonBlock}>
-				<img src="/images/thumb2.png" height="256px" />
+				<img src="/images/thumb2.png" height="256px" alt="" />
 
 				<button
 					className={styles.darkButton}
@@ -25,7 +25,8 @@ const Reference = props => {
 
 				<a
 					href="https://aresprotocollab.medium.com/the-canary-network-of-ares-protocol-mars-announced-auction-strategy-crowdloaning-specification-a1e66f74b985"
-					target="_blank">
+					target="_blank"
+					rel="noreferrer">
 					<div className={styles.lightButton}>{t("learnMore")}</div>
 				</a>
 			</div>
@@ -71,11 +72,14 @@ const Reference = props => {
 					</div>
 				</div>
 
-				<img src="/images/laptop.png" style={{
-					position: "relative",
-					top: "-15px",
-					width: "100%"
-				}} />
+				<img
+					src="/images/laptop.png"
+					alt=""
+					style={{
+						position: "relative",
+						top: "-15px",
+						width: "100%"
+					}} />
 			</div>
 		</div>
 	</section>);

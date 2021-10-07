@@ -15,13 +15,11 @@ import { ApiPromise } from "@polkadot/api";
 
 function App() {
   const [api, setAPI] = useState(null);
-  const [isConnected, setIsConnected] = useState(false);
 
   const init = async () => {
     const provider = new WsProvider("wss://kusama-rpc.polkadot.io");
     const tempAPI: any = await ApiPromise.create({ provider });
     setAPI(tempAPI);
-    setIsConnected(true);
   };
 
   useEffect(() => {

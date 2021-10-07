@@ -10,56 +10,56 @@ const Community = props => {
 
 		<div className={styles.content}>
 			<div className={styles.img}>
-				<a href="https://t.me/aresprotocol" target="_blank">
-					<img src="/images/tg.png" />
+				<a href="https://t.me/aresprotocol" target="_blank" rel="noreferrer">
+					<img src="/images/tg.png" alt="" />
 				</a>
 			</div>
 
 			<div className={styles.img}>
-				<a href="https://twitter.com/AresProtocolLab" target="_blank">
-					<img src="/images/t.png" />
+				<a href="https://twitter.com/AresProtocolLab" target="_blank" rel="noreferrer">
+					<img src="/images/t.png" alt="" />
 				</a>
 			</div>
 
 			<div className={styles.img}>
-				<a href="https://www.facebook.com/aresprotocollab" target="_blank">
-					<img src="/images/f.png" />
+				<a href="https://www.facebook.com/aresprotocollab" target="_blank" rel="noreferrer">
+					<img src="/images/f.png" alt="" />
 				</a>
 			</div>
 
 			<div className={styles.img}>
-				<a href="https://discord.gg/MKE4yX4h" target="_blank">
-					<img src="/images/ro.png" />
+				<a href="https://discord.gg/MKE4yX4h" target="_blank" rel="noreferrer">
+					<img src="/images/ro.png" alt="" />
 				</a>
 			</div>
 
 			<div className={styles.img}>
-				<a href="https://www.reddit.com/r/AresProtocolLabs" target="_blank">
-					<img src="/images/reddit.png" />
+				<a href="https://www.reddit.com/r/AresProtocolLabs" target="_blank" rel="noreferrer">
+					<img src="/images/reddit.png" alt="" />
 				</a>
 			</div>
 
 			<div className={styles.img}>
-				<a href="https://aresprotocollab.medium.com" target="_blank">
-					<img src="/images/pop.png" />
+				<a href="https://aresprotocollab.medium.com" target="_blank" rel="noreferrer">
+					<img src="/images/pop.png" alt="" />
 				</a>
 			</div>
 
 			<div className={styles.img}>
-				<a href="https://github.com/aresprotocols" target="_blank">
-					<img src="/images/github.png" />
+				<a href="https://github.com/aresprotocols" target="_blank" rel="noreferrer">
+					<img src="/images/github.png" alt="" />
 				</a>
 			</div>
 
 			<div className={styles.img}>
-				<a href="https://www.instagram.com/aresprotocollab" target="_blank">
-					<img src="/images/ins.png" />
+				<a href="https://www.instagram.com/aresprotocollab" target="_blank" rel="noreferrer">
+					<img src="/images/ins.png" alt="" />
 				</a>
 			</div>
 
 			<div className={styles.img}>
-				<a href="https://www.youtube.com/channel/UCgwY4NwkoP8Hx1Fqmp_rJUw" target="_blank">
-					<img src="/images/youtube.png" />
+				<a href="https://www.youtube.com/channel/UCgwY4NwkoP8Hx1Fqmp_rJUw" target="_blank" rel="noreferrer">
+					<img src="/images/youtube.png" alt="" />
 				</a>
 			</div>
 		</div>

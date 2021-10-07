@@ -1,4 +1,4 @@
-import React, { useState, useEffect, MouseEventHandler } from "react";
+import { useState, useEffect } from "react";
 import "./style.scss";
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
@@ -268,7 +268,7 @@ function Head(props: any) {
                   justifyContent: "center"
                 }}>
                   <div className="floatBlock">
-                    <img src="/images/thumb1.png" height="190px" />
+                    <img src="/images/thumb1.png" height="190px" alt="" />
 
                     <div>{t("aboutMars")}</div>
                   </div>
@@ -287,7 +287,3 @@ function Head(props: any) {
 }
 
 export default Head;
-function menu(menu: any) {
-  throw new Error("Function not implemented.");
-}
-

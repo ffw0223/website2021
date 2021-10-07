@@ -3,6 +3,8 @@ import { unmountComponentAtNode } from "react-dom";
 import styles from "./PopupMenu.module.scss";
 
 const PopupMenu = props => {
+	const hiddenCallback = props.hide;
+
 	const handleClickItem = event => {
 		unmountComponentAtNode(document.getElementById("modalContainer"));
 		return props.menuItems[parseInt(event.target.id)].handle()
@@ -12,10 +14,10 @@ const PopupMenu = props => {
 		if (props.menuItems) {
 			setTimeout(() => {
 				unmountComponentAtNode(document.getElementById("modalContainer"));
-				return props.hide();
+				return hiddenCallback();
 			}, 3000);
 		}
-	}, [props.menuItems])
+	}, [props.menuItems, hiddenCallback])
 
 	return (<div className={styles.popupMenuLayout} style={{
 		left: props.left + "px",
