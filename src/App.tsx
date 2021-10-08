@@ -23,7 +23,7 @@ function App() {
             <div
               className={classnames(
                 "App",
-                document?.documentElement?.clientWidth <= 1279 ? "m" : ""
+                window.screen.width <= 1279 ? "m" : ""
               )}
             >
               <Head />
