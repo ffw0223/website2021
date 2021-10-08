@@ -56,7 +56,7 @@ function Road() {
       ],
     },
   ];
-  if (document?.documentElement?.clientWidth <= 1279) {
+  if (window.screen.width <= 1279) {
     const swiperConfig = {
       // loop: true,
       // autoplay: {

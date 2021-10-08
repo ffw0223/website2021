@@ -133,7 +133,7 @@ function Team() {
       ),
     },
   ];
-  const number = document?.documentElement?.clientWidth <= 1279 ? 1 : 3;
+  const number = window.screen.width <= 1279 ? 1 : 3;
   const slides = Math.ceil(list.length / number) as number;
   return (
     <section className="team" id="Team">

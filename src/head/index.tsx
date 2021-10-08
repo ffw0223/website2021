@@ -184,9 +184,7 @@ function Head() {
     fetchData();
   }, []);
   useEffect(() => {
-    const isPhone =
-      (document?.documentElement?.clientWidth || document?.body?.clientWidth) <=
-      1279;
+    const isPhone = window.screen.width <= 1279;
     isPhone && setPhone(isPhone);
     setScroll(
       document?.documentElement?.scrollTop || document?.body?.scrollTop
@@ -261,8 +259,8 @@ function Head() {
                       } = nav as any;
                       let active = null;
                       if (
-                        document.body.clientWidth >= 1280 &&
-                        document.body.clientWidth <= 1679
+                        window.screen.width >= 1280 &&
+                        window.screen.width <= 1679
                       ) {
                         active =
                           minScrollTop1280 &&
@@ -317,8 +315,8 @@ function Head() {
                                     } = sNav as any;
                                     let active = null;
                                     if (
-                                      document.body.clientWidth >= 1280 &&
-                                      document.body.clientWidth <= 1679
+                                      window.screen.width >= 1280 &&
+                                      window.screen.width <= 1679
                                     ) {
                                       active =
                                         minScrollTop1280 &&
@@ -465,8 +463,8 @@ function Head() {
                   } = nav as any;
                   let active = null;
                   if (
-                    document.body.clientWidth >= 1280 &&
-                    document.body.clientWidth <= 1679
+                    window.screen.width >= 1280 &&
+                    window.screen.width <= 1679
                   ) {
                     active =
                       minScrollTop1280 &&
@@ -522,8 +520,8 @@ function Head() {
                                 } = sNav as any;
                                 let active = null;
                                 if (
-                                  document.body.clientWidth >= 1280 &&
-                                  document.body.clientWidth <= 1679
+                                  window.screen.width >= 1280 &&
+                                  window.screen.width <= 1679
                                 ) {
                                   active =
                                     minScrollTop1280 &&
@@ -687,8 +685,7 @@ function Head() {
                 </a>
               </p>
               <div className="substrat">
-                {document?.documentElement?.clientWidth ||
-                document?.body?.clientWidth ? (
+                {window.screen.width ? (
                   <div className="substratLogo-con">
                     <img className="substratLogo" src={parityImg} alt="" />
                   </div>
