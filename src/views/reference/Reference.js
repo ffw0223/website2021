@@ -12,7 +12,7 @@ const Reference = props => {
 	};
 
 	return (<section className={styles.referenceLayout} id="crowdloan">
-		<h2>{t("references")}&nbsp;$AMAS</h2>
+		<h2>{t("referencesASMS")}</h2>
 		<div className={styles.description}>{t("referenceDescription")}</div>
 
 		<div className={styles.content}>

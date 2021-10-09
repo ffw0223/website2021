@@ -252,8 +252,7 @@ function Head(props: any) {
           <div
             className="head-top-nav-mobile"
             onClick={handleShowMenu}
-            style={{ color: isMobileMenuShow ? "#E56239" : "white" }}>⎯<br />⎯<br />⎯</div>
-        </div>
+            style={{ color: isMobileMenuShow ? "#E56239" : "white" }}>－<br />－<br />－</div></div>
 
         <header className="head-con" onClick={handleClickSection}>
           <div className="head-content">

@@ -107,7 +107,7 @@
 @media (max-width: 576px) {
 	.supplyLayout {
 		font-size: 16px;
-		margin-top: 20rem;
+		margin-top: 23em;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
@@ -121,9 +121,11 @@
 		}
 
 		.description {
+			margin-top: 1em;
 			color: #1e1c24;
 			font-size: 1rem;
 			text-align: center;
+			line-height: 1.5em;
 		}
 
 		.content {
@@ -133,7 +135,7 @@
 			align-items: center;
 			margin-top: 2rem;
 			width: 100%;
-			row-gap: 2rem;
+			// row-gap: 2rem;
 
 			.chartBlock {
 				transform: scale(0.7, 0.7);

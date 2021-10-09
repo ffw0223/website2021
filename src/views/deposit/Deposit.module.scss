@@ -98,8 +98,11 @@
 		}
 
 		.description {
+			margin-top: 1em;
 			font-size: 1rem;
 			text-align: center;
+			width: 90%;
+			line-height: 1.5em;
 		}
 
 		.content {
@@ -108,13 +111,14 @@
 			justify-content: center;
 			align-items: center;
 			width: 100%;
-			row-gap: 1rem;
+			// row-gap: 1rem;
 			margin-top: 3rem;
 			padding-bottom: 3rem;
 
 			.card {
 				width: 80%;
 				padding: 2rem 0;
+				margin-top: 1em;
 
 				h3 {
 					font-size: 1.5rem;
