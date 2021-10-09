@@ -51,7 +51,7 @@ function Head(props: any) {
         name: t("apps"),
         id: "apps",
         menu: null,
-        target: "https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fgladios.aresprotocol.io/#/explorer"
+        target: "https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fwss.mars.aresprotocol.io/#/explorer"
       }
     ],
     language: {
