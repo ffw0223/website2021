@@ -66,6 +66,7 @@ const Footer = props => {
 
 				<div className={styles.inputContainer}>
 					<input
+						placeholder="name@company.com"
 						className={styles.inputMail}
 						onChange={handleInput} />
 
@@ -75,7 +76,10 @@ const Footer = props => {
 						onClick={handleSubmit}>{t("send")}</button>
 				</div>
 
-				{!isValidMail && (<div style={{ fontSize: "1em" }}>{t("emailTip")}</div>)}
+				{!isValidMail && (<div style={{
+					fontSize: "1em",
+					color: "#C50000"
+				}}>{t("emailTip")}</div>)}
 			</div>
 		</div>
 

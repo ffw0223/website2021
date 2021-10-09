@@ -1,8 +1,9 @@
 import { web3Accounts, web3Enable, web3FromAddress } from "@polkadot/extension-dapp";
 import BigNumber from "bignumber.js";
 import { useState } from "react";
-import { unmountComponentAtNode } from "react-dom";
+import { render, unmountComponentAtNode } from "react-dom";
 import { useTranslation } from "react-i18next";
+import Alert from "./Alert";
 import styles from "./JoinCrowdloanModal.module.scss";
 
 let theInput = null;
@@ -41,6 +42,7 @@ const JoinCrowdloanModal = props => {
 			.signAndSend(SENDER, { signer: injector.signer }, status => {
 				if (status.isFinalized()) {
 					unmountComponentAtNode(document.getElementById("mainModalContainer"));
+					render(<Alert title={t("thanksForSupport")} content={t("thanksForSupportContent")} />, document.getElementById("mainModalContainer"));
 				}
 			});
 	}
@@ -125,7 +127,7 @@ const JoinCrowdloanModal = props => {
 				</div>
 			</div>
 
-			<img className={styles.illustrationModal} src="/images/modal.png" alt="illustration"/>
+			<img className={styles.illustrationModal} src="/images/modal.png" alt="illustration" />
 		</div>
 
 	</div >);

@@ -28,6 +28,11 @@
 		margin-top: 122px;
 		width: 80%;
 
+		.chartBlock {
+			transform: scale(0.9, 0.9);
+			position: "relative";
+		}
+
 		.thinLabel {
 			border-radius: 6px;
 			margin: 0 1rem;
@@ -63,6 +68,7 @@
 				flex-direction: row;
 				justify-content: space-between;
 				align-items: center;
+				column-gap: 0.1em;
 
 				.letter {
 					font-size: 48px;
@@ -76,7 +82,7 @@
 					&:nth-last-child(6),
 					&:nth-last-child(9),
 					&:nth-last-child(12) {
-						margin-left: 0.6rem;
+						margin-left: 0.5rem;
 					}
 				}
 			}
@@ -129,6 +135,10 @@
 			width: 100%;
 			row-gap: 2rem;
 
+			.chartBlock {
+				transform: scale(0.7, 0.7);
+			}
+
 			.leftBlock {
 				width: 100%;
 
@@ -138,7 +148,7 @@
 					width: 100%;
 
 					.letter {
-						font-size: 2rem;
+						font-size: 1.5em;
 					}
 				}
 			}

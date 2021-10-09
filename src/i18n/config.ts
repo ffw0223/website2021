@@ -58,6 +58,8 @@ export const resources = {
       emailTip: "Enter your e-mail address in the correct format",
       thanksForSubscribing: "Thank you for subscribing!",
       thanksForSubscribingContent: "We will keep you up to date with all the information from the world of Ares Protocol.",
+      thanksForSupport: "Thanks for your support!",
+      thanksForSupportContent: "We are very grateful that you contribute to our project.",
       send: "send"
     },
   },
@@ -120,6 +122,8 @@ export const resources = {
       emailTip: "请输入格式正确的邮箱地址",
       thanksForSubscribing: "谢谢您的订阅!",
       thanksForSubscribingContent: "我们将为您提供来自《战神协议》世界的所有最新信息。火星的世界。",
+      thanksForSupport: "谢谢您的支持！",
+      thanksForSupportContent: "非常感谢您对我们项目的支持。",
       send: "发送"
     },
   },

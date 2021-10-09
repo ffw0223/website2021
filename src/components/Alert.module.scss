@@ -32,6 +32,8 @@
 			cursor: pointer;
 			pointer-events: all;
 			padding: 0.5rem;
+			color: #e56239;
+			font-weight: 900;
 		}
 
 		.modalLayout {
@@ -58,20 +60,26 @@
 
 @media (max-width: 576px) {
 	.alertLayout {
-	
 		.modal {
 			font-size: 16px;
 			column-gap: 0;
 			padding: 1rem;
 			width: 80%;
-	
+
 			.modalLayout {
+				padding: 3em 0;
+
+				h3 {
+					font-size: 1.2em;
+				}
+
 				.content {
 					max-width: none;
 					text-align: center;
-					line-height: 2rem;
+					line-height: 1.5;
+					font-size: 1em;
 				}
 			}
 		}
-	}	
+	}
 }

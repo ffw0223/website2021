@@ -17,7 +17,7 @@ const Reference = props => {
 
 		<div className={styles.content}>
 			<div className={styles.buttonBlock}>
-				<img src="/images/thumb2.png" height="256px" alt="" />
+				<img className={styles.illustration} src="/images/thumb2.png" alt="" />
 
 				<button
 					className={styles.darkButton}
@@ -26,8 +26,9 @@ const Reference = props => {
 				<a
 					href="https://aresprotocollab.medium.com/the-canary-network-of-ares-protocol-mars-announced-auction-strategy-crowdloaning-specification-a1e66f74b985"
 					target="_blank"
-					rel="noreferrer">
-					<div className={styles.lightButton}>{t("learnMore")}</div>
+					rel="noreferrer"
+					className={styles.lightButton}>
+					{t("learnMore")}
 				</a>
 			</div>
 

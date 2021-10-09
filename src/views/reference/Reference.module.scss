@@ -36,6 +36,10 @@
 			row-gap: 1rem;
 			width: 300px;
 
+			.illustration {
+				height: 256px;
+			}
+
 			a {
 				text-decoration: none;
 				width: 100%;
@@ -163,16 +167,24 @@
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				row-gap: 1rem;
+				row-gap: 1em;
 				width: 300px;
+				margin-top: 1em;
+
+				.illustration {
+					display: none;
+				}
 
 				.darkButton {
-					padding: 19px 37px;
-					font-size: 1rem;
+					padding: 1em 2em;
+					font-size: 1em;
+					width: 14em;
 				}
 
 				.lightButton {
-					font-size: 1rem;
+					padding: 1em 2em;
+					width: 10em;
+					font-size: 1em;
 				}
 			}
 
@@ -195,7 +207,7 @@
 					.monitorInline {
 						background: #e5e9eb;
 						border-radius: 15px 15px 0 0;
-						padding: 2rem 1rem;
+						padding: 1.5rem 1rem;
 
 						.table {
 							max-width: 100%;

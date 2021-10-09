@@ -19,11 +19,19 @@ function Head(props: any) {
           menuItems: [
             {
               title: "Ares Protocol",
-              handle: () => { window.location.href = "https://aresprotocol.io" }
+              handle: () => {
+                setIsMobileMenuShow(false);
+                window.location.href = "https://aresprotocol.io";
+              },
+              forLanguage: false
             },
             {
               title: "Mars",
-              handle: () => { window.location.href = "#Home" }
+              handle: () => {
+                setIsMobileMenuShow(false);
+                window.location.href = "#Home";
+              },
+              forLanguage: false
             }
           ]
         },
@@ -59,10 +67,14 @@ function Head(props: any) {
         {
           name: "EN",
           id: "en",
+          title: "EN",
+          handle: null
         },
         {
           name: "简体中文",
           id: "cn",
+          title: "简体中文",
+          handle: null
         },
       ],
       localIndex: 0,
@@ -74,6 +86,22 @@ function Head(props: any) {
   const [language, setlanguage] = useState(head.language.select[head.language.localIndex].name);
   const [isMenuShow, setIsMenuShow] = useState(false);
   const [isTopButtonShow, setIsTopButtonShow] = useState(false);
+  const [isMobileMenuShow, setIsMobileMenuShow] = useState(false);
+
+  const handleClickSection = (event: any) => {
+    setIsMobileMenuShow(false);
+    setIsMenuShow(false);
+  }
+
+  const emptyFunction = () => { };
+
+  const handleShowMenu = (event: any) => {
+    setIsMobileMenuShow(!isMobileMenuShow);
+  }
+
+  const handleHideMenu = (event: any) => {
+    setIsMobileMenuShow(false);
+  }
 
   const handleJoinCrowdloan = (event: any) => {
     render(<JoinCrowdloanModal api={props.api} />, document.getElementById("mainModalContainer"));
@@ -86,6 +114,7 @@ function Head(props: any) {
   useEffect(() => {
     window.onscroll = () => {
       setIsMenuShow(false);
+      setIsMobileMenuShow(false);
 
       const tempHeight = document?.documentElement?.scrollTop || document?.body?.scrollTop
       setScroll(tempHeight);
@@ -113,6 +142,22 @@ function Head(props: any) {
       left={rect.x}
       top={rect.y + dom.offsetHeight + document.documentElement.scrollTop + 5} />;
     render(theModal, document.getElementById("modalContainer"))
+  }
+
+  const handleChoiceLanguage = (e: any) => {
+    setIsMobileMenuShow(false);
+    setlanguageStatus(!languageStatus);
+
+    if ((e.target as any).innerText === "EN") {
+      head.language.localIndex = 0;
+    } else {
+      head.language.localIndex = 1;
+    }
+    const language = head.language.select[head.language.localIndex].name;
+    document.querySelector("#root")?.setAttribute("class", head.language.select[head.language.localIndex].id);
+    setlanguage(language);
+    setlanguageStatus(!languageStatus);
+    i18n.changeLanguage(head.language.select[head.language.localIndex].id);
   }
 
   return (
@@ -178,58 +223,14 @@ function Head(props: any) {
                       className={classnames("one", {
                         isShowLanguage: languageStatus,
                       })}
-                      onClick={(e) => {
-                        setlanguageStatus(!languageStatus);
-                        if ((e.target as any).innerText === "EN") {
-                          head.language.localIndex = 0;
-                        } else {
-                          head.language.localIndex = 1;
-                        }
-                        const language =
-                          head.language.select[head.language.localIndex].name;
-                        setlanguage(language);
-                        document
-                          .querySelector("#root")
-                          ?.setAttribute(
-                            "class",
-                            head.language.select[head.language.localIndex].id
-                          );
-                        setlanguageStatus(!languageStatus);
-                        i18n.changeLanguage(
-                          head.language.select[head.language.localIndex].id
-                        );
-                      }}
-                    >
+                      onClick={handleChoiceLanguage}>
                       {language === "EN" ? "EN" : "CN"}
                     </span>
+
                     {languageStatus ? (
                       <span
                         className="two"
-                        onClick={(e) => {
-                          setlanguageStatus(!languageStatus);
-                          if ((e.target as any).innerText === "EN") {
-                            head.language.localIndex = 0;
-                          } else {
-                            head.language.localIndex = 1;
-                          }
-                          const language =
-                            head.language.select[head.language.localIndex]
-                              .name;
-                          document
-                            .querySelector("#root")
-                            ?.setAttribute(
-                              "class",
-                              head.language.select[head.language.localIndex]
-                                .id
-                            );
-
-                          setlanguage(language);
-                          setlanguageStatus(!languageStatus);
-                          i18n.changeLanguage(
-                            head.language.select[head.language.localIndex].id
-                          );
-                        }}
-                      >
+                        onClick={handleChoiceLanguage}>
                         {language === "EN" ? "CN" : "EN"}
                       </span>
                     ) : null}
@@ -247,9 +248,14 @@ function Head(props: any) {
               </div>
             </div>
           </div>
+
+          <div
+            className="head-top-nav-mobile"
+            onClick={handleShowMenu}
+            style={{ color: isMobileMenuShow ? "#E56239" : "white" }}>⎯<br />⎯<br />⎯</div>
         </div>
 
-        <header className="head-con">
+        <header className="head-con" onClick={handleClickSection}>
           <div className="head-content">
             <div className="head-warp">
               <div className="content-desc">
@@ -282,6 +288,45 @@ function Head(props: any) {
 
         {isTopButtonShow && (<div className="goToTopButton" onClick={goToTop}>⌃</div>)}
       </section>
+
+      {
+        isMobileMenuShow && (<div className="mobileMenu">
+          <ul className="mobileMenuItems">
+            {head.navs.concat([{
+              name: language,
+              id: language,
+              menu: { menuItems: head.language.select.map(l => ({ title: l.name, handle: emptyFunction, forLanguage: true })) },
+              target: ""
+            }]).map(item => (<li key={item.id}>
+              <span>
+                <a
+                  href={item.target ? item.target : "#" + item.id}
+                  onClick={handleHideMenu}>
+                  {item.name}
+                </a>
+              </span>
+
+              {item.menu && (<>
+                <span className="arrow">&nbsp;▾</span>
+
+                <ul>
+                  {item.menu.menuItems.map(subMenu => {
+                    if (subMenu.forLanguage && subMenu.title === language) {
+                      return <></>;
+                    }
+
+                    return (<li
+                      key={subMenu.title}
+                      onClick={subMenu.forLanguage ? handleChoiceLanguage : subMenu.handle}>
+                      {subMenu.title}
+                    </li>)
+                  })}
+                </ul>
+              </>)}
+            </li>))}
+          </ul>
+        </div>)
+      }
     </>
   );
 }
