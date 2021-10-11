@@ -61,7 +61,8 @@ export const resources = {
       thanksForSubscribingContent: "We will keep you up to date with all the information from the world of Ares Protocol.",
       thanksForSupport: "Thanks for your support!",
       thanksForSupportContent: "We are very grateful that you contribute to our project.",
-      send: "send"
+      send: "send",
+      home: "home"
     },
   },
   cn: {
@@ -126,7 +127,8 @@ export const resources = {
       thanksForSubscribingContent: "我们将为您提供来自《战神协议》世界的所有最新信息。火星的世界。",
       thanksForSupport: "谢谢您的支持！",
       thanksForSupportContent: "非常感谢您对我们项目的支持。",
-      send: "发送"
+      send: "发送",
+      home: "首页"
     },
   },
 };

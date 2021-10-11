@@ -26,11 +26,15 @@
 		justify-content: space-between;
 		align-items: center;
 		margin-top: 122px;
-		width: 80%;
+		width: calc(100% - 6rem);
+		padding-left: 3rem;
+		padding-right: 3rem;
+		position: static;
 
 		.chartBlock {
-			transform: scale(0.9, 0.9);
+			transform: scale(1);
 			position: "relative";
+			margin-right: 1em;
 		}
 
 		.thinLabel {
@@ -126,19 +130,30 @@
 			font-size: 1rem;
 			text-align: center;
 			line-height: 1.5em;
+			width: 90%;
 		}
 
 		.content {
-			display: flex;
+			// 	display: flex;
+			// flex-direction: row;
+			// justify-content: space-between;
+			// align-items: center;
+			// margin-top: 122px;
+			// width: calc(100% - 6rem);
+			// padding-left: 3rem;
+			// padding-right: 3rem;
+			// position: static;
 			flex-direction: column;
 			justify-content: center;
-			align-items: center;
 			margin-top: 2rem;
-			width: 100%;
-			// row-gap: 2rem;
+			width: calc(100% - 2rem);
+			padding-left: 1rem;
+			padding-right: 1rem;
 
 			.chartBlock {
 				transform: scale(0.7, 0.7);
+				position: relative;
+				left: 0;
 			}
 
 			.leftBlock {
@@ -147,7 +162,7 @@
 				.score {
 					flex-direction: row;
 					justify-content: space-between;
-					width: 100%;
+					width: 90%;
 
 					.letter {
 						font-size: 1.5em;

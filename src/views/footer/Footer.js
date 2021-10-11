@@ -45,18 +45,40 @@ const Footer = props => {
 				textTransform: "capitalize"
 			}}>
 				<h3>{t("quickLinks")}</h3>
-				<div>{t("network")}</div>
-				<div>{t("supply")}</div>
-				<div>{t("deposit")}</div>
-				<div>{t("crowdloan")}</div>
-				<div>Apps</div>
+
+				<div>
+					<a href="#Home">{t("home")}</a>
+				</div>
+
+				<div>
+					<a href="#supply">{t("supply")}</a>
+				</div>
+
+				<div>
+					<a href="#deposit">{t("deposit")}</a>
+				</div>
+
+				<div>
+					<a href="#crowdloan">{t("crowdloan")}</a>
+				</div>
+
+				<div>
+					<a href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fwss.mars.aresprotocol.io/#/explorer" target="_blank" rel="noreferrer">Apps</a>
+				</div>
 			</div>
 
 			<div className={styles.card}>
 				<h3>{t("resources")}</h3>
-				<div>{t("documentation")}</div>
-				<div>{t("blockchainExplore")}</div>
-				<div>Medium</div>
+
+				<div>
+					<a href="https://docs.aresprotocol.io/#/" target="_blank" rel="noreferrer">{t("documentation")}</a>
+				</div>
+
+				<div>
+					<a href="https://etherscan.io/token/0x358aa737e033f34df7c54306960a38d09aabd523" target="_blank" rel="noreferrer">
+						{t("blockchainExplore")}
+					</a>
+				</div>
 			</div>
 
 			<div className={styles.card}>

@@ -265,9 +265,8 @@
             background-color: white;
             box-shadow: 7px 18px 37px rgba(93, 93, 93, 0.25);
             border-radius: 17px;
-            position: absolute;
-            max-width: 85%;
-            top: 850px;
+            position: relative;
+            top: 400px;
             z-index: 200;
             font-size: 25px;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -682,7 +681,7 @@
       li {
         margin-top: 1.5em;
         cursor: pointer;
-        
+
         a {
           text-decoration: none;
           color: #e56239;

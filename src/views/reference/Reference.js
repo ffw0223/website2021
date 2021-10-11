@@ -38,7 +38,7 @@ const Reference = props => {
 						<table className={styles.table}>
 							<thead>
 								<tr style={{ backgroundColor: "white" }}>
-									<th>{t("references")}</th>
+									<th style={{ width: "38%" }}>{t("references")}</th>
 									<th>{t("specification")}</th>
 								</tr>
 							</thead>

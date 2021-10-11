@@ -4,6 +4,7 @@
   align-items: center;
   max-width: 1680px;
   flex-direction: column;
+  width: 100%;
 }
 
 .goToTopButton {

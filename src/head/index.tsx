@@ -205,8 +205,8 @@ function Head(props: any) {
                           {name}
                           <span className={classnames("language-arrow", {
                             top: isMenuShow,
-                            bottom: !isMenuShow,
-                          })} />
+                            bottom: !isMenuShow
+                          })} style={{ pointerEvents: "none" }} />
                         </div>) : (<a
                           className={classnames("item", { active, highlight: id === "apps" })}
                           href={target ? target : "#" + id}
