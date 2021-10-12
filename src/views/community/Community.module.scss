@@ -40,6 +40,10 @@
 			justify-content: center;
 			align-items: center;
 
+			img {
+				transform: scale(0.8);
+			}
+
 			&:hover {
 				background: #f3944f;
 				border-color: #f3944f;
