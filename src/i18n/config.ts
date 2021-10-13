@@ -145,7 +145,7 @@ export const resources = {
       send: "发送",
       home: "首页",
       communitiesByCountry: "社区",
-      communitiesByCountryDescription: "Join the community of your interest and enjoy the updated content on Ares Protocol",
+      communitiesByCountryDescription: "加入您感兴趣的社区，获得战神协议的实时信息",
       community: "社区",
       official: "官方",
       russia: "俄国",
