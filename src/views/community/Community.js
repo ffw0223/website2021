@@ -1,8 +1,15 @@
+import { render } from "react-dom";
 import { useTranslation } from "react-i18next";
+import TelegramList from "../../components/TelegramList";
 import styles from "./Community.module.scss";
 
 const Community = props => {
 	const { t } = useTranslation();
+
+	const handleClickTelegram = event => {
+		// render(<Alert title={t("thanksForSupport")} content={t("thanksForSupportContent")} />, document.getElementById("mainModalContainer"));
+		render(<TelegramList />, document.getElementById("mainModalContainer"))
+	}
 
 	return (<section className={styles.communityLayout} id="community">
 		<h2>{t("joinCommunity")}</h2>
@@ -10,7 +17,7 @@ const Community = props => {
 
 		<div className={styles.content}>
 			<div className={styles.img}>
-				<a href="https://t.me/aresprotocol" target="_blank" rel="noreferrer">
+				<a onClick={handleClickTelegram}>
 					<img src="/images/tg.png" alt="" />
 				</a>
 			</div>
