@@ -1,0 +1,176 @@
+.telegramItemLayout {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	cursor: pointer;
+	margin-left: 0.8em;
+	margin-right: 0.8em;
+	margin-bottom: 0.8em;
+	font-size: 0.8em;
+	transition: all 0.5s;
+
+	&:hover {
+		transition: all 0.5s;
+		transform: scale(1.1);
+	}
+
+	img {
+		width: 3em;
+		z-index: 1;
+	}
+
+	a {
+		text-decoration: none;
+		cursor: pointer;
+		pointer-events: all;
+	}
+
+	.label {
+		background: #1195f0;
+		box-shadow: 0px 3px 3px rgba(0, 6, 166, 0.12);
+		border-radius: 32px;
+		text-transform: capitalize;
+		padding: 0.5em 1em 0.5em 2em;
+		color: white;
+		margin-left: -1.5em;
+		width: 8.5em;
+	}
+}
+
+.telegramListLayout {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100%;
+	background-color: rgba($color: #000000, $alpha: 0.5);
+	z-index: 100001;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+
+	.modal {
+		font-size: 25px;
+		background: #ffffff;
+		box-shadow: 0px 20px 40px rgba(30, 28, 36, 0.2);
+		border-radius: 15px;
+		font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: flex-end;
+		position: relative;
+		max-width: 90%;
+
+		.closeButton {
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			font-size: 1rem;
+			cursor: pointer;
+			pointer-events: all;
+			padding: 0.5rem;
+			color: #1D1F75;
+			font-weight: 900;
+		}
+
+		.modalLayout {
+			padding: 3em 2em;
+			display: flex;
+			flex-direction: column;
+			row-gap: 2rem;
+			justify-content: center;
+			align-items: center;
+
+			h3 {
+				font-size: 2rem;
+				font-weight: bold;
+				color: #1D1F75;
+				text-align: center;
+			}
+
+			.description {
+				font-size: 0.8em;
+				line-height: 1.5;
+				text-align: center;
+				width: 80%;
+			}
+
+			.content {
+				max-width: 100%;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.telegramListLayout {
+		.modal {
+			font-size: 16px;
+			column-gap: 0;
+			padding: 1em;
+			width: 80%;
+
+			.modalLayout {
+				padding: 1em 0;
+				width: 100%;
+
+				h3 {
+					font-size: 1.2em;
+				}
+
+				.content {
+					max-width: 100%;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.telegramItemLayout {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		cursor: pointer;
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+		margin-bottom: 0.8em;
+		font-size: 0.6em;
+		transition: none;
+
+		&:hover {
+			transition: none;
+			transform: none;
+		}
+
+		img {
+			width: 3em;
+			z-index: 1;
+		}
+
+		a {
+			text-decoration: none;
+			cursor: pointer;
+			pointer-events: all;
+		}
+
+		.label {
+			background: #1195f0;
+			box-shadow: 0px 3px 3px rgba(0, 6, 166, 0.12);
+			border-radius: 32px;
+			text-transform: capitalize;
+			padding: 0.5em 1em 0.5em 2em;
+			color: white;
+			margin-left: -1.5em;
+			width: 8.5em;
+		}
+	}
+}

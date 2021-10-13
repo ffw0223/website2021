@@ -14,6 +14,8 @@ import link7 from "../assets/join-link7.png";
 import link8 from "../assets/join-link8.png";
 import link9 from "../assets/join-link9.png";
 import linkBtn from "../assets/link-logo-btn.png";
+import { render } from "react-dom";
+import TelegramList from "../components/TelegramList";
 
 function Join() {
   const { t } = useTranslation();
@@ -21,21 +23,26 @@ function Join() {
   const desc = t("Please comment，press like button, share, retweet, and subscribe on our social networks.");
   const btn = t("Click here to Buy Token");
   const btnUrl = 'https://www.gateio.pro/cn/trade/ARES_USDT';
+
+  const handleClickTelegram = (event: any) => {
+    render(<TelegramList />, document.getElementById("mainModalContainer"));
+  }
+
   return (
     <section className="join">
       <div className="join-con">
         <h2 className="title">{title}</h2>
         <p className="desc">{desc}</p>
         <div className="link-icon">
-            <a href='https://t.me/aresprotocol' target="_blank" rel="noreferrer"><img src={link1} alt="" /></a>
-            <a href='https://twitter.com/AresProtocolLab' target="_blank" rel="noreferrer"><img src={link3} alt="" /></a>
-            <a href='https://www.facebook.com/aresprotocollab' target="_blank" rel="noreferrer"><img src={link2} alt="" /></a>
-            <a href='https://discord.gg/MKE4yX4h' target="_blank" rel="noreferrer"><img src={link4} alt="" /></a>
-            <a href='https://www.reddit.com/r/AresProtocolLabs/' target="_blank" rel="noreferrer"><img src={link5} alt="" /></a>
-            <a href='https://aresprotocollab.medium.com/' target="_blank" rel="noreferrer"><img src={link6} alt="" /></a>
-            <a href='https://github.com/aresprotocols' target="_blank" rel="noreferrer"><img src={link7} alt="" /></a>
-            <a href='https://www.instagram.com/aresprotocollab/' target="_blank" rel="noreferrer"><img src={link8} alt="" /></a>
-            <a href='https://www.youtube.com/channel/UCgwY4NwkoP8Hx1Fqmp_rJUw' target="_blank" rel="noreferrer"><img src={link9} alt="" /></a>
+          <a onClick={handleClickTelegram}><img src={link1} alt="" /></a>
+          <a href='https://twitter.com/AresProtocolLab' target="_blank" rel="noreferrer"><img src={link3} alt="" /></a>
+          <a href='https://www.facebook.com/aresprotocollab' target="_blank" rel="noreferrer"><img src={link2} alt="" /></a>
+          <a href='https://discord.gg/MKE4yX4h' target="_blank" rel="noreferrer"><img src={link4} alt="" /></a>
+          <a href='https://www.reddit.com/r/AresProtocolLabs/' target="_blank" rel="noreferrer"><img src={link5} alt="" /></a>
+          <a href='https://aresprotocollab.medium.com/' target="_blank" rel="noreferrer"><img src={link6} alt="" /></a>
+          <a href='https://github.com/aresprotocols' target="_blank" rel="noreferrer"><img src={link7} alt="" /></a>
+          <a href='https://www.instagram.com/aresprotocollab/' target="_blank" rel="noreferrer"><img src={link8} alt="" /></a>
+          <a href='https://www.youtube.com/channel/UCgwY4NwkoP8Hx1Fqmp_rJUw' target="_blank" rel="noreferrer"><img src={link9} alt="" /></a>
         </div>
         <div className='btn-con'>
           <a className="btn" href={btnUrl} target='_blank' rel="noreferrer">
@@ -44,6 +51,8 @@ function Join() {
           </a>
         </div>
       </div>
+
+      <div id="mainModalContainer" />
     </section>
   );
 }
