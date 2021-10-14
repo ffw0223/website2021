@@ -30,11 +30,11 @@ const TelegramList = props => {
 				<div className={styles.description}>{t("communitiesByCountryDescription")}</div>
 
 				<div className={styles.content}>
-					<TelegramItem icon="/images/0000-35.png" label={t("official")} url="http://myzaker.com" />
+					<TelegramItem icon="/images/0000-35.png" label={t("official")} url="https://t.me/AresProtocolLab" />
 					<TelegramItem icon="/images/RU-36.png" label={t("russia")} url="https://t.me/AresProtocol_RussianCommunity" />
 					<TelegramItem icon="/images/CN.png" label={t("china")} url="http://t.me/AresProtocolChina" />
 					<TelegramItem icon="/images/UK.png" label={t("ukraine")} url="https://t.me/AresProtocol_UkrainianCommunity" />
-					<TelegramItem icon="/images/ES.png" label={t("spanish")} url="https://t.me/aresprotocollab" />
+					<TelegramItem icon="/images/ES.png" label={t("spanish")} url="https://t.me/aresprotocol_spanish" />
 					<TelegramItem icon="/images/KO.png" label={t("korea")} url="https://t.me/AresProtocol_KoreanCommunity" />
 					<TelegramItem icon="/images/Italia.png" label={t("italy")} url="https://t.me/AresProtocolItalian" />
 					<TelegramItem icon="/images/Armenia.png" label={t("armenia")} url="https://t.me/AresProtocol_Armenian" />
