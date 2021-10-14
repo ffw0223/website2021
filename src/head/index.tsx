@@ -256,32 +256,22 @@ function Head(props: any) {
 
         <header className="head-con" onClick={handleClickSection}>
           <div className="head-content">
-            <div className="head-warp">
-              <div className="content-desc">
-                <div className="content">{t("descriptionHomePage")}</div>
+            <div className="content">{t("descriptionHomePage")}</div>
 
-                <button
-                  className="button"
-                  style={{ marginTop: "2rem" }}
-                  onClick={handleJoinCrowdloan}>{t("joinCrowdloan")}</button>
+            <button
+              className="button"
+              style={{ marginTop: "2rem" }}
+              onClick={handleJoinCrowdloan}>{t("joinCrowdloan")}</button>
 
-                <div id="animatePlayer" className="illustration" />
-
-                <div style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center"
-                }}>
-                  <div className="floatBlock">
-                    <img src="/images/thumb1.png" height="190px" alt="" />
-
-                    <div>{t("aboutMars")}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div id="animatePlayer" className="illustration" />
           </div>
         </header>
+
+        <div className="floatBlock">
+          <img src="/images/thumb1.png" height="190px" alt="" />
+
+          <div>{t("aboutMars")}</div>
+        </div>
 
         <div id="modalContainer" style={{ display: !isMenuShow ? "none" : "block" }} />
 
