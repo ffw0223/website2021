@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import { lazy, Suspense } from "react";
 import "./App.css";
 import "./reset.css";
 import "./global.css";
@@ -12,39 +12,37 @@ import Join from "./join";
 import classnames from "classnames";
 import Foot from "./foot";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Backend from "./backend/Backend";
-import MarsApp from "./Mars";
 
 function App() {
+  const backend = lazy(() => import("./backend/Backend"));
+  const marsApp = lazy(() => import("./Mars"));
+
   return (
     <>
       <BrowserRouter>
         <Suspense fallback={<div>loading...</div>}>
-          <Route exact path="/">
-            <div
-              className={classnames(
-                "App",
-                window.screen.width <= 1279 ? "m" : ""
-              )}
-            >
-              <Head />
-              <Technology />
-              <EconomicModelApplicationScenario />
-              <Team />
-              <Strategic />
-              <Road />
-              <Join />
-              <Foot />
-            </div>
-          </Route>
+          <Switch>
+            <Route exact path="/">
+              <div
+                className={classnames(
+                  "App",
+                  window.screen.width <= 1279 ? "m" : ""
+                )}
+              >
+                <Head />
+                <Technology />
+                <EconomicModelApplicationScenario />
+                <Team />
+                <Strategic />
+                <Road />
+                <Join />
+                <Foot />
+              </div>
+            </Route>
 
-          <Route exact path="/admin">
-            <Backend />
-          </Route>
-
-          <Route exact path="/mars">
-            <MarsApp />
-          </Route>
+            <Route path="/admin" component={backend} />
+            <Route path="/mars" component={marsApp} />
+          </Switch>
         </Suspense>
       </BrowserRouter>
     </>
