@@ -64,7 +64,7 @@ function Head() {
           },
           {
             name: t("Mars"),
-            url: "https://www.aresprotocol.io/mars",
+            url: "/mars",
           },
         ],
       },
@@ -166,10 +166,10 @@ function Head() {
   const [aresData, setAresData] = useState(ares);
   const [navChildActive, setNavChildActive] = useState<null | number>(null);
   useEffect(() => {
-    const svg = document.getElementById("eHCcx25uMnP1");
-    const vedioImg = document.querySelector(".video-img");
-    vedioImg?.appendChild(svg!);
-    svg?.setAttribute("style", "display:block");
+    // const svg = document.getElementById("eHCcx25uMnP1");
+    // const vedioImg = document.querySelector(".video-img");
+    // vedioImg?.appendChild(svg!);
+    // svg?.setAttribute("style", "display:block");
     const fetchData = async () => {
       const res = (await getAresAll()) as unknown as aresData;
       const newAresData = Object.assign(JSON.parse(JSON.stringify(aresData)), {
@@ -662,6 +662,8 @@ function Head() {
               className="video-button"
               onClick={() => setVedioStauts(!vedioSwich)}
             ></span>
+
+            <iframe src="/images/Animacionwebsite001.svg" frameBorder={0} />
           </div>
           <div className="head-content">
             <div className="head-warp">

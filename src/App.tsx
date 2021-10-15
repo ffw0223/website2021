@@ -13,6 +13,7 @@ import classnames from "classnames";
 import Foot from "./foot";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Backend from "./backend/Backend";
+import MarsApp from "./Mars";
 
 function App() {
   return (
@@ -39,6 +40,10 @@ function App() {
 
           <Route exact path="/admin">
             <Backend />
+          </Route>
+
+          <Route exact path="/mars">
+            <MarsApp />
           </Route>
         </Suspense>
       </BrowserRouter>

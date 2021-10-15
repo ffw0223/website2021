@@ -72,7 +72,7 @@
       transform: rotate(270deg) scale(0.5);
     }
   }
-  .mNav-warp{
+  .mNav-warp {
     background: #1195f0;
   }
   .mNav-con {
@@ -154,8 +154,8 @@
               font-weight: 600;
               color: #ffffff;
               text-decoration: none;
-              &:first-child{
-                margin-top:10px
+              &:first-child {
+                margin-top: 10px;
               }
               &:not(:first-child) {
                 margin-top: 20px;
@@ -287,6 +287,13 @@
     position: absolute;
     top: 150px;
     right: 0;
+
+    iframe {
+      width: 100%;
+      z-index: 1;
+      height: 100%;
+    }
+
     .video-button {
       top: 625px;
       margin-left: -50px;
@@ -372,8 +379,7 @@
             }
 
             .nav-child {
-              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                "Roboto", "Oxygen";
+              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen";
               position: absolute;
               left: 0;
               top: 45px;
@@ -728,15 +734,7 @@
     transform: rotate(360deg);
   }
 }
-.cn
-  .head
-  .head-top
-  .head-top-nav
-  .nav
-  .nav-right
-  .list
-  .nav-child
-  .nav-child-item.aresProtocol {
+.cn .head .head-top .head-top-nav .nav .nav-right .list .nav-child .nav-child-item.aresProtocol {
   width: auto;
 }
 @keyframes pulsePrimary {

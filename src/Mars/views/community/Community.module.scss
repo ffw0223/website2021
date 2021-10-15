@@ -1,0 +1,95 @@
+.communityLayout {
+	padding-top: 76px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 17px;
+	width: 100%;
+	background: url("../../assets/map.png"), linear-gradient(173deg, #e56239 0%, #e27c5c 100%);
+	padding-bottom: 107px;
+	background-size: cover;
+
+	h2 {
+		font-size: 53px;
+		font-weight: bold;
+		color: #ffffff;
+	}
+
+	.description {
+		color: white;
+		font-size: 23px;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		margin-top: 64px;
+		width: 80%;
+		column-gap: 1rem;
+
+		.img {
+			border-radius: 50%;
+			border: 1px solid white;
+			width: 64px;
+			height: 64px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			img {
+				transform: scale(0.8);
+			}
+
+			&:hover {
+				background: #f3944f;
+				border-color: #f3944f;
+			}
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.communityLayout {
+		font-size: 16px;
+		padding-top: 3rem;
+		// row-gap: 1rem;
+		padding-bottom: 3rem;
+
+		h2 {
+			font-size: 1.5rem;
+			width: 90%;
+			text-align: center;
+		}
+
+		.description {
+			margin-top: 1em;
+			font-size: 1rem;
+			text-align: center;
+			width: 90%;
+			line-height: 1.5em;
+		}
+
+		.content {
+			flex-wrap: wrap;
+			margin-top: 2rem;
+			width: 75%;
+			// column-gap: 0.75rem;
+			// row-gap: 0.5rem;
+
+			.img {
+				width: 2.5rem;
+				height: 2.5rem;
+				margin: 0.35em 0.25em;
+
+				img {
+					width: 1.5rem;
+					height: 1.5rem;
+				}
+			}
+		}
+	}
+}

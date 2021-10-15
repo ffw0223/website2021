@@ -1,0 +1,85 @@
+.alertLayout {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100%;
+	background-color: rgba($color: #000000, $alpha: 0.5);
+	z-index: 100001;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+
+	.modal {
+		font-size: 25px;
+		background: #ffffff;
+		box-shadow: 0px 20px 40px rgba(30, 28, 36, 0.2);
+		border-radius: 15px;
+		font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: flex-end;
+		column-gap: 159px;
+		position: relative;
+
+		.closeButton {
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			font-size: 1rem;
+			cursor: pointer;
+			pointer-events: all;
+			padding: 0.5rem;
+			color: #e56239;
+			font-weight: 900;
+		}
+
+		.modalLayout {
+			padding: 5rem;
+			display: flex;
+			flex-direction: column;
+			row-gap: 2rem;
+
+			h3 {
+				font-size: 2rem;
+				font-weight: bold;
+				color: #e56239;
+				text-align: center;
+			}
+
+			.content {
+				max-width: 45rem;
+				text-align: center;
+				line-height: 2rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.alertLayout {
+		.modal {
+			font-size: 16px;
+			column-gap: 0;
+			padding: 1rem;
+			width: 80%;
+
+			.modalLayout {
+				padding: 3em 0;
+
+				h3 {
+					font-size: 1.2em;
+				}
+
+				.content {
+					max-width: none;
+					text-align: center;
+					line-height: 1.5;
+					font-size: 1em;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,247 @@
+.referenceLayout {
+	padding-top: 76px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 17px;
+	width: 100%;
+	margin-bottom: 107px;
+	font-size: 25px;
+
+	h2 {
+		color: #e56239;
+		font-size: 54px;
+	}
+
+	.description {
+		color: #1e1c24;
+		font-size: 23px;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 122px;
+		width: calc(100% - 6rem);
+		padding-left: 3rem;
+		padding-right: 3rem;
+		position: static;
+		column-gap: 1rem;
+
+		.buttonBlock {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			row-gap: 1rem;
+			width: 300px;
+			margin-bottom: 5em;
+
+			.illustration {
+				height: 256px;
+			}
+
+			a {
+				text-decoration: none;
+				width: 100%;
+			}
+
+			.darkButton {
+				outline: none;
+				border-width: 0;
+				width: 100%;
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+				text-transform: capitalize;
+				background: #e56239;
+				border-radius: 43px;
+				padding: 19px 37px;
+				font-size: 22px;
+				font-weight: 400;
+				color: #ffffff;
+
+				&:hover {
+					background-color: #f39e4f;
+					color: #fdf4eb;
+				}
+			}
+
+			.lightButton {
+				width: 100%;
+				text-align: center;
+				background: #ffffff;
+				border: 2px solid #e56239;
+				border-radius: 43px;
+				font-size: 22px;
+				padding-top: 19px;
+				padding-bottom: 19px;
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+				font-weight: 400;
+				color: #e56239;
+
+				&:hover {
+					background: #e56239;
+					color: white;
+				}
+			}
+		}
+
+		.monitor {
+			width: 80%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			max-width: 1140px;
+
+			.monitorOutline {
+				background: linear-gradient(180deg, #f37b53 0%, #ffb980 100%);
+				box-shadow: 7px 21px 15px rgba(187, 25, 0, 0.2);
+				padding: 15px 15px 0 15px;
+				border-radius: 15px 15px 0 0;
+				width: 80%;
+
+				.monitorInline {
+					background: #e5e9eb;
+					border-radius: 15px 15px 0 0;
+					padding: 3em 3.5em;
+
+					.table {
+						max-width: 764px;
+
+						th {
+							font-size: 0.8em;
+							font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+							font-weight: bold;
+							color: #1e1c24;
+							padding: 20px 28px;
+						}
+
+						tbody {
+							// font-size: 0.8em;
+							font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+							font-weight: 400;
+							color: #1e1c24;
+
+							td {
+								font-size: 0.8em;
+								font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+								color: #1e1c24;
+								padding: 20px 28px;
+								vertical-align: top;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.referenceLayout {
+		font-size: 16px;
+		padding-top: 3rem;
+		// row-gap: 1rem;
+		width: 100%;
+		margin-bottom: 3rem;
+
+		h2 {
+			font-size: 2rem;
+			width: 90%;
+			text-align: center;
+		}
+
+		.description {
+			margin-top: 1em;
+			font-size: 1rem;
+			text-align: center;
+			width: 90%;
+			line-height: 1.5em;
+		}
+
+		.content {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin-top: 0;
+			// row-gap: 1rem;
+			width: calc(100% - 2em);
+			padding-left: 1em;
+			padding-right: 1em;
+
+			.buttonBlock {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				// row-gap: 1em;
+				width: 300px;
+				margin-top: 1em;
+				margin-bottom: 1em;
+
+				.illustration {
+					display: none;
+				}
+
+				.darkButton {
+					padding: 1em 2em;
+					font-size: 1em;
+					width: 14em;
+				}
+
+				.lightButton {
+					margin-top: 1em;
+					padding: 1em 2em;
+					width: 10em;
+					font-size: 1em;
+				}
+			}
+
+			.monitor {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				max-width: 100%;
+				margin-top: 2rem;
+
+				.monitorOutline {
+					background: linear-gradient(180deg, #f37b53 0%, #ffb980 100%);
+					box-shadow: 7px 21px 15px rgba(187, 25, 0, 0.2);
+					padding: 10px 10px 0 10px;
+					border-radius: 15px 15px 0 0;
+					width: 80%;
+
+					.monitorInline {
+						background: #e5e9eb;
+						border-radius: 15px 15px 0 0;
+						padding: 1.5rem 1rem;
+
+						.table {
+							max-width: 100%;
+
+							th {
+								font-size: 0.5rem;
+								padding: 0.5rem;
+							}
+
+							tbody {
+								font-size: 0.5rem;
+
+								td {
+									font-size: 0.5rem;
+									padding: 0.5rem;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
