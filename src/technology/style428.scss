@@ -5,7 +5,7 @@
     }
   }
   .technology {
-    width: 428px;
+    width: 100%;
     margin: 0 auto;
     height: auto;
     top: 0;
@@ -17,7 +17,7 @@
       margin-bottom: 40px;
     }
     .technology-con {
-      width: 428px;
+      width: 100%;
       padding: 0 27px 75px;
       box-sizing: border-box;
 
@@ -26,8 +26,8 @@
           flex-wrap: wrap;
           justify-content: space-between;
           .item {
-            flex: 181px 0;
-            width: 319 * 0.55864198px;
+            flex: 48% 0;
+            width: 48%;
             height: 275px;
             box-shadow: 7 * 0.55864198px 21 * 0.55864198px 18 * 0.55864198px
               rgba(29, 31, 117, 0.15);

@@ -1,11 +1,11 @@
 @media only screen and (max-width: 1279px) {
-  .cn .head .head-con .head-content .head-warp .substrat .substratLogo{
+  .cn .head .head-con .head-content .head-warp .substrat .substratLogo {
     right: -30px;
   }
   .head .head-top-address .address a {
     font-size: 16px;
   }
-  .head .head-con .head-content-line{
+  .head .head-con .head-content-line {
     top: -290px;
   }
   .head .video-img.isNoAddress {
@@ -24,10 +24,10 @@
   #root.cn .join .btn-con .btn span {
     padding-left: 110 * 0.55864198px;
   }
-  
+
   .head {
     .video-img {
-      width: 428px;
+      width: 80%;
       height: 1071 * 0.55864198px;
       top: 590px;
       left: 50%;
@@ -41,7 +41,7 @@
       .head-top-nav {
         height: 139 * 0.55864198px;
         .nav {
-          width: 428px;
+          width: 100%;
           padding-top: 33 * 0.55864198px;
 
           .nav-left {
@@ -99,7 +99,7 @@
     }
     .head-top-address {
       .address {
-        width: 428px;
+        width: 100%;
         margin: 0 auto;
         line-height: 57px;
         font-size: 16px;
@@ -119,7 +119,7 @@
 
     .head-con {
       .head-content {
-        width: 428px;
+        width: 100%;
         height: 1000px;
         background-size: 1280px;
 
@@ -128,18 +128,17 @@
         }
 
         .head-warp {
-          width: 428px;
+          width: 100%;
 
           .content-desc {
             padding-bottom: 52px;
             padding-top: 338 * 0.55864198px;
-            width: 428px;
+            width: 100%;
             height: 110px;
             font-size: 30px;
             text-align: center;
             line-height: 72 * 0.55864198px;
-            text-shadow: 0px 3 * 0.55864198px 6 * 0.55864198px
-              rgba(0, 22, 221, 0.23);
+            text-shadow: 0px 3 * 0.55864198px 6 * 0.55864198px rgba(0, 22, 221, 0.23);
           }
 
           .content-btn {
@@ -152,39 +151,49 @@
             a {
               width: 148px;
               line-height: 44px;
-              box-shadow: 0px 3 * 0.55864198px 3 * 0.55864198px
-                rgba(0, 6, 166, 0.12);
+              box-shadow: 0px 3 * 0.55864198px 3 * 0.55864198px rgba(0, 6, 166, 0.12);
               border-radius: 32 * 0.55864198px;
               font-size: 18px;
             }
           }
 
           .substrat {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
             .substratLogo-con {
-              width: 100%;
+              width: none;
             }
+
             .substratLogo {
               position: relative;
-              right: -100px;
+              right: none;
               width: 129px;
               height: 58px;
               display: block;
             }
 
             .parity {
-              width: 228x;
-              height: 56 * 0.55864198px;
+              width: 70%;
+              height: none;
               font-size: 18px;
               font-weight: bold;
               line-height: 24px;
-              margin-right: 17px;
+              margin-right: none;
+              text-align: center;
+              text-indent: 0;
+              margin-right: 0;
+              margin-top: 1em;
             }
 
             .substrateBtnText {
               width: 158px;
               line-height: 43px;
-              box-shadow: 0px 3 * 0.55864198px 3 * 0.55864198px
-                rgba(0, 27, 162, 0.12);
+              box-shadow: 0px 3 * 0.55864198px 3 * 0.55864198px rgba(0, 27, 162, 0.12);
               border-radius: 43px;
               font-size: 18px;
               font-weight: bold;
@@ -198,18 +207,19 @@
   }
 
   .usd {
-    &.fixed{
+    transform: scale(0.9);
+
+    &.fixed {
       top: 946px;
     }
     &.topClose {
       top: 946px;
     }
-    width: 374px;
+    width: calc(100% - 1em);
     height: 198px;
     top: 975px;
     margin-left: -180px;
-    box-shadow: 7 * 0.55864198px 18 * 0.55864198px 37 * 0.55864198px
-      rgba(29, 31, 117, 0.25);
+    box-shadow: 7 * 0.55864198px 18 * 0.55864198px 37 * 0.55864198px rgba(29, 31, 117, 0.25);
     border-radius: 20 * 0.55864198px;
 
     .usd-con {
@@ -277,7 +287,7 @@
       }
 
       .usd-value {
-        font-size: 20px;
+        font-size: 18px;
       }
 
       .usd-marketCap {
