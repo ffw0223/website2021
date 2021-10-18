@@ -25,7 +25,7 @@ function Road() {
     },
     {
       year: "2021",
-      envy: "Q1",
+      envy: "Q2",
       text: [
         t("Technical yellow paper was issued"),
         t("Improve the cross-chain interaction of Oracle users"),
@@ -38,7 +38,7 @@ function Road() {
     },
     {
       year: "2021",
-      envy: "Q2",
+      envy: "Q4",
       text: [
         t("Improve economic model design"),
         t("Launch Testnet"),
@@ -46,13 +46,11 @@ function Road() {
       ],
     },
     {
-      year: "2021",
-      envy: "Q3",
+      year: "2022",
+      envy: "Q2",
       text: [
         t("Launch Mainnet"),
         t("Carry out multi-channel service cooperation"),
-        t("Formal cooperation with enterprises"),
-        t("Eco Marathon Developer Activities"),
       ],
     },
   ];
