@@ -37,7 +37,7 @@ function Join() {
           <a onClick={handleClickTelegram}><img src={link1} alt="" /></a>
           <a href='https://twitter.com/AresProtocolLab' target="_blank" rel="noreferrer"><img src={link3} alt="" /></a>
           <a href='https://www.facebook.com/aresprotocollab' target="_blank" rel="noreferrer"><img src={link2} alt="" /></a>
-          <a href='https://discord.gg/MKE4yX4h' target="_blank" rel="noreferrer"><img src={link4} alt="" /></a>
+          <a href='https://discord.gg/cqduK4ZNaY' target="_blank" rel="noreferrer"><img src={link4} alt="" /></a>
           <a href='https://www.reddit.com/r/AresProtocolLabs/' target="_blank" rel="noreferrer"><img src={link5} alt="" /></a>
           <a href='https://aresprotocollab.medium.com/' target="_blank" rel="noreferrer"><img src={link6} alt="" /></a>
           <a href='https://github.com/aresprotocols' target="_blank" rel="noreferrer"><img src={link7} alt="" /></a>

@@ -35,7 +35,7 @@ const Community = props => {
 			</div>
 
 			<div className={styles.img}>
-				<a href="https://discord.gg/MKE4yX4h" target="_blank" rel="noreferrer">
+				<a href="https://discord.gg/cqduK4ZNaY" target="_blank" rel="noreferrer">
 					<img src="/images/mars/ro.png" alt="" />
 				</a>
 			</div>
