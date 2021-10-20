@@ -1,5 +1,5 @@
 const Config = {
-	baseMailAPI: "http://141.164.58.241:3000",
+	baseMailAPI: "https://mailbox.aresprotocol.io",
 	subscribeAPI: "/api/subscribe",
 	loginAPI: "/admin/login",
 	sendMailAPI: "/admin/send",
