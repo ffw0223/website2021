@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ReactChild, ReactElement } from "react";
 import "./style.scss";
 import "./style1280.scss";
 import "./style428.scss";
@@ -10,6 +10,8 @@ import aresLogoImg from "../assets/ares-logo.png";
 import logoImg from "../assets/logo.png";
 import parityImg from "../assets/parity.png";
 import topImg from "../assets/top.png";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 interface aresData {
   price: number;
@@ -38,12 +40,22 @@ async function getAresAll() {
 }
 
 function Head() {
+  const settings = {
+    // axis: 'vertical',
+    autoPlay: true,
+    infiniteLoop: true,
+    interval: 5000,
+    showArrows: false,
+    showIndicators: false,
+    showStatus: false,
+    showThumbs: false,
+  }
   const { t, i18n } = useTranslation();
   const head = {
-    topTip: t(
-      "ARES Official ERC-20 Contract is 0x358AA737e033F34df7c54306960a38d09AaBd523"
-    ),
-    topTip_m: "ARES Official ERC-20 Contract is 0x358A...Bd523",
+    // topTip: t(
+    //   "ARES Official ERC-20 Contract is 0x358AA737e033F34df7c54306960a38d09AaBd523"
+    // ),
+    // topTip_m: "ARES Official ERC-20 Contract is 0x358A...Bd523",
     desc: t("ARES A Decentralized Cross-Chain Oracle Service Protocol"),
     farmsUrl: "https://trojan.aresprotocol.io/",
     farmBtnText: t("Farms"),
@@ -154,7 +166,7 @@ function Head() {
     volume: 809945.75,
     volumeText: t("Volume"),
   };
-  const [addressSwitch, setAddressSwitch] = useState(true);
+  // const [addressSwitch, setAddressSwitch] = useState(true);
   const [mNav, setmNavSwitch] = useState(false);
   const [languageStatus, setlanguageStatus] = useState(false);
   const [scrollTop, setScroll] = useState(0);
@@ -165,6 +177,13 @@ function Head() {
   );
   const [aresData, setAresData] = useState(ares);
   const [navChildActive, setNavChildActive] = useState<null | number>(null);
+  const [tips, setTips] = useState<null | Array<any>>(null);
+
+  const fetchTips = async () => {
+    const result = await (await fetch("/tips.json?t=" + new Date().getTime())).json();
+    setTips(result);
+  };
+
   useEffect(() => {
     // const svg = document.getElementById("eHCcx25uMnP1");
     // const vedioImg = document.querySelector(".video-img");
@@ -182,7 +201,12 @@ function Head() {
       setAresData(newAresData);
     };
     fetchData();
+
+    setTimeout(() => {
+      fetchTips();
+    }, 3000);
   }, []);
+
   useEffect(() => {
     const isPhone = window.screen.width <= 1279;
     isPhone && setPhone(isPhone);
@@ -201,27 +225,39 @@ function Head() {
     };
   }, []);
 
+  const makeTips = () => {
+    // {tips && tips.map(tip => {
+    //   const ee = (<div>{tip.label}</div>)
+    //   const e = ee as ReactElement;
+    //   return e;
+    // })}
+    let tempArray = new Array<ReactElement>();
+    if (tips) {
+      tips.forEach(tip => {
+        const e = (<div className="address" key={tip.id}>
+          <a href={tip.link} target="_blank" rel="noreferrer">{tip.label}</a>
+        </div>);
+        tempArray.push(e as ReactElement);
+      })
+    }
+
+    console.log("tempArray =", tempArray);
+    return tempArray;
+  }
+
   return (
     <>
       <section className="head" id="Home">
         <div className={classnames("head-top", { fixed: !!scrollTop })}>
-          <div className="head-top-address">
-            {addressSwitch ? (
-              <h2 className="address">
-                <a
-                  href={`https://etherscan.io/token/0x358AA737e033F34df7c54306960a38d09AaBd523`}
-                >
-                  {phone ? head.topTip_m : head.topTip}
-                </a>
-                <span
-                  className="close"
-                  onClick={() => {
-                    setAddressSwitch(false);
-                  }}
-                ></span>
-              </h2>
-            ) : null}
-          </div>
+          {tips && (<div className="head-top-address">
+            <Carousel
+              autoPlay={true}
+              infiniteLoop={true}
+              interval={5000}
+              showIndicators={false}
+              showStatus={false}
+              showThumbs={false}>{makeTips()}</Carousel>
+          </div>)}
           {phone ? (
             <div className="mNav-warp">
               <div className="mNav">
@@ -447,7 +483,7 @@ function Head() {
           )}
         </div>
         {mNav ? (
-          <div className={classnames("mNav-con", { isAddress: addressSwitch })}>
+          <div className={classnames("mNav-con", { isAddress: Boolean(tips) })}>
             <div className="mNav-list">
               <ul className="list">
                 {head.navs.map((nav, index) => {
@@ -654,7 +690,7 @@ function Head() {
           <div
             className={classnames(
               "video-img",
-              { isNoAddress: !addressSwitch },
+              { isNoAddress: !Boolean(tips) },
               { fixed: !!scrollTop }
             )}
           >
@@ -736,7 +772,7 @@ function Head() {
       <section
         className={classnames(
           "usd",
-          { topClose: !addressSwitch },
+          { topClose: !Boolean(tips) },
           { fixed: !!scrollTop }
         )}
       >
