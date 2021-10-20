@@ -172,6 +172,7 @@ function Head() {
   const [scrollTop, setScroll] = useState(0);
   const [phone, setPhone] = useState(false);
   const [vedioSwich, setVedioStauts] = useState(false);
+  console.log("vedioSwich =", vedioSwich)
   const [language, setlanguage] = useState(
     head.language.select[head.language.localIndex].name
   );
@@ -241,7 +242,6 @@ function Head() {
       })
     }
 
-    console.log("tempArray =", tempArray);
     return tempArray;
   }
 
@@ -694,11 +694,7 @@ function Head() {
               { fixed: !!scrollTop }
             )}
           >
-            <span
-              className="video-button"
-              onClick={() => setVedioStauts(!vedioSwich)}
-            ></span>
-
+            <span className="video-button" onClick={() => setVedioStauts(!vedioSwich)} />
             <iframe src="/images/Animacionwebsite001.svg" frameBorder={0} />
           </div>
           <div className="head-content">
