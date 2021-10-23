@@ -223,7 +223,14 @@ export const resources = {
       persian: "persian",
       japan: "japan",
       israel: "israel",
-      georgia: "georgia"
+      georgia: "georgia",
+      contribute: "contribute",
+      rewards: "rewards",
+      getRewards: "get rewards",
+      getRewardsDescription: "Please send us your ethereum address",
+      crowdloanDrop: "crowdloan drop",
+      submitEthereumAddress: "Submit Ethereum Address",
+      thanksContribution: "Thanks for you constribution for the KSM slot"
     },
   },
   cn: {
@@ -452,7 +459,14 @@ export const resources = {
       persian: "波斯语",
       japan: "日本",
       israel: "以色列",
-      georgia: "格鲁吉亚"
+      georgia: "格鲁吉亚",
+      contribute: "贡献",
+      rewards: "奖励",
+      getRewards: "获取奖励",
+      getRewardsDescription: "请提交您的以太坊地址",
+      crowdloanDrop: "众贷空投",
+      submitEthereumAddress: "提交以太坊地址",
+      thanksContribution: "Thanks for you constribution for the KSM slot"
     },
   },
 };

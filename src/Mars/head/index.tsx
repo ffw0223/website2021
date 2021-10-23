@@ -5,11 +5,31 @@ import { useTranslation } from "react-i18next";
 import PopupMenu from "../components/PopupMenu";
 import { render } from "react-dom";
 import JoinCrowdloanModal from "../components/JoinCrowdloanModal";
+import RewardsModal from "../components/RewardsModal";
 
 function Head(props: any) {
   const visibleBottom = window.scrollY + document.documentElement.clientHeight;
   const visibleTop = window.scrollY;
   const { t, i18n } = useTranslation();
+  const [showRewardsModal, setShowRewardsModal] = useState(false)
+  const [showJoinCrowdloanModal, setShowJoinCrowdloanModal] = useState(false)
+
+  const handleJoinCrowdloan = (event: any) => {
+    setShowJoinCrowdloanModal(true);
+  };
+
+  const handleRewards = (event: any) => {
+    setShowRewardsModal(true);
+  };
+
+  const handleCloseRewardsModal = () => {
+    setShowRewardsModal(false);
+  }
+
+  const handleCloseJoinCrowdloanModal = () => {
+    setShowJoinCrowdloanModal(false);
+  }
+
   const head = {
     navs: [
       {
@@ -52,7 +72,20 @@ function Head(props: any) {
       {
         name: t("crowdloan"),
         id: "crowdloan",
-        menu: null,
+        menu: {
+          menuItems: [
+            {
+              title: t("contribute"),
+              handle: handleJoinCrowdloan,
+              forLanguage: false
+            },
+            {
+              title: t("rewards"),
+              handle: handleRewards,
+              forLanguage: false
+            }
+          ]
+        },
         target: ""
       },
       {
@@ -102,10 +135,6 @@ function Head(props: any) {
   const handleHideMenu = (event: any) => {
     setIsMobileMenuShow(false);
   }
-
-  const handleJoinCrowdloan = (event: any) => {
-    render(<JoinCrowdloanModal api={props.api} />, document.getElementById("mainModalContainer"));
-  };
 
   const goToTop = () => {
     window.location.href = "#Home";
@@ -258,10 +287,19 @@ function Head(props: any) {
           <div className="head-content-mars">
             <div className="content">{t("descriptionHomePage")}</div>
 
-            <button
-              className="button"
-              style={{ marginTop: "2rem" }}
-              onClick={handleJoinCrowdloan}>{t("joinCrowdloan")}</button>
+            <div>
+              <button
+                className="button"
+                disabled={!Boolean(props.api)}
+                style={{ marginTop: "2rem" }}
+                onClick={handleJoinCrowdloan}>{t("joinCrowdloan")}</button>
+
+              <button
+                className="button"
+                disabled={!Boolean(props.api) || !Boolean(props.contributions)}
+                style={{ marginLeft: "0.5em" }}
+                onClick={handleRewards}>{t("crowdloanDrop")}</button>
+            </div>
 
             <iframe
               id="animatePlayer"
@@ -320,6 +358,10 @@ function Head(props: any) {
           </ul>
         </div>)
       }
+
+      {showJoinCrowdloanModal && (<JoinCrowdloanModal api={props.api} onClose={handleCloseJoinCrowdloanModal} />)}
+
+      {showRewardsModal && (<RewardsModal api={props.api} contributions={props.contributions} onClose={handleCloseRewardsModal} />)}
     </>
   );
 }

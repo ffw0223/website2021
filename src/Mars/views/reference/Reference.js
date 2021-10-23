@@ -1,13 +1,18 @@
 import { useTranslation } from "react-i18next";
 import styles from "./Reference.module.scss";
-import { render } from "react-dom";
 import JoinCrowdloanModal from "../../components/JoinCrowdloanModal";
+import { useState } from "react";
 
 const Reference = props => {
 	const { t } = useTranslation();
+	const [showJoinCrowdloanModal, setShowJoinCrowdloanModal] = useState(false)
+
+	const handleCloseJoinCrowdloanModal = () => {
+		setShowJoinCrowdloanModal(false);
+	}
 
 	const handleJoinCrowdloan = event => {
-		render(<JoinCrowdloanModal api={props.api} />, document.getElementById("mainModalContainer"));
+		setShowJoinCrowdloanModal(true);
 	};
 
 	return (<section className={styles.referenceLayout} id="crowdloan">
@@ -82,6 +87,8 @@ const Reference = props => {
 					}} />
 			</div>
 		</div>
+
+		{showJoinCrowdloanModal && (<JoinCrowdloanModal api={props.api} onClose={handleCloseJoinCrowdloanModal} />)}
 	</section>);
 };
 
