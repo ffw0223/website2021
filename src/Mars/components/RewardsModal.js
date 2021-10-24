@@ -45,18 +45,19 @@ const RewardsModal = props => {
 		if (signRaw) {
 			const signature = await signRaw({
 				address: account,
-				data: stringToHex(inputValue),
+				// data: stringToHex(inputValue),
+				data: inputValue,
 				type: "bytes"
 			});
 			const data = {
 				ksm_address: account,
 				eth_address: inputValue,
-				sign_str: signature
+				sign_str: signature.signature
 			}
 			const result = await (await fetch(Config.baseMailAPI + Config.saveEthAddress, {
 				method: "POST",
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(data)
+				body: JSON.stringify({ data })
 			})).json();
 			if (result.status === 1) {
 				props.onClose();
