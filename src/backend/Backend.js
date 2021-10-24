@@ -94,6 +94,31 @@ const Backend = _ => {
 		}
 	}
 
+	const handleCreateTable = async event => {
+		if (!token) {
+			window.alert("token不存在，请重新登录。");
+		}
+
+		if (window.confirm("确认创建addresses表吗？")) {
+			const result = await (await fetch(Config.baseMailAPI + Config.runSql, {
+				method: "POST",
+				headers: {
+					'Content-Type': 'application/json',
+					'Authorization': token
+				},
+				body: JSON.stringify({
+					sql: 'CREATE TABLE IF NOT EXISTS "addresses" ("id"	INTEGER NOT NULL UNIQUE, "owner"	TEXT NOT NULL, "data"	TEXT NOT NULL, "time"	INTEGER NOT NULL, PRIMARY KEY("id"));'
+				})
+			})).json();
+
+			if (result.status === 1) {
+				window.alert("数据表addresses已创建。");
+			} else {
+				console.warn(result.message);
+			}
+		}
+	};
+
 	const loginForm = (<div className="backendLoginForm">
 		<input id="userName" placeholder="管理员用户名" onChange={handleChange} />
 		<input id="userPassword" type="password" placeholder="管理员密码" onChange={handleChange} />
@@ -115,7 +140,11 @@ const Backend = _ => {
 			justifyContent: "space-between",
 			width: "100%"
 		}}>
-			<button style={{ width: "150px" }} onClick={handleDownload}>下载用户数据文件</button>
+			<div>
+				<button onClick={handleDownload}>下载用户数据文件</button>
+
+				<button style={{ marginLeft: "1em" }} onClick={handleCreateTable}>创建addresses表</button>
+			</div>
 
 			<button
 				onClick={handleSend}
