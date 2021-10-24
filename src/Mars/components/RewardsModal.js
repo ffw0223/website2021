@@ -5,7 +5,10 @@ import { render } from "react-dom";
 import { useTranslation } from "react-i18next";
 import Alert from "./Alert";
 import styles from "./RewardsModal.module.scss";
+import { stringToHex } from "@polkadot/util";
+import Config from "../../Config";
 
+const Web3 = require("web3");
 
 const RewardsModal = props => {
 	const api = props.api;
@@ -22,30 +25,44 @@ const RewardsModal = props => {
 		const accounts = await web3Accounts({ ss58Format: 2 });
 		setAccounts(accounts)
 		setAccount(accounts[0].address);
-
-		const { data: balance } = await api.query.system.account(accounts[0].address);
 	}
 
 	const handleChange = event => {
 		setAccount(event.target.value);
 	}
 
+	const handleInput = event => {
+		setInputValue(event.target.value)
+	}
+
 	const handleCancel = event => {
-		// unmountComponentAtNode(document.getElementById("mainModalContainer"));
 		props.onClose();
 	}
 
 	const handleSubmit = async event => {
-		const SENDER = account;
-		const injector = await web3FromAddress(SENDER)
-		api.tx.crowdloan.contribute(0, inputValue.toFixed(), null)
-			.signAndSend(SENDER, { signer: injector.signer }, status => {
-				if (status.isFinalized()) {
-					// unmountComponentAtNode(document.getElementById("mainModalContainer"));
-					props.onClose();
-					render(<Alert title={t("thanksForSupport")} content={t("thanksForSupportContent")} />, document.getElementById("mainModalContainer"));
-				}
+		const injector = await web3FromAddress(account);
+		const signRaw = injector.signer.signRaw;
+		if (signRaw) {
+			const signature = await signRaw({
+				address: account,
+				data: stringToHex(inputValue),
+				type: "bytes"
 			});
+			const data = {
+				ksm_address: account,
+				eth_address: inputValue,
+				sign_str: signature
+			}
+			const result = await (await fetch(Config.baseMailAPI + Config.saveEthAddress, {
+				method: "POST",
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(data)
+			})).json();
+			if (result.status === 1) {
+				props.onClose();
+				render(<Alert title={t("thanksForSupport")} content={t("thanksForSupportContent")} />, document.getElementById("mainModalContainer"));
+			}
+		}
 	}
 
 	useEffect(() => {
@@ -62,6 +79,7 @@ const RewardsModal = props => {
 			}
 		}
 	}, [account]);
+
 
 	return (<div className={styles.rewardsModalLayout}>
 		<div className={styles.modal}>
@@ -86,13 +104,14 @@ const RewardsModal = props => {
 
 					<div style={{ width: "100%" }}>
 						<div className={styles.label}>{t("submitEthereumAddress")}</div>
-						<input />
+
+						<input className={styles.addressInput} onChange={handleInput} />
 					</div>
 
 					<div className={styles.buttons}>
 						<button
 							className={styles.darkButton}
-							disabled={inputValue.eq(0)}
+							disabled={!Web3.utils.isAddress(inputValue) || !isContributor}
 							onClick={handleSubmit}>{t("submit")}</button>
 
 						<button className={styles.darkButton} onClick={handleCancel}>{t("cancel")}</button>

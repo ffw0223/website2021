@@ -66,7 +66,6 @@
 				font-size: 0.6em;
 				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 				text-align: center;
-				padding: 0 0 2em 0;
 				width: 100%;
 				text-align: center;
 				color: #00b85c;
@@ -76,10 +75,10 @@
 				margin-top: 2rem;
 				display: flex;
 				flex-direction: column;
-				row-gap: 1rem;
+				row-gap: 1em;
 				justify-content: flex-start;
 				align-items: flex-start;
-				max-width: 564px;
+				width: 15em;
 				pointer-events: all;
 
 				input::-webkit-outer-spin-button,
@@ -119,7 +118,7 @@
 					text-transform: capitalize;
 				}
 
-				input {
+				.addressInput {
 					border: 2px solid #969696;
 					box-shadow: 0px 3px 3px rgba(0, 6, 166, 0.12);
 					opacity: 0.65;
@@ -127,11 +126,11 @@
 					padding-top: 1rem;
 					padding-bottom: 1rem;
 					padding-left: 2rem;
-					padding-right: 9rem;
+					padding-right: 2rem;
 					background-color: white;
 					outline: none;
 					font-size: 1rem;
-					width: calc(100% - 11.2rem);
+					width: calc(100% - 4rem);
 				}
 
 				.maxButton {
@@ -184,6 +183,10 @@
 						font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 						font-weight: 400;
 						color: #ffffff;
+
+						&:disabled{
+							opacity: 0.7;
+						}
 					}
 				}
 			}
@@ -210,6 +213,7 @@
 				.content {
 					margin-top: 2rem;
 					max-width: none;
+					width: 100%;
 
 					.buttons {
 						justify-content: center;

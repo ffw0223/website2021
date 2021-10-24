@@ -3,7 +3,8 @@ const Config = {
 	subscribeAPI: "/api/subscribe",
 	loginAPI: "/admin/login",
 	sendMailAPI: "/admin/send",
-	csvURL: "/admin/csv"
+	csvURL: "/admin/csv",
+	saveEthAddress: "/api/saveaddress"
 }
 
 export default Config;
