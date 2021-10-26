@@ -1,6 +1,6 @@
 const Config = {
-	// baseMailAPI: "https://mailbox.aresprotocol.io",
-	baseMailAPI: "http://localhost:2999",
+	baseMailAPI: "https://mailbox.aresprotocol.io",
+	// baseMailAPI: "http://localhost:2999",
 	subscribeAPI: "/api/subscribe",
 	loginAPI: "/admin/login",
 	sendMailAPI: "/admin/send",
