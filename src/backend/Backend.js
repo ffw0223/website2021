@@ -41,8 +41,12 @@ const Backend = _ => {
 			})
 		})).json();
 
-		setToken(result.token);
-		setIsLogin(true);
+		if (result.token) {
+			setToken(result.token);
+			setIsLogin(true);
+		} else {
+			return window.alert("错误的用户名或密码，请联系管理员。");
+		}
 	}
 
 	const receiveHtml = content => {
@@ -50,6 +54,10 @@ const Backend = _ => {
 	}
 
 	const handleDownload = async _ => {
+		if (!token) {
+			return window.alert("token不存在，请重新登录。");
+		}
+
 		fetch(Config.baseMailAPI + Config.csvURL, {
 			method: "GET",
 			headers: {
@@ -70,7 +78,7 @@ const Backend = _ => {
 
 	const handleSend = async _ => {
 		if (!token) {
-			window.alert("token不存在，请重新登录。");
+			return window.alert("token不存在，请重新登录。");
 		}
 
 		if (window.confirm("确认向所有用户群发此邮件吗？")) {
@@ -96,7 +104,7 @@ const Backend = _ => {
 
 	const handleCreateTable = async event => {
 		if (!token) {
-			window.alert("token不存在，请重新登录。");
+			return window.alert("token不存在，请重新登录。");
 		}
 
 		if (window.confirm("确认创建addresses表吗？")) {
