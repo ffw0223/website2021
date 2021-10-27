@@ -71,6 +71,44 @@
 				color: #00b85c;
 			}
 
+			.descRed {
+				font-size: 0.6em;
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+				text-align: center;
+				width: 100%;
+				text-align: center;
+				color: #d20000;
+			}
+
+			.scoreBoard {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: flex-start;
+				width: 100%;
+
+				.scorePanel {
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					align-items: flex-start;
+
+					.scoreLabel {
+						font-size: 0.8em;
+						margin-left: 1em;
+						margin-bottom: 0.5em;
+						text-transform: capitalize;
+					}
+
+					.number {
+						font-size: 1em;
+						background: #ffe3cd;
+						border-radius: 100px;
+						padding: 0.5em 2em 0.5em 1em;
+					}
+				}
+			}
+
 			.content {
 				margin-top: 2rem;
 				display: flex;
@@ -184,7 +222,7 @@
 						font-weight: 400;
 						color: #ffffff;
 
-						&:disabled{
+						&:disabled {
 							opacity: 0.7;
 						}
 					}
@@ -195,7 +233,7 @@
 }
 
 @media (max-width: 576px) {
-	.joinCrowdloanModalLayout {
+	.rewardsModalLayout {
 		.modal {
 			font-size: 16px;
 			column-gap: 0;
@@ -208,7 +246,7 @@
 			}
 
 			.modalLayout {
-				padding: 3rem 0;
+				padding: 3em 2em 1em 2em;
 
 				.content {
 					margin-top: 2rem;
@@ -219,6 +257,14 @@
 						justify-content: center;
 						width: 100%;
 						margin-top: 1rem;
+					}
+				}
+
+				.scoreBoard {
+					.scorePanel {
+						.number {
+							padding: 0.5em 1em 0.5em 1em;
+						}
 					}
 				}
 			}

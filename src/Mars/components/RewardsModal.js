@@ -19,6 +19,7 @@ const RewardsModal = props => {
 	const [account, setAccount] = useState(null);
 	const [inputValue, setInputValue] = useState(new BigNumber(0));
 	const [isContributor, setIsContributor] = useState(false);
+	const [contributed, setContributed] = useState(new BigNumber(750000000000))
 
 	const handleConnect = async event => {
 		await web3Enable("mars");
@@ -76,6 +77,7 @@ const RewardsModal = props => {
 		for (let i = 0; i < contributions.length; i++) {
 			if (contributions[i].who === account) {
 				setIsContributor(true);
+				setContributed(new BigNumber(contributions[i].contributed))
 				break;
 			}
 		}
@@ -101,7 +103,19 @@ const RewardsModal = props => {
 						disabled={!isConnected}
 						onClick={handleConnect}>{t("connectPolkadotExtension")}</button>) : (<div className={styles.lightButton}>Loading Polkadot.js...</div>))}
 
-					{isContributor && (<div className={styles.descGreen}>{t("thanksContribution")}</div>)}
+					{isContributor ? (<div className={styles.descGreen}>{t("thanksContribution")}</div>) : (account ? ((<div className={styles.descRed}>{t("didntContribute")}</div>)) : null)}
+
+					{isContributor && account && (<div className={styles.scoreBoard}>
+						<div className={styles.scorePanel}>
+							<div className={styles.scoreLabel}>{t("contribute")}</div>
+							<div className={styles.number}>{contributed.shiftedBy(-12).toFixed()}&nbsp;KSM</div>
+						</div>
+
+						<div className={styles.scorePanel}>
+							<div className={styles.scoreLabel}>{t("earned")}</div>
+							<div className={styles.number}>{contributed.shiftedBy(-12).toFixed()}&nbsp;ARES</div>
+						</div>
+					</div>)}
 
 					<div style={{ width: "100%" }}>
 						<div className={styles.label}>{t("submitEthereumAddress")}</div>

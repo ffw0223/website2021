@@ -287,16 +287,15 @@ function Head(props: any) {
           <div className="head-content-mars">
             <div className="content">{t("descriptionHomePage")}</div>
 
-            <div>
+            <div className="buttons">
               <button
                 className="button"
-                disabled={!Boolean(props.api)}
-                style={{ marginTop: "2rem" }}
+                // disabled={!Boolean(props.api)}
                 onClick={handleJoinCrowdloan}>{t("joinCrowdloan")}</button>
 
               <button
                 className="button"
-                disabled={!Boolean(props.api) || !Boolean(props.contributions)}
+                // disabled={!Boolean(props.api) || !Boolean(props.contributions)}
                 style={{ marginLeft: "0.5em" }}
                 onClick={handleRewards}>{t("crowdloanDrop")}</button>
             </div>
