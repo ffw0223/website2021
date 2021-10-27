@@ -19,7 +19,7 @@ const RewardsModal = props => {
 	const [account, setAccount] = useState(null);
 	const [inputValue, setInputValue] = useState(new BigNumber(0));
 	const [isContributor, setIsContributor] = useState(false);
-	const [contributed, setContributed] = useState(new BigNumber(750000000000))
+	const [contributed, setContributed] = useState(new BigNumber(0))
 
 	const handleConnect = async event => {
 		await web3Enable("mars");
@@ -113,7 +113,7 @@ const RewardsModal = props => {
 
 						<div className={styles.scorePanel}>
 							<div className={styles.scoreLabel}>{t("earned")}</div>
-							<div className={styles.number}>{contributed.shiftedBy(-12).toFixed()}&nbsp;ARES</div>
+							<div className={styles.number}>{contributed.shiftedBy(-12).multipliedBy(500).toFixed()}&nbsp;ARES</div>
 						</div>
 					</div>)}
 
