@@ -230,7 +230,9 @@ export const resources = {
       getRewardsDescription: "Please send us your ethereum address",
       crowdloanDrop: "crowdloan drop",
       submitEthereumAddress: "Submit Ethereum Address",
-      thanksContribution: "Thanks for you constribution for the KSM slot"
+      thanksContribution: "Thanks for you constribution for the KSM slot",
+      didntContribute: "Sorry, you are not on the list. Contribute now!",
+      earned: "earned"
     },
   },
   cn: {
@@ -463,10 +465,12 @@ export const resources = {
       contribute: "贡献",
       rewards: "奖励",
       getRewards: "获取奖励",
-      getRewardsDescription: "请提交您的以太坊地址",
+      getRewardsDescription: "请将您的 ETH 地址发送给我们",
       crowdloanDrop: "众贷空投",
-      submitEthereumAddress: "提交以太坊地址",
-      thanksContribution: "Thanks for you constribution for the KSM slot"
+      submitEthereumAddress: "提交 ETH 地址",
+      thanksContribution: "感谢您对 KSM 插槽的贡献",
+      didntContribute: "抱歉，您不在列表中。快来贡献吧！",
+      earned: "获得"
     },
   },
 };
