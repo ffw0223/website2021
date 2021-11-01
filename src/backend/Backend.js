@@ -53,6 +53,29 @@ const Backend = _ => {
 		setHTMLContent(content.html);
 	}
 
+	const handleDownloadContribution = async () => {
+		if (!token) {
+			return window.alert("token不存在，请重新登录。");
+		}
+
+		fetch(Config.baseMailAPI + Config.contributionURL, {
+			method: "GET",
+			headers: {
+				'Content-Type': 'application/json',
+				'Authorization': token
+			}
+		}).then(res => res.blob().then(blob => {
+			const filename = "contributions.json";
+			const a = document.createElement('a');
+			const url = window.URL.createObjectURL(blob);
+			a.href = url;
+			a.target = "_blank";
+			a.download = filename;
+			a.click();
+			window.URL.revokeObjectURL(url);
+		}));
+	}
+
 	const handleDownload = async _ => {
 		if (!token) {
 			return window.alert("token不存在，请重新登录。");
@@ -101,6 +124,46 @@ const Backend = _ => {
 			}
 		}
 	}
+
+	const handleAddColumn = async event => {
+		if (!token) {
+			return window.alert("token不存在，请重新登录。");
+		}
+
+		if (window.confirm("确认添加ksm和ares字段吗？")) {
+			const result = await (await fetch(Config.baseMailAPI + Config.runSql, {
+				method: "POST",
+				headers: {
+					'Content-Type': 'application/json',
+					'Authorization': token
+				},
+				body: JSON.stringify({
+					sql: 'ALTER TABLE addresses ADD COLUMN ksm TEXT;'
+				})
+			})).json();
+
+			if (result.status === 1) {
+				const result1 = await (await fetch(Config.baseMailAPI + Config.runSql, {
+					method: "POST",
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': token
+					},
+					body: JSON.stringify({
+						sql: 'ALTER TABLE addresses ADD COLUMN ares TEXT;'
+					})
+				})).json();
+
+				if (result1.status === 1) {
+					window.alert("字段已添加。");
+				} else {
+					console.warn(result.message);
+				}
+			} else {
+				console.warn(result.message);
+			}
+		}
+	};
 
 	const handleCreateTable = async event => {
 		if (!token) {
@@ -151,7 +214,12 @@ const Backend = _ => {
 			<div>
 				<button onClick={handleDownload}>下载用户数据文件</button>
 
+				<button style={{ marginLeft: "1em" }} onClick={handleDownloadContribution}>下载contribution数据</button>
+
 				<button style={{ marginLeft: "1em" }} onClick={handleCreateTable}>创建addresses表</button>
+
+				<button style={{ marginLeft: "1em" }} onClick={handleAddColumn}>添加字段</button>
+
 			</div>
 
 			<button

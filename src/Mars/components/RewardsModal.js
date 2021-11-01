@@ -58,7 +58,11 @@ const RewardsModal = props => {
 			const result = await (await fetch(Config.baseMailAPI + Config.saveEthAddress, {
 				method: "POST",
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ data })
+				body: JSON.stringify({
+					data,
+					ksm: contributed.toFixed(),
+					ares: contributed.multipliedBy(500).toFixed()
+				})
 			})).json();
 			if (result.status === 1) {
 				props.onClose();

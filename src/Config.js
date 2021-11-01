@@ -5,6 +5,7 @@ const Config = {
 	loginAPI: "/admin/login",
 	sendMailAPI: "/admin/send",
 	csvURL: "/admin/csv",
+	contributionURL: "/admin/addresses",
 	saveEthAddress: "/api/saveaddress",
 	runSql: "/admin/run"
 }
