@@ -41,11 +41,13 @@ const JoinCrowdloanModal = props => {
 		const injector = await web3FromAddress(SENDER)
 		api.tx.crowdloan.contribute(0, inputValue.toFixed(), null)
 			.signAndSend(SENDER, { signer: injector.signer }, status => {
-				if (status.isFinalized()) {
+				if (status.isInBlock) {
 					// unmountComponentAtNode(document.getElementById("mainModalContainer"));
 					props.onClose();
 					render(<Alert title={t("thanksForSupport")} content={t("thanksForSupportContent")} />, document.getElementById("mainModalContainer"));
 				}
+			}).catch((error: any) => {
+				console.error(error);
 			});
 	}
 
