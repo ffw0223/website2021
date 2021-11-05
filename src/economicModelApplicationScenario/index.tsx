@@ -52,6 +52,7 @@ function EconomicModelApplicationScenario() {
     ],
     swiperConfig: {
       loop: true,
+      autoHeight: true,
       autoplay: {
         delay: 3000,
         stopOnLastSlide: false,
@@ -141,6 +142,7 @@ function EconomicModelApplicationScenario() {
     ],
     swiperConfig: {
       loop: true,
+      autoHeight: true,
       autoplay: {
         delay: 3000,
         stopOnLastSlide: false,
