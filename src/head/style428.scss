@@ -213,25 +213,20 @@
   }
 
   .usd {
-    transform: scale(0.9);
-
-    &.fixed {
-      top: 946px;
-    }
-    &.topClose {
-      top: 946px;
-    }
-    width: calc(100% - 1em);
-    height: 198px;
-    top: 975px;
-    margin-left: -180px;
-    box-shadow: 7 * 0.55864198px 18 * 0.55864198px 37 * 0.55864198px rgba(29, 31, 117, 0.25);
-    border-radius: 20 * 0.55864198px;
+    width: calc(100% - 2em);
+    height: auto;
+    // top: 975px;
+    position: relative;
+    top: -4em;
+    margin-left: calc(-100vw / 2 + 1em);
+    padding-bottom: 2em;
+    flex-direction: column;
 
     .usd-con {
       flex-wrap: wrap;
       padding-left: 16px;
       padding-top: 25px;
+      justify-content: center;
 
       .usd-logo {
         img {
@@ -281,7 +276,7 @@
       .usd-rank {
         align-items: flex-start;
         margin-left: 0px;
-        margin-top: 43px;
+        margin-top: 1em;
         &::after {
           content: none;
         }
@@ -297,13 +292,13 @@
       }
 
       .usd-marketCap {
-        margin-top: 43px;
+        margin-top: 1em;
         align-items: flex-start;
         margin-left: 20px;
       }
 
       .usd-volume {
-        margin-top: 43px;
+        margin-top: 1em;
         align-items: flex-start;
         margin-left: 20px;
       }
