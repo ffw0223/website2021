@@ -39,7 +39,7 @@ const JoinCrowdloanModal = props => {
 	const handleSubmit = async event => {
 		const SENDER = account;
 		const injector = await web3FromAddress(SENDER)
-		api.tx.crowdloan.contribute(0, inputValue.toFixed(), null)
+		api.tx.crowdloan.contribute(2008, inputValue.toFixed(), null)
 			.signAndSend(SENDER, { signer: injector.signer }, ({ status, dispatchError }) => {
 				if (dispatchError) {
 					if (dispatchError.isModule) {
@@ -51,7 +51,7 @@ const JoinCrowdloanModal = props => {
 					}
 					console.log(`${dispatchError}`);
 				}
-				
+
 				if (status.isInBlock) {
 					// unmountComponentAtNode(document.getElementById("mainModalContainer"));
 					props.onClose();
