@@ -40,7 +40,18 @@ const JoinCrowdloanModal = props => {
 		const SENDER = account;
 		const injector = await web3FromAddress(SENDER)
 		api.tx.crowdloan.contribute(0, inputValue.toFixed(), null)
-			.signAndSend(SENDER, { signer: injector.signer }, status => {
+			.signAndSend(SENDER, { signer: injector.signer }, ({ status, dispatchError }) => {
+				if (dispatchError) {
+					if (dispatchError.isModule) {
+						// for module errors, we have the section indexed, lookup
+						const decoded = api.registry.findMetaError(dispatchError.asModule);
+						const { docs, name, section } = decoded;
+
+						console.log(`${section}.${name}: ${docs.join(' ')}`);
+					}
+					console.log(`${dispatchError}`);
+				}
+				
 				if (status.isInBlock) {
 					// unmountComponentAtNode(document.getElementById("mainModalContainer"));
 					props.onClose();
