@@ -775,6 +775,7 @@ function Head() {
         <ul className="usd-con">
           <li className="usd-logo">
             <img src={aresLogoImg} alt="" />
+            <img className="animate" src="/images/loading.png" />
           </li>
           <li className="usd-usd">
             <p className="usd-name">{aresData.name}</p>
