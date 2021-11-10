@@ -788,9 +788,7 @@ function Head() {
             <span className="usd-num">{aresData.point}%</span>
             <span className="usd-direction"></span>
           </li>
-        </ul>
-
-        <ul className="usd-con">
+          <li className="placeholder" />
           <li className="usd-rank verticalBar">
             <p className="usd-text">{ares.rankText}</p>
             <p className="usd-value">{aresData.rank}</p>

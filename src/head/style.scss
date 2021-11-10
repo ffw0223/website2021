@@ -600,9 +600,14 @@
   display: flex;
 
   .usd-con {
-    padding-left: 50px;
-    padding-top: 54px;
+    // padding-left: 50px;
+    // padding-top: 54px;
+    padding: 0 3em;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 
     .usd-logo {
       // &::after {
@@ -639,7 +644,7 @@
       flex-direction: column;
       align-items: end;
       justify-content: space-around;
-      margin-left: 38px;
+      // margin-left: 38px;
 
       .usd-name {
         font-weight: bold;
@@ -673,7 +678,7 @@
     .usd-point {
       display: flex;
       align-items: center;
-      margin-left: 100px;
+      // margin-left: 100px;
       font-size: 40px;
       font-weight: bold;
       line-height: 53px;
@@ -692,12 +697,16 @@
       }
     }
 
+    .placeholder {
+      display: none;
+    }
+
     .usd-rank {
       display: flex;
       flex-direction: column;
       align-items: end;
       justify-content: space-around;
-      margin-left: 108px;
+      // margin-left: 108px;
     }
 
     .usd-text {
@@ -714,7 +723,7 @@
       flex-direction: column;
       align-items: end;
       justify-content: space-around;
-      margin-left: 108px;
+      // margin-left: 108px;
     }
 
     .usd-volume {
@@ -722,7 +731,7 @@
       flex-direction: column;
       align-items: end;
       justify-content: space-around;
-      margin-left: 108px;
+      // margin-left: 108px;
     }
   }
 }

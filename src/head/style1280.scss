@@ -221,8 +221,8 @@
     border-radius: 20 * 0.76190476px;
 
     .usd-con {
-      padding-left: 50 * 0.76190476px;
-      padding-top: 54 * 0.76190476px;
+      // padding-left: 50 * 0.76190476px;
+      // padding-top: 54 * 0.76190476px;
 
       .usd-logo {
         img {
@@ -232,7 +232,7 @@
       }
 
       .usd-usd {
-        margin-left: 38 * 0.76190476px;
+        // margin-left: 38 * 0.76190476px;
 
         .usd-name {
           font-size: 20 * 0.76190476px;
@@ -243,20 +243,20 @@
         }
 
         .usd-currency {
-          margin-left: 10 * 0.76190476px;
+          // margin-left: 10 * 0.76190476px;
           font-size: 30 * 0.76190476px;
         }
       }
 
       .verticalBar {
-        &:after {
-          left: -50 * 0.76190476px;
-          height: 61 * 0.76190476px;
-        }
+        // &:after {
+        //   left: -50 * 0.76190476px;
+        //   height: 61 * 0.76190476px;
+        // }
       }
 
       .usd-point {
-        margin-left: 100 * 0.76190476px;
+        // margin-left: 100 * 0.76190476px;
         font-size: 40 * 0.76190476px;
         line-height: 53 * 0.76190476px;
 
@@ -269,7 +269,7 @@
       }
 
       .usd-rank {
-        margin-left: 108 * 0.76190476px;
+        // margin-left: 108 * 0.76190476px;
       }
 
       .usd-text {
@@ -281,11 +281,11 @@
       }
 
       .usd-marketCap {
-        margin-left: 108 * 0.76190476px;
+        // margin-left: 108 * 0.76190476px;
       }
 
       .usd-volume {
-        margin-left: 108 * 0.76190476px;
+        // margin-left: 108 * 0.76190476px;
       }
     }
   }
