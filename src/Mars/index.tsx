@@ -29,7 +29,16 @@ function MarsApp(props: any) {
   };
 
   useEffect(() => {
-    init()
+    init();
+
+    let link: any = document.getElementById("link1");
+    link.href = "/marsfavicon.ico";
+
+    link = document.getElementById("link2");
+    link.href = "/marsfavicon.ico";
+
+    link = document.getElementById("link3");
+    link.href = "/marsfavicon.ico";
   }, []);
 
   return (<>
