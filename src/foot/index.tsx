@@ -14,7 +14,7 @@ function Foot() {
   const about = {
     title: t("About Us"),
     desc: t(
-      "Ares is an on-chain-verified oracle protocol that provides secure and reliable data services for the Polkadot DeFi ecosystem."
+      "Ares is an on-chain-verified oracle platform that provides secure and reliable data services for the Polkadot DeFi ecosystem."
     ),
     email: "info@aresprotocol.io",
     emailUrl: "mailto:info@aresprotocol.io",

@@ -14,7 +14,7 @@ function Technology() {
   const { t } = useTranslation();
   const title = t("Technology Architecture");
   const desc =
-    t("Ares is an on-chain verifying oracle protocol powered by Polkadot. It provides reliable off-chain data efficiently and in a trustless manner.");
+    t("Ares is an on-chain verifying oracle platform powered by Polkadot. It provides reliable off-chain data efficiently in a trustless manner.");
   const list = [
     {
       img: technology1Png,
@@ -24,12 +24,12 @@ function Technology() {
     {
       img: technology2Png,
       title: t("Challenger"),
-      desc: t("The challenger verifies the integrity and validity of the data submitted by the aggregator and submits fraudulent aggregator data and correct data to the Reputation Committee for rewards.")
+      desc: t("The challenger verifies the integrity and validity of the data submitted by the aggregator and provides fraudulent aggregator data and correct data to the Reputation Committee for rewards.")
     },
     {
       img: technology3Png,
       title: t("Reputation Committee"),
-      desc: t("By incentivizing validators and punishing malicious aggregators, the security of the Ares network is ensured. The Reputation Committee is fully self-governed by the community, running for the Reputation Committee through token mortgage and reputation weighting.")
+      desc: t("By incentivizing validators and punishing malicious aggregators, the security of the Ares network is ensured. The Reputation Committee is fully self-governed by the community, running through token mortgage and reputation weighting.")
     },
     {
       img: technology4Png,
@@ -39,7 +39,7 @@ function Technology() {
     {
       img: technology5Png,
       title: t("Node Operator"),
-      desc: t("Node operators, as full nodes of the Ares network, verify data by comparing it with the locally stored data market to ensure the Ares network's security, and provide oracle RPC services.")
+      desc: t("Node operators, as full nodes of the Ares network, verify data by comparing it with the locally stored data market to ensure the Ares network's security and provide oracle RPC services.")
     },
   ];
 

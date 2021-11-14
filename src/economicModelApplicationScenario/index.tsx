@@ -16,7 +16,7 @@ function EconomicModelApplicationScenario() {
   const eeconomicModel = {
     title: t("Economic Model"),
     desc: t(
-      "The Ares token will be released to motivate all participants in the system and ensure the growthand development of the ecosystem through community governance."
+      "The Ares token will be released to motivate all participants in the system and ensure the growth and development of the ecosystem through community governance."
     ),
     swiper: [
       {
