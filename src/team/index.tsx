@@ -42,7 +42,7 @@ function Team() {
   );
   const list = [
     {
-      position: t("Founder&Researcher"),
+      position: t("Founder & Researcher"),
       name: t("Andy"),
       desc: t(
         "Early investor of Polkadot. 10 years’ experience in Internet entrepreneurship. 5 years’ experience in the blockchain industry. Expert in economic modelling and distributed businesses."
