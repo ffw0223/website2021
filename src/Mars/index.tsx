@@ -39,6 +39,8 @@ function MarsApp(props: any) {
 
     link = document.getElementById("link3");
     link.href = "/marsfavicon.ico";
+
+    document.title = "Mars - The only on-chain Oracle of Kusama Canary Network";
   }, []);
 
   return (<>
