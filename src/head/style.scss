@@ -76,9 +76,7 @@
     background: #1195f0;
   }
   .mNav-con {
-    width: 428px;
-    left: 50%;
-    margin-left: -214px;
+    width: 100%;
     z-index: 1000;
     background: #1195f0;
     box-shadow: 0px 3px 17px rgba(0, 16, 125, 0.37);
@@ -86,11 +84,10 @@
     border-radius: 0px;
     padding: 31px 27px;
     box-sizing: border-box;
-    position: fixed;
+    position: relative;
     top: 0;
-    &.isAddress {
-      top: 57px;
-    }
+    margin-top: 12px;
+    
     .mNav-close {
       cursor: pointer;
       position: absolute;
