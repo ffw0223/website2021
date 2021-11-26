@@ -21,23 +21,23 @@ interface aresData {
   volume: number;
 }
 
-async function getAresAll() {
-  return new Promise((resolve) => {
-    const url = "https://api.aresprotocol.io/api/getAresAll";
-    const httpRequest = new XMLHttpRequest();
-    httpRequest.open("GET", url, true);
-    httpRequest.send();
-    httpRequest.onreadystatechange = function () {
-      if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-        const json = httpRequest.responseText;
-        const result = JSON.parse(json);
-        if (!result?.code && result?.message === "OK") {
-          resolve(result?.data);
-        }
-      }
-    };
-  });
-}
+// async function getAresAll() {
+//   return new Promise((resolve) => {
+//     const url = "https://api.aresprotocol.io/api/getAresAll";
+//     const httpRequest = new XMLHttpRequest();
+//     httpRequest.open("GET", url, true);
+//     httpRequest.send();
+//     httpRequest.onreadystatechange = function () {
+//       if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+//         const json = httpRequest.responseText;
+//         const result = JSON.parse(json);
+//         if (!result?.code && result?.message === "OK") {
+//           resolve(result?.data);
+//         }
+//       }
+//     };
+//   });
+// }
 
 function Head() {
   const settings = {
@@ -191,15 +191,19 @@ function Head() {
     // vedioImg?.appendChild(svg!);
     // svg?.setAttribute("style", "display:block");
     const fetchData = async () => {
-      const res = (await getAresAll()) as unknown as aresData;
-      const newAresData = Object.assign(JSON.parse(JSON.stringify(aresData)), {
-        price: res?.price?.toFixed(3),
-        marketCap: res?.market_cap?.toFixed(2),
-        point: res?.percent_change?.toFixed(2),
-        rank: res?.rank,
-        volume: res?.volume?.toFixed(2),
-      });
-      setAresData(newAresData);
+      // const res = (await getAresAll()) as unknown as aresData;
+      // const newAresData = Object.assign(JSON.parse(JSON.stringify(aresData)), {
+      //   price: res?.price?.toFixed(3),
+      //   marketCap: res?.market_cap?.toFixed(2),
+      //   point: res?.percent_change?.toFixed(2),
+      //   rank: res?.rank,
+      //   volume: res?.volume?.toFixed(2),
+      // });
+      // setAresData(newAresData);
+      const result = await (await fetch("https://data.gateapi.io/api2/1/ticker/ares_usdt")).json();
+      if (result && result.last) {
+        setAresData({ ...aresData, price: result.last });
+      }
     };
     fetchData();
 
