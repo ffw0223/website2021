@@ -280,13 +280,14 @@
 
       .usd-rank {
         align-items: flex-start;
-        margin-left: 2em;
-        margin-top: 1em;
+        margin-left: 3em;
+        margin-top: 0em;
       }
 
       .usd-text {
         font-size: 1em;
         line-height: 1.2;
+        margin-bottom: 4px;
       }
 
       .usd-value {
@@ -294,15 +295,15 @@
       }
 
       .usd-marketCap {
-        margin-top: 1em;
+        margin-top: 0em;
         align-items: flex-start;
-        margin-left: 2em;
+        margin-left: 3em;
       }
 
       .usd-volume {
-        margin-top: 1em;
+        margin-top: 0em;
         align-items: flex-start;
-        margin-left: 2em;
+        margin-left: 3em;
       }
     }
   }
