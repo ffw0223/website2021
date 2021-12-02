@@ -120,9 +120,19 @@
     margin: 0 auto;
   }
 
-  .title {
-    margin-bottom: 16px;
+  .road-con-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      padding-top: 66px;
+      padding-right: 10px;
+    }
   }
+
+  //.title {
+  //  margin-bottom: 16px;
+  //}
 
   .desc {
     margin-bottom: 95px;

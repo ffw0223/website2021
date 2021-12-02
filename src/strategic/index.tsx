@@ -9,7 +9,7 @@ function Strategic() {
   const { t } = useTranslation();
   const title = t("Strategic Investors");
   const desc = t(
-    "Our investors, the seed of our project and  a fundamental part of our development and innovation."
+    "An investment in knowledge pays the best interest."
   );
   return (
     <section className="strategic" id="Strategic">

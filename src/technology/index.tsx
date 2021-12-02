@@ -34,7 +34,7 @@ function Technology() {
     {
       img: technology4Png,
       title: t("Data Consumer"),
-      desc: t("Data consumers can be objects that need to obtain external data in smart contracts, parachains, and DAPPs. They can provide various credible and compelling data for DEFI, prediction markets, and gambling.")
+      desc: t("Data consumers can be objects that need to obtain external data in smart contracts, parachains, and DAPPs. They can provide various credible and compelling data for DEFI, prediction markets and gambling.")
     },
     {
       img: technology5Png,

@@ -20,7 +20,7 @@ import TelegramList from "../components/TelegramList";
 function Join() {
   const { t } = useTranslation();
   const title = t("Please Join our Community Now.");
-  const desc = t("Please comment，press the like button, share, retweet, and subscribe on our social networks.");
+  const desc = t("Please comment，press the like the button, share, retweet, and subscribe to our social platforms.");
   const btn = t("Click here to Buy Token");
   const btnUrl = 'https://www.gateio.pro/cn/trade/ARES_USDT';
 

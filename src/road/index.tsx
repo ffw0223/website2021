@@ -3,6 +3,7 @@ import "./style.scss";
 import "./style1280.scss";
 import { useTranslation } from "react-i18next";
 import roadIcon from "../assets/road.png";
+import roadLogo from "../assets/link-logo-btn.png";
 import AwesomeSwiper from "react-awesome-swiper";
 
 function Road() {
@@ -10,7 +11,7 @@ function Road() {
   const { t } = useTranslation();
   const title = t("Road Map");
   const desc = t(
-    "A great road traveled, gaining experiences, adding successes and build a great project."
+    "All you need is the plan, the road map, and the courage to press on to your destination."
   );
   const data = [
     {
@@ -129,7 +130,10 @@ function Road() {
   return (
     <section className="road">
       <div className="road-con">
-        <h2 className="title">{title}</h2>
+        <div className="road-con-header">
+          <img src={roadLogo} alt=""/>
+          <h2 className="title">{title}</h2>
+        </div>
         <p className="desc">{desc}</p>
         <ul className="warp">
           {data.map((item, index) => {

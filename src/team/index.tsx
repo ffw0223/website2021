@@ -38,98 +38,98 @@ function Team() {
   let swiperRef = null;
   const title = t("Team Members");
   const desc = t(
-    "The Ares Protocol Team combines knowledge, experience andpassion for cryptocurrencies. "
+    "Individual commitment to a group effort--that is what makes a team work, a company work, a society work, a civilization work."
   );
   const list = [
     {
       position: t("Founder & Researcher"),
-      name: t("Andy"),
+      name: t("Andy Ray"),
       desc: t(
-        "Early investor of Polkadot. 10 years’ experience in Internet entrepreneurship. 5 years’ experience in the blockchain industry. Expert in economic modelling and distributed businesses."
+        "Early investor of Polkadot with ten years of experience in Internet fields. Five years of experience in the blockchain industry, expertise in economic modelling and distributed business."
       ),
     },
     {
       position: t("Co-founder & CTO"),
-      name: t("Keric"),
+      name: t("Keric Frank"),
       desc: t(
-        "6 years’ experience in blockchain development. Proficient in public chain and parallel chain development. Participated in the development of multiple blockchain projects. Expert in Go and Rust. Early Follower of Polkadot."
+        "Six years of experience in the blockchain industry with proficient public chain and parallel chain development skills. Participated in multiple blockchain projects. Expert in Go and Rust, an early follower of Polkadot."
       ),
     },
     {
       position: t("COO"),
-      name: t("Mory"),
+      name: t("Mory Baker"),
       desc: t(
-        "Blockchain researchers. 5 years of experience in blockchain, expert in community building and community marketing, early participant of Polkadot."
+        "Blockchain researcher with five years of experience. Expert in community building and marketing, early participant of Polkadot."
       ),
     },
     {
       position: t("Senior Software Engineer"),
-      name: t("Nick"),
+      name: t("Nick Martin"),
       desc: t(
-        "3 years' experience in blockchain development. Proficient in public chain development. Participated in the development of multiple blockchain projects. Expert in go，C++, and RUST."
+        "Three years of experience in blockchain development. Proficient in public chain development. Participated in multiple blockchain projects. Expert in go, C++, and RUST."
       ),
     },
     {
       position: t("Core Develop"),
       name: t("Sander Ruvins"),
       desc: t(
-        "Sander Ruvins Over 10 years of experiences in Development and Management, real time database products and exchange platform products expert. Currently focused on Blockchain Development and Cross-chain Technologies."
+        "Over ten years of experience in development and management. Expert in real-time products on database and exchange platforms. Currently, focused on blockchain and cross-chain technologies."
       ),
     },
     {
       position: t("Core Develop"),
       name: t("Tiago Boat"),
       desc: t(
-        "Tiago Boat, more than 8 years of experience in-large-scale computing and algorithm, 5 years of cloud service experience, with many patents such as consensus algorithm and blockchain transaction."
+        "More than eight years of experience in large-scale computing and algorithm. Five years of cloud service experience with a few patents, such as consensus algorithm and blockchain transaction."
       ),
     },
     {
       position: t("Brand Advisor"),
-      name: t("Emily"),
+      name: t("Emily Anderson"),
       desc: t(
-        "Graduated from master degree in journalism and communication and worked in the marketing department of Tencent. 4 years of experience in the field of blockchain and served as the co-founder of a blockchain medium. Early contributor of Polkadot and its ecosystem. She has managed to hold 50 online and offline activities so far."
+        "Mastered in journalism and the art of communication. Worked in the marketing division in Tencent. Four years of experience in the blockchain field, served in a blockchain outlet. Early contributor of Polkadot and held around 50 advertising sessions online and offline about blockchain."
       ),
     },
     {
-      position: t("UI Designer"),
-      name: t("Rauli"),
+      position: t("UI Designer & Spanish Market Manager"),
+      name: t("Rauli Velaz"),
       desc: t(
-        "Computer engineering graduate, specialized in graphic design and Adobe System tools, 8 years of experience in brand design and UX/UI design. Passionate about marketing, advertising and new technologies."
+        "Computer engineering graduate specialized in graphic design and Adobe System tools. Eight years of experience in brand and UX/UI design. Passionate in marketing, advertising, and new technologies."
       ),
     },
     {
-      position: t("Community Advisor"),
-      name: t("Erwin"),
+      position: t("Community Consultant"),
+      name: t("Erwin Clarke"),
       desc: t(
-        "With more than 2 years of experience in  blockchain industry, he has served as the head of the marketing division of a blockchain media. He is a KOL with a fan base of 10,000 and has extensive experience in community developing and operation."
+        "Served as the head of the marketing division of blockchain media. KOL With more than two years of experience in blockchain and 10,000 of a fanbase. Has extensive knowledge in community operation."
       ),
     },
     {
-      position: t("Community / Growth Manger"),
-      name: t("Vivian"),
+      position: t("Community Manager"),
+      name: t("Vivian Carter"),
       desc: t(
-        "She has 2 years of practical experience in community operation, systematic community developing knowledge from 0-1, responsible for absorbing visitors, retention / activation, transformation, and building fission module for the community. Good at creating KOL-oriented,  KOC assisted high-quality community operation model and high conversion rate of the system. "
+        "Expert in launching, cultivating, transforming and activating community with KOL as a core KOC assisted operation model. Has excellent performing record in community feedback."
       ),
     },
     {
-      position: t("Head of Russian market"),
-      name: t("Фея/Feya"),
+      position: t("Head of Russian Market"),
+      name: t("Sofia Ivanov"),
       desc: t(
-        "Graduated from Taras Shevchenko National University of Kyiv，master degree.  Worked for marketing in Ukraine for 6 years. Sufficient in marketing and operation skills, adept in languages such as  Russian, Ukranian, English and Chinese."
+        "Mastered in Taras Shevchenko National University in Kyiv. Worked in the marketing field in Ukraine for six years. Sufficient marketing and operation skills, fluent in Russian, Ukrainian, English."
       ),
     },
     {
-      position: t("Head of Asia Pacific market"),
-      name: t("Jasper"),
+      position: t("Head of Asian Market"),
+      name: t("Miles Damon"),
       desc: t(
-        "A marketing expert with 10 years of technical support experience in Japan and South Korea. He is experienced in strategic marketing in global scale and business development. He was an enthusiast for the fields of technical support, content editing and activity arrangement."
+        "A marketing expert with ten years of experience. Worked in strategic marketing in South Korea and Japan. Enthusiast in technical support fields and content editing."
       ),
     },
     {
       position: t("Overseas Community Manger"),
-      name: t("Krali"),
+      name: t("Muller Ahmad"),
       desc: t(
-        "He is adept in English and Mandarin. He has  2 years of experience in media and community operation. He is familiar with social media's marketing strategy and content editing, and highly sensitive to hotspots in the blockchain industry."
+        "Adept in English and Mandarin with professional translation skills. Worked over two years in media outlets. Experienced in social media’s marketing strategy, content editing and highly sensitive to the blockchain industry."
       ),
     },
   ];
