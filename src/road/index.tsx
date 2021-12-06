@@ -131,7 +131,6 @@ function Road() {
     <section className="road">
       <div className="road-con">
         <div className="road-con-header">
-          <img src={roadLogo} alt=""/>
           <h2 className="title">{title}</h2>
         </div>
         <p className="desc">{desc}</p>
