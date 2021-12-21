@@ -22,7 +22,7 @@ function Join() {
   const title = t("Please Join Our Community Now.");
   const desc = t("Please comment，press the like button, share, retweet, and subscribe to our social media platforms.");
   const btn = t("Click here to buy tokens");
-  const btnUrl = 'https://www.gateio.pro/cn/trade/ARES_USDT';
+  const btnUrl = t("Trade ARES");
 
   const handleClickTelegram = (event: any) => {
     render(<TelegramList />, document.getElementById("mainModalContainer"));

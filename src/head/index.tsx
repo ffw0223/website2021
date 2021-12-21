@@ -797,14 +797,14 @@ function Head() {
             <p className="usd-text">{ares.marketCapText}</p>
             <p className="usd-value">
               {aresData.symbol}
-              {aresData.marketCap} M
+              {aresData.marketCap}
             </p>
           </li>
           <li className="usd-volume verticalBar">
             <p className="usd-text">{ares.volumeText}</p>
             <p className="usd-value">
               {aresData.symbol}
-              {aresData.volume} M
+              {aresData.volume}
             </p>
           </li>
         </ul>
