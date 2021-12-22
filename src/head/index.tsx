@@ -130,7 +130,7 @@ function Head() {
       {
         name: t("Buy Token"),
         id: "Buy Token",
-        url: "https://www.gateio.pro/cn/trade/ARES_USDT",
+        url: t("Trade ARES"),
       },
       {
         name: "Apps",
