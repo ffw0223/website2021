@@ -5,17 +5,21 @@ import { render } from "react-dom";
 import { useTranslation } from "react-i18next";
 import Alert from "./Alert";
 import styles from "./JoinCrowdloanModal.module.scss";
+import type { DeriveOwnContributions } from '@polkadot/api-derive/types';
 
 let theInput = null;
 
 const JoinCrowdloanModal = props => {
 	const api = props.api;
+	const contributions = props.contributions;
 	const isConnected = Boolean(api);
 	const { t } = useTranslation();
 	const [accounts, setAccounts] = useState([]);
 	const [account, setAccount] = useState(null);
 	const [balance, setBalance] = useState(null);
 	const [inputValue, setInputValue] = useState(new BigNumber(0));
+	const [contributed, setContributed] = useState(new BigNumber(0))
+	const [newContributed, setNewContributed] = useState(new BigNumber(0))
 
 	const handleConnect = async event => {
 		await web3Enable("mars");
@@ -24,6 +28,30 @@ const JoinCrowdloanModal = props => {
 		setAccount(accounts[0].address);
 
 		const { data: balance } = await api.query.system.account(accounts[0].address);
+
+		let contribute = new BigNumber(0);
+		if (contributions)
+		{
+			for (let i = 0; i < contributions.length; i++) {
+				if (contributions[i].who === accounts[0].address) {
+					contribute = new BigNumber(contributions[i].contributed);
+					setContributed(contribute)
+					break;
+				}
+			}
+		}
+
+		const newContribute = await api.derive.crowdloan.ownContributions(props.paraId, [accounts[0].address])
+			.then((result: DeriveOwnContributions)=>{
+				if (result[accounts[0].account])
+				{
+					return new BigNumber(result[accounts[0].account]);
+				} else {
+					return new BigNumber(0);
+				}
+
+			});
+		setNewContributed(newContribute);
 		setBalance(balance.free)
 	}
 
@@ -63,7 +91,7 @@ const JoinCrowdloanModal = props => {
 	}
 
 	const handleMax = event => {
-		const value = new BigNumber(balance);
+		const value = new BigNumber(balance).plus(contributed).plus(newContributed);
 		setInputValue(value);
 		if (theInput) {
 			theInput.value = value.shiftedBy(-12).toNumber();

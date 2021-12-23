@@ -11,9 +11,21 @@ import Footer from "./views/footer/Footer";
 import { WsProvider } from "@polkadot/rpc-provider";
 import { ApiPromise } from "@polkadot/api";
 
+import { Keyring } from '@polkadot/api';
+import { u8aToHex, BN_ZERO } from '@polkadot/util';
+import type { DeriveContributions, DeriveOwnContributions } from '@polkadot/api-derive/types';
+import { useCall } from '@polkadot/react-hooks';
+import type { Balance, ParaId } from '@polkadot/types/interfaces';
+import { TypeRegistry } from '@polkadot/types';
+import {u32} from "@polkadot/types";
+
+
+
 function MarsApp(props: any) {
   const [api, setAPI] = useState(null);
   const [contributions, setContributions] = useState(null);
+  const keyring = new Keyring({ type: 'sr25519' });
+  const paraId: ParaId = new u32(new TypeRegistry(), 2008)
 
   const fetchContributions = async () => {
     const result = await (await fetch("/contributions.json")).json();
@@ -47,7 +59,7 @@ function MarsApp(props: any) {
     <div className="marsApp">
       <Head
         api={api}
-        contributions={contributions} />
+        contributions={contributions} paraId={paraId} />
 
       <Supply />
       <Deposit />

@@ -358,7 +358,8 @@ function Head(props: any) {
         </div>)
       }
 
-      {showJoinCrowdloanModal && (<JoinCrowdloanModal api={props.api} onClose={handleCloseJoinCrowdloanModal} />)}
+      {showJoinCrowdloanModal && (<JoinCrowdloanModal api={props.api} paraId={props.paraId} contributions={props.contributions}
+                                                      onClose={handleCloseJoinCrowdloanModal} />)}
 
       {showRewardsModal && (<RewardsModal api={props.api}
                                           contributions={props.contributions} onClose={handleCloseRewardsModal} />)}
