@@ -5,24 +5,17 @@ import { render } from "react-dom";
 import { useTranslation } from "react-i18next";
 import Alert from "./Alert";
 import styles from "./JoinCrowdloanModal.module.scss";
-import type { DeriveOwnContributions } from '@polkadot/api-derive/types';
-import {Keyring} from "@polkadot/api";
-import {u8aToHex} from "@polkadot/util";
 
 let theInput = null;
 
 const JoinCrowdloanModal = props => {
 	const api = props.api;
-	const contributions = props.contributions;
-	const keyring = new Keyring({ type: 'sr25519' });
 	const isConnected = Boolean(api);
 	const { t } = useTranslation();
 	const [accounts, setAccounts] = useState([]);
 	const [account, setAccount] = useState(null);
 	const [balance, setBalance] = useState(null);
 	const [inputValue, setInputValue] = useState(new BigNumber(0));
-	const [contributed, setContributed] = useState(new BigNumber(0))
-	const [newContributed, setNewContributed] = useState(new BigNumber(0))
 
 	const handleConnect = async event => {
 		await web3Enable("mars");
@@ -31,34 +24,6 @@ const JoinCrowdloanModal = props => {
 		setAccount(accounts[0].address);
 
 		const { data: balance } = await api.query.system.account(accounts[0].address);
-
-		let contribute = new BigNumber(0);
-		if (contributions)
-		{
-			for (let i = 0; i < contributions.length; i++) {
-				if (contributions[i].who === accounts[0].address) {
-					contribute = new BigNumber(contributions[i].contributed);
-					setContributed(contribute)
-					break;
-				}
-			}
-		}
-
-		let dave_acc = keyring.addFromAddress(accounts[0].address)
-		let dave_acc_hex = u8aToHex(dave_acc.addressRaw);
-
-		const newContribute = await api.derive.crowdloan.ownContributions(props.paraId, [dave_acc_hex])
-			.then((result: DeriveOwnContributions)=>{
-				if (result[dave_acc_hex])
-				{
-					return new BigNumber(result[dave_acc_hex]);
-				} else {
-					return new BigNumber(0);
-				}
-
-			});
-
-		setNewContributed(newContribute);
 		setBalance(balance.free)
 	}
 
@@ -74,19 +39,14 @@ const JoinCrowdloanModal = props => {
 	const handleSubmit = async event => {
 		const SENDER = account;
 		const injector = await web3FromAddress(SENDER)
-		const bal = new BigNumber(balance).shiftedBy(-12).toNumber();
-		let input = inputValue;
-		if (input > bal)
-		{
-			input = bal;
-		}
-		api.tx.crowdloan.contribute(2008, input.toFixed(), null)
+		api.tx.crowdloan.contribute(2008, inputValue.toFixed(), null)
 			.signAndSend(SENDER, { signer: injector.signer }, ({ status, dispatchError }) => {
 				if (dispatchError) {
 					if (dispatchError.isModule) {
 						// for module errors, we have the section indexed, lookup
 						const decoded = api.registry.findMetaError(dispatchError.asModule);
 						const { docs, name, section } = decoded;
+
 						console.log(`${section}.${name}: ${docs.join(' ')}`);
 					}
 					console.log(`${dispatchError}`);
@@ -100,46 +60,10 @@ const JoinCrowdloanModal = props => {
 			}).catch((error: any) => {
 				console.error(error);
 			});
-
-
-		api.tx.crowdloan.contribute(2008, contributed.shiftedBy(-12).toNumber().toFixed(), null)
-			.signAndSend(SENDER, { signer: injector.signer }, ({ status, dispatchError }) => {
-				if (dispatchError) {
-					if (dispatchError.isModule) {
-						// for module errors, we have the section indexed, lookup
-						const decoded = api.registry.findMetaError(dispatchError.asModule);
-						const { docs, name, section } = decoded;
-						console.log(`${section}.${name}: ${docs.join(' ')}`);
-					}
-					console.log(`${dispatchError}`);
-				}
-			}).catch((error: any) => {
-			console.error(error);
-		});
-
-
-		api.tx.crowdloan.contribute(2008, newContributed.shiftedBy(-12).toNumber().toFixed(), null)
-			.signAndSend(SENDER, { signer: injector.signer }, ({ status, dispatchError }) => {
-				if (dispatchError) {
-					if (dispatchError.isModule) {
-						// for module errors, we have the section indexed, lookup
-						const decoded = api.registry.findMetaError(dispatchError.asModule);
-						const { docs, name, section } = decoded;
-						console.log(`${section}.${name}: ${docs.join(' ')}`);
-					}
-					console.log(`${dispatchError}`);
-				}
-			}).catch((error: any) => {
-			console.error(error);
-		});
-
-
-
-
 	}
 
 	const handleMax = event => {
-		const value = new BigNumber(balance).plus(contributed).plus(newContributed);
+		const value = new BigNumber(balance);
 		setInputValue(value);
 		if (theInput) {
 			theInput.value = value.shiftedBy(-12).toNumber();

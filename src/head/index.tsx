@@ -193,7 +193,7 @@ function Head() {
     const fetchData = async () => {
       const res = (await getAresAll()) as unknown as aresData;
       const newAresData = Object.assign(JSON.parse(JSON.stringify(aresData)), {
-        price: res?.price?.toFixed(3),
+        price: res?.price?.toFixed(4),
         marketCap: res?.market_cap?.toFixed(2),
         point: res?.percent_change?.toFixed(2),
         rank: res?.rank,

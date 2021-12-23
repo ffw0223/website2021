@@ -146,12 +146,12 @@ const RewardsModal = props => {
 					{isContributor && account && (<div className={styles.scoreBoard}>
 						<div className={styles.scorePanel}>
 							<div className={styles.scoreLabel}>{t("contribute")}</div>
-							<div className={styles.number}>{contributed.shiftedBy(-12).toFixed()}&nbsp;KSM</div>
+							<div className={styles.number}>{(new BigNumber(contributed).plus(newContributed)).shiftedBy(-12).toFixed()}&nbsp;KSM</div>
 						</div>
 
 						<div className={styles.scorePanel}>
 							<div className={styles.scoreLabel}>{t("earned")}</div>
-							<div className={styles.number}>{contributed.shiftedBy(-12).multipliedBy(500).toFixed()}&nbsp;ARES</div>
+							<div className={styles.number}>{(new BigNumber(contributed).plus(newContributed)).shiftedBy(-12).multipliedBy(500).toFixed()}&nbsp;ARES</div>
 						</div>
 					</div>)}
 
