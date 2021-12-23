@@ -360,7 +360,8 @@ function Head(props: any) {
 
       {showJoinCrowdloanModal && (<JoinCrowdloanModal api={props.api} onClose={handleCloseJoinCrowdloanModal} />)}
 
-      {showRewardsModal && (<RewardsModal api={props.api} contributions={props.contributions} onClose={handleCloseRewardsModal} />)}
+      {showRewardsModal && (<RewardsModal api={props.api}
+                                          contributions={props.contributions} onClose={handleCloseRewardsModal} />)}
     </>
   );
 }

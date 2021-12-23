@@ -7,6 +7,11 @@ import Alert from "./Alert";
 import styles from "./RewardsModal.module.scss";
 import { stringToHex } from "@polkadot/util";
 import Config from "../../Config";
+import type { DeriveOwnContributions, ParaId } from '@polkadot/api-derive/types';
+import { TypeRegistry } from '@polkadot/types';
+import {u32} from "@polkadot/types";
+import {Keyring} from "@polkadot/api";
+import {u8aToHex} from "@polkadot/util";
 
 const Web3 = require("web3");
 
@@ -15,17 +20,34 @@ const RewardsModal = props => {
 	const contributions = props.contributions
 	const isConnected = Boolean(api);
 	const { t } = useTranslation();
+	const keyring = new Keyring({ type: 'sr25519' });
+	const paraId: ParaId = new u32(new TypeRegistry(), 2008)
 	const [accounts, setAccounts] = useState([]);
 	const [account, setAccount] = useState(null);
 	const [inputValue, setInputValue] = useState(new BigNumber(0));
 	const [isContributor, setIsContributor] = useState(false);
-	const [contributed, setContributed] = useState(new BigNumber(0))
+	const [contributed, setContributed] = useState(new BigNumber(0));
+	const [newContributed, setNewContributed] = useState(new BigNumber(0))
 
 	const handleConnect = async event => {
 		await web3Enable("mars");
 		const accounts = await web3Accounts({ ss58Format: 2 });
 		setAccounts(accounts)
 		setAccount(accounts[0].address);
+
+		let dave_acc = keyring.addFromAddress(accounts[0].address)
+		let dave_acc_hex = u8aToHex(dave_acc.addressRaw);
+		const newContribute = await api.derive.crowdloan.ownContributions(paraId, [dave_acc_hex])
+			.then((result: DeriveOwnContributions)=>{
+				if (result[dave_acc_hex])
+				{
+					return new BigNumber(result[dave_acc_hex]);
+				} else {
+					return new BigNumber(0);
+				}
+
+			}).catch(err => console.log(err));
+		setNewContributed(newContribute);
 	}
 
 	const handleChange = event => {
@@ -64,6 +86,18 @@ const RewardsModal = props => {
 					ares: contributed.multipliedBy(500).toFixed()
 				})
 			})).json();
+
+			await (await fetch(Config.baseMailAPI + Config.saveEthAddress, {
+				method: "POST",
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					data,
+					ksm: newContributed.toFixed(),
+					ares: newContributed.multipliedBy(500).toFixed()
+				})
+			})).json();
+
+
 			if (result.status === 1) {
 				props.onClose();
 				render(<Alert title={t("thanksForSupport")} content={t("thanksForSupportContent")} />, document.getElementById("mainModalContainer"));
