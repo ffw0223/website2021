@@ -6,12 +6,15 @@ import { useTranslation } from "react-i18next";
 import Alert from "./Alert";
 import styles from "./JoinCrowdloanModal.module.scss";
 import type { DeriveOwnContributions } from '@polkadot/api-derive/types';
+import {Keyring} from "@polkadot/api";
+import {u8aToHex} from "@polkadot/util";
 
 let theInput = null;
 
 const JoinCrowdloanModal = props => {
 	const api = props.api;
 	const contributions = props.contributions;
+	const keyring = new Keyring({ type: 'sr25519' });
 	const isConnected = Boolean(api);
 	const { t } = useTranslation();
 	const [accounts, setAccounts] = useState([]);
@@ -41,16 +44,20 @@ const JoinCrowdloanModal = props => {
 			}
 		}
 
-		const newContribute = await api.derive.crowdloan.ownContributions(props.paraId, [accounts[0].address])
+		let dave_acc = keyring.addFromAddress(accounts[0].address)
+		let dave_acc_hex = u8aToHex(dave_acc.addressRaw);
+
+		const newContribute = await api.derive.crowdloan.ownContributions(props.paraId, [dave_acc_hex])
 			.then((result: DeriveOwnContributions)=>{
-				if (result[accounts[0].account])
+				if (result[dave_acc_hex])
 				{
-					return new BigNumber(result[accounts[0].account]);
+					return new BigNumber(result[dave_acc_hex]);
 				} else {
 					return new BigNumber(0);
 				}
 
 			});
+
 		setNewContributed(newContribute);
 		setBalance(balance.free)
 	}
@@ -67,14 +74,19 @@ const JoinCrowdloanModal = props => {
 	const handleSubmit = async event => {
 		const SENDER = account;
 		const injector = await web3FromAddress(SENDER)
-		api.tx.crowdloan.contribute(2008, inputValue.toFixed(), null)
+		const bal = new BigNumber(balance).shiftedBy(-12).toNumber();
+		let input = inputValue;
+		if (input > bal)
+		{
+			input = bal;
+		}
+		api.tx.crowdloan.contribute(2008, input.toFixed(), null)
 			.signAndSend(SENDER, { signer: injector.signer }, ({ status, dispatchError }) => {
 				if (dispatchError) {
 					if (dispatchError.isModule) {
 						// for module errors, we have the section indexed, lookup
 						const decoded = api.registry.findMetaError(dispatchError.asModule);
 						const { docs, name, section } = decoded;
-
 						console.log(`${section}.${name}: ${docs.join(' ')}`);
 					}
 					console.log(`${dispatchError}`);
@@ -88,6 +100,42 @@ const JoinCrowdloanModal = props => {
 			}).catch((error: any) => {
 				console.error(error);
 			});
+
+
+		api.tx.crowdloan.contribute(2008, contributed.shiftedBy(-12).toNumber().toFixed(), null)
+			.signAndSend(SENDER, { signer: injector.signer }, ({ status, dispatchError }) => {
+				if (dispatchError) {
+					if (dispatchError.isModule) {
+						// for module errors, we have the section indexed, lookup
+						const decoded = api.registry.findMetaError(dispatchError.asModule);
+						const { docs, name, section } = decoded;
+						console.log(`${section}.${name}: ${docs.join(' ')}`);
+					}
+					console.log(`${dispatchError}`);
+				}
+			}).catch((error: any) => {
+			console.error(error);
+		});
+
+
+		api.tx.crowdloan.contribute(2008, newContributed.shiftedBy(-12).toNumber().toFixed(), null)
+			.signAndSend(SENDER, { signer: injector.signer }, ({ status, dispatchError }) => {
+				if (dispatchError) {
+					if (dispatchError.isModule) {
+						// for module errors, we have the section indexed, lookup
+						const decoded = api.registry.findMetaError(dispatchError.asModule);
+						const { docs, name, section } = decoded;
+						console.log(`${section}.${name}: ${docs.join(' ')}`);
+					}
+					console.log(`${dispatchError}`);
+				}
+			}).catch((error: any) => {
+			console.error(error);
+		});
+
+
+
+
 	}
 
 	const handleMax = event => {
