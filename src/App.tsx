@@ -12,6 +12,7 @@ import Join from "./join";
 import classnames from "classnames";
 import Foot from "./foot";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Snow from "./snow";
 
 function App() {
   const backend = lazy(() => import("./backend/Backend"));
@@ -37,6 +38,7 @@ function App() {
                 <Road />
                 <Join />
                 <Foot />
+                <Snow />
               </div>
             </Route>
 
