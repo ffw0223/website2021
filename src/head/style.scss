@@ -278,7 +278,7 @@
   }
   .video-img {
     width: 919px;
-    z-index: 100;
+    z-index: 80;
     height: 1071px;
     // background: url('../assets/earth.svg') no-repeat;
     position: absolute;
@@ -383,6 +383,7 @@
               padding: 25px;
               box-sizing: border-box;
               text-align: left;
+              position: absolute;
               position: absolute;
               background: #ffffff;
               box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.16);
