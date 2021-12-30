@@ -63,12 +63,12 @@
     background: url("../assets/left.png") no-repeat;
 
     &.top {
-      transition: all 0.5s;
+      transition: all 0.3s;
       transform: rotate(90deg) scale(0.5);
     }
 
     &.bottom {
-      transition: all 0.5s;
+      transition: all 0.3s;
       transform: rotate(270deg) scale(0.5);
     }
   }
@@ -362,7 +362,7 @@
               &:not(.Apps):hover,
               &:not(.Apps).active {
                 &::after {
-                  animation: nav 1s;
+                  animation: nav 0.3s;
                   position: absolute;
                   bottom: -10px;
                   left: 10%;
@@ -383,7 +383,6 @@
               padding: 25px;
               box-sizing: border-box;
               text-align: left;
-              position: absolute;
               position: absolute;
               background: #ffffff;
               box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.16);
