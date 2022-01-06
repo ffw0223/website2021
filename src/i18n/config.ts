@@ -476,7 +476,7 @@ export const resources = {
       earned: "获得"
     },
   },
-es: {
+  es: {
     translation: {
       "Networks": "Redes",
       "Technology": "Tecnología",
@@ -569,7 +569,7 @@ es: {
       "UI Designer & Spanish Market Manager": "Diseñador UI y Responsable del Mercado Español",
       "Computer engineering graduate specialized in graphic design and Adobe System tools. Eight years of experience in brand and UX/UI design. Passionate in marketing, advertising, and new technologies.": "Ingeniero informático especializado en diseño gráfico y herramientas del sistema Adobe. Ocho años de experiencia en diseño de marcas y UX/UI. Apasionado del marketing, la publicidad y las nuevas tecnologías.",
       "Erwin Clarke": "Erwin Clarke",
-      "Community Consultant": "Consultor de Comunidad,
+      "Community Consultant": "Consultor de Comunidad",
       "Served as the head of the marketing division of blockchain media. KOL With more than two years of experience in blockchain and 10,000 of a fanbase. Has extensive knowledge in community operation.": "Ha sido jefe de la división de marketing de los medios de comunicación de blockchain. KOL Con más de dos años de experiencia en blockchain y 10.000 de base de fans. Tiene amplios conocimientos en el funcionamiento de la comunidad.",
       "Vivian Carter": "Vivian Carter",
       "Community Manager": "Gestor de Comunidad",
@@ -608,7 +608,7 @@ es: {
       "Click here to buy tokens": "Haga clic aquí, para comprar Ares",
       "Trade ARES": "https://www.gateio.pro/trade/ARES_USDT",
       "Please Join Our Community Now.": "Únase a nuestra comunidad, Ahora!.",
-      "Please comment,press the like button, share, retweet, and subscribe to our social media platforms.": "Por favor, comparte, pulsa el botón de "me gusta", comenta, retuitea y suscríbete a nuestras redes sociales.",
+      "Please comment,press the like button, share, retweet, and subscribe to our social media platforms.": "Por favor, comparte, pulsa el botón de me gusta, comenta, retuitea y suscríbete a nuestras redes sociales.",
       "All you need is the plan, the road map, and the courage to press on to your destination.": "Todo lo que necesitas es el plan, la hoja de ruta y el valor para seguir adelante hacia tu destino. — Earl Nightingale",
       "Individual commitment to a group effort--that is what makes a team work, a company work, a society work, a civilization work.": "El compromiso individual con un esfuerzo de grupo: eso es lo que hace que un equipo funcione, que una empresa funcione, que una sociedad funcione, que una civilización funcione. — Vince Lombardi",
       "Lending": "Préstamo",
@@ -620,7 +620,6 @@ es: {
       "Prediction Marketr": "Mercado de predicciones",
       "IOT": "IOT",
       "ARES CHAIN": "ARES CHAIN",
-      "Networks": "Redes",
       "Introduction": "Introducción",
       "About": "Acerca de",
       "Ares Protocol": "Ares Protocol",
@@ -713,3 +712,4 @@ es: {
       earned: "ganados"
     },
   },
+}
