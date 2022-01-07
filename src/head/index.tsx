@@ -149,6 +149,10 @@ function Head() {
           name: "简体中文",
           id: "cn",
         },
+        {
+          name: "ES",
+          id: "es",
+        },
       ],
       localIndex: 0,
     },
@@ -211,6 +215,7 @@ function Head() {
 
   useEffect(() => {
     const isPhone = window.screen.width <= 1279;
+    console.log("isPhone: ", isPhone);
     isPhone && setPhone(isPhone);
     setScroll(
       document?.documentElement?.scrollTop || document?.body?.scrollTop
@@ -414,58 +419,50 @@ function Head() {
                         })}
                         onClick={(e) => {
                           setlanguageStatus(!languageStatus);
-                          if ((e.target as any).innerText === "EN") {
-                            head.language.localIndex = 0;
-                          } else {
-                            head.language.localIndex = 1;
-                          }
-                          const language =
-                            head.language.select[head.language.localIndex].name;
-                          setlanguage(language);
-                          document
-                            .querySelector("#root")
-                            ?.setAttribute(
-                              "class",
-                              head.language.select[head.language.localIndex].id
-                            );
-                          setlanguageStatus(!languageStatus);
-                          i18n.changeLanguage(
-                            head.language.select[head.language.localIndex].id
-                          );
                         }}
                       >
-                        {language === "EN" ? "EN" : "CN"}
+                        {
+                          language
+                          // === "EN" ? "EN" : "CN"
+                        }
                       </span>
                       {languageStatus ? (
-                        <span
-                          className="two"
-                          onClick={(e) => {
-                            setlanguageStatus(!languageStatus);
-                            if ((e.target as any).innerText === "EN") {
-                              head.language.localIndex = 0;
-                            } else {
-                              head.language.localIndex = 1;
-                            }
-                            const language =
-                              head.language.select[head.language.localIndex]
-                                .name;
-                            document
-                              .querySelector("#root")
-                              ?.setAttribute(
-                                "class",
-                                head.language.select[head.language.localIndex]
-                                  .id
-                              );
+                          head.language.select
+                              .filter((item, index) => item.name !== language)
+                              .map((item, index) => {
+                            return <span
+                                className={`two ${index !== 0 ? "three" : ""}`}
+                                onClick={(e) => {
+                                  setlanguageStatus(!languageStatus);
+                                  if ((e.target as any).innerText === "EN") {
+                                    head.language.localIndex = 0;
+                                  } else if ((e.target as any).innerText === "CN") {
+                                    head.language.localIndex = 1;
+                                  } else if ((e.target as any).innerText === "ES") {
+                                    head.language.localIndex = 2;
+                                  }
+                                  const language =
+                                      head.language.select[head.language.localIndex]
+                                          .name;
 
-                            setlanguage(language);
-                            setlanguageStatus(!languageStatus);
-                            i18n.changeLanguage(
-                              head.language.select[head.language.localIndex].id
-                            );
-                          }}
-                        >
-                          {language === "EN" ? "CN" : "EN"}
-                        </span>
+                                  document
+                                      .querySelector("#root")
+                                      ?.setAttribute(
+                                          "class",
+                                          head.language.select[head.language.localIndex]
+                                              .id
+                                      );
+
+                                  setlanguage(language);
+                                  setlanguageStatus(!languageStatus);
+                                  i18n.changeLanguage(
+                                      head.language.select[head.language.localIndex].id
+                                  );
+                                }}
+                            >
+                              {item.id.toUpperCase()}
+                            </span>
+                         })
                       ) : null}
                     </p>
                     <span
@@ -619,56 +616,47 @@ function Head() {
                     })}
                     onClick={(e) => {
                       setlanguageStatus(!languageStatus);
-                      if ((e.target as any).innerText === "EN") {
-                        head.language.localIndex = 0;
-                      } else {
-                        head.language.localIndex = 1;
-                      }
-                      const language =
-                        head.language.select[head.language.localIndex].name;
-                      setlanguage(language);
-                      document
-                        .querySelector("#root")
-                        ?.setAttribute(
-                          "class",
-                          head.language.select[head.language.localIndex].id
-                        );
-                      setlanguageStatus(!languageStatus);
-                      i18n.changeLanguage(
-                        head.language.select[head.language.localIndex].id
-                      );
                     }}
                   >
-                    {language === "EN" ? "EN" : "CN"}
+                    {language}
                   </span>
                   {languageStatus ? (
-                    <span
-                      className="two"
-                      onClick={(e) => {
-                        setlanguageStatus(!languageStatus);
-                        if ((e.target as any).innerText === "EN") {
-                          head.language.localIndex = 0;
-                        } else {
-                          head.language.localIndex = 1;
-                        }
-                        const language =
-                          head.language.select[head.language.localIndex].name;
-                        document
-                          .querySelector("#root")
-                          ?.setAttribute(
-                            "class",
-                            head.language.select[head.language.localIndex].id
-                          );
+                      head.language.select
+                          .filter((item, index) => item.name !== language)
+                          .map((item, index) => {
+                            return <span
+                                className={`two ${index !== 0 ? "three" : ""}`}
+                                onClick={(e) => {
+                                  setlanguageStatus(!languageStatus);
+                                  if ((e.target as any).innerText === "EN") {
+                                    head.language.localIndex = 0;
+                                  } else if ((e.target as any).innerText === "CN") {
+                                    head.language.localIndex = 1;
+                                  } else if ((e.target as any).innerText === "ES") {
+                                    head.language.localIndex = 2;
+                                  }
+                                  const language =
+                                      head.language.select[head.language.localIndex]
+                                          .name;
 
-                        setlanguage(language);
-                        setlanguageStatus(!languageStatus);
-                        i18n.changeLanguage(
-                          head.language.select[head.language.localIndex].id
-                        );
-                      }}
-                    >
-                      {language === "EN" ? "CN" : "EN"}
-                    </span>
+                                  document
+                                      .querySelector("#root")
+                                      ?.setAttribute(
+                                          "class",
+                                          head.language.select[head.language.localIndex]
+                                              .id
+                                      );
+
+                                  setlanguage(language);
+                                  setlanguageStatus(!languageStatus);
+                                  i18n.changeLanguage(
+                                      head.language.select[head.language.localIndex].id
+                                  );
+                                }}
+                            >
+                              {item.id.toUpperCase()}
+                            </span>
+                          })
                   ) : null}
                 </p>
                 <span

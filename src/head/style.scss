@@ -14,16 +14,19 @@
         position: relative;
         color: #ffffff;
         &.isShowLanguage {
-          top: 13px;
+          top: 25px;
         }
       }
       .two {
         position: relative;
         color: #ffffff;
-        top: 20px;
+        top: 35px;
         &:hover {
           color: #1d1f75;
         }
+      }
+      .three {
+       margin-top: 5px;
       }
     }
 
@@ -167,6 +170,12 @@
           margin-top: 5px;
         }
       }
+    }
+    .one.isShowLanguage {
+      top: 15px !important;
+    }
+    .two {
+      top: 25px !important;
     }
   }
   .mNav {
