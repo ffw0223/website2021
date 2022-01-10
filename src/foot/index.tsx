@@ -64,10 +64,22 @@ function Foot() {
         name: t("Explorer"),
         url: "https://etherscan.io/token/0x358aa737e033f34df7c54306960a38d09aabd523",
       },
-      // {
-      //   name: t("Market"),
-      //   url: "mailto:info@aresprotocol.io",
-      // },
+      {
+        name: t("AresScan"),
+        url: "https://aresscan.aresprotocol.io/ares",
+      },
+      {
+        name: t("Warehouse"),
+        url: "https://warehouseui.aresprotocol.io/",
+      },
+      {
+        name: t("Gladios"),
+        url: "https://js.aresprotocol.io/?rpc=wss%3A%2F%2Fgladios.aresprotocol.io#/explorer",
+      },
+      {
+        name: t("RSS"),
+        url: "https://medium.com/feed/@aresprotocollab",
+      },
     ],
   };
   const subscribe = {

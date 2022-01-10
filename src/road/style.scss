@@ -140,6 +140,8 @@
 
   .warp {
     display: flex;
+    width: 92vw;
+    overflow: hidden;
     position: relative;
     &::after {
       animation-duration: 5s;
@@ -150,16 +152,16 @@
       left: 0;
       top: 112px;
       display: inline-block;
-      width: 0px;
-      height: 0px;
+      width: 0;
+      height: 0;
       border-radius: 3px;
       border: 6px solid #2197ed;
     }
     .item {
       clear: both;
-      flex: 1;
+      width: 235px;
       .road-title {
-        font-size: 34px;
+        font-size: 28px;
         font-weight: bold;
         color: #1d1f75;
 
@@ -167,22 +169,22 @@
           margin-left: 10px;
           display: inline-block;
           text-align: center;
-          width: 100px;
-          height: 50px;
-          line-height: 50px;
+          width: 80px;
+          height: 42px;
+          line-height: 42px;
           background: #ffffff;
-          box-shadow: 0px 5px 15px rgba(29, 31, 117, 0.15);
+          box-shadow: 0 5px 15px rgba(29, 31, 117, 0.15);
           border-radius: 26px;
         }
       }
 
       .road-info {
         position: relative;
-        margin-top: 62px;
+        margin-top: 69px;
         display: inline-block;
         width: 100%;
         margin-bottom: 28px;
-        height: 0px;
+        height: 0;
         border-radius: 3px;
         border: 6px solid #3eddcf;
         img {
@@ -191,21 +193,22 @@
           height: 62px;
           position: absolute;
           top: -32px;
+          left: 95px;
         }
       }
 
       .road-text {
         float: right;
         margin-top: 28px;
-        width: 365px;
+        width: 210px;
         p {
           padding: 12px 6px 9px 11px;
           text-align: center;
           color: #363872;
-          background: #ffffff;
-          box-shadow: 0px 10px 18px rgba(29, 31, 117, 0.1);
+          background: #fff;
+          box-shadow: 0 10px 18px rgba(29, 31, 117, 0.1);
           border-radius: 10px;
-          font-size: 22px;
+          font-size: 18px;
           line-height: 23px;
           &:not(:first-child) {
             margin-top: 11px;

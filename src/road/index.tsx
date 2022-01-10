@@ -18,40 +18,73 @@ function Road() {
       year: "2020",
       envy: "Q4",
       text: [
-        t("Whitepaper 1.0 was issued"),
+        t("Issue White Paper 1.0"),
         t("Core protocol design"),
-        t("WEB3 Foundation Grant Application"),
-        t("Prototype development based on pallet and off-chain work"),
+        t("Apply for Web3 fund grant"),
+        t("Develop prototype based on \"pallet\" and \"off-chain work\""),
+      ],
+    },
+    {
+      year: "2021",
+      envy: "Q1",
+      text: [
+        t("Improve the economic model"),
+        t("Integrate Ares Protocol in Polkadot Defi projects"),
+        t("Obtain Web3 fund grant"),
       ],
     },
     {
       year: "2021",
       envy: "Q2",
       text: [
-        t("Technical yellow paper was issued"),
-        t("Improve the cross-chain interaction of Oracle users"),
+        t("Publish Technology Yellow Paper"),
+        t("Launch test network"),
         t(
           "Realize the random selection of aggregators and on chain aggregation"
         ),
-        t("Improve the challenger and arbitration council model"),
-        t("Million dollars of financing accomplished"),
+        t("Listing on the secondary market"),
+      ],
+    },
+    {
+      year: "2021",
+      envy: "Q3",
+      text: [
+        t("Strengthen the cross-chain interaction of the oracle users"),
+        t("Improve challenger and Arbitration counsel model"),
+        t(
+            "Improve economic model design"
+        ),
       ],
     },
     {
       year: "2021",
       envy: "Q4",
       text: [
-        t("Improve economic model design"),
-        t("Launch Testnet"),
-        t("Integration of Ares Protocol into Polkadot DeFi projects"),
+        t("Implement random selection of aggregators and on-chain aggregation"),
+        t("Launch test network"),
+        t("Access to the eco-partner testing"),
+      ],
+    },
+    {
+      year: "2022",
+      envy: "Q1",
+      text: [
+        t("Launch AresScan blockchain browser with trade history searching function."),
+        t("Launch price prediction module in Gladios test network"),
+        t("Acquire on-chain and off-chain data on Ares Protocol price quotation program"),
+        t("Open up asset bridge between BSC & ETH network"),
+        t("Publish updated official Wikipedia"),
       ],
     },
     {
       year: "2022",
       envy: "Q2",
       text: [
-        t("Launch Mainnet"),
-        t("Carry out multi-channel service cooperation"),
+        t("Launch the main network"),
+        t("Operate multi-channelled cooperation"),
+        t("Enhance cross-company companionship"),
+        t("Operate Eco-marathon developer activities"),
+        t("Issue chain verified, VRF algorithm based game The Trojan Box"),
       ],
     },
   ];
