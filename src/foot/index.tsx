@@ -78,7 +78,7 @@ function Foot() {
       },
       {
         name: t("RSS"),
-        url: "https://medium.com/feed/@aresprotocollab",
+        url: "https://crypto.com/price/ares-protocol",
       },
     ],
   };
