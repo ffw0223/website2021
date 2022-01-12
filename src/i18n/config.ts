@@ -714,7 +714,7 @@ export const resources = {
     },
   },
   jp: {
-    translation: {   
+    translation: {
       "Home": "ホーム",
       "Technology": "テクノロジー",
       "Economics": "エコノミクス",
@@ -757,7 +757,7 @@ export const resources = {
       "Challenger": "チャレンジャー",
       "The challenger verifies the integrity and validity of the data submitted by the aggregator and provides fraudulent aggregator data and correct data to the Reputation Committee for rewards.": "チャレンジャーは、アグリゲーターが提出したデータの完全性と有効性を検証し、評判委員会に不正なデータと正確なデータを提供して報酬を得る。",
       "Reputation Committee": "評判委員会",
-      "The aggregator obtains external request data through Scanner, sends the request to the Provider to process all Oracle requests, uses VRF to ensure the randomness of the aggregator.": "アグリゲーターはScannerを介して外部データを取得し、すべてのOracle要求を処理するためにProviderに要求を送信する。VRFを用いてアグリゲーターのランダム性を保証する。"
+      "The aggregator obtains external request data through Scanner, sends the request to the Provider to process all Oracle requests, uses VRF to ensure the randomness of the aggregator.": "アグリゲーターはScannerを介して外部データを取得し、すべてのOracle要求を処理するためにProviderに要求を送信する。VRFを用いてアグリゲーターのランダム性を保証する。",
       "Aggregator": "アグリゲーター",
       "ARES A Decentralized Cross-Chain Oracle Service Protocol": "ARESはクロスチェーンのオラクルである",
       "About Us": "私たちについて",
@@ -841,7 +841,7 @@ export const resources = {
       "Subscribe": "チャンネル登録",
       "An investment in knowledge pays the best interest.": "知識への投資は最大の利益をもたらします。 - ベンジャミンフランクリン",
       "Team Members": "チームメンバー",
-      "Subscribe and receive all news and information about Ares Protocol.": "Ares Protocolに関するニュースと情報を登録して受信する.”,
+      "Subscribe and receive all news and information about Ares Protocol.": "Ares Protocolに関するニュースと情報を登録して受信する.",
       "Click here to buy tokens": "トークンを購入するには、ここをクリックしてください",
       "Trade ARES": "https://www.gateio.pro/trade/ARES_USDT",
       "Please Join Our Community Now.": "私たちのコミュニティへようこそ",
@@ -889,7 +889,7 @@ export const resources = {
       rewardsDescription2: "1 $ KSMをサポートして1200 $ AMASを取得",
       rewardsDescription3: "$ AMASの3％ボーナスを獲得するように他の人を誘う",
       references: "参考",
-      referencesASMS: " $AMASについて”,
+      referencesASMS: " $AMASについて",
       referenceDescription: "クラウとファンディングに参加して、私たちのプロジェクトから報酬を受け取りましょう",
       learnMore: "もっと詳しく",
       specification: "規格",
@@ -947,7 +947,7 @@ export const resources = {
       submitEthereumAddress: "Eth アドレスをお願い",
       thanksContribution: "KSMスロットにご協力いただきありがとうございます",
       didntContribute: "申し訳ありませんが、あなたはリストに載っていません。今すぐ貢献してください！",
-      earned: "獲得" 
+      earned: "獲得"
     },
   },
 }
