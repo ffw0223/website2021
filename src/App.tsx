@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import {lazy, Suspense, useState} from "react";
 import "./App.css";
 import "./reset.css";
 import "./global.css";
@@ -12,9 +12,9 @@ import Join from "./join";
 import classnames from "classnames";
 import Foot from "./foot";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Snow from "./snow";
 
 function App() {
+  const [widgetShow, setWidgetShow] = useState(true);
   const backend = lazy(() => import("./backend/Backend"));
   const marsApp = lazy(() => import("./Mars"));
 
@@ -38,7 +38,12 @@ function App() {
                 <Road />
                 <Join />
                 <Foot />
-                <Snow />
+                <div className="widget" style={{display: `${widgetShow ? "block" : "none"}`}}>
+                  <div className="close">
+                    <span onClick={() => setWidgetShow(!widgetShow)}>×</span>
+                  </div>
+                  <div id="crypto-widget-CoinList" data-design="classic" data-coins="ares-protocol"></div>
+                </div>
               </div>
             </Route>
 

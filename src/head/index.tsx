@@ -7,8 +7,7 @@ import { useTranslation } from "react-i18next";
 import vedio from "../assets/vedio.mp4";
 import vedioEn from "../assets/vedioEn.mp4";
 import aresLogoImg from "../assets/ares-logo.png";
-// import logoImg from "../assets/logo.png";
-import logoImg from "../assets/logo_happy.png";
+import logoImg from "../assets/logo.png";
 import parityImg from "../assets/parity.png";
 import topImg from "../assets/top.png";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -782,8 +781,11 @@ function Head() {
             </p>
           </li>
           <li className="usd-point verticalBar">
-            <span className="usd-num">{aresData.point}%</span>
-            <span className="usd-direction"></span>
+            <span className={`usd-num ${aresData.point > 0 ? "" : "down"}`}>{aresData.point}%</span>
+            {
+              aresData.point > 0 ? <span className="usd-direction" /> :
+              <span className="down-direction" />
+            }
           </li>
           <li className="placeholder" />
           <li className="usd-rank verticalBar">

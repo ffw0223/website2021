@@ -28,6 +28,29 @@
   color: #61dafb;
 }
 
+.widget {
+  position: fixed;
+  bottom: 50px;
+  width: 600px;
+  left: calc(100vw/2 - 300px);
+  z-index: 999;
+  margin: 0 auto;
+}
+
+.widget .close {
+  position: relative;
+}
+
+.widget .close span {
+  color: #1096f0;
+  font-weight: 600;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  z-index: 50;
+  cursor: pointer;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

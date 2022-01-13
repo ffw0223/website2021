@@ -76,10 +76,6 @@ function Foot() {
         name: t("Gladios"),
         url: "https://js.aresprotocol.io/?rpc=wss%3A%2F%2Fgladios.aresprotocol.io#/explorer",
       },
-      {
-        name: t("RSS"),
-        url: "https://crypto.com/price/ares-protocol",
-      },
     ],
   };
   const subscribe = {

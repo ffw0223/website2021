@@ -4,6 +4,9 @@
   &.m {
     margin: 0 auto;
     padding-bottom: 67px;
+    .swiper-container {
+      width: 80%;
+    }
     .warp::after {
       content: none;
     }
@@ -49,10 +52,15 @@
       height: 35px;
       line-height: 35px;
     }
+
+    .swiper-button-disabled {
+      opacity: 1;
+    }
+
     .swiper-button-prev,
     .swiper-container-rtl .swiper-button-next {
       background-image: none;
-      left: -20px;
+      left: 60px;
       top: 60%;
       &::after{
         content: '<';
@@ -72,7 +80,7 @@
     .swiper-button-next,
     .swiper-container-rtl .swiper-button-prev {
       background-image: none;
-      right: -20px;
+      right: 60px;
       top: 60%;
       &::after{
         content: '>';
@@ -86,6 +94,7 @@
         font-weight: bold;
         right: 0;
         top: 0;
+        opacity: 1;
       }
     }
     .swiper-pagination-team {
@@ -216,6 +225,108 @@
         }
       }
     }
+  }
+}
+
+
+.swiper-slide {
+   padding: 0 0 50px 0;
+}
+
+.item2 {
+  width: 750px;
+}
+
+.swiperItemWrapper {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  &::after {
+    animation-duration: 5s;
+    animation-name: road;
+    animation-iteration-count: infinite;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 112px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-radius: 3px;
+    border: 6px solid #2197ed;
+  }
+  .wrapItem {
+    clear: both;
+    width: 260px;
+
+    .wrap-road-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #1d1f75;
+      padding-left: 45px;
+
+      span {
+        margin-left: 10px;
+        display: inline-block;
+        text-align: center;
+        width: 80px;
+        height: 42px;
+        line-height: 42px;
+        background: #ffffff;
+        box-shadow: 0 5px 15px rgba(29, 31, 117, 0.15);
+        border-radius: 26px;
+      }
+    }
+
+    .wrap-road-info {
+      position: relative;
+      margin-top: 69px;
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 28px;
+      height: 0;
+      border-radius: 3px;
+      border: 6px solid #3eddcf;
+      img {
+        z-index: 1;
+        width: 62px;
+        height: 62px;
+        position: absolute;
+        top: -32px;
+        left: 112px;
+      }
+    }
+
+    .wrap-road-text {
+      float: right;
+      margin-top: 28px;
+      width: 210px;
+      p {
+        padding: 12px 6px 9px 11px;
+        text-align: center;
+        color: #363872;
+        background: #fff;
+        box-shadow: 0 10px 18px rgba(29, 31, 117, 0.1);
+        border-radius: 10px;
+        font-size: 18px;
+        line-height: 23px;
+        &:not(:first-child) {
+          margin-top: 11px;
+        }
+      }
+    }
+  }
+}
+
+.team-swiper {
+  .swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+  }
+  .swiper-pagination-bullet-active {
+    background: #2ce6da;
   }
 }
 
