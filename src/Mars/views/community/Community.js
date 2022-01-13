@@ -17,6 +17,7 @@ const Community = props => {
 
 		<div className={styles.content}>
 			<div className={styles.img}>
+				{/* eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
 				<a onClick={handleClickTelegram}>
 					<img src="/images/mars/tg.png" alt="" />
 				</a>

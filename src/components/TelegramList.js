@@ -6,7 +6,7 @@ const TelegramItem = props => {
 	const { t } = useTranslation();
 
 	return (<div className={styles.telegramItemLayout}>
-		<img src={props.icon} />
+		<img src={props.icon}  alt="telegram"/>
 		<a href={props.url} target="_blank" rel="noreferrer">
 			<div className={styles.label}>{props.label}&nbsp;{t("community")}</div>
 		</a>

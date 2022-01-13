@@ -3,7 +3,7 @@ import "./style.scss";
 import "./style1280.scss";
 import { useTranslation } from "react-i18next";
 import roadIcon from "../assets/road.png";
-import roadLogo from "../assets/link-logo-btn.png";
+// import roadLogo from "../assets/link-logo-btn.png";
 import AwesomeSwiper from "react-awesome-swiper";
 
 function Road() {
@@ -21,7 +21,7 @@ function Road() {
         t("Issue White Paper 1.0"),
         t("Core protocol design"),
         t("Apply for Web3 fund grant"),
-        t("Develop prototype based on \"pallet\" and \"off-chain work\""),
+        t("Develop prototype based on pallet and off-chain work"),
       ],
     },
     {
@@ -38,10 +38,7 @@ function Road() {
       envy: "Q2",
       text: [
         t("Publish Technology Yellow Paper"),
-        t("Launch test network"),
-        t(
-          "Realize the random selection of aggregators and on chain aggregation"
-        ),
+        t("Develop testnet"),
         t("Listing on the secondary market"),
       ],
     },
@@ -61,7 +58,7 @@ function Road() {
       envy: "Q4",
       text: [
         t("Implement random selection of aggregators and on-chain aggregation"),
-        t("Launch test network"),
+        t("Launch testnet"),
         t("Access to the eco-partner testing"),
       ],
     },
@@ -70,7 +67,7 @@ function Road() {
       envy: "Q1",
       text: [
         t("Launch AresScan blockchain browser with trade history searching function."),
-        t("Launch price prediction module in Gladios test network"),
+        t("Launch price prediction module in Gladios test testnet"),
         t("Acquire on-chain and off-chain data on Ares Protocol price quotation program"),
         t("Open up asset bridge between BSC & ETH network"),
         t("Publish updated official Wikipedia"),
@@ -89,9 +86,7 @@ function Road() {
     },
   ];
 
-  console.log("width", document.body.clientWidth  );
   if (document.body.clientWidth <= 1779) {
-    console.log("width", document.body.clientWidth);
     const swiperConfig = {
       // loop: true,
       // autoplay: {
@@ -136,6 +131,7 @@ function Road() {
           <div className="warp">
             <div className="team-con">
               <AwesomeSwiper
+                  // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 ref={(ref) => (swiperRef = ref)}
                 config={swiperConfig}
                 className="team-swiper"

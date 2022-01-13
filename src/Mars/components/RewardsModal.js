@@ -5,7 +5,7 @@ import { render } from "react-dom";
 import { useTranslation } from "react-i18next";
 import Alert from "./Alert";
 import styles from "./RewardsModal.module.scss";
-import { stringToHex } from "@polkadot/util";
+// import { stringToHex } from "@polkadot/util";
 import Config from "../../Config";
 import type { DeriveOwnContributions, ParaId } from '@polkadot/api-derive/types';
 import { TypeRegistry } from '@polkadot/types';
@@ -119,6 +119,7 @@ const RewardsModal = props => {
 				break;
 			}
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [account]);
 
 

@@ -3,7 +3,7 @@ import "./style.scss";
 import "./style1280.scss";
 import "./style428.scss";
 import { useTranslation } from 'react-i18next';
-import link from "../assets/link-icon.png";
+// import link from "../assets/link-icon.png";
 import link1 from "../assets/join-link1.png";
 import link2 from "../assets/join-link2.png";
 import link3 from "../assets/join-link3.png";
@@ -34,7 +34,8 @@ function Join() {
         <h2 className="title">{title}</h2>
         <p className="desc">{desc}</p>
         <div className="link-icon">
-          <a onClick={handleClickTelegram}><img src={link1} alt="" /></a>
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          <a onClick={handleClickTelegram} ><img src={link1} alt="" /></a>
           <a href='https://twitter.com/AresProtocolLab' target="_blank" rel="noreferrer"><img src={link3} alt="" /></a>
           <a href='https://www.facebook.com/aresprotocollab' target="_blank" rel="noreferrer"><img src={link2} alt="" /></a>
           <a href='https://discord.gg/cqduK4ZNaY' target="_blank" rel="noreferrer"><img src={link4} alt="" /></a>

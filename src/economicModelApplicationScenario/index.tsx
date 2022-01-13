@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import AwesomeSwiper from "react-awesome-swiper";
 import { useTranslation } from "react-i18next";
-import classnames from "classnames";
-import EconomicImg from "../assets/Economic.png";
-import applicationScenarioImg from "../assets/applicationScenario.png";
+// import classnames from "classnames";
+// import EconomicImg from "../assets/Economic.png";
+// import applicationScenarioImg from "../assets/applicationScenario.png";
 import "./style.scss";
 import "./style1280.scss";
 import "./style428.scss";
 
 function EconomicModelApplicationScenario() {
   const { t } = useTranslation();
-  const [economicSwiperIndex, seteconomicSwiperIndex] = useState(1);
+  // const [economicSwiperIndex, seteconomicSwiperIndex] = useState(1);
   let economicModelRef: any = null;
   let applicationScenarioRef = null;
   const eeconomicModel = {
@@ -79,7 +79,6 @@ function EconomicModelApplicationScenario() {
         document
           .querySelector(`.economic5`)
           ?.setAttribute("class", `economic5 common hover`);
-        console.log(2);
       }
       if (index === 2) {
         document
@@ -102,6 +101,7 @@ function EconomicModelApplicationScenario() {
           ?.setAttribute("class", `economic1 common hover`);
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const applicationScenario = {
     title: t("Application Scenario"),

@@ -300,6 +300,7 @@ function Head(props: any) {
                 onClick={handleRewards}>{t("crowdloanDrop")}</button>
             </div>
 
+            {/*eslint-disable-next-line jsx-a11y/iframe-has-title*/}
             <iframe
               id="animatePlayer"
               className="illustration"

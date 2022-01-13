@@ -4,8 +4,8 @@ import "./style.scss";
 import "./style428.scss";
 import "./style1280.scss";
 import { useTranslation } from "react-i18next";
-import twitterImg from "../assets/twitter.png";
-import telegramImg from "../assets/telegram.png";
+// import twitterImg from "../assets/twitter.png";
+// import telegramImg from "../assets/telegram.png";
 import AwesomeSwiper from "react-awesome-swiper";
 const swiperConfig = {
   // loop: true,
@@ -139,6 +139,7 @@ function Team() {
     <section className="team" id="Team">
       <div className="team-con">
         <AwesomeSwiper
+            //eslint-disable-next-line @typescript-eslint/no-unused-vars
           ref={(ref) => (swiperRef = ref)}
           config={swiperConfig}
           className="team-swiper"
@@ -164,7 +165,7 @@ function Team() {
                   <p className="desc">{desc}</p>
                   <div className="warp">
                     {newList.map((data, sindex) => {
-                      const { img, twitter, telegram, position, name, desc } =
+                      const {position, name, desc } =
                         data;
                       return (
                         <div className="item" key={`${index}${sindex}`}>

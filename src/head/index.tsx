@@ -40,6 +40,7 @@ async function getAresAll() {
 }
 
 function Head() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const settings = {
     // axis: 'vertical',
     autoPlay: true,
@@ -180,7 +181,6 @@ function Head() {
   const [scrollTop, setScroll] = useState(0);
   const [phone, setPhone] = useState(false);
   const [vedioSwich, setVedioStauts] = useState(false);
-  console.log("vedioSwich =", vedioSwich)
   const [language, setlanguage] = useState(
     head.language.select[head.language.localIndex].name
   );
@@ -214,11 +214,11 @@ function Head() {
     setTimeout(() => {
       fetchTips();
     }, 3000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     const isPhone = window.screen.width <= 1279;
-    console.log("isPhone: ", isPhone);
     isPhone && setPhone(isPhone);
     setScroll(
       document?.documentElement?.scrollTop || document?.body?.scrollTop
@@ -230,8 +230,9 @@ function Head() {
     };
     document.body.onclick = (e) => {
       const navChildClassName = (e?.target as any)?.getAttribute("class");
-      if (navChildClassName?.includes("nav-child")) return;
+      if (navChildClassName?.includes("nav-child") || navChildClassName?.includes("isShowLanguage")) return;
       setNavChildActive(null);
+      setlanguageStatus(false);
     };
   }, []);
 
@@ -351,7 +352,6 @@ function Head() {
                                     const {
                                       name,
                                       url,
-                                      id,
                                       className,
                                       minScrollTop,
                                       maxScrollTop,
@@ -415,7 +415,7 @@ function Head() {
                     })}
                   </ul>
                   <div className="language">
-                    <p className="language-name">
+                    <div className="language-name">
                       <span
                         className={classnames("one", {
                           isShowLanguage: languageStatus,
@@ -430,46 +430,51 @@ function Head() {
                         }
                       </span>
                       {languageStatus ? (
-                          head.language.select
-                              .filter((item, index) => item.name !== language)
-                              .map((item, index) => {
-                            return <span
-                                className={`two ${index !== 0 ? "three" : ""}`}
-                                onClick={(e) => {
-                                  setlanguageStatus(!languageStatus);
-                                  if ((e.target as any).innerText === "EN") {
-                                    head.language.localIndex = 0;
-                                  } else if ((e.target as any).innerText === "CN") {
-                                    head.language.localIndex = 1;
-                                  } else if ((e.target as any).innerText === "ES") {
-                                    head.language.localIndex = 2;
-                                  } else if ((e.target as any).innerText === "JP") {
-                                    head.language.localIndex = 3;
-                                  }
-                                  const language =
-                                      head.language.select[head.language.localIndex]
-                                          .name;
+                          <div className="language-dropdown">
+                            {
+                              head.language.select
+                                  .filter((item, index) => item.name !== language)
+                                  .map((item, index) => {
+                                    return <span
+                                        key={`language-${index}`}
+                                        className={`two ${index !== 0 ? "three" : ""}`}
+                                        onClick={(e) => {
+                                          setlanguageStatus(!languageStatus);
+                                          if ((e.target as any).innerText === "EN") {
+                                            head.language.localIndex = 0;
+                                          } else if ((e.target as any).innerText === "CN") {
+                                            head.language.localIndex = 1;
+                                          } else if ((e.target as any).innerText === "ES") {
+                                            head.language.localIndex = 2;
+                                          } else if ((e.target as any).innerText === "JP") {
+                                            head.language.localIndex = 3;
+                                          }
+                                          const language =
+                                              head.language.select[head.language.localIndex]
+                                                  .name;
 
-                                  document
-                                      .querySelector("#root")
-                                      ?.setAttribute(
-                                          "class",
-                                          head.language.select[head.language.localIndex]
-                                              .id
-                                      );
+                                          document
+                                              .querySelector("#root")
+                                              ?.setAttribute(
+                                                  "class",
+                                                  head.language.select[head.language.localIndex]
+                                                      .id
+                                              );
 
-                                  setlanguage(language);
-                                  setlanguageStatus(!languageStatus);
-                                  i18n.changeLanguage(
-                                      head.language.select[head.language.localIndex].id
-                                  );
-                                }}
-                            >
-                              {item.id.toUpperCase()}
-                            </span>
-                         })
+                                          setlanguage(language);
+                                          setlanguageStatus(!languageStatus);
+                                          i18n.changeLanguage(
+                                              head.language.select[head.language.localIndex].id
+                                          );
+                                        }}
+                                    >
+                                      {item.id.toUpperCase()}
+                                    </span>
+                                  })
+                            }
+                          </div>
                       ) : null}
-                    </p>
+                    </div>
                     <span
                       onClick={(e) => {
                         setlanguageStatus(!languageStatus);
@@ -550,7 +555,6 @@ function Head() {
                                 const {
                                   name,
                                   url,
-                                  id,
                                   className,
                                   minScrollTop,
                                   maxScrollTop,
@@ -691,6 +695,7 @@ function Head() {
             )}
           >
             <span className="video-button" onClick={() => setVedioStauts(!vedioSwich)} />
+            {/*eslint-disable-next-line jsx-a11y/iframe-has-title*/}
             <iframe src="/images/Animacionwebsite001.svg" frameBorder={0} />
           </div>
           <div className="head-content">
@@ -771,7 +776,7 @@ function Head() {
         <ul className="usd-con">
           <li className="usd-logo">
             <img src={aresLogoImg} alt="" />
-            <img className="animate" src="/images/loading.png" />
+            <img className="animate" src="/images/loading.png"  alt="loading"/>
           </li>
           <li className="usd-usd">
             <p className="usd-name">{aresData.name}</p>
