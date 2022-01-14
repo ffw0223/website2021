@@ -157,6 +157,10 @@ function Head() {
           name: "JP",
           id: "jp",
         },
+        {
+          name: "RU",
+          id: "ru",
+        },
       ],
       localIndex: 0,
     },
@@ -452,6 +456,8 @@ function Head() {
                                             head.language.localIndex = 2;
                                           } else if ((e.target as any).innerText === "JP") {
                                             head.language.localIndex = 3;
+                                          } else if ((e.target as any).innerText === "RU") {
+                                            head.language.localIndex = 4;
                                           }
                                           const language =
                                               head.language.select[head.language.localIndex]
@@ -650,6 +656,8 @@ function Head() {
                                     head.language.localIndex = 2;
                                   } else if ((e.target as any).innerText === "JP") {
                                     head.language.localIndex = 3;
+                                  } else if ((e.target as any).innerText === "RU") {
+                                    head.language.localIndex = 4;
                                   }
                                   const language =
                                       head.language.select[head.language.localIndex]

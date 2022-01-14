@@ -17,7 +17,6 @@
   .join-con {
     z-index: 2;
     position: relative;
-    width: 1920px;
     height: 661px;
     margin: 0 auto;
     background: #fff url("../assets//join-bg.png") no-repeat;
@@ -68,7 +67,6 @@
     .btn {
       text-decoration: none;
       cursor: pointer;
-      width: 382px;
       height: 73px;
       border: 2px solid #ffffff;
       box-shadow: 0px 3px 3px rgba(0, 6, 166, 0.12);
@@ -88,7 +86,8 @@
       }
 
       span {
-        padding-left: 40px;
+        padding-left: 70px !important;
+        padding-right: 70px;
         font-size: 20px;
         line-height: 38px;
         color: #ffffff;
