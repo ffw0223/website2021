@@ -7,12 +7,12 @@
     width: 1640px;
     margin: 10px auto 70px;
     color: #363872;
-    font-size: 25px;
+    font-size: 20px;
 
     .foot-title {
       font-weight: bold;
       color: #1d1f75;
-      font-size: 35px;
+      font-size: 25px;
       padding-top: 30px;
       margin-bottom: 45px;
     }
@@ -76,7 +76,7 @@
         display: flex;
         margin-top: 35px;
         width: 508px;
-        height: 73px;
+        height: 60px;
         border: 2px solid #707070;
         box-shadow: 0px 3px 3px rgba(0, 6, 166, 0.12);
         border-radius: 36px;
@@ -85,11 +85,11 @@
           border-radius: 36px;
           flex: 1;
           font-size: 24px;
-          height: 73px;
+          height: 60px;
           border: none;
           color: #363872;
           outline: none;
-          line-height: 73px;
+          line-height: 60px;
           padding-left: 30px;
         }
 
@@ -100,11 +100,11 @@
           right: -5px;
           width: 140px;
           display: inline-block;
-          height: 76px;
+          height: 65px;
           text-align: center;
           color: #fff;
-          font-size: 26px;
-          line-height: 72px;
+          font-size: 20px;
+          line-height: 65px;
           background: #1195f0;
           border-radius: 100px;
           &:hover {
@@ -120,7 +120,7 @@
     line-height: 60px;
     background: #1d1f75;
     text-align: center;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 400;
     color: #ffffff;
   }

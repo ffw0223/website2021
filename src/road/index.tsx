@@ -86,7 +86,7 @@ function Road() {
     },
   ];
 
-  if (document.body.clientWidth <= 1779) {
+  if (document.body.clientWidth <= 1779 && document.body.clientWidth > 750) {
     const swiperConfig = {
       // loop: true,
       // autoplay: {
@@ -137,27 +137,6 @@ function Road() {
                 className="team-swiper"
               >
                 <div className="swiper-wrapper">
-                  {/*{data.slice(0, 4).map((item, index) => {*/}
-                  {/*  const { year, envy, text } = item;*/}
-                  {/*  return (*/}
-                  {/*    <div className="swiper-slide">*/}
-                  {/*      <div className="item" key={index}>*/}
-                  {/*        <h2 className="road-title">*/}
-                  {/*          {year}*/}
-                  {/*          <span>{envy}</span>*/}
-                  {/*        </h2>*/}
-                  {/*        <p className="road-info">*/}
-                  {/*          <img src={roadIcon} alt="" />*/}
-                  {/*        </p>*/}
-                  {/*        <div className="road-text">*/}
-                  {/*          {text.map((t, index) => (*/}
-                  {/*            <p key={index}>{t}</p>*/}
-                  {/*          ))}*/}
-                  {/*        </div>*/}
-                  {/*      </div>*/}
-                  {/*    </div>*/}
-                  {/*  );*/}
-                  {/*})}*/}
                   <div className="swiper-slide">
                     <ul className="swiperItemWrapper">
                       {data.slice(0, 4).map((item, index) => {
@@ -216,6 +195,76 @@ function Road() {
       </section>
     );
   }
+
+
+  if (document.body.clientWidth <= 750) {
+    const swiperConfig = {
+
+      preloadImages: false,
+      // Enable lazy loading
+      lazy: true,
+      speed: 500,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+      },
+      on: {
+        slideChange: function () {},
+      },
+    };
+    return (
+        <section className="road m phone">
+          <div className="road-con">
+            <h2 className="title">{title}</h2>
+            <p className="desc">{desc}</p>
+            <div className="warp">
+              <div className="team-con">
+                <AwesomeSwiper
+                    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                    ref={(ref) => (swiperRef = ref)}
+                    config={swiperConfig}
+                    className="team-swiper"
+                >
+                  <div className="swiper-wrapper">
+                    {data.map((item, index) => {
+                      const { year, envy, text } = item;
+                      return (
+                        <div className="swiper-slide">
+                          <div className="item" key={index}>
+                            <h2 className="road-title">
+                              {year}
+                              <span>{envy}</span>
+                            </h2>
+                            <p className="road-info">
+                              <img src={roadIcon} alt="" />
+                            </p>
+                            <div className="road-text">
+                              {text.map((t, index) => (
+                                <p key={index}>{t}</p>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div className="swiper-pagination"></div>
+                </AwesomeSwiper>
+                <div className="swiper-button-prev"></div>
+                <div className="swiper-button-next"></div>
+                {/*<div className="swiper-pagination"></div>*/}
+              </div>
+            </div>
+          </div>
+        </section>
+    );
+  }
+
+
   return (
     <section className="road">
       <div className="road-con">

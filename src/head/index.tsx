@@ -230,7 +230,11 @@ function Head() {
     };
     document.body.onclick = (e) => {
       const navChildClassName = (e?.target as any)?.getAttribute("class");
-      if (navChildClassName?.includes("nav-child") || navChildClassName?.includes("isShowLanguage")) return;
+      if (navChildClassName?.includes("nav-child") || navChildClassName?.includes("isShowLanguage")
+          || navChildClassName?.includes("language-arrow"))
+      {
+        return;
+      }
       setNavChildActive(null);
       setlanguageStatus(false);
     };
@@ -344,7 +348,7 @@ function Head() {
                                   top: navChildActive === index,
                                   bottom: navChildActive !== index,
                                 })}
-                              ></span>
+                              />
                               {navChildActive === index}
                               {navChildActive === index ? (
                                 <div className="nav-child">
@@ -483,7 +487,7 @@ function Head() {
                         top: languageStatus,
                         bottom: !languageStatus,
                       })}
-                    ></span>
+                    />
                   </div>
                 </div>
               </div>
@@ -547,7 +551,7 @@ function Head() {
                                 top: navChildActive === index,
                                 bottom: navChildActive !== index,
                               })}
-                            ></span>
+                            />
                           </div>
                           {navChildActive === index ? (
                             <div className="nav-child">
@@ -618,7 +622,7 @@ function Head() {
                 })}
               </ul>
               <div className="language">
-                <p className="language-name">
+                <div className="language-name">
                   <span
                     className={classnames("one", {
                       isShowLanguage: languageStatus,
@@ -634,6 +638,7 @@ function Head() {
                           .filter((item, index) => item.name !== language)
                           .map((item, index) => {
                             return <span
+                                key={item.name}
                                 className={`two ${index !== 0 ? "three" : ""}`}
                                 onClick={(e) => {
                                   setlanguageStatus(!languageStatus);
@@ -669,8 +674,8 @@ function Head() {
                             </span>
                           })
                   ) : null}
-                </p>
-                <span
+                </div>
+                <div
                   onClick={(e) => {
                     setlanguageStatus(!languageStatus);
                   }}
@@ -678,7 +683,7 @@ function Head() {
                     top: languageStatus,
                     bottom: !languageStatus,
                   })}
-                ></span>
+                />
               </div>
             </div>
             <span className="mNav-close" onClick={() => setmNavSwitch(false)}>

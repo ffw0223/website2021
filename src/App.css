@@ -37,6 +37,13 @@
   margin: 0 auto;
 }
 
+@media only screen and (max-width: 750px) {
+  .widget {
+    width: 380px;
+    left: calc(100vw/2 - 190px);
+  }
+}
+
 .widget .close {
   position: relative;
 }

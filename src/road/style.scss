@@ -114,7 +114,7 @@
       }
     }
     .warp .item .road-title {
-      font-size: 24px;
+      font-size: 30px;
     }
     .warp .item .road-text {
       margin-top: 10px;
@@ -159,7 +159,7 @@
       content: "";
       position: absolute;
       left: 0;
-      top: 112px;
+      top: 88px;
       display: inline-block;
       width: 0;
       height: 0;
@@ -170,7 +170,7 @@
       clear: both;
       width: 235px;
       .road-title {
-        font-size: 28px;
+        font-size: 30px;
         font-weight: bold;
         color: #1d1f75;
 
@@ -189,7 +189,7 @@
 
       .road-info {
         position: relative;
-        margin-top: 69px;
+        margin-top: 47px;
         display: inline-block;
         width: 100%;
         margin-bottom: 28px;
@@ -217,7 +217,7 @@
           background: #fff;
           box-shadow: 0 10px 18px rgba(29, 31, 117, 0.1);
           border-radius: 10px;
-          font-size: 18px;
+          font-size: 20px;
           line-height: 23px;
           &:not(:first-child) {
             margin-top: 11px;
@@ -250,7 +250,7 @@
     content: "";
     position: absolute;
     left: 0;
-    top: 112px;
+    top: 79px;
     display: inline-block;
     width: 0;
     height: 0;
@@ -262,7 +262,7 @@
     width: 260px;
 
     .wrap-road-title {
-      font-size: 28px;
+      font-size: 30px;
       font-weight: bold;
       color: #1d1f75;
       padding-left: 45px;
@@ -282,7 +282,7 @@
 
     .wrap-road-info {
       position: relative;
-      margin-top: 69px;
+      margin-top: 38px;
       display: inline-block;
       width: 100%;
       margin-bottom: 28px;
@@ -315,6 +315,49 @@
         &:not(:first-child) {
           margin-top: 11px;
         }
+      }
+    }
+  }
+}
+
+.road {
+  .warp {
+    width: 100%;
+  }
+  &.phone {
+    .swiper-container {
+      width: 85%;
+      margin: 0 auto;
+    }
+    .swiper-button-prev,
+    .swiper-container-rtl .swiper-button-next {
+      background-image: none;
+      left: -7px;
+      top: 55%;
+    }
+
+    .swiper-button-next,
+    .swiper-container-rtl .swiper-button-prev {
+      background-image: none;
+      right: 10px;
+      top: 55%;
+    }
+
+    .item {
+      margin-left: 20px;
+      .road-title {
+        position: initial !important;
+        text-align: center;
+      }
+      .road-info {
+        margin-left: 0 !important;
+        img {
+          left: 80px !important;
+          text-align: center;
+        }
+      }
+      .road-text {
+        width: 100% !important;
       }
     }
   }
