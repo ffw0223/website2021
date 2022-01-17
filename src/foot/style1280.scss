@@ -3,17 +3,16 @@
     .foot-con {
       width: 1640 * 0.76190476px;
       margin: 0 auto 70 * 0.76190476px;
-      font-size: 20 * 0.76190476px;
+      font-size: 20px;
 
       .foot-title {
-        font-size: 25 * 0.76190476px;
+        font-size: 25px;
         padding-top: 30 * 0.76190476px;
         margin-bottom: 45 * 0.76190476px;
       }
 
       .about {
         width: 505 * 0.76190476px;
-
         .about-desc {
           width: 405 * 0.76190476px;
           line-height: 33 * 0.76190476px;
@@ -64,20 +63,20 @@
 
           input {
             border-radius: 36 * 0.76190476px;
-            font-size: 24 * 0.76190476px;
+            font-size: 20px;
             height: 73 * 0.76190476px;
             line-height: 73 * 0.76190476px;
             padding-left: 30 * 0.76190476px;
           }
 
           span {
-            top: -2 * 0.76190476px;
             right: -5 * 0.76190476px;
             width: 140 * 0.76190476px;
-            height: 76 * 0.76190476px;
-            font-size: 26 * 0.76190476px;
-            line-height: 72 * 0.76190476px;
+            height: 78 * 0.76190476px;
+            font-size: 20px;
+            line-height: 78 * 0.76190476px;
             border-radius: 100 * 0.76190476px;
+            //box-shadow: 0 * 0.76190476px 3 * 0.76190476px #1195f0;
           }
         }
       }

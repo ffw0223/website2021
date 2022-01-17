@@ -237,6 +237,10 @@
   width: 750px;
 }
 
+.item1 {
+  width: 1040px;
+}
+
 .swiperItemWrapper {
   display: flex;
   margin: 0 auto;
@@ -265,7 +269,7 @@
       font-size: 30px;
       font-weight: bold;
       color: #1d1f75;
-      padding-left: 45px;
+      padding-left: 19px;
 
       span {
         margin-left: 10px;
@@ -295,12 +299,12 @@
         height: 62px;
         position: absolute;
         top: -32px;
-        left: 112px;
+        left: 96px;
       }
     }
 
     .wrap-road-text {
-      float: right;
+      margin: 0 auto;
       margin-top: 28px;
       width: 210px;
       p {

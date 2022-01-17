@@ -138,7 +138,7 @@ function Road() {
               >
                 <div className="swiper-wrapper">
                   <div className="swiper-slide">
-                    <ul className="swiperItemWrapper">
+                    <ul className="swiperItemWrapper item1">
                       {data.slice(0, 4).map((item, index) => {
                         const { year, envy, text } = item;
                         return (
