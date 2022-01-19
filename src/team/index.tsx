@@ -113,7 +113,7 @@ function Team() {
     },
     {
       position: t("Head of Russian Market"),
-      name: t("Sofia Ivanov"),
+      name: t("Sofia Ivanova"),
       desc: t(
         "Mastered in Taras Shevchenko National University in Kyiv. Worked in the marketing field in Ukraine for six years. Sufficient marketing and operation skills, fluent in Russian, Ukrainian, English."
       ),
