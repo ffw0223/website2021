@@ -35,6 +35,8 @@
   left: calc(100vw/2 - 300px);
   z-index: 999;
   margin: 0 auto;
+  box-shadow: 3px 2px 3px #e8e8e8;
+  background: #e8e8e8;
 }
 
 @media only screen and (max-width: 750px) {
@@ -55,6 +57,7 @@
   right: 20px;
   top: 10px;
   z-index: 50;
+  font-size: 18px;
   cursor: pointer;
 }
 
